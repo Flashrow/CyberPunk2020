@@ -1,0 +1,921 @@
+fileFormatVersion: 2
+guid: f204e1ea35913c9468dd1903bd00f62c
+ModelImporter:
+  serializedVersion: 19300
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: acessoiresMat
+    second: {fileID: 2100000, guid: 9df537706fef04b4794f6e31af24aa18, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: acessoires_axe_bride4Mat
+    second: {fileID: 2100000, guid: 0ea6cff0c4221c540878014f674cf78d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: acessoires_axe_bride4_axe_bride3Mat
+    second: {fileID: 2100000, guid: 67ddf087e6643a54893955abdf250b7b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: acessoires_axe_bride4_axe_bride3_axe_bride2Mat
+    second: {fileID: 2100000, guid: 841c5d9a402af8741a3c31826c14836f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: acessoires_axe_bride4_axe_bride3_axe_bride2_axe_bride1Mat
+    second: {fileID: 2100000, guid: f61edcbbca2c80e4aa028072ed552f49, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: acessoires_axe_bride4_axe_bride3_axe_bride2_axe_bride1_more_1Mat
+    second: {fileID: 2100000, guid: 587b70f70f09b4441b33a54f607f4b67, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: acessoires_axe_bride4_axe_bride3_axe_bride2_axe_bride1_more_2Mat
+    second: {fileID: 2100000, guid: 91739b37985ce04479ffc721a6994783, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: acessoires_axe_bride4_axe_bride3_axe_bride2_axe_bride1_more_3Mat
+    second: {fileID: 2100000, guid: 28cb19e78f4cab441ac03803995903b0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: acessoires_axe_bride4_axe_bride3_axe_bride2_axe_bride1_more_4Mat
+    second: {fileID: 2100000, guid: 34765bcd9fedde545bd2910684c3de6b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: acessoires_axe_soudure10Mat
+    second: {fileID: 2100000, guid: 5591368c2c952ac46842385eab1d9d34, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: acessoires_axe_soudure10_soudur03Mat
+    second: {fileID: 2100000, guid: a0294856834826741b795b2cc9192361, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: acessoires_axe_soudure10_soudur03_soudure02Mat
+    second: {fileID: 2100000, guid: fe4b3fb3e5028b74faec75264defbabb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: acessoires_axe_soudure10_soudur03_soudure02_axe_soudure9Mat
+    second: {fileID: 2100000, guid: dbe1cb63880628241bb19b9a1e77f861, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: acessoires_axe_soudure10_soudur03_soudure02_axe_soudure9_soudur03Mat
+    second: {fileID: 2100000, guid: a8d5316ccc2aa0240afcf880073a25a9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: acessoires_axe_soudure10_soudur03_soudure02_axe_soudure9_soudur03_soudure02Mat
+    second: {fileID: 2100000, guid: 50dd2d4e22295734196c291c013dfd6f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: acessoires_axe_soudure10_soudur03_soudure02_axe_soudure9_soudur03_soudure02_axe_soudureMat
+    second: {fileID: 2100000, guid: 5262b3f5bfe23324292f057e1e3c77ec, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: acessoires_axe_soudure10_soudur03_soudure02_axe_soudure9_soudur03_soudure02_axe_soudure_soudur03Mat
+    second: {fileID: 2100000, guid: 1263a21024916ef46bd1a79ba9222717, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: acessoires_axe_soudure10_soudur03_soudure02_axe_soudure9_soudur03_soudure02_axe_soudure_soudur03_soudure02Mat
+    second: {fileID: 2100000, guid: 1b8f4a5058a94644d97df8d7428a14ea, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: acessoires_axe_soudure10_soudur03_soudure02_axe_soudure9_soudur03_soudure02_axe_soudure_soudur03_soudure02_soudure01Mat
+    second: {fileID: 2100000, guid: eab5e83e3dde3fa429af19f873e95c87, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: acessoires_axe_soudure10_soudur03_soudure02_axe_soudure9_soudur03_soudure02_axe_soudure_soudur03_soudure02_soudure01_etincellesMat
+    second: {fileID: 2100000, guid: e8e7c3407fa578244882e18df1a9fa9e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: acessoires_axe_soudure3Mat
+    second: {fileID: 2100000, guid: be3390bf2924c864b8e335745505d3a5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: acessoires_axe_soudure3_soudur04Mat
+    second: {fileID: 2100000, guid: 25627f26513acd74db6b6093cb4b1958, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: acessoires_axe_soudure3_soudur04_pSphere1Mat
+    second: {fileID: 2100000, guid: fe3c17692ec2eae4dbf7058f9ec0cea5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: acessoires_axe_soudure6Mat
+    second: {fileID: 2100000, guid: 188cc6aa0484a474fa920dd989a16621, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: acessoires_axe_soudure6_soudur09Mat
+    second: {fileID: 2100000, guid: b39f3ed61f00e4b4eb7475f5c28dc595, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: acessoires_axe_soudure6_soudur09_soudure04Mat
+    second: {fileID: 2100000, guid: 45cb26523bc1fb84ca8c89cefb36930c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: acessoires_axe_soudure6_soudur09_soudure04_soudure06Mat
+    second: {fileID: 2100000, guid: 61656902091e9ea4a849a830782b8066, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: acessoires_axe_soudure6_soudur09_soudure04_soudure06_soudur08Mat
+    second: {fileID: 2100000, guid: fc420532ebc65b14a8b2bea62f7778d5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: acessoires_axe_soudure6_soudur09_soudure04_soudure06_soudur08_soudure05Mat
+    second: {fileID: 2100000, guid: be9f33e996697bf4f82cc2e74a0676b2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: acessoires_axe_soudure6_soudur09_soudure04_soudure06_soudur08_soudure05_pCylinder1Mat
+    second: {fileID: 2100000, guid: 66be76eea0b03fc4bb79603a235b1002, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: acessoires_axe_soudure6_soudur09_soudure04_soudure06_soudur08_soudure05_pCylinder1_pCylinder2Mat
+    second: {fileID: 2100000, guid: b459170a08d218a4cbce03bde18a607e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: acessoires_axe_soudure6_soudur09_soudure04_soudure06_soudur08_soudure05_pCylinder1_pCylinder2_polySurface18Mat
+    second: {fileID: 2100000, guid: 406bba41e6620574b94774ea84037b05, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: acessoires_axe_soudure6_soudur09_soudure04_soudure06_soudur08_soudure05_pCylinder1_pCylinder2_polySurface18_soudur07Mat
+    second: {fileID: 2100000, guid: f4768bfb1e5cb724283af1524f03d37b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: acessoires_axe_soudure6_soudur09_soudure04_soudure06_soudur08_soudure05_pCylinder1_pCylinder2_polySurface18_soudur07_polySurface13Mat
+    second: {fileID: 2100000, guid: 5ecbc2b075460614ebc68607877b5418, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: acessoires_axe_soudure6_soudur09_soudure04_soudure06_soudur08_soudure05_pCylinder1_pCylinder2_polySurface18_soudur07_polySurface14Mat
+    second: {fileID: 2100000, guid: b20645a0589a74c4cb13ef0ce5b2773a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: acessoires_axe_soudure7Mat
+    second: {fileID: 2100000, guid: aea9113c1091800488ec086b49de15ad, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: acessoires_axe_soudure7_soudur09Mat
+    second: {fileID: 2100000, guid: 7de9bf1693ce6d443a3f3efa5518f786, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: acessoires_axe_soudure7_soudur09_soudure04Mat
+    second: {fileID: 2100000, guid: fbf8b56db1eb20c499d98837c59eef3d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: acessoires_axe_soudure7_soudur09_soudure04_soudure06Mat
+    second: {fileID: 2100000, guid: 5ed0fe3d58e67c94492898bde71ccb0f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: acessoires_axe_soudure7_soudur09_soudure04_soudure06_soudur08Mat
+    second: {fileID: 2100000, guid: d2feb12418c85704f9f00bd6fcd76da8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: acessoires_axe_soudure7_soudur09_soudure04_soudure06_soudur08_soudure05Mat
+    second: {fileID: 2100000, guid: 1c484a201c3ecfd40811d023f1d49a60, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: acessoires_axe_soudure7_soudur09_soudure04_soudure06_soudur08_soudure05_pCylinder1Mat
+    second: {fileID: 2100000, guid: 29d3403e9075fac45a0bfb2aa2c4bbf3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: acessoires_axe_soudure7_soudur09_soudure04_soudure06_soudur08_soudure05_pCylinder1_pCylinder2Mat
+    second: {fileID: 2100000, guid: 660a1f2c1c0d0d644910ba0b8c95ffa9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: acessoires_axe_soudure7_soudur09_soudure04_soudure06_soudur08_soudure05_pCylinder1_pCylinder2_polySurface18Mat
+    second: {fileID: 2100000, guid: 62356dd25eca2aa4a96282e0da04f3eb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: acessoires_axe_soudure7_soudur09_soudure04_soudure06_soudur08_soudure05_pCylinder1_pCylinder2_polySurface18_soudur07Mat
+    second: {fileID: 2100000, guid: df63d7fb9209b654bb42a5aaba7d680c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: acessoires_axe_soudure7_soudur09_soudure04_soudure06_soudur08_soudure05_pCylinder1_pCylinder2_polySurface18_soudur07_polySurface13Mat
+    second: {fileID: 2100000, guid: cd810c629eaf4bc479a69cb9596a6c21, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: acessoires_axe_soudure7_soudur09_soudure04_soudure06_soudur08_soudure05_pCylinder1_pCylinder2_polySurface18_soudur07_polySurface14Mat
+    second: {fileID: 2100000, guid: 2d3806a72b432894ebf60a476f91b0cf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: acessoires_douille5Mat
+    second: {fileID: 2100000, guid: 583c5799a95f29246af9aee85cc6d44b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: acessoires_douille5_douille4Mat
+    second: {fileID: 2100000, guid: 0d47db1d07ec68b44bcb2451b5b0c683, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: acessoires_douille5_douille4_douille3Mat
+    second: {fileID: 2100000, guid: ab154d5a0410fc745881a16777b39f58, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: acessoires_douille5_douille4_douille3_douille2Mat
+    second: {fileID: 2100000, guid: af101f9267a5e9744bbbae5ecf8bcceb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: acessoires_douille5_douille4_douille3_douille2_douille1Mat
+    second: {fileID: 2100000, guid: 1ec014b38543e9640b4120a4c1ce1e3e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: acessoires_pCylinder10Mat
+    second: {fileID: 2100000, guid: 44106203478f6344991fcc58380d24d8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: acessoires_pCylinder10_pCylinder9Mat
+    second: {fileID: 2100000, guid: ea52c181f262a074da6e27b41a8ed8d6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: acessoires_pCylinder10_pCylinder9_pCylinder8Mat
+    second: {fileID: 2100000, guid: 5c942e4f3f741324dac9b439b1ea1d00, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: acessoires_pCylinder10_pCylinder9_pCylinder8_pCylinder11Mat
+    second: {fileID: 2100000, guid: 4d5e65920d10f0c439d2a38ee2506d19, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: acessoires_pCylinder10_pCylinder9_pCylinder8_pCylinder11_pCylinder12Mat
+    second: {fileID: 2100000, guid: 172c39646f43a8a4bb52c0a521979a57, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: acessoires_pCylinder10_pCylinder9_pCylinder8_pCylinder11_pCylinder12_polySurface24Mat
+    second: {fileID: 2100000, guid: abbeff21c0b494c49a18ed636efa0153, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: acessoires_pCylinder10_pCylinder9_pCylinder8_pCylinder11_pCylinder12_polySurface25Mat
+    second: {fileID: 2100000, guid: 31475f6a66e9b6d478bf738def448c54, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: acessoires_pCylinder10_pCylinder9_pCylinder8_pCylinder11_pCylinder12_polySurface26Mat
+    second: {fileID: 2100000, guid: 33b4e9e733d40054abeb282eba42b9be, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: acessoires_pCylinder10_pCylinder9_pCylinder8_pCylinder11_pCylinder12_polySurface27Mat
+    second: {fileID: 2100000, guid: 565a3f02bf521b44d8e1f19eef4a5528, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: axe_brasMat
+    second: {fileID: 2100000, guid: d6ae76ac8d032f342bafdd1b875ac705, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: axe_bras_bras_centreMat
+    second: {fileID: 2100000, guid: c0af8382be2a37f4f9e2bc08f5914e62, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: axe_bras_bras_centre_chevillle_centreMat
+    second: {fileID: 2100000, guid: dc25a2d42879c2e48ace718b59982fa9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: axe_bras_bras_centre_chevillle_centre_sabot_centreMat
+    second: {fileID: 2100000, guid: 391416f5148a993429d405fbbddb185f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: axe_bras_bras_centre_chevillle_centre_sabot_centre_alim_centreMat
+    second: {fileID: 2100000, guid: a282ec29dabbfa84ea1ebcfad1552dd7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: axe_bras_bras_centre_filtre_main_centre_droitMat
+    second: {fileID: 2100000, guid: 0b10e95d4df213840b88abdacd712e93, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: axe_bras_bras_centre_filtre_main_centre_gaucheMat
+    second: {fileID: 2100000, guid: b6854d97923a60a4194ff604c0ad258a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: axe_bras_bras_droitMat
+    second: {fileID: 2100000, guid: 23561bcf635e60f45880b5b7175e39db, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: axe_bras_bras_droit_bras_droit_carter_fuse_basMat
+    second: {fileID: 2100000, guid: 93b5ab3da5091c44ca4b7737966cffb5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: axe_bras_bras_droit_bras_droit_carter_fuse_bas_piston_bas_droitMat
+    second: {fileID: 2100000, guid: f7636846890744c44a2e612feff76d90, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: axe_bras_bras_droit_bras_droit_carter_fuse_hautMat
+    second: {fileID: 2100000, guid: 3ac82431be264cd4eb66aaf9a46c9a63, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: axe_bras_bras_droit_bras_droit_carter_fuse_milieuMat
+    second: {fileID: 2100000, guid: 4554b32dd4f47c34aba1eb37a73557b7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: axe_bras_bras_droit_bras_droit_carter_fuse_milieu_ecrou_milieu_droitMat
+    second: {fileID: 2100000, guid: 6e3edcaa975e169459e32d5380307834, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: axe_bras_bras_droit_bras_droit_carter_fuse_milieu_piston_milieu_droitMat
+    second: {fileID: 2100000, guid: 6e41db4674fe87d4a991e80fb0a3b4b7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: axe_bras_bras_droit_bras_droit_detailsMat
+    second: {fileID: 2100000, guid: 59991e493aecd3742aaf14e99b9d8b77, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: axe_bras_bras_droit_chevillle_droiteMat
+    second: {fileID: 2100000, guid: fb241cc163ec6d24f8bc4a0c70a0f065, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: axe_bras_bras_droit_chevillle_droite_sabot_droitMat
+    second: {fileID: 2100000, guid: c1caa315b48ee4b4aadbc66c8fa56b9d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: axe_bras_bras_droit_fuse_charniere_droitMat
+    second: {fileID: 2100000, guid: 2c44806c6f9616f4d926fe285b5aa256, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: axe_bras_bras_droit_fuse_charniere_droit_bras_droit_pousoir2Mat
+    second: {fileID: 2100000, guid: 82cca39e275f36a4ab6d125b96ac7f3a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: axe_bras_bras_droit_fuse_charniere_droit_bras_droit_pousoir2_bras_droit_poussoir3Mat
+    second: {fileID: 2100000, guid: d43dc83a4a42b05408ae6cb54ed7571d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: axe_bras_bras_droit_fuse_charniere_droit_bras_gauche_fuse1Mat
+    second: {fileID: 2100000, guid: a0f07c0dccfa6a84c80dd20c4899bb7b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: axe_bras_bras_droit_fuse_charniere_droit_bras_gauche_fuse1_bras_droit_poussoir1Mat
+    second: {fileID: 2100000, guid: 91fda3ad16cd635489a5141234132af5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: axe_bras_bras_droit_fuse_charniere_droit_bras_gauche_fuse1_bras_droit_poussoir1_bras_droit_poussoir4Mat
+    second: {fileID: 2100000, guid: 3834b611dec8f8740ba03ff31a0df617, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: axe_bras_bras_droit_fuse_charniere_droit_bras_gauche_fuse1_pCone2Mat
+    second: {fileID: 2100000, guid: 347c9ed5cc4e7b1429dd7c1a1cf1e262, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: axe_bras_bras_droit_fuse_charniere_droit_bras_gauche_fuse1_pCylinder15Mat
+    second: {fileID: 2100000, guid: c4f53dbe3088e6b489a74ff4b79de7c2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: axe_bras_bras_droit_main_droitMat
+    second: {fileID: 2100000, guid: dcb4d9342929a764c90083ccd35c031d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: axe_bras_bras_droit_main_droit_filtre_main_droitMat
+    second: {fileID: 2100000, guid: 90dd9e47767802c4285d4e9e6b7dafea, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: axe_bras_bras_gaucheMat
+    second: {fileID: 2100000, guid: 0b0423bc9e3ea2a4ca6c7bbcb58ea7c9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: axe_bras_bras_gauche_bras_gauche_carter_fuse_basMat
+    second: {fileID: 2100000, guid: bf6c63f433110234796d8e605499c3a2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: axe_bras_bras_gauche_bras_gauche_carter_fuse_bas_piston_bas_gaucheMat
+    second: {fileID: 2100000, guid: c80dd7dc0511926428e695d90986411d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: axe_bras_bras_gauche_bras_gauche_carter_fuse_hautMat
+    second: {fileID: 2100000, guid: 984add5682e8f974aa72011a120ac26f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: axe_bras_bras_gauche_bras_gauche_carter_fuse_milieuMat
+    second: {fileID: 2100000, guid: 868ecc87ec487654f917c06f8c4ac17b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: axe_bras_bras_gauche_bras_gauche_carter_fuse_milieu_ecrou_milieu_gaucheMat
+    second: {fileID: 2100000, guid: 6d5fe14abc8126a40b578fefdf4b0bd8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: axe_bras_bras_gauche_bras_gauche_carter_fuse_milieu_piston_milieu_gaucheMat
+    second: {fileID: 2100000, guid: 2e8a2f29978c57d4b940f13fff3eb04a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: axe_bras_bras_gauche_bras_gauche_detailsMat
+    second: {fileID: 2100000, guid: 50997bf340c95aa44b7fbec8f26cb937, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: axe_bras_bras_gauche_chevillle_gaucheMat
+    second: {fileID: 2100000, guid: d0c07c0d5e3980f46926fc773a174083, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: axe_bras_bras_gauche_chevillle_gauche_sabot_gaucheMat
+    second: {fileID: 2100000, guid: 221836997d6a98849830061b3e60e832, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: axe_bras_bras_gauche_chevillle_gauche_sabot_gauche_cable_gaucheMat
+    second: {fileID: 2100000, guid: 9d696293f92bbe44eb0c58b9b685de28, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: axe_bras_bras_gauche_fuse_charniere_droitMat
+    second: {fileID: 2100000, guid: 468ea27c34c49a046acc3ad625c57cdf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: axe_bras_bras_gauche_fuse_charniere_droit_bras_gauche_fuseMat
+    second: {fileID: 2100000, guid: 2ce9f137129a60c46ac1fb8b51a91723, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: axe_bras_bras_gauche_fuse_charniere_droit_bras_gauche_fuse_bras_gauche_poussoir1Mat
+    second: {fileID: 2100000, guid: bec1275e58fd1ed4eaadcd593d525ef8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: axe_bras_bras_gauche_fuse_charniere_droit_bras_gauche_fuse_bras_gauche_poussoir1_bras_gauche_poussoir4Mat
+    second: {fileID: 2100000, guid: dffcde5e727d1cb44910e6a7181a401d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: axe_bras_bras_gauche_fuse_charniere_droit_bras_gauche_fuse_pCone1Mat
+    second: {fileID: 2100000, guid: faf94b1b684030f4099d55986bf663e0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: axe_bras_bras_gauche_fuse_charniere_droit_bras_gauche_fuse_pCylinder14Mat
+    second: {fileID: 2100000, guid: 74e41e22750769345a6df9b21a59424e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: axe_bras_bras_gauche_fuse_charniere_droit_bras_gauche_pousoir2Mat
+    second: {fileID: 2100000, guid: b064ef29ddf23da4d9b0952b74a81d99, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: axe_bras_bras_gauche_fuse_charniere_droit_bras_gauche_pousoir2_bras_gauche_poussoir3Mat
+    second: {fileID: 2100000, guid: 8b7c92c398ec49c47ac94e86cfcf18c5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: axe_bras_bras_gauche_main_gaucheMat
+    second: {fileID: 2100000, guid: 44c0a9e484e8c794f838199a84062d90, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: axe_bras_bras_gauche_main_gauche_filtre_main_gaucheMat
+    second: {fileID: 2100000, guid: e5d33cd9c46eb8649b372879cd7a06af, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: corpsMat
+    second: {fileID: 2100000, guid: 8fb564afb3928b44e834eaf6312dbf1e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: corps_porte_AV_basMat
+    second: {fileID: 2100000, guid: a4f5d6d2cdb467d42ab7774bf5944f17, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: corps_porte_AV_hautMat
+    second: {fileID: 2100000, guid: 82be81102ab154d459d7bba9cbef4dff, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: corps_porte_centreMat
+    second: {fileID: 2100000, guid: 4238be508af305a40a0bc2313954057f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: corps_porte_droiteMat
+    second: {fileID: 2100000, guid: dc10fb26461d93941b5406f81d5a01e6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: corps_porte_gaucheMat
+    second: {fileID: 2100000, guid: 010a19d96c9736240996a86560596ecd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: teteMat
+    second: {fileID: 2100000, guid: 0229de91284fa8e4d82eae6dd88de4fc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tete_axe_soudure8Mat
+    second: {fileID: 2100000, guid: b0667a1cac4a9e34a9e1b7a79400c8bf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tete_axe_soudure8_soudur09Mat
+    second: {fileID: 2100000, guid: c8bfea1f65eb51744b1d911a7b59b1c7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tete_axe_soudure8_soudur09_soudure04Mat
+    second: {fileID: 2100000, guid: b22d3fded102ecc459c6b4d6a2dd45d0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tete_axe_soudure8_soudur09_soudure04_soudure06Mat
+    second: {fileID: 2100000, guid: 5f782af87938fcf4c95dfa87a4636e0b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tete_axe_soudure8_soudur09_soudure04_soudure06_soudur08Mat
+    second: {fileID: 2100000, guid: 95c718b6ef9af3d429cd79e8680bc14c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tete_axe_soudure8_soudur09_soudure04_soudure06_soudur08_soudure05Mat
+    second: {fileID: 2100000, guid: bd1db84eae0f14649a359151989ac1b4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tete_axe_soudure8_soudur09_soudure04_soudure06_soudur08_soudure05_pCylinder1Mat
+    second: {fileID: 2100000, guid: 53721d96e810d6a42b6a71b64f615575, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tete_axe_soudure8_soudur09_soudure04_soudure06_soudur08_soudure05_pCylinder1_pCylinder2Mat
+    second: {fileID: 2100000, guid: 4868f0196dbeb9e4cb8c7c9479be11c6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tete_axe_soudure8_soudur09_soudure04_soudure06_soudur08_soudure05_pCylinder1_pCylinder2_pCylinder4Mat
+    second: {fileID: 2100000, guid: 76ad981ac61223e4598537aad54a6857, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tete_axe_soudure8_soudur09_soudure04_soudure06_soudur08_soudure05_pCylinder1_pCylinder2_pCylinder4_polySurface18Mat
+    second: {fileID: 2100000, guid: a495c6bf6ba81b0479949e42edcd54ce, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tete_axe_soudure8_soudur09_soudure04_soudure06_soudur08_soudure05_pCylinder1_pCylinder2_pCylinder4_polySurface18_soudur07Mat
+    second: {fileID: 2100000, guid: 600ecadf5d239124280b604a87f5334e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tete_axe_soudure8_soudur09_soudure04_soudure06_soudur08_soudure05_pCylinder1_pCylinder2_pCylinder4_polySurface18_soudur07_polySurface13Mat
+    second: {fileID: 2100000, guid: a784caa0f02a0f141a7f05285fbf0fc4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tete_axe_soudure8_soudur09_soudure04_soudure06_soudur08_soudure05_pCylinder1_pCylinder2_pCylinder4_polySurface18_soudur07_polySurface14Mat
+    second: {fileID: 2100000, guid: 31805572ebdf9ab42a27d49107254cdd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tete_electric4Mat
+    second: {fileID: 2100000, guid: 20a641e2abccc3545a19f7888567b7e7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tete_electric4_electric3Mat
+    second: {fileID: 2100000, guid: ecbe05f28c8e4034e9aa1d2fe02535d9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tete_electric4_electric3_electric2Mat
+    second: {fileID: 2100000, guid: 5b4a93c882daa534ea2b06e5fccadfe1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tete_electric4_electric3_electric2_deco_eclaireMat
+    second: {fileID: 2100000, guid: 8e17ae33173ee5a4b9571c73a29eaeda, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tete_electric4_electric3_electric2_electric1Mat
+    second: {fileID: 2100000, guid: 255155db1f381624e975931d2c90a8af, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tete_oeuil1Mat
+    second: {fileID: 2100000, guid: 0d19d02dc6bb8144086ca850f158efc6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tete_oeuil1_oeuil2Mat
+    second: {fileID: 2100000, guid: 3475916eb9c666e4685c6400e8a84eba, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tete_oeuil1_oeuil2_oeuil3Mat
+    second: {fileID: 2100000, guid: 389dcc2155da3fe4dbb9ec7e944b861b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tete_oeuil1_oeuil2_oeuil3_porte_T10Mat
+    second: {fileID: 2100000, guid: 8f79c02ab22902b42af39ee4313f082c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tete_porte_T11Mat
+    second: {fileID: 2100000, guid: ef95a9f2b304b0642bb8079a9333b8f3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tete_porte_T1Mat
+    second: {fileID: 2100000, guid: d109f327a8f153143a34e2dd4f021237, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tete_porte_T2Mat
+    second: {fileID: 2100000, guid: 50b22dcadf9f6e545a8794b79ca3a14a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tete_porte_T3Mat
+    second: {fileID: 2100000, guid: 89d52660519907247bc651ae3caf2666, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tete_porte_T4Mat
+    second: {fileID: 2100000, guid: c0e2a48ebeba6504f932cd3e3d542cc3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tete_porte_T5Mat
+    second: {fileID: 2100000, guid: 0d64878614ce3514aa71e945595623a6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tete_porte_T6Mat
+    second: {fileID: 2100000, guid: 592f642522338c84d8c4ef7e2ee4098d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tete_porte_T7Mat
+    second: {fileID: 2100000, guid: 2ef7f36d14fc8cb4298784cc11cd4292, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tete_porte_T8Mat
+    second: {fileID: 2100000, guid: bd44e0937741bbf40888a85331b62b12, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tete_porte_T9Mat
+    second: {fileID: 2100000, guid: 906c5495d2b9c5e47ac94f81e21d8b99, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tete_progecteur1Mat
+    second: {fileID: 2100000, guid: c14195c558e5b484b8de71a8c134fd0c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tete_progecteur2Mat
+    second: {fileID: 2100000, guid: baa589657e74f5d4eb7b88a210ae3a43, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tete_progecteur3Mat
+    second: {fileID: 2100000, guid: b34278488523fcf40a5c40d68c6ec1f0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tete_radar1Mat
+    second: {fileID: 2100000, guid: f0e1ca64c7843234397e2c62bf294483, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tete_radar1_radar2Mat
+    second: {fileID: 2100000, guid: 3afb2b89852376e4ba8f67679cc9c5e4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tete_radar1_radar2_radar3Mat
+    second: {fileID: 2100000, guid: 4b982b0face1f5442bf074bf00575491, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tete_radar1_radar2_radar3_radar4Mat
+    second: {fileID: 2100000, guid: cb3ec17b15c4689418d5702adcc7b7df, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tete_radar1_radar2_radar3_radar4_radar_5Mat
+    second: {fileID: 2100000, guid: ad431fde44026a5408cdb71157bed0b9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tete_radar1_radar2_radar3_radar4_radar_cable1Mat
+    second: {fileID: 2100000, guid: 6636a721f7683be4abf4f2f3e958bd53, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tete_radar1_radar2_radar3_radar4_radar_cable2Mat
+    second: {fileID: 2100000, guid: 483452a10bd6849469724750ab36a4e7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tete_soudure05Mat
+    second: {fileID: 2100000, guid: 09fd2f17f206f7d4c810127f6341254b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tete_soudure05_pCylinder1Mat
+    second: {fileID: 2100000, guid: 4e3def315251d7e4fa9ba0843e7878a3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tete_soudure05_pCylinder1_pCylinder2Mat
+    second: {fileID: 2100000, guid: f6ab822338ae1ef42ab1336614bdbe36, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tete_soudure05_pCylinder1_pCylinder2_polySurface18Mat
+    second: {fileID: 2100000, guid: 29fe63c31e2c4dd47a3a4e148ec7e839, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tete_soudure05_pCylinder1_pCylinder2_polySurface18_soudur07Mat
+    second: {fileID: 2100000, guid: f78ba7835ca10e945b74eefe6c62e233, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tete_soudure05_pCylinder1_pCylinder2_polySurface18_soudur07_polySurface13Mat
+    second: {fileID: 2100000, guid: ec624d17fcf3e4245b7fb3ebac7bddf9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tete_soudure05_pCylinder1_pCylinder2_polySurface18_soudur07_polySurface14Mat
+    second: {fileID: 2100000, guid: 92b348199fd29ee44bb10d1ceb4870a4, type: 2}
+  materials:
+    materialImportMode: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.01
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 0.01
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
