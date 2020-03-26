@@ -5,7 +5,7 @@ using UnityEngine;
 public class ChestsInteractions : MonoBehaviour
 {
     bool isActive = false;
-    public List<Item> items = new List<Item>();
+    List<Item> items = new List<Item>();
     public ChestDisplay chestDisplayPrefab;
     private ChestDisplay chestDisplayPrefabUI;
     MoneySystem moneySystem;
@@ -17,7 +17,11 @@ public class ChestsInteractions : MonoBehaviour
 
     void Start()
     {
-        
+        this.items.Add(new Ammo());     
+        foreach(Item item in items)
+        {
+            item.number = Random.Range(item.minNumber, item.maxNumber + 1);
+        }
     }
 
     void Update()
@@ -38,11 +42,9 @@ public class ChestsInteractions : MonoBehaviour
     {
         items.ForEach(delegate(Item item)
         {
-            switch (item.type)
+            if(item is Ammo)
             {
-                case ItemType.Coins:
-                    moneySystem.Add(item.number);
-                    break;
+                moneySystem.Add(item.number);
             }
         });
     }
@@ -58,11 +60,6 @@ public class ChestsInteractions : MonoBehaviour
         if (isActive) return;
         Debug.Log("Chest Interaction");
         isActive = true;
-        foreach (Item item in items)
-        {
-            System.Random rnd = new System.Random();
-            item.number = rnd.Next(item.minNumber, item.maxNumber);
-        }
         chestDisplayPrefabUI = (ChestDisplay)Instantiate(chestDisplayPrefab);
         chestDisplayPrefabUI.Prime(items);
     }
