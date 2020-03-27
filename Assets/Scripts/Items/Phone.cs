@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Ammo : Item
+public class Phone : Item
 {
-   public Ammo(): base("ammo")
-   {
-        itemId = "ammo";
+    public Phone() : base("phone")
+    {
+        itemId = "phone";
         defaultNumber = 0;
         minNumber = 1;
-        maxNumber = 100;
+        maxNumber = 1;
         number = 0;
-        type = ItemType.Ammo;
+        type = ItemType.Phone;
     }
 }

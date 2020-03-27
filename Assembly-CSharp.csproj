@@ -88,6 +88,9 @@
     <Compile Include="Assets\Scripts\Interactions\InteractionRadius.cs" />
     <Compile Include="Assets\Scripts\Item.cs" />
     <Compile Include="Assets\Scripts\Items\Ammo.cs" />
+    <Compile Include="Assets\Scripts\Items\Coins.cs" />
+    <Compile Include="Assets\Scripts\Items\Phone.cs" />
+    <Compile Include="Assets\Scripts\Items\Tools.cs" />
     <Compile Include="Assets\Scripts\Systems\MoneySystem.cs" />
     <Compile Include="Assets\Scripts\UI\BitCoinsBar.cs" />
     <Compile Include="Assets\Scripts\UI\Chest\ChestDisplay.cs" />

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public enum ItemType {Coins, Gun, Ammo};
+public enum ItemType {Coins, Gun, Ammo, Phone, Tools};
 
-public class Item : MonoBehaviour
+public class Item
 {
     public Sprite sprite;
     public string itemId;
