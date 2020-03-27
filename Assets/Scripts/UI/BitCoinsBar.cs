@@ -12,7 +12,7 @@ public class BitCoinsBar : MonoBehaviour
 
     private void Awake()
     {
-        moneySystem = GameObject.FindObjectOfType<MoneySystem>();        
+        moneySystem = GameObject.FindObjectOfType<MoneySystem>();
     }
 
     void Start()
@@ -29,6 +29,7 @@ public class BitCoinsBar : MonoBehaviour
     void OnEnable()
     {
         MoneySystem.onMoneyChange += OnMoneyChange;
+        coinsText.text = $"{moneySystem.money}";
     }
 
     void OnDisable()

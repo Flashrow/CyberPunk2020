@@ -90,13 +90,14 @@
     <Compile Include="Assets\Scripts\Items\Ammo.cs" />
     <Compile Include="Assets\Scripts\Items\Coins.cs" />
     <Compile Include="Assets\Scripts\Items\Phone.cs" />
-    <Compile Include="Assets\Scripts\Items\Tools.cs" />
+    <Compile Include="Assets\Scripts\Items\tools.cs" />
     <Compile Include="Assets\Scripts\Systems\MoneySystem.cs" />
     <Compile Include="Assets\Scripts\UI\BitCoinsBar.cs" />
     <Compile Include="Assets\Scripts\UI\Chest\ChestDisplay.cs" />
     <Compile Include="Assets\Scripts\UI\Chest\ChestListItemDisplay.cs" />
     <Compile Include="Assets\Scripts\UI\HpBar.cs" />
     <Compile Include="Assets\Scripts\UI\UITextScript.cs" />
+    <Compile Include="Assets\Scripts\UI\UImanager.cs" />
     <Compile Include="Assets\Scripts\Weapons\Gun.cs" />
     <Compile Include="Assets\Scripts\Weapons\Target.cs" />
     <Compile Include="Assets\Scripts\lookAtTarget.cs" />
