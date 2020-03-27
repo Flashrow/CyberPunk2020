@@ -18,8 +18,9 @@ public class ChestsInteractions : MonoBehaviour
     List<Item> items = new List<Item>();
     public ChestDisplay chestDisplayPrefab;
     private ChestDisplay chestDisplayPrefabUI;
-    MoneySystem moneySystem;
     public List<ItemProbability> itemProbability = new List<ItemProbability>();
+    MoneySystem moneySystem;
+    Inventory inventory;
 
     void Awake()
     {
@@ -29,7 +30,7 @@ public class ChestsInteractions : MonoBehaviour
     void LoadItemsDictionary()
     {
         itemProbability.Add(new ItemProbability(new Ammo(), 70 ));
-        itemProbability.Add(new ItemProbability(new Coins(), 90 ));
+        itemProbability.Add(new ItemProbability(new Coins(), 100 ));
         itemProbability.Add(new ItemProbability(new Tools(), 20 ));
         itemProbability.Add(new ItemProbability(new Phone(), 10 ));
     }
@@ -45,6 +46,7 @@ public class ChestsInteractions : MonoBehaviour
 
     void Start()
     {
+        inventory = GameObject.FindObjectOfType<Hero>().inventory;
         RandomItems();
         foreach (Item item in items)
         {
@@ -73,6 +75,9 @@ public class ChestsInteractions : MonoBehaviour
             if(item is Coins)
             {
                 moneySystem.Add(item.number);
+            } else
+            {
+                inventory.AddItem(item);
             }
         });
     }
