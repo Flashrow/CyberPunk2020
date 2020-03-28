@@ -16,9 +16,7 @@ public class InventoryUI : MonoBehaviour
     // Use this for initialization
  
     void Start()
-    {
-        inventory = hero.inventory;
-        
+    {  
     }
 
     // Update is called once per frame
@@ -29,6 +27,7 @@ public class InventoryUI : MonoBehaviour
 
     private void OnEnable()
     {
+        inventory = hero.inventory;
         foreach (KeyValuePair<ItemType, Item> item in inventory.items)
         {
             InventoryItem display = (InventoryItem)Instantiate(itemPreFab);

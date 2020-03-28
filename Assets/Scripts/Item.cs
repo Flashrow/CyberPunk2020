@@ -13,6 +13,7 @@ public class Item
     public int minNumber;
     public int maxNumber;
     public int number;
+    public int cost = 0;
     public GameObject model;
     public ItemType type;
 
