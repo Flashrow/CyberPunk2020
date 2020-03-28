@@ -56,6 +56,7 @@ public class ChestsInteractions : MonoBehaviour
     public void Interact()
     {
         if (isActive) return;
+        AudioManager.instance.playSound("interaction");
         Debug.Log("Chest Interaction");
         isActive = true;
         foreach (Item item in items)
