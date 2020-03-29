@@ -11,8 +11,9 @@ public class InventoryUI : MonoBehaviour
 
     public InventoryItem itemPreFab;
     public InventoryItem itemCharacterPreFab;
-    public Hero hero;
-    Inventory inventory;
+
+    [SerializeField]
+    private Inventory inventory;
     // Use this for initialization
  
     void Start()
@@ -27,7 +28,6 @@ public class InventoryUI : MonoBehaviour
 
     private void OnEnable()
     {
-        inventory = hero.inventory;
         foreach (KeyValuePair<ItemType, Item> item in inventory.items)
         {
             InventoryItem display = (InventoryItem)Instantiate(itemPreFab);

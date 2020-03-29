@@ -19,13 +19,11 @@ public class ChestsInteractions : MonoBehaviour
     public ChestDisplay chestDisplayPrefab;
     private ChestDisplay chestDisplayPrefabUI;
     public List<ItemProbability> itemProbability = new List<ItemProbability>();
-    MoneySystem moneySystem;
-    Inventory inventory;
 
-    void Awake()
-    {
-        moneySystem = GameObject.FindObjectOfType<MoneySystem>();
-    }
+    [SerializeField]
+    private MoneySystem moneySystem;
+    [SerializeField]
+    private Inventory inventory;
 
     void LoadItemsDictionary()
     {
@@ -46,7 +44,6 @@ public class ChestsInteractions : MonoBehaviour
 
     void Start()
     {
-        inventory = GameObject.FindObjectOfType<Hero>().inventory;
         RandomItems();
         foreach (Item item in items)
         {

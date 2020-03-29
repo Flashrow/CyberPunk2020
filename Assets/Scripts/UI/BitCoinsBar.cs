@@ -7,13 +7,10 @@ public class BitCoinsBar : MonoBehaviour
 {
     public Text coinsText;
     public Hero hero;
-    MoneySystem moneySystem;
-    // Start is called before the first frame update
 
-    private void Awake()
-    {
-        moneySystem = GameObject.FindObjectOfType<MoneySystem>();
-    }
+    [SerializeField]
+    private MoneySystem moneySystem;
+    // Start is called before the first frame update
 
     void Start()
     {
