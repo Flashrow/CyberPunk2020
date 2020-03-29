@@ -210,6 +210,8 @@ MonoBehaviour:
   text: {fileID: 9118712976298833362}
   amount: {fileID: 390295306365472771}
   image: {fileID: 9118712977884356637}
+  detailsWindowPreFabTemp: {fileID: 194653377258005466, guid: e604e5cd23f6743469968a4db1b19e2c,
+    type: 3}
 --- !u!1 &9118712976678742844
 GameObject:
   m_ObjectHideFlags: 0
