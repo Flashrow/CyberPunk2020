@@ -12,6 +12,8 @@ public class InventoryItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     InventoryItemDetailsWindow detailsWindowPreFab;
     public InventoryItemDetailsWindow detailsWindowPreFabTemp;
 
+    bool isPointerOver = false;
+
     // Use this for initialization
     void Start()
     {        
@@ -29,14 +31,30 @@ public class InventoryItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        detailsWindowPreFab = (InventoryItemDetailsWindow)Instantiate(detailsWindowPreFabTemp, transform);
-        detailsWindowPreFab.transform.position = eventData.position + new Vector2(20, -20);
-        detailsWindowPreFab.Prime(item);
+        isPointerOver = true;
+        LeanTween.scale(this.gameObject, new Vector3(1.1f, 1.1f, 1), 0.03f);
+        StartCoroutine(CreateDetailsWindow(eventData));
+    }
+
+    IEnumerator CreateDetailsWindow(PointerEventData eventData)
+    {
+        yield return new WaitForSeconds(.5f);
+        if (isPointerOver && !detailsWindowPreFab)
+        {
+            detailsWindowPreFab = (InventoryItemDetailsWindow)Instantiate(detailsWindowPreFabTemp, transform);
+            RectTransform rt = (RectTransform)detailsWindowPreFab.transform;
+            float width = rt.rect.width;
+            float height = rt.rect.height;
+            detailsWindowPreFab.transform.position = eventData.position + new Vector2(width/2, -height/2);
+            detailsWindowPreFab.Prime(item);
+        }
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        DestroyImmediate(detailsWindowPreFab.gameObject);
+        isPointerOver = false;
+        LeanTween.scale(this.gameObject, new Vector3(1, 1, 1), 0.03f);
+        if(detailsWindowPreFab) DestroyImmediate(detailsWindowPreFab.gameObject);
     }
 
     public void Prime(Item item)

@@ -66,6 +66,7 @@
     <Compile Include="Assets\AssetStoreOriginals\_SNAPS_PrototypingAssets\Scripts\Editor\PackageChecker\PackageChecker.cs" />
     <Compile Include="Assets\JMO Assets\Cartoon FX Easy Editor\Editor\CFXEasyEditor.cs" />
     <Compile Include="Assets\JMO Assets\WarFX\Editor\CFX_SpawnSystemEditor.cs" />
+    <Compile Include="Assets\LeanTween\Editor\LeanTweenDocumentationEditor.cs" />
     <None Include="Assets\AssetStoreOriginals\_SNAPS_PrototypingAssets\Scripts\Editor\PackageChecker\settings\PackageImportList_ShaderGraph.txt" />
     <None Include="Assets\AssetStoreOriginals\_SNAPS_PrototypingAssets\Scripts\Editor\PackageChecker\PackageImportList.txt" />
     <Reference Include="UnityEditor.TestRunner">
