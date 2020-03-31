@@ -12,3 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4fe4ec5f0a6e7449bda7328a69724bf, type: 3}
   m_Name: Inventory
   m_EditorClassIdentifier: 
+  FlyingItemPreFab: {fileID: 8790315326927457149, guid: feae5bf2a9cbc2a409826bbf23f292bd,
+    type: 3}

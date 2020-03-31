@@ -118,6 +118,8 @@
     <Compile Include="Assets\Scripts\Character\cameraMovement.cs" />
     <Compile Include="Assets\Scripts\Hero.cs" />
     <Compile Include="Assets\Scripts\Interactions\ChestsInteractions.cs" />
+    <Compile Include="Assets\Scripts\Interactions\FlyingItem.cs" />
+    <Compile Include="Assets\Scripts\Interactions\InteractionLabel.cs" />
     <Compile Include="Assets\Scripts\Interactions\InteractionRadius.cs" />
     <Compile Include="Assets\Scripts\Inventory\Inventory.cs" />
     <Compile Include="Assets\Scripts\Inventory\InventoryCharacterItem.cs" />

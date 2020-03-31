@@ -15,6 +15,8 @@ public class Inventory : ScriptableObject
     public delegate void AddedItemInventory(Item item);
     public static AddedItemInventory onAddItemInventory;
 
+    public FlyingItem FlyingItemPreFab;
+
     public void AddItem(Item item)
     {
         try
@@ -82,8 +84,18 @@ public class Inventory : ScriptableObject
         catch { };
     }
 
+    void DisplayItemInTheWorld(Item item)
+    {
+        Vector3 pos = GameObject.FindObjectOfType<Hero>().transform.position;
+        pos += Vector3.forward * 2;
+        FlyingItem display = (FlyingItem)Instantiate(FlyingItemPreFab);
+        display.Prime(item);
+        display.transform.position = pos;
+    }
+
     public void DropItem(ItemType type)
     {
+        DisplayItemInTheWorld(items[type]);
         items.Remove(type);
         try
         {
@@ -94,6 +106,7 @@ public class Inventory : ScriptableObject
 
     public void DropItem(Slots slot)
     {
+        DisplayItemInTheWorld(slots[slot]);
         slots.Remove(slot);
         try
         {

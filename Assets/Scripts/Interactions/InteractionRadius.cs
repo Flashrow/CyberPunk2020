@@ -7,6 +7,9 @@ public class InteractionRadius : MonoBehaviour
     public float radius = 3f;
     public GameObject text;
     public Camera mainCamera;
+
+    public InteractionLabel label;
+    InteractionLabel labelTemp;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,11 +38,17 @@ public class InteractionRadius : MonoBehaviour
         if (nearest != null)
         {
             OnKeyPress(nearest);
-            text.transform.position = nearest.transform.position + new Vector3(0, 1f, 0);
+            if (labelTemp == null)
+            {
+                labelTemp = (InteractionLabel)Instantiate(label , nearest.transform.position, Quaternion.identity);
+            }            
+            labelTemp.SetLabel("Open");
+            labelTemp.transform.position = nearest.transform.position + new Vector3(0, 1, 0);
         }
         else
         {
-            text.transform.position = new Vector3(0, -1f, 0);
+            if(labelTemp != null)
+                DestroyImmediate(labelTemp.gameObject);
         }
     }
 
@@ -56,6 +65,10 @@ public class InteractionRadius : MonoBehaviour
             if(nearest.TryGetComponent<ChestsInteractions>(out ChestsInteractions chests))
             {
                 chests.Interact();
+            }
+            if (nearest.TryGetComponent<FlyingItem>(out FlyingItem item))
+            {
+                item.Interact();
             }
         }
     }
