@@ -11,6 +11,7 @@ public class Inventory : ScriptableObject
 
     public delegate void InventoryChanged();
     public static InventoryChanged onInventoryChange;
+
     public delegate void AddedItemInventory(Item item);
     public static AddedItemInventory onAddItemInventory;
 
@@ -19,7 +20,11 @@ public class Inventory : ScriptableObject
         try
         {
             items.Add(item.data.type, item);
-            onAddItemInventory(item);
+            try
+            {
+                onAddItemInventory(item);
+            }
+            catch { }
         } catch
         {
             items[item.data.type].number += item.number;
@@ -70,7 +75,11 @@ public class Inventory : ScriptableObject
         if (!slots.ContainsKey(slot)) return;
         AddItem(slots[slot]);
         slots.Remove(slot);
-        onInventoryChange();
+        try
+        {
+            onInventoryChange();
+        }
+        catch { };
     }
 
     public bool IsSlotEmpty(Slots slot)
