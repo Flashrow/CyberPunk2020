@@ -27,7 +27,10 @@ public class InventoryItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 
     public void OnPointerClick(PointerEventData pointerEventData)
     {
-        inventory.MoveItemToCharacter(item);
+        if(pointerEventData.button == PointerEventData.InputButton.Left)
+            inventory.MoveItemToCharacter(item);
+        if (pointerEventData.button == PointerEventData.InputButton.Right)
+            inventory.DropItem(item.data.type);
     }
 
     public void OnPointerEnter(PointerEventData eventData)

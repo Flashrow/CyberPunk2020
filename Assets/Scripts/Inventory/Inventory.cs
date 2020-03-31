@@ -82,6 +82,26 @@ public class Inventory : ScriptableObject
         catch { };
     }
 
+    public void DropItem(ItemType type)
+    {
+        items.Remove(type);
+        try
+        {
+            onInventoryChange();
+        }
+        catch { };
+    }
+
+    public void DropItem(Slots slot)
+    {
+        slots.Remove(slot);
+        try
+        {
+            onInventoryChange();
+        }
+        catch { };
+    }
+
     public bool IsSlotEmpty(Slots slot)
     {
         return !slots.ContainsKey(slot);
