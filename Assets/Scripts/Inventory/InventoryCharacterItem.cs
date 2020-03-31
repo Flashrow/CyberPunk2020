@@ -2,14 +2,19 @@
 using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
-public class InventoryItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
+
+public class InventoryCharacterItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
     // UI fields
     public Text text;
     public Text amount;
     public Image image;
-    public Item item = new Item();
 
+    [SerializeField]
+    private Slots slot;
+
+    [SerializeField]
+    private Inventory inventory;
     // DetailsWindow Prefab
     InventoryItemDetailsWindow detailsWindowPreFab;
     public InventoryItemDetailsWindow detailsWindowPreFabTemp;
@@ -17,17 +22,14 @@ public class InventoryItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     bool isPointerOver = false;
     Vector3 position;
 
-    [SerializeField]
-    private Inventory inventory;
-
     void Start()
     {
-        
+
     }
 
     public void OnPointerClick(PointerEventData pointerEventData)
     {
-        inventory.MoveItemToCharacter(item);
+        inventory.MoveItemToInventory(slot);
     }
 
     public void OnPointerEnter(PointerEventData eventData)
@@ -40,14 +42,14 @@ public class InventoryItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     IEnumerator CreateDetailsWindow(PointerEventData eventData)
     {
         yield return new WaitForSeconds(.5f);
-        if (isPointerOver && !detailsWindowPreFab)
+        if (isPointerOver && !detailsWindowPreFab && !inventory.IsSlotEmpty(slot))
         {
             detailsWindowPreFab = (InventoryItemDetailsWindow)Instantiate(detailsWindowPreFabTemp, transform);
             RectTransform rt = (RectTransform)detailsWindowPreFab.transform;
             float width = rt.rect.width;
             float height = rt.rect.height;
-            detailsWindowPreFab.transform.position = eventData.position + new Vector2(width/2, -height/2);
-            detailsWindowPreFab.Prime(item);
+            detailsWindowPreFab.transform.position = eventData.position + new Vector2(width / 2, -height / 2);
+            detailsWindowPreFab.Prime(inventory.slots[slot]);
         }
     }
 
@@ -55,36 +57,32 @@ public class InventoryItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     {
         isPointerOver = false;
         LeanTween.scale(this.gameObject, new Vector3(1, 1, 1), 0.03f);
-        if(detailsWindowPreFab) DestroyImmediate(detailsWindowPreFab.gameObject);
+        if (detailsWindowPreFab) DestroyImmediate(detailsWindowPreFab.gameObject);
     }
 
-    public void Prime(Item item)
+    void LoadData()
     {
-        this.item = item;
         try
         {
-            text.text = item.itemId;
+            text.text = inventory.slots[slot].itemId;
+            amount.text = $"{inventory.slots[slot].number}";
+            image.sprite = inventory.slots[slot].data.sprite;
         }
-        catch { }
-        amount.text = $"{item.number}";
-        image.sprite = item.data.sprite;
-    }
-
-    private void refresh()
-    {
-        if (inventory.HasItem(item.data.type))
-            Prime(item);
-        else
-            DestroyImmediate(gameObject);
+        catch
+        {
+            text.text = "";
+            amount.text = "";
+            image.sprite = null;
+        }
     }
 
     private void OnEnable()
     {
-        Inventory.onInventoryChange += refresh;
+        Inventory.onInventoryChange += LoadData;       
     }
 
     private void OnDisable()
     {
-        Inventory.onInventoryChange -= refresh;
+        Inventory.onInventoryChange -= LoadData;
     }
 }

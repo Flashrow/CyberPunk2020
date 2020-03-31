@@ -27,10 +27,10 @@ public class ChestsInteractions : MonoBehaviour
 
     void LoadItemsDictionary()
     {
-        itemProbability.Add(new ItemProbability(new Ammo(), 70 ));
+        itemProbability.Add(new ItemProbability(new Ammo(), 100 ));
         itemProbability.Add(new ItemProbability(new Coins(), 100 ));
-        itemProbability.Add(new ItemProbability(new Tools(), 20 ));
-        itemProbability.Add(new ItemProbability(new Phone(), 10 ));
+        itemProbability.Add(new ItemProbability(new Tools(), 100 ));
+        itemProbability.Add(new ItemProbability(new Phone(), 100 ));
     }
 
     void RandomItems()

@@ -7,18 +7,19 @@ using UnityEngine;
 public class Inventory : ScriptableObject
 {
     public Dictionary<ItemType, Item> items = new Dictionary<ItemType, Item>();
+    public Dictionary<Slots, Item> slots = new Dictionary<Slots, Item>();
 
     public delegate void InventoryChanged();
     public static InventoryChanged onInventoryChange;
-
-    public Item item1;
-    public Item item2;
+    public delegate void AddedItemInventory(Item item);
+    public static AddedItemInventory onAddItemInventory;
 
     public void AddItem(Item item)
     {
         try
         {
             items.Add(item.data.type, item);
+            onAddItemInventory(item);
         } catch
         {
             items[item.data.type].number += item.number;
@@ -43,16 +44,42 @@ public class Inventory : ScriptableObject
 
     public void MoveItemToCharacter(Item item)
     {
-        items[item.data.type].number -= 1;
-        item1 = items[item.data.type].CreateInstance();
-        item1.number = 1;
-        Debug.Log(item1.itemId);
+        switch (item.data.slot)
+        {
+            case Slots.LeftHand:
+                if(slots.ContainsKey(Slots.LeftHand))
+                    MoveItemToInventory(Slots.LeftHand);
+                slots.Add(Slots.LeftHand, items[item.data.type].CreateInstance());
+                items[item.data.type].number -= 1;
+                slots[Slots.LeftHand].number = 1;
+                break;
+            case Slots.RightHand:
+                if (slots.ContainsKey(Slots.RightHand))
+                    MoveItemToInventory(Slots.RightHand);
+                slots.Add(Slots.RightHand, items[item.data.type].CreateInstance());
+                items[item.data.type].number -= 1;
+                slots[Slots.RightHand].number = 1;
+                break;
+        }
         if (items[item.data.type].number <= 0) items.Remove(item.data.type);
         onInventoryChange();
     }
 
-    public void MoveItemToInventory(Item item)
+    public void MoveItemToInventory(Slots slot)
     {
+        if (!slots.ContainsKey(slot)) return;
+        AddItem(slots[slot]);
+        slots.Remove(slot);
+        onInventoryChange();
+    }
 
+    public bool IsSlotEmpty(Slots slot)
+    {
+        return !slots.ContainsKey(slot);
+    }
+
+    public bool HasItem(ItemType type)
+    {
+        return items.ContainsKey(type);
     }
 }

@@ -120,6 +120,7 @@
     <Compile Include="Assets\Scripts\Interactions\ChestsInteractions.cs" />
     <Compile Include="Assets\Scripts\Interactions\InteractionRadius.cs" />
     <Compile Include="Assets\Scripts\Inventory\Inventory.cs" />
+    <Compile Include="Assets\Scripts\Inventory\InventoryCharacterItem.cs" />
     <Compile Include="Assets\Scripts\Inventory\InventoryItem.cs" />
     <Compile Include="Assets\Scripts\Inventory\InventoryItemDetailsWindow.cs" />
     <Compile Include="Assets\Scripts\Inventory\InventoryUI.cs" />
