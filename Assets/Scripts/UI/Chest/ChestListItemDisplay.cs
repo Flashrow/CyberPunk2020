@@ -24,6 +24,6 @@ public class ChestListItemDisplay : MonoBehaviour
     {
         this.amount = item.number;
         text.text = $"x{amount}";
-        image.sprite = item.sprite;
+        image.sprite = item.data.sprite;
     }
 }

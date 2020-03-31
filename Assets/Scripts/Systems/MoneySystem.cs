@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MoneySystem : MonoBehaviour
+[CreateAssetMenu(fileName = "MoneyData", menuName = "MoneySystem", order = 2)]
+public class MoneySystem : ScriptableObject
 {
     public int money { get; private set; } = 1000;
 

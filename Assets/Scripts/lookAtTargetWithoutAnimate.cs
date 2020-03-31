@@ -14,6 +14,10 @@ public class lookAtTargetWithoutAnimate : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (target == null)
+        {
+            target = GameObject.FindObjectOfType<Hero>().transform;
+        }
         Vector3 relativePos =  transform.position - target.position;
         transform.rotation = Quaternion.LookRotation(relativePos);
     }

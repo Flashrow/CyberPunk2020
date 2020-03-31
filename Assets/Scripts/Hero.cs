@@ -11,6 +11,12 @@ public class Hero : MonoBehaviour
     public ushort playerAmmo = 60;
     public ushort inGunAmmo = 16;
 
+    public Inventory inventory;
+
+    private void Awake()
+    {
+        inventory = new Inventory();
+    }
 
     public void setPlayerAmmo(ushort ammo)
     {

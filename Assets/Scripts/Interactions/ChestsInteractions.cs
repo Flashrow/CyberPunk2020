@@ -2,22 +2,53 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public class ItemProbability {
+    public Item item;
+    public int probability;
+    public ItemProbability(Item item, int probability)
+    {
+        this.item = item;
+        this.probability = probability;
+    }
+};
+
 public class ChestsInteractions : MonoBehaviour
 {
     bool isActive = false;
-    public List<Item> items = new List<Item>();
+    List<Item> items = new List<Item>();
     public ChestDisplay chestDisplayPrefab;
     private ChestDisplay chestDisplayPrefabUI;
-    MoneySystem moneySystem;
+    public List<ItemProbability> itemProbability = new List<ItemProbability>();
 
-    void Awake()
+    [SerializeField]
+    private MoneySystem moneySystem;
+    [SerializeField]
+    private Inventory inventory;
+
+    void LoadItemsDictionary()
     {
-        moneySystem = GameObject.FindObjectOfType<MoneySystem>();
+        itemProbability.Add(new ItemProbability(new Ammo(), 100 ));
+        itemProbability.Add(new ItemProbability(new Coins(), 100 ));
+        itemProbability.Add(new ItemProbability(new Tools(), 100 ));
+        itemProbability.Add(new ItemProbability(new Phone(), 100 ));
+    }
+
+    void RandomItems()
+    {
+        LoadItemsDictionary();        
+        foreach(ItemProbability item in itemProbability)
+        {
+            if(Random.Range(0, 101) < item.probability) items.Add(item.item);
+        }        
     }
 
     void Start()
     {
-        
+        RandomItems();
+        foreach (Item item in items)
+        {
+            item.number = Random.Range(item.data.minNumber, item.data.maxNumber + 1);
+        }
     }
 
     void Update()
@@ -38,11 +69,12 @@ public class ChestsInteractions : MonoBehaviour
     {
         items.ForEach(delegate(Item item)
         {
-            switch (item.type)
+            if(item is Coins)
             {
-                case ItemType.Coins:
-                    moneySystem.Add(item.number);
-                    break;
+                moneySystem.Add(item.number);
+            } else
+            {
+                inventory.AddItem(item);
             }
         });
     }
@@ -59,11 +91,6 @@ public class ChestsInteractions : MonoBehaviour
         AudioManager.instance.playSound("interaction");
         Debug.Log("Chest Interaction");
         isActive = true;
-        foreach (Item item in items)
-        {
-            System.Random rnd = new System.Random();
-            item.number = rnd.Next(item.minNumber, item.maxNumber);
-        }
         chestDisplayPrefabUI = (ChestDisplay)Instantiate(chestDisplayPrefab);
         chestDisplayPrefabUI.Prime(items);
     }
