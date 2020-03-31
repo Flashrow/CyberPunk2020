@@ -67,6 +67,6 @@ public class InventoryItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
         }
         catch { }
         amount.text = $"{item.number}";
-        image.sprite = item.sprite;
+        image.sprite = item.data.sprite;
     }
 }

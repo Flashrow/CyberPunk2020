@@ -47,7 +47,7 @@ public class ChestsInteractions : MonoBehaviour
         RandomItems();
         foreach (Item item in items)
         {
-            item.number = Random.Range(item.minNumber, item.maxNumber + 1);
+            item.number = Random.Range(item.data.minNumber, item.data.maxNumber + 1);
         }
     }
 
@@ -88,7 +88,6 @@ public class ChestsInteractions : MonoBehaviour
     public void Interact()
     {
         if (isActive) return;
-        Debug.Log("Chest Interaction");
         isActive = true;
         chestDisplayPrefabUI = (ChestDisplay)Instantiate(chestDisplayPrefab);
         chestDisplayPrefabUI.Prime(items);

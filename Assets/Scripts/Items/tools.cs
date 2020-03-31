@@ -5,14 +5,10 @@ using UnityEngine.UI;
 
 public class Tools : Item
 {
-    public Tools() : base("tools")
+    public Tools() : base("tools", "Tools")
     {
-        itemId = "tools";
-        defaultNumber = 0;
-        minNumber = 1;
-        maxNumber = 5;
+        itemId = "tools";        
         number = 0;
-        type = ItemType.Tools;
     }
 
     public override Item CreateInstance()

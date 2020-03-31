@@ -5,14 +5,10 @@ using UnityEngine.UI;
 
 public class Phone : Item
 {
-    public Phone() : base("phone")
+    public Phone() : base("phone", "Phone")
     {
         itemId = "phone";
-        defaultNumber = 0;
-        minNumber = 1;
-        maxNumber = 1;
         number = 0;
-        type = ItemType.Phone;
     }
 
     public override Item CreateInstance()

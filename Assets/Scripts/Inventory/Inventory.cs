@@ -18,10 +18,10 @@ public class Inventory : ScriptableObject
     {
         try
         {
-            items.Add(item.type, item);
+            items.Add(item.data.type, item);
         } catch
         {
-            items[item.type].number += item.number;
+            items[item.data.type].number += item.number;
         }
     }
 
@@ -43,11 +43,11 @@ public class Inventory : ScriptableObject
 
     public void MoveItemToCharacter(Item item)
     {
-        items[item.type].number -= 1;
-        item1 = items[item.type].CreateInstance();
+        items[item.data.type].number -= 1;
+        item1 = items[item.data.type].CreateInstance();
         item1.number = 1;
         Debug.Log(item1.itemId);
-        if (items[item.type].number <= 0) items.Remove(item.type);
+        if (items[item.data.type].number <= 0) items.Remove(item.data.type);
         onInventoryChange();
     }
 
