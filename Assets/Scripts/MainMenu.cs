@@ -10,6 +10,11 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene("City");
     }
 
+    public void CreateNewGame()
+    {
+        Debug.Log("NEW GAME!");
+    }
+
     public void QuitGame()
     {
         Debug.Log("QUIT WORK!");
