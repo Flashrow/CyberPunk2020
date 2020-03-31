@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 341ba1377f868414997e786d15bf6b5f, type: 3}
-  m_Name: Coins
+  m_Name: Coin
   m_EditorClassIdentifier: 
-  itemId: 
+  itemId: coins
   defaultNumber: 0
-  minNumber: 0
-  maxNumber: 100
-  sprite: {fileID: 0}
+  minNumber: 10
+  maxNumber: 50
+  sprite: {fileID: 21300000, guid: faedae616ffd7bd4f8e0ae9ffd511f94, type: 3}
   model: {fileID: 0}
   type: 0
   slot: 0

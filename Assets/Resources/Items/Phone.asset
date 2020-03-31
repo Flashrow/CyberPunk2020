@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 341ba1377f868414997e786d15bf6b5f, type: 3}
   m_Name: Phone
   m_EditorClassIdentifier: 
-  itemId: 
+  itemId: phone
   defaultNumber: 0
-  minNumber: 0
-  maxNumber: 100
-  sprite: {fileID: 0}
+  minNumber: 1
+  maxNumber: 1
+  sprite: {fileID: 21300000, guid: 65e7186b34aa258478b8b51bed57865a, type: 3}
   model: {fileID: 0}
-  type: 0
-  slot: 0
+  type: 3
+  slot: 1
