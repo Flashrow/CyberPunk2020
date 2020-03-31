@@ -19,4 +19,4 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: 4041d1d7917a2b5469156bcf23f39c71, type: 3}
   model: {fileID: 0}
   type: 4
-  slot: 1
+  slot: 0
