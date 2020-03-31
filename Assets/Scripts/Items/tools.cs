@@ -14,4 +14,9 @@ public class Tools : Item
         number = 0;
         type = ItemType.Tools;
     }
+
+    public override Item CreateInstance()
+    {
+        return new Tools();
+    }
 }

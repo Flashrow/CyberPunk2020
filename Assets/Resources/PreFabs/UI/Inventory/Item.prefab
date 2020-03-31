@@ -93,6 +93,7 @@ MonoBehaviour:
   image: {fileID: 4703543827823342339}
   detailsWindowPreFabTemp: {fileID: 194653377258005466, guid: e604e5cd23f6743469968a4db1b19e2c,
     type: 3}
+  inventory: {fileID: 11400000, guid: c80ac1334756ae540bb9ef051d9bd981, type: 2}
 --- !u!1 &4703543827823342337
 GameObject:
   m_ObjectHideFlags: 0

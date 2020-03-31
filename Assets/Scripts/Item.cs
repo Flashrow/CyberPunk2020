@@ -16,6 +16,7 @@ public class Item
     public int cost = 0;
     public GameObject model;
     public ItemType type;
+    public System.Type type2 = typeof(Item);
 
     public Item() { }
 
@@ -38,5 +39,10 @@ public class Item
     
     public void LoadSprite(string spriteName) {
         this.sprite = Resources.Load<Sprite>("Sprites/Items/" + spriteName);
+    }
+
+    public virtual Item CreateInstance()
+    {
+        return new Item();
     }
 }

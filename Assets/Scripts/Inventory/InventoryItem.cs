@@ -2,31 +2,32 @@
 using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
-public class InventoryItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class InventoryItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
+    // UI fields
     public Text text;
     public Text amount;
     public Image image;
     public Item item = new Item();
 
+    // DetailsWindow Prefab
     InventoryItemDetailsWindow detailsWindowPreFab;
     public InventoryItemDetailsWindow detailsWindowPreFabTemp;
 
     bool isPointerOver = false;
+    Vector3 position;
 
-    // Use this for initialization
+    [SerializeField]
+    private Inventory inventory;
+
     void Start()
-    {        
+    {
+        
     }
 
-    // Update is called once per frame
-    void Update()
+    public void OnPointerClick(PointerEventData pointerEventData)
     {
-    }
-
-    bool IsMouseOver()
-    {
-        return EventSystem.current.IsPointerOverGameObject();
+        inventory.MoveItemToCharacter(item);
     }
 
     public void OnPointerEnter(PointerEventData eventData)

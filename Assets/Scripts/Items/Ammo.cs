@@ -14,4 +14,9 @@ public class Ammo : Item
         number = 0;
         type = ItemType.Ammo;
     }
+
+    public override Item CreateInstance()
+    {
+        return new Ammo();
+    }
 }

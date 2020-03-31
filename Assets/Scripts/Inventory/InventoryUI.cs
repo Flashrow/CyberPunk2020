@@ -14,8 +14,13 @@ public class InventoryUI : MonoBehaviour
 
     [SerializeField]
     private Inventory inventory;
-    // Use this for initialization
- 
+
+    //Character items fields
+    [SerializeField]
+    private InventoryItem item1;
+    [SerializeField]
+    private InventoryItem item2;
+
     void Start()
     {  
     }
@@ -26,8 +31,15 @@ public class InventoryUI : MonoBehaviour
 
     }
 
+    private void refresh()
+    {
+        OnDisable();
+        OnEnable();
+    }
+
     private void OnEnable()
     {
+        Inventory.onInventoryChange += refresh;
         foreach (KeyValuePair<ItemType, Item> item in inventory.items)
         {
             InventoryItem display = (InventoryItem)Instantiate(itemPreFab);
@@ -41,10 +53,15 @@ public class InventoryUI : MonoBehaviour
             display.transform.localScale = new Vector3(1, 1, 1);
             display.Prime(item.Value);
         }
+        if(inventory.item1 != null)
+        {
+            item1.Prime(inventory.item1);
+        }
     }
 
     private void OnDisable()
     {
+        Inventory.onInventoryChange -= refresh;
         foreach (Transform child in items)
         {
             GameObject.Destroy(child.gameObject);

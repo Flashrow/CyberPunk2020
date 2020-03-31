@@ -14,4 +14,9 @@ public class Phone : Item
         number = 0;
         type = ItemType.Phone;
     }
+
+    public override Item CreateInstance()
+    {
+        return new Phone();
+    }
 }

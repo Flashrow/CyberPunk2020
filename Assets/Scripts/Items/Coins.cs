@@ -14,4 +14,9 @@ public class Coins : Item
         number = 0;
         type = ItemType.Coins;
     }
+
+    public override Item CreateInstance()
+    {
+        return new Coins();
+    }
 }
