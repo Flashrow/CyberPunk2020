@@ -22,7 +22,7 @@ public class FlyingItem : Interacted
 
     }
 
-    public override void Interaction()
+    public override void OnInteract()
     {
         inventory.AddItem(item);
         Destroy(gameObject);

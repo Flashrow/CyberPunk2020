@@ -85,7 +85,7 @@ public class ChestsInteractions : Interacted
         isActive = false;
     }
 
-    public override void Interaction()
+    public override void OnInteract()
     {
         if (isActive) return;
         isActive = true;

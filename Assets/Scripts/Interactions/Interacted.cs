@@ -61,7 +61,7 @@ public class Interacted : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.F))
         {
-            Interaction();
+            OnInteract();
         }
     }
 
@@ -74,6 +74,6 @@ public class Interacted : MonoBehaviour
         catch { }
     }
 
-    public virtual void Interaction() { }
+    public virtual void OnInteract() { }
     public virtual void OnCancelIntegration() { }
 }
