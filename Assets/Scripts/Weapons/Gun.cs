@@ -48,15 +48,15 @@ public class Gun : MonoBehaviour
 
     void Shoot()
     {
-        AudioManager.instance.playSound("shoot");
-        player.inGunAmmo -= 1;
-        gunFlash.Play();
-        RaycastHit hit;
-        if (Physics.Raycast(fpsCamera.transform.position, fpsCamera.transform.forward, out hit, range))
-        {
-            Debug.Log(hit.transform.name);
-        }
-        Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
+       
+            player.inGunAmmo -= 1;
+            gunFlash.Play();
+            RaycastHit hit;
+            if (Physics.Raycast(fpsCamera.transform.position, fpsCamera.transform.forward, out hit, range))
+            {
+                Debug.Log(hit.transform.name);
+            }
+            Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
 
     }
 }
