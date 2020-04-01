@@ -35,6 +35,7 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+
 public void playSound(string soundName)
     {
         foreach(Sound sound in soundList)
