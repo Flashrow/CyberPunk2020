@@ -132,6 +132,8 @@
     <Compile Include="Assets\Scripts\Items\ItemScriptable.cs" />
     <Compile Include="Assets\Scripts\Items\Phone.cs" />
     <Compile Include="Assets\Scripts\Items\tools.cs" />
+    <Compile Include="Assets\Scripts\MapScripts\Audio\AudioManager.cs" />
+    <Compile Include="Assets\Scripts\MapScripts\Audio\Sound.cs" />
     <Compile Include="Assets\Scripts\Systems\MoneySystem.cs" />
     <Compile Include="Assets\Scripts\UI\BitCoinsBar.cs" />
     <Compile Include="Assets\Scripts\UI\Chest\ChestDisplay.cs" />
