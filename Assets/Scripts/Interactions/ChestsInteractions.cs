@@ -12,7 +12,7 @@ public class ItemProbability {
     }
 };
 
-public class ChestsInteractions : MonoBehaviour
+public class ChestsInteractions : Interacted
 {
     bool isActive = false;
     List<Item> items = new List<Item>();
@@ -85,11 +85,16 @@ public class ChestsInteractions : MonoBehaviour
         isActive = false;
     }
 
-    public void Interact()
+    public override void Interaction()
     {
         if (isActive) return;
         isActive = true;
         chestDisplayPrefabUI = (ChestDisplay)Instantiate(chestDisplayPrefab);
         chestDisplayPrefabUI.Prime(items);
+    }
+
+    public override void OnCancelIntegration()
+    {
+        CloseUI();
     }
 }
