@@ -53,6 +53,12 @@
     <UnityBuildTarget>StandaloneWindows64:19</UnityBuildTarget>
     <UnityVersion>2019.3.3f1</UnityVersion>
   </PropertyGroup>
+<<<<<<< HEAD
+=======
+  <ItemGroup>
+    <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
+  </ItemGroup>
+>>>>>>> remotes/origin/dev
   <ItemGroup>
     <Reference Include="UnityEngine">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2019.3.3f1\Editor\Data\Managed/UnityEngine/UnityEngine.dll</HintPath>
@@ -77,6 +83,7 @@
     <Compile Include="Assets\JMO Assets\WarFX\Scripts\WFX_BulletHoleDecal.cs" />
     <Compile Include="Assets\JMO Assets\WarFX\Scripts\WFX_LightFlicker.cs" />
     <Compile Include="Assets\JMO Assets\WarFX\Spawn System\CFX_SpawnSystem.cs" />
+<<<<<<< HEAD
     <Compile Include="Assets\LeanTween\Examples\Archived\OldGUIExamplesCS.cs" />
     <Compile Include="Assets\LeanTween\Examples\Archived\TestingPunch.cs" />
     <Compile Include="Assets\LeanTween\Examples\Archived\TestingRigidbodyCS.cs" />
@@ -110,6 +117,8 @@
     <Compile Include="Assets\LeanTween\Framework\LeanTest.cs" />
     <Compile Include="Assets\LeanTween\Framework\LeanTween.cs" />
     <Compile Include="Assets\LeanTween\Framework\LeanTweenExt.cs" />
+=======
+>>>>>>> remotes/origin/dev
     <Compile Include="Assets\Resources\Models\3D\Characters\Player\Ch03\AnimationControl.cs" />
     <Compile Include="Assets\Scripts\Car\CarMovement.cs" />
     <Compile Include="Assets\Scripts\Character\Movement\basMovement.cs" />
@@ -118,6 +127,7 @@
     <Compile Include="Assets\Scripts\Character\cameraMovement.cs" />
     <Compile Include="Assets\Scripts\Hero.cs" />
     <Compile Include="Assets\Scripts\Interactions\ChestsInteractions.cs" />
+<<<<<<< HEAD
     <Compile Include="Assets\Scripts\Interactions\FlyingItem.cs" />
     <Compile Include="Assets\Scripts\Interactions\InteractionLabel.cs" />
     <Compile Include="Assets\Scripts\Interactions\InteractionRadius.cs" />
@@ -132,13 +142,22 @@
     <Compile Include="Assets\Scripts\Items\ItemScriptable.cs" />
     <Compile Include="Assets\Scripts\Items\Phone.cs" />
     <Compile Include="Assets\Scripts\Items\tools.cs" />
+=======
+    <Compile Include="Assets\Scripts\Interactions\InteractionRadius.cs" />
+    <Compile Include="Assets\Scripts\Item.cs" />
+    <Compile Include="Assets\Scripts\MapScripts\Audio\AudioManager.cs" />
+    <Compile Include="Assets\Scripts\MapScripts\Audio\Sound.cs" />
+>>>>>>> remotes/origin/dev
     <Compile Include="Assets\Scripts\Systems\MoneySystem.cs" />
     <Compile Include="Assets\Scripts\UI\BitCoinsBar.cs" />
     <Compile Include="Assets\Scripts\UI\Chest\ChestDisplay.cs" />
     <Compile Include="Assets\Scripts\UI\Chest\ChestListItemDisplay.cs" />
     <Compile Include="Assets\Scripts\UI\HpBar.cs" />
     <Compile Include="Assets\Scripts\UI\UITextScript.cs" />
+<<<<<<< HEAD
     <Compile Include="Assets\Scripts\UI\UImanager.cs" />
+=======
+>>>>>>> remotes/origin/dev
     <Compile Include="Assets\Scripts\Weapons\Gun.cs" />
     <Compile Include="Assets\Scripts\Weapons\Target.cs" />
     <Compile Include="Assets\Scripts\lookAtTarget.cs" />
@@ -147,10 +166,15 @@
     <Compile Include="Assets\SpaceSkies Free\Demo\Scripts\SkyboxChanger.cs" />
     <None Include="Assets\JMO Assets\WarFX\Shaders\WFX_S Multiply Soft.shader" />
     <None Include="Assets\JMO Assets\WarFX\Shaders\WFX_S Multiply Soft Scroll.shader" />
+<<<<<<< HEAD
     <None Include="Assets\LeanTween\ReadMe.txt" />
     <None Include="Assets\JMO Assets\WarFX\_Effects\MuzzleFlashes\!MuzzleFlash Differences.txt" />
     <None Include="Assets\JMO Assets\WarFX\Shaders\WFX_S Alpha-Specular TintColor.shader" />
     <None Include="Assets\LeanTween\License.txt" />
+=======
+    <None Include="Assets\JMO Assets\WarFX\_Effects\MuzzleFlashes\!MuzzleFlash Differences.txt" />
+    <None Include="Assets\JMO Assets\WarFX\Shaders\WFX_S Alpha-Specular TintColor.shader" />
+>>>>>>> remotes/origin/dev
     <None Include="Assets\JMO Assets\WarFX\Shaders\WFX_S Add Scroll.shader" />
     <None Include="Assets\JMO Assets\Cartoon FX Easy Editor\CartoonFX Easy Editor Readme.txt" />
     <None Include="Assets\JMO Assets\WarFX\_Effects (Mobile)\MuzzleFlashes\!MuzzleFlash Differences.txt" />
@@ -159,12 +183,16 @@
     <None Include="Assets\JMO Assets\WarFX\Shaders\WFX_S Particle Multiply A8.shader" />
     <None Include="Assets\Resources\Models\Low Poly Toon Chests\Readme.txt" />
     <None Include="Assets\JMO Assets\WarFX\Shaders\WFX_S AlphaBlend Scroll.shader" />
+<<<<<<< HEAD
     <None Include="Assets\LeanTween\Examples\Archived\2dUnlitWithFade.shader" />
+=======
+>>>>>>> remotes/origin/dev
     <None Include="Assets\JMO Assets\WarFX\Shaders\WFX_S Particle AddSoft A8.shader" />
     <None Include="Assets\JMO Assets\WarFX\!WarFX Readme.txt" />
     <None Include="Assets\JMO Assets\WarFX\Shaders\WFX_S Alpha-Diffuse TintColor.shader" />
     <None Include="Assets\JMO Assets\WarFX\Shaders\WFX_S AlphaBlend NoSoftParticles.shader" />
     <Reference Include="Unity.Timeline.Editor">
+<<<<<<< HEAD
       <HintPath>S:/CyberPunk2020/CyberPunk2020/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.ProGrids">
@@ -208,6 +236,51 @@
     </Reference>
     <Reference Include="UnityEditor.UI">
       <HintPath>S:/CyberPunk2020/CyberPunk2020/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+=======
+      <HintPath>D:/Code/cyberpunk2020/CyberPunk2020/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ProGrids">
+      <HintPath>D:/Code/cyberpunk2020/CyberPunk2020/Library/ScriptAssemblies/Unity.ProGrids.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VSCode.Editor">
+      <HintPath>D:/Code/cyberpunk2020/CyberPunk2020/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ProBuilder">
+      <HintPath>D:/Code/cyberpunk2020/CyberPunk2020/Library/ScriptAssemblies/Unity.ProBuilder.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ProBuilder.Editor">
+      <HintPath>D:/Code/cyberpunk2020/CyberPunk2020/Library/ScriptAssemblies/Unity.ProBuilder.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ProBuilder.AssetIdRemapUtility">
+      <HintPath>D:/Code/cyberpunk2020/CyberPunk2020/Library/ScriptAssemblies/Unity.ProBuilder.AssetIdRemapUtility.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ProGrids.Editor">
+      <HintPath>D:/Code/cyberpunk2020/CyberPunk2020/Library/ScriptAssemblies/Unity.ProGrids.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro.Editor">
+      <HintPath>D:/Code/cyberpunk2020/CyberPunk2020/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>D:/Code/cyberpunk2020/CyberPunk2020/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Timeline">
+      <HintPath>D:/Code/cyberpunk2020/CyberPunk2020/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.CollabProxy.Editor">
+      <HintPath>D:/Code/cyberpunk2020/CyberPunk2020/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Rider.Editor">
+      <HintPath>D:/Code/cyberpunk2020/CyberPunk2020/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ProBuilder.AddOns.Editor">
+      <HintPath>D:/Code/cyberpunk2020/CyberPunk2020/Library/ScriptAssemblies/Unity.ProBuilder.AddOns.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro">
+      <HintPath>D:/Code/cyberpunk2020/CyberPunk2020/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.UI">
+      <HintPath>D:/Code/cyberpunk2020/CyberPunk2020/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+>>>>>>> remotes/origin/dev
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>

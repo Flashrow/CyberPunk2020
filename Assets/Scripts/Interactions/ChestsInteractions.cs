@@ -88,6 +88,11 @@ public class ChestsInteractions : MonoBehaviour
     public void Interact()
     {
         if (isActive) return;
+<<<<<<< HEAD
+=======
+        AudioManager.instance.playSound("interaction");
+        Debug.Log("Chest Interaction");
+>>>>>>> remotes/origin/dev
         isActive = true;
         chestDisplayPrefabUI = (ChestDisplay)Instantiate(chestDisplayPrefab);
         chestDisplayPrefabUI.Prime(items);
