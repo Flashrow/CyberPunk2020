@@ -69,7 +69,7 @@ public class basMovement : MonoBehaviour {
     private void stepSound(stepType type)
     {
         switch (type)
-        {
+        { 
             case stepType.sprint:
                 if (stepTimer > 0.2)
                 {

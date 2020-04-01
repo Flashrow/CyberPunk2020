@@ -48,7 +48,7 @@ public class Gun : MonoBehaviour
 
     void Shoot()
     {
-        AudioManager.instance.playSound("shoot");
+        AudioManager.instance.playSound("shoot"); 
         player.inGunAmmo -= 1;
         gunFlash.Play();
         RaycastHit hit;
