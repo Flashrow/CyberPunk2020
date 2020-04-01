@@ -1,5 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream:Assets/TextMesh Pro.meta
 guid: f54d1bd14bd3ca042bd867b519fee8cc
+=======
+guid: e87b5ba8672fcaa4288007d6f4cb1445
+>>>>>>> Stashed changes:Assets/Scripts/Controllers.meta
+=======
+guid: f54d1bd14bd3ca042bd867b519fee8cc
+>>>>>>> Stashed changes
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
