@@ -44,6 +44,36 @@ public class basMovement : MonoBehaviour {
         else
         {
             controller.Move(trotSpeed * moveDirection * Time.deltaTime);
+        
+        controller.Move (velocity * Time.deltaTime);
+    }
+
+    private void stepSound(stepType type)
+    {
+        switch (type)
+        { 
+            case stepType.sprint:
+                if (stepTimer > 0.2)
+                {
+                    AudioManager.instance.playSound("step");
+                    stepTimer = 0f;
+                }
+                else
+                {
+                    stepTimer += Time.deltaTime;
+                }
+                break;
+            case stepType.trot:
+                if (stepTimer > 0.4)
+                {
+                    AudioManager.instance.playSound("step");
+                    stepTimer = 0f;
+                }
+                else
+                {
+                    stepTimer += Time.deltaTime;
+                }
+                break;
         }
         
         controller.Move (velocity * Time.deltaTime);
