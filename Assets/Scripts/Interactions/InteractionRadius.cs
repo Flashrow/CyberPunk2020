@@ -6,7 +6,7 @@ public class InteractionRadius : MonoBehaviour
 {
     public float radius = 3f;
     public GameObject text;
-    public Camera mainCamera;
+    private Camera mainCamera;
 
     public InteractionLabel label;
     InteractionLabel labelTemp;
@@ -16,7 +16,7 @@ public class InteractionRadius : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        mainCamera = CameraManager.Instance.Brain;
     }
 
     // Update is called once per frame
@@ -43,7 +43,7 @@ public class InteractionRadius : MonoBehaviour
             interaction2.Interact(nearest.transform, nearest.GetComponent<Collider>().bounds.size.y);
         }
         try
-        {            
+        {
             if(nearest == null)
                 onIntegrate("");
             else
@@ -54,7 +54,7 @@ public class InteractionRadius : MonoBehaviour
 
     bool isObjectInCamera(Vector3 targetPosition)
     {
-        Vector3 screenPoint = mainCamera.WorldToViewportPoint(targetPosition);        
+        Vector3 screenPoint = mainCamera.WorldToViewportPoint(targetPosition);
         return (screenPoint.z > 0 && screenPoint.x > 0 && screenPoint.x < 1 && screenPoint.y > 0 && screenPoint.y < 1);
     }
 }
