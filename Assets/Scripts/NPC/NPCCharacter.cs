@@ -6,6 +6,7 @@ using UnityEngine.AI;
 public abstract class NPCCharacter : MonoBehaviour {
     public float PlayerDetectArea = 10f;
     public Transform[] MoveSpots;
+    public float MaxHealth = 100f;
     protected int randomSpot;
     protected Transform player;
     protected NavMeshAgent agent;

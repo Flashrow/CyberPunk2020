@@ -1,13 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class NPCEnemy : NPCCharacter {
-
-    public ushort maxHealth;
-    public ushort currentHealth { get; protected set; }
+    public Slider HealthbarHandler;
+    public Text HealthbarTextHandler;
+    public float currentHealth { get; protected set; }
     public NPCEnemy () {
-        currentHealth = maxHealth;
+        currentHealth = MaxHealth;
     }
     public override void OnDrawGizmosSelected () {
         Gizmos.color = Color.red;
@@ -19,14 +20,18 @@ public class NPCEnemy : NPCCharacter {
             agent.SetDestination (player.position);
             FaceTarget ();
             if (distance <= agent.stoppingDistance) {
-                Debug.Log ("NPC ENEMY FIGHT");
+                // TODO: Combat
+                currentHealth--;
+                float val = currentHealth / MaxHealth;
+                HealthbarHandler.value = val;
+                HealthbarTextHandler.text = $"{val}%";
             }
         }
+        if(currentHealth < 0)
+            Die();
     }
     public override void Die () {
-        if (currentHealth < 0) {
-            Destroy (gameObject);
-            Debug.Log ("NPC ENEMY DIE");
-        }
+        // TODO: Animation
+        Destroy (gameObject);
     }
 }

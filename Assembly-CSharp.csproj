@@ -766,6 +766,10 @@
       <Project>{026b906e-bc56-ee30-fa5e-dc1246e9cf30}</Project>
       <Name>Unity.Timeline.Editor</Name>
     </ProjectReference>
+    <ProjectReference Include="Cinemachine.csproj">
+      <Project>{aa6c92cd-a42f-f793-44b5-ae278ceb608a}</Project>
+      <Name>Cinemachine</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.ProGrids.csproj">
       <Project>{2ca96224-82f3-34e9-66b8-5c48eee51f5d}</Project>
       <Name>Unity.ProGrids</Name>
@@ -810,6 +814,10 @@
       <Project>{b38b10c8-b284-477b-5738-3703144f4dfc}</Project>
       <Name>Unity.Rider.Editor</Name>
     </ProjectReference>
+    <ProjectReference Include="com.unity.cinemachine.editor.csproj">
+      <Project>{af712480-cd60-a367-7b23-e16f56a79631}</Project>
+      <Name>com.unity.cinemachine.editor</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.ProBuilder.AddOns.Editor.csproj">
       <Project>{3fd15f80-4c72-9430-714c-45ff152e6294}</Project>
       <Name>Unity.ProBuilder.AddOns.Editor</Name>
@@ -821,14 +829,6 @@
     <ProjectReference Include="UnityEditor.UI.csproj">
       <Project>{c3e5e476-2556-ac6f-ead0-bc0cbbb24a5f}</Project>
       <Name>UnityEditor.UI</Name>
-    </ProjectReference>
-    <ProjectReference Include="Cinemachine.csproj">
-      <Project>{aa6c92cd-a42f-f793-44b5-ae278ceb608a}</Project>
-      <Name>Cinemachine</Name>
-    </ProjectReference>
-    <ProjectReference Include="com.unity.cinemachine.editor.csproj">
-      <Project>{af712480-cd60-a367-7b23-e16f56a79631}</Project>
-      <Name>com.unity.cinemachine.editor</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
