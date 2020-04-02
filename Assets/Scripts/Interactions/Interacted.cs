@@ -8,11 +8,16 @@ public class Interacted : MonoBehaviour
     InteractionLabel label;
     InteractionLabel labelTemp;
 
-
-    public string labelText;
+    [SerializeField]
+    private string labelText;
 
     public void Interact(Transform transform, float height)
     {
+        try
+        {
+            InInteraction();
+        }
+        catch { }
         CreateLabel(transform);
         SetLabelPosition(height);
         KeyListener();
@@ -25,8 +30,17 @@ public class Interacted : MonoBehaviour
             labelTemp = (InteractionLabel)Instantiate(label, transform);
             labelTemp.SetLabel(labelText);
             InteractionRadius.onIntegrate += DestroyIfNotActive;
-            Debug.Log("saved");
+            try
+            {
+                OnStartIntegration();
+            }
+            catch { }
         }
+    }
+
+    public void SetLabelText(string text)
+    {
+        labelText = text;
     }
 
     void DestroyIfNotActive(string name)
@@ -75,5 +89,7 @@ public class Interacted : MonoBehaviour
     }
 
     public virtual void OnInteract() { }
+    public virtual void InInteraction() { }
+    public virtual void OnStartIntegration() { }
     public virtual void OnCancelIntegration() { }
 }
