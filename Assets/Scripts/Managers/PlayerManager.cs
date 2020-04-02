@@ -5,13 +5,13 @@ using UnityEngine;
 public class PlayerManager : MonoBehaviour {
     #region Singleton
 
-    public static PlayerManager instance;
+    public static PlayerManager Instance;
 
     void Awake () {
-        instance = this;
+        Instance = this;
     }
 
     #endregion
 
-    public GameObject player;
+    public GameObject Player;
 }

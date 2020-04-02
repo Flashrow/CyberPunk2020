@@ -10,7 +10,7 @@ public abstract class NPCCharacter : MonoBehaviour {
     protected Transform player;
     protected NavMeshAgent agent;
     void Start () {
-        player = PlayerManager.instance.player.transform;
+        player = PlayerManager.Instance.Player.transform;
         agent = GetComponent<NavMeshAgent> ();
         randomSpot = Random.Range (0, MoveSpots.Length - 1);
     }

@@ -1,95 +1,73 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Interacted : MonoBehaviour
-{
-    [SerializeField, Header("Label Settings")]
+public class Interacted : MonoBehaviour {
+    [SerializeField, Header ("Label Settings")]
     InteractionLabel label;
     InteractionLabel labelTemp;
 
     [SerializeField]
     private string labelText;
 
-    public void Interact(Transform transform, float height)
-    {
-        try
-        {
-            InInteraction();
-        }
-        catch { }
-        CreateLabel(transform);
-        SetLabelPosition(height);
-        KeyListener();
+    public void Interact (Transform transform, float height) {
+        try {
+            InInteraction ();
+        } catch { }
+        CreateLabel (transform);
+        SetLabelPosition (height);
+        KeyListener ();
     }
 
-    void CreateLabel(Transform transform)
-    {
-        if (labelTemp == null)
-        {
-            labelTemp = (InteractionLabel)Instantiate(label, transform);
-            labelTemp.SetLabel(labelText);
+    void CreateLabel (Transform transform) {
+        if (labelTemp == null) {
+            labelTemp = (InteractionLabel) Instantiate (label, transform);
+            labelTemp.SetLabel (labelText);
             InteractionRadius.onIntegrate += DestroyIfNotActive;
-            try
-            {
-                OnStartIntegration();
-            }
-            catch { }
+            try {
+                OnStartIntegration ();
+            } catch { }
         }
     }
 
-    public void SetLabelText(string text)
-    {
+    public void SetLabelText (string text) {
         labelText = text;
     }
 
-    void DestroyIfNotActive(string name)
-    {
-        if(name != this.name)
-        {
-            try
-            {
-                OnCancelIntegration();
-            }
-            catch { }
-            DestroyLabel();
+    void DestroyIfNotActive (string name) {
+        if (name != this.name) {
+            try {
+                OnCancelIntegration ();
+            } catch { }
+            DestroyLabel ();
             InteractionRadius.onIntegrate -= DestroyIfNotActive;
         }
     }
 
-    public void DestroyLabel()
-    {
-        try
-        {
-            DestroyImmediate(labelTemp.gameObject);
-        }
-        catch { }
+    public void DestroyLabel () {
+        try {
+            DestroyImmediate (labelTemp.gameObject);
+        } catch { }
     }
 
-    void SetLabelPosition(float height)
-    {
-        labelTemp.transform.position = transform.position + new Vector3(0, 1.2f * height, 0);
+    void SetLabelPosition (float height) {
+        labelTemp.transform.position = transform.position + new Vector3 (0, 1.2f * height, 0);
     }
 
-    void KeyListener()
-    {
-        if(Input.GetKeyDown(KeyCode.F))
-        {
-            OnInteract();
+    void KeyListener () {
+        if (Input.GetKeyDown (KeyCode.F)) {
+            OnInteract ();
         }
     }
 
-    private void OnDestroy()
-    {
-        try
-        {
+    private void OnDestroy () {
+        try {
             InteractionRadius.onIntegrate -= DestroyIfNotActive;
-        }
-        catch { }
+        } catch { }
     }
 
-    public virtual void OnInteract() { }
-    public virtual void InInteraction() { }
-    public virtual void OnStartIntegration() { }
-    public virtual void OnCancelIntegration() { }
+    public virtual void OnInteract () { }
+    public virtual void InInteraction () { }
+    public virtual void OnStartIntegration () { }
+    public virtual void OnCancelIntegration () { }
 }
