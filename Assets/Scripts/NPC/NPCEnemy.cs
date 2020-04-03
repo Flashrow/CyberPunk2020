@@ -6,13 +6,14 @@ using UnityEngine.UI;
 public class NPCEnemy : NPCCharacter {
     public Slider HealthbarHandler;
     public Text HealthbarTextHandler;
-    public NPCEnemyAttack AttackScript;
+    private NPCEnemyAttack attackScript;
     public override void OnDrawGizmosSelected () {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere (transform.position, PlayerDetectArea);
     }
     void Awake () {
         HealthbarTextHandler.text = $"{MaxHealth}";
+        attackScript = GetComponent<NPCEnemyAttack>();
     }
 
     public override void OnHit (float val) {
@@ -30,14 +31,14 @@ public class NPCEnemy : NPCCharacter {
         if (dist <= PlayerDetectArea) {
             FaceTarget ();
             agent.SetDestination (player.position);
-            if (dist <= AttackScript.Area)
-                AttackScript.ShootToPlayer (dist);
+            if (dist <= attackScript.Area)
+                attackScript.ShootToPlayer (dist);
         } else movementScript.Spot (agent);
     }
     protected override void isStatic (float dist) {
         if (dist <= PlayerDetectArea) {
             FaceTarget ();
-            if (dist <= AttackScript.Area) AttackScript.ShootToPlayer (dist);
+            if (dist <= attackScript.Area) attackScript.ShootToPlayer (dist);
         }
     }
 }
