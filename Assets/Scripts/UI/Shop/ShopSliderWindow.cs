@@ -76,6 +76,7 @@ public class ShopSliderWindow : MonoBehaviour
         {
             money.Buy(finalyPrice);
             shopItems.items[item.data.type].number -= sliderValue;
+            if (shopItems.items[item.data.type].number <= 0) shopItems.items.Remove(item.data.type);
             Item newItem = item.CreateInstance();
             newItem.number = sliderValue;
             newItem.cost = item.cost;
