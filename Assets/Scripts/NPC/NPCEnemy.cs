@@ -6,10 +6,6 @@ using UnityEngine.UI;
 public class NPCEnemy : NPCCharacter {
     public Slider HealthbarHandler;
     public Text HealthbarTextHandler;
-    public float currentHealth { get; protected set; }
-    public NPCEnemy () {
-        currentHealth = MaxHealth;
-    }
     public override void OnDrawGizmosSelected () {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere (transform.position, PlayerDetectArea);
@@ -21,16 +17,19 @@ public class NPCEnemy : NPCCharacter {
             FaceTarget ();
             if (distance <= agent.stoppingDistance) {
                 // TODO: Combat
-                currentHealth--;
-                float val = currentHealth / MaxHealth;
-                HealthbarHandler.value = val;
-                HealthbarTextHandler.text = $"{val}%";
+                OnHit (1);
             }
         }
-        if(currentHealth < 0)
-            Die();
+        if (currentHealth < 0)
+            Die ();
     }
-    public override void Die () {
+    public override void OnHit (int val) {
+        currentHealth -= val;
+        float valHealth = currentHealth / MaxHealth;
+        HealthbarHandler.value = valHealth;
+        HealthbarTextHandler.text = $"{valHealth*100}%";
+    }
+    protected override void Die () {
         // TODO: Animation
         Destroy (gameObject);
     }

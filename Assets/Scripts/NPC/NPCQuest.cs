@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -29,5 +30,8 @@ public class NPCQuest : NPCCharacter {
             CameraManager.Instance.Current.gameObject.SetActive (false);
             QuestCamera.SetActive (true);
         }
+    }
+    public override void OnHit (int val) {
+        throw new NPCShootedException ("YOU HIT: NPC_QUEST");
     }
 }
