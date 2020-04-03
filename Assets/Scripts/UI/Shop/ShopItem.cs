@@ -2,17 +2,19 @@
 using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
-public class ShopItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class ShopItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
     public Text amount;
     public Image image;
     public Item item = new Item();
-
+    
     public delegate void OnPointerEnterItem(Item item);
     public static OnPointerEnterItem onPointerEnterItem;
+    public delegate void OnShopItemClick(Item item);
+    public static OnShopItemClick onShopItemClick;
 
     [SerializeField]
-    private Inventory inventory;
+    private ShopItems items;
 
     void Start()
     {
@@ -40,4 +42,10 @@ public class ShopItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
         LeanTween.scale(this.gameObject, new Vector3(1, 1, 1), 0.03f);
     }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        onShopItemClick(item);
+    }
+
 }

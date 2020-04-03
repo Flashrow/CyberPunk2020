@@ -19,7 +19,7 @@ public class Inventory : ScriptableObject
 
     public void AddItem(Item item)
     {
-        try
+        if (!items.ContainsKey(item.data.type))
         {
             items.Add(item.data.type, item);
             try
@@ -27,7 +27,8 @@ public class Inventory : ScriptableObject
                 onAddItemInventory(item);
             }
             catch { }
-        } catch
+        }
+        else
         {
             items[item.data.type].number += item.number;
         }
@@ -36,12 +37,14 @@ public class Inventory : ScriptableObject
     public void IncreaseItem(ItemType type, int value)
     {
         items[type].number += value;
+        onInventoryChange();
     }
 
     public void DecreaseItem(ItemType type, int value)
     {
         items[type].number -= value;
         if (items[type].number <= 0) items.Remove(type);
+        onInventoryChange();
     }
 
     public void RemoveItem(ItemType type)

@@ -615,6 +615,8 @@ MonoBehaviour:
   shopItemsContainer: {fileID: 2609832778723906505}
   itemDetailsPrice: {fileID: 2609832777911703845}
   itemDetailsName: {fileID: 2609832778660143403}
+  shopSliderWindowPreFab: {fileID: -617384434185904029, guid: 49db135951255b94ea2433f7dc8c06c3,
+    type: 3}
 --- !u!1 &2609832778498036563
 GameObject:
   m_ObjectHideFlags: 0

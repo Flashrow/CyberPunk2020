@@ -20,19 +20,30 @@ public class ShopUI : MonoBehaviour
     private Text itemDetailsPrice;
     [SerializeField]
     private Text itemDetailsName;
-    
+
+
+    [SerializeField]
+    private ShopSliderWindow shopSliderWindowPreFab;
+    ShopSliderWindow shopSliderWindowPreFabTemp;
+
     private ShopItems shopItems;
     // Use this for initialization
     private void OnEnable()
     {
         Inventory.onAddItemInventory += DisplayItem;
         ShopItem.onPointerEnterItem += FillDetailsLabel;
+        ShopItem.onShopItemClick += DisplayBuyWindow;
+        ShopCharacterItem.onCharacterItemClick += DisplaySellWindow;
+        ShopSliderWindow.onShopItemsChanged += DisplayShopItems;
     }
 
     private void OnDisable()
     {
         Inventory.onAddItemInventory -= DisplayItem;
         ShopItem.onPointerEnterItem -= FillDetailsLabel;
+        ShopItem.onShopItemClick -= DisplayBuyWindow;
+        ShopCharacterItem.onCharacterItemClick -= DisplaySellWindow;
+        ShopSliderWindow.onShopItemsChanged -= DisplayShopItems;
     }
 
     void Start()
@@ -41,18 +52,27 @@ public class ShopUI : MonoBehaviour
         {
             DisplayItem(item.Value);
         }
-        foreach (KeyValuePair<ItemType, Item> item in shopItems.items)
-        {
-            DisplayShopItem(item.Value);
-        }
+        DisplayShopItems();
     }
 
     void DisplayItem(Item item)
     {
         ShopCharacterItem display = (ShopCharacterItem)Instantiate(itemPreFab);
-        display.transform.SetParent(itemsContainer); 
+        display.transform.SetParent(itemsContainer);
         display.transform.localScale = new Vector3(1, 1, 1);
         display.Prime(item);
+    }
+
+    void DisplayShopItems()
+    {
+        foreach (Transform child in shopItemsContainer)
+        {
+            GameObject.Destroy(child.gameObject);
+        }
+        foreach (KeyValuePair<ItemType, Item> item in shopItems.items)
+        {
+            DisplayShopItem(item.Value);
+        }
     }
 
     void DisplayShopItem(Item item)
@@ -61,6 +81,24 @@ public class ShopUI : MonoBehaviour
         display.transform.SetParent(shopItemsContainer);
         display.transform.localScale = new Vector3(1, 1, 1);
         display.Prime(item);
+    }
+
+    void DisplayBuyWindow(Item item)
+    {
+        if (shopSliderWindowPreFabTemp == null)
+        {
+            shopSliderWindowPreFabTemp = (ShopSliderWindow)Instantiate(shopSliderWindowPreFab, transform);
+            shopSliderWindowPreFabTemp.Prime(item, "BUY", shopItems);
+        }
+    }
+
+    void DisplaySellWindow(Item item)
+    {
+        if (shopSliderWindowPreFabTemp == null)
+        {
+            shopSliderWindowPreFabTemp = (ShopSliderWindow)Instantiate(shopSliderWindowPreFab, transform);
+            shopSliderWindowPreFabTemp.Prime(item, "SELL", shopItems);
+        }
     }
 
     void FillDetailsLabel(Item item)

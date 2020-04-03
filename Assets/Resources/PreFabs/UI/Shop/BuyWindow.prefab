@@ -117,7 +117,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4770380052177762011}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: -617384434185904029}
+        m_MethodName: AcceptButtonClicked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4770380052203592759
 GameObject:
   m_ObjectHideFlags: 0
@@ -388,11 +399,22 @@ MonoBehaviour:
   m_Direction: 0
   m_MinValue: 0
   m_MaxValue: 1
-  m_WholeNumbers: 0
+  m_WholeNumbers: 1
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: -617384434185904029}
+        m_MethodName: OnSliderValueChange
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4770380053150045368
 GameObject:
   m_ObjectHideFlags: 0
@@ -587,7 +609,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4770380053243653942}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: -617384434185904029}
+        m_MethodName: DestroyMe
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4770380053340962839
 GameObject:
   m_ObjectHideFlags: 0
@@ -695,7 +728,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4770380053764758252}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -735,7 +768,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 3
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -830,6 +863,7 @@ GameObject:
   - component: {fileID: 4770380053764758252}
   - component: {fileID: 4770380053764758250}
   - component: {fileID: 4770380053764758253}
+  - component: {fileID: -617384434185904029}
   m_Layer: 0
   m_Name: BuyWindow
   m_TagString: Untagged
@@ -848,8 +882,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 4770380053804701090}
   - {fileID: 4770380053431930343}
+  - {fileID: 4770380053804701090}
   - {fileID: 4770380052960072035}
   - {fileID: 4770380052217623965}
   - {fileID: 4770380053841339735}
@@ -901,6 +935,26 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &-617384434185904029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4770380053764758255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcb4e117ccafbb34397e13b97e7993dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventory: {fileID: 11400000, guid: c80ac1334756ae540bb9ef051d9bd981, type: 2}
+  money: {fileID: 11400000, guid: 877f4996af4457546a7e1b14b99b9588, type: 2}
+  itemName: {fileID: 4770380053431930340}
+  minValue: {fileID: 4770380052217623962}
+  maxValue: {fileID: 4770380053841339732}
+  cost: {fileID: 4770380053150045350}
+  buttonText: {fileID: 4770380053459312090}
+  slider: {fileID: 4770380052960072032}
 --- !u!1 &4770380053804701093
 GameObject:
   m_ObjectHideFlags: 0
@@ -931,7 +985,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4770380053764758252}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}

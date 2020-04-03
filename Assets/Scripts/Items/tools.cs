@@ -13,6 +13,9 @@ public class Tools : Item
 
     public override Item CreateInstance()
     {
-        return new Tools();
+        Tools newTools = new Tools();
+        newTools.cost = cost;
+        newTools.number = number;
+        return newTools;
     }
 }

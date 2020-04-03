@@ -8,10 +8,12 @@ public class ShopCharacterItem : MonoBehaviour, IPointerEnterHandler, IPointerEx
     public Text amount;
     public Image image;
     public Item item = new Item();
-
+    
     // DetailsWindow Prefab
     InventoryItemDetailsWindow detailsWindowPreFab;
     public InventoryItemDetailsWindow detailsWindowPreFabTemp;
+    public delegate void OnCharacterItemClick(Item item);
+    public static OnCharacterItemClick onCharacterItemClick;
 
     bool isPointerOver = false;
     Vector3 position;
@@ -24,9 +26,9 @@ public class ShopCharacterItem : MonoBehaviour, IPointerEnterHandler, IPointerEx
 
     }
 
-    public void OnPointerClick(PointerEventData pointerEventData)
+    public void OnPointerClick(PointerEventData eventData)
     {
-        //TODO
+        onCharacterItemClick(item);
     }
 
     public void OnPointerEnter(PointerEventData eventData)
