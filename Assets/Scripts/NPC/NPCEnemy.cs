@@ -6,24 +6,21 @@ using UnityEngine.UI;
 public class NPCEnemy : NPCCharacter {
     public Slider HealthbarHandler;
     public Text HealthbarTextHandler;
+    public NPCEnemyAttack AttackScript;
     public override void OnDrawGizmosSelected () {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere (transform.position, PlayerDetectArea);
     }
-
-    void Awake() {
+    void Awake () {
         HealthbarTextHandler.text = $"{MaxHealth}";
     }
-
     void Update () {
         float distance = Vector3.Distance (player.position, transform.position);
         if (distance <= PlayerDetectArea) {
-            agent.SetDestination (player.position);
             FaceTarget ();
-            if (distance <= agent.stoppingDistance) {
-                // TODO: Combat + event
-                OnHit (1);
-                PlayerManager.Instance.HeroScript.HitPlayer(1);
+            agent.SetDestination (player.position);
+            if (distance <= AttackScript.Area) {
+                AttackScript.ShootToPlayer ();
             }
         } else NPCMove ();
         if (currentHealth < 0) Die ();

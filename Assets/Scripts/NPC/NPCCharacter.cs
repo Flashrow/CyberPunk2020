@@ -22,7 +22,7 @@ public abstract class NPCCharacter : MonoBehaviour {
         currentHealth = MaxHealth;
         player = PlayerManager.Instance.Player.transform;
         agent = GetComponent<NavMeshAgent> ();
-        if(MoveSpots.Length > 0)
+        if (MoveSpots.Length > 0)
             randomSpot = UnityEngine.Random.Range (0, MoveSpots.Length);
     }
     protected void FaceTarget () {
@@ -37,7 +37,7 @@ public abstract class NPCCharacter : MonoBehaviour {
                 Vector3.Distance (transform.position, MoveSpots[randomSpot].position) <
                 agent.stoppingDistance + 1
             )
-            randomSpot = UnityEngine.Random.Range (0, MoveSpots.Length);
+                randomSpot = UnityEngine.Random.Range (0, MoveSpots.Length);
         }
     }
     public abstract void OnDrawGizmosSelected ();
