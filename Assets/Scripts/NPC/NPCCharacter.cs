@@ -13,15 +13,13 @@ public class NPCShootedException : System.Exception {
 public abstract class NPCCharacter : MonoBehaviour {
     public float PlayerDetectArea = 10f;
     public Transform[] MoveSpots;
-    public float MaxHealth = 100f;
+    public float MaxHealth;
     protected float currentHealth { get; set; }
     protected int randomSpot;
     protected Transform player;
     protected NavMeshAgent agent;
-    public NPCCharacter () {
-        currentHealth = MaxHealth;
-    }
     void Start () {
+        currentHealth = MaxHealth;
         player = PlayerManager.Instance.Player.transform;
         agent = GetComponent<NavMeshAgent> ();
         if(MoveSpots.Length > 0)
@@ -43,6 +41,6 @@ public abstract class NPCCharacter : MonoBehaviour {
         }
     }
     public abstract void OnDrawGizmosSelected ();
-    public abstract void OnHit (int val);
+    public abstract void OnHit (float val);
     protected virtual void Die () { }
 }

@@ -10,23 +10,29 @@ public class NPCEnemy : NPCCharacter {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere (transform.position, PlayerDetectArea);
     }
+
+    void Awake() {
+        HealthbarTextHandler.text = $"{MaxHealth}";
+    }
+
     void Update () {
         float distance = Vector3.Distance (player.position, transform.position);
         if (distance <= PlayerDetectArea) {
             agent.SetDestination (player.position);
             FaceTarget ();
             if (distance <= agent.stoppingDistance) {
-                // TODO: Combat
+                // TODO: Combat + event
                 OnHit (1);
+                PlayerManager.Instance.HeroScript.HitPlayer(1);
             }
         } else NPCMove ();
         if (currentHealth < 0) Die ();
     }
-    public override void OnHit (int val) {
+    public override void OnHit (float val) {
         currentHealth -= val;
         float valHealth = currentHealth / MaxHealth;
         HealthbarHandler.value = valHealth;
-        HealthbarTextHandler.text = $"{valHealth*100}%";
+        HealthbarTextHandler.text = $"{currentHealth} / {MaxHealth}";
     }
     protected override void Die () {
         // TODO: Animation

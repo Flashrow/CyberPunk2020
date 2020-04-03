@@ -17,7 +17,7 @@ public class NPCHumanoid : NPCCharacter {
             }
         } else NPCMove ();
     }
-    public override void OnHit (int val) {
+    public override void OnHit (float val) {
         throw new NPCShootedException ("YOU HIT: NPC_HUMANOID");
     }
 }

@@ -14,4 +14,5 @@ public class PlayerManager : MonoBehaviour {
     #endregion
 
     public GameObject Player;
+    public Hero HeroScript;
 }

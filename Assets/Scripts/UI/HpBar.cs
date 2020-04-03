@@ -8,18 +8,21 @@ public class HpBar : MonoBehaviour {
     public RectTransform bar;
     public Text playerName;
     public Text hpText;
-    public Hero hero;
-
+    float width = 350f;
     void Start () {
-        float width = 350f;
-        if (hero == null) return;
-        playerName.text = hero.playerName;
-        hpText.text = $"{(hero.Hp / hero.BaseHp) * 100}%";
-        bar.offsetMax = new Vector2 (-(width - ((hero.Hp / hero.BaseHp) * width)), bar.offsetMax.y);
+        if (PlayerManager.Instance.HeroScript == null) return;
+        refreshStats();
     }
 
     // Update is called once per frame
     void Update () {
+        // TODO: Event
+        refreshStats();
+    }
 
+    void refreshStats() {
+        playerName.text = PlayerManager.Instance.HeroScript.playerName;
+        hpText.text = $"{(PlayerManager.Instance.HeroScript.Hp / PlayerManager.Instance.HeroScript.BaseHp) * 100}%";
+        bar.offsetMax = new Vector2 (-(width - ((PlayerManager.Instance.HeroScript.Hp / PlayerManager.Instance.HeroScript.BaseHp) * width)), bar.offsetMax.y);
     }
 }
