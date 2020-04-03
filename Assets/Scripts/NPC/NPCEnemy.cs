@@ -20,7 +20,7 @@ public class NPCEnemy : NPCCharacter {
             FaceTarget ();
             agent.SetDestination (player.position);
             if (distance <= AttackScript.Area) {
-                AttackScript.ShootToPlayer ();
+                AttackScript.ShootToPlayer (distance);
             }
         } else NPCMove ();
         if (currentHealth < 0) Die ();
