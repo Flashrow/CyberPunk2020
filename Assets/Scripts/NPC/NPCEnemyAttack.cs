@@ -15,9 +15,8 @@ public class NPCEnemyAttack : MonoBehaviour {
     public void ShootToPlayer (float distance) {
         //TODO: ANIMATION + AUDIO
         RaycastHit hit;
-        if(Physics.Raycast (WPX.position, WPX.forward, out hit, Mathf.Infinity))
-        {
-            if(hit.transform.name == "Player") {
+        if (Physics.Raycast (WPX.position, WPX.forward, out hit, Mathf.Infinity)) {
+            if (hit.transform.name == "Player") {
                 if (distance < 5 || UnityEngine.Random.Range (0, 100) <= Luck) {
                     PlayerManager.Instance.HeroScript.HitPlayer (Random.Range (MinDamage, MaxDamage));
                     Debug.Log ("NPC HIT YOU :(");

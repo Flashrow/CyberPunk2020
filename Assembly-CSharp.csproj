@@ -139,6 +139,7 @@
      <Compile Include="Assets\Scripts\NPC\NPCHumanoid.cs" />
      <Compile Include="Assets\Scripts\NPC\NPCMovement.cs" />
      <Compile Include="Assets\Scripts\NPC\NPCQuest.cs" />
+     <Compile Include="Assets\Scripts\NPC\NPCQuestInteractions.cs" />
      <Compile Include="Assets\Scripts\Systems\MoneySystem.cs" />
      <Compile Include="Assets\Scripts\UI\BitCoinsBar.cs" />
      <Compile Include="Assets\Scripts\UI\Chest\ChestDisplay.cs" />

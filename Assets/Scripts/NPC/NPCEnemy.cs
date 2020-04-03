@@ -13,7 +13,7 @@ public class NPCEnemy : NPCCharacter {
     }
     void Awake () {
         HealthbarTextHandler.text = $"{MaxHealth}";
-        attackScript = GetComponent<NPCEnemyAttack>();
+        attackScript = GetComponent<NPCEnemyAttack> ();
     }
 
     public override void OnHit (float val) {
