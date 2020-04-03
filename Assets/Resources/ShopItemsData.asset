@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: ShopItemsData
   m_EditorClassIdentifier: 
   list:
-  - number: 400
-    cost: 1
-    type: 2
   - number: 10
     cost: 50
     type: 4
+  - number: 400
+    cost: 1
+    type: 2
   - number: 2
     cost: 1000
     type: 3
