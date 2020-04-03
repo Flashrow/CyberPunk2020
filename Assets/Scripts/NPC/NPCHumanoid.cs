@@ -15,12 +15,7 @@ public class NPCHumanoid : NPCCharacter {
             if (distance <= agent.stoppingDistance) {
                 agent.SetDestination (player.position);
             }
-        } else {
-            agent.SetDestination (MoveSpots[randomSpot].position);
-        }
-        if (Vector3.Distance (transform.position, MoveSpots[randomSpot].position) < agent.stoppingDistance + 1) {
-            randomSpot = UnityEngine.Random.Range (0, MoveSpots.Length);
-        }
+        } else NPCMove ();
     }
     public override void OnHit (int val) {
         throw new NPCShootedException ("YOU HIT: NPC_HUMANOID");

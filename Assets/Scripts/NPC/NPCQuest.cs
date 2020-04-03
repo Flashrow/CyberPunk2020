@@ -17,7 +17,7 @@ public class NPCQuest : NPCCharacter {
             if (distance <= agent.stoppingDistance) {
                 NPCQuestInteraction ();
             }
-        }
+        } else NPCMove ();
     }
 
     void NPCQuestInteraction () {

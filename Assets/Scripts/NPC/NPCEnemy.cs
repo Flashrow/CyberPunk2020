@@ -19,9 +19,8 @@ public class NPCEnemy : NPCCharacter {
                 // TODO: Combat
                 OnHit (1);
             }
-        }
-        if (currentHealth < 0)
-            Die ();
+        } else NPCMove ();
+        if (currentHealth < 0) Die ();
     }
     public override void OnHit (int val) {
         currentHealth -= val;
