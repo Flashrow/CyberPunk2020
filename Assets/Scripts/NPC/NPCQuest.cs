@@ -9,17 +9,6 @@ public class NPCQuest : NPCCharacter {
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere (transform.position, PlayerDetectArea);
     }
-    void Update () {
-        float distance = Vector3.Distance (player.position, transform.position);
-        if (distance <= PlayerDetectArea) {
-            // agent.SetDestination (player.position);
-            FaceTarget ();
-            if (distance <= agent.stoppingDistance) {
-                NPCQuestInteraction ();
-            }
-        } else NPCMove ();
-    }
-
     void NPCQuestInteraction () {
         if (Input.GetKeyDown (KeyCode.Escape)) {
             QuestCamera.SetActive (false);
@@ -33,5 +22,21 @@ public class NPCQuest : NPCCharacter {
     }
     public override void OnHit (float val) {
         throw new NPCShootedException ("YOU HIT: NPC_QUEST");
+    }
+
+    protected override void isMovable (float dist) {
+        if (dist <= PlayerDetectArea) {
+            FaceTarget ();
+            if (dist <= agent.stoppingDistance) {
+                agent.SetDestination (player.position);
+                NPCQuestInteraction ();
+            }
+        } else movementScript.Spot (agent);
+    }
+    protected override void isStatic (float dist) {
+        if (dist <= PlayerDetectArea) {
+            FaceTarget ();
+            if (dist <= 5) NPCQuestInteraction ();
+        }
     }
 }

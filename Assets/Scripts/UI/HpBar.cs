@@ -11,16 +11,16 @@ public class HpBar : MonoBehaviour {
     float width = 350f;
     void Start () {
         if (PlayerManager.Instance.HeroScript == null) return;
-        refreshStats();
+        refreshStats ();
     }
 
     // Update is called once per frame
     void Update () {
         // TODO: Event
-        refreshStats();
+        refreshStats ();
     }
 
-    void refreshStats() {
+    void refreshStats () {
         playerName.text = PlayerManager.Instance.HeroScript.playerName;
         hpText.text = $"{(PlayerManager.Instance.HeroScript.Hp / PlayerManager.Instance.HeroScript.BaseHp) * 100}%";
         bar.offsetMax = new Vector2 (-(width - ((PlayerManager.Instance.HeroScript.Hp / PlayerManager.Instance.HeroScript.BaseHp) * width)), bar.offsetMax.y);

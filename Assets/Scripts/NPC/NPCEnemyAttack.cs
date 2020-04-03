@@ -18,11 +18,10 @@ public class NPCEnemyAttack : MonoBehaviour {
         transform.LookAt (PlayerManager.Instance.Player.transform);
         RaycastHit hit;
         Physics.Raycast (transform.position, transform.forward, out hit, Mathf.Infinity);
-        if (distance < 10 || UnityEngine.Random.Range (0, 100) <= Luck)
-        {
+        if (distance < 10 || UnityEngine.Random.Range (0, 100) <= Luck) {
             PlayerManager.Instance.HeroScript.HitPlayer (Random.Range (MinDamage, MaxDamage));
             Debug.Log ("NPC HIT YOU :(");
-        } else Debug.Log("NPC NOT HIT YOU :D");
+        } else Debug.Log ("NPC NOT HIT YOU :D");
         Instantiate (impactEffect, hit.point, Quaternion.LookRotation (hit.normal));
         AudioManager.instance.playSound ("shoot");
     }

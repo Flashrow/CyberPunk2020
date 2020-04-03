@@ -8,16 +8,18 @@ public class NPCHumanoid : NPCCharacter {
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere (transform.position, PlayerDetectArea);
     }
-    void Update () {
-        float distance = Vector3.Distance (player.position, transform.position);
-        if (distance <= PlayerDetectArea) {
-            FaceTarget ();
-            if (distance <= agent.stoppingDistance) {
-                agent.SetDestination (player.position);
-            }
-        } else NPCMove ();
-    }
     public override void OnHit (float val) {
         throw new NPCShootedException ("YOU HIT: NPC_HUMANOID");
+    }
+
+    protected override void isMovable (float dist) {
+        if (dist <= PlayerDetectArea) {
+            FaceTarget ();
+        } else movementScript.Spot (agent);
+    }
+    protected override void isStatic (float dist) {
+        if (dist <= PlayerDetectArea) {
+            FaceTarget ();
+        };
     }
 }

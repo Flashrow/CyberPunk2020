@@ -28,7 +28,7 @@ public class Hero : MonoBehaviour {
         this.playerAmmo = ammo;
     }
 
-    public void HitPlayer(float val) {
+    public void HitPlayer (float val) {
         this.Hp -= val;
     }
 

@@ -14,17 +14,7 @@ public class NPCEnemy : NPCCharacter {
     void Awake () {
         HealthbarTextHandler.text = $"{MaxHealth}";
     }
-    void Update () {
-        float distance = Vector3.Distance (player.position, transform.position);
-        if (distance <= PlayerDetectArea) {
-            FaceTarget ();
-            agent.SetDestination (player.position);
-            if (distance <= AttackScript.Area) {
-                AttackScript.ShootToPlayer (distance);
-            }
-        } else NPCMove ();
-        if (currentHealth < 0) Die ();
-    }
+
     public override void OnHit (float val) {
         currentHealth -= val;
         float valHealth = currentHealth / MaxHealth;
@@ -34,5 +24,20 @@ public class NPCEnemy : NPCCharacter {
     protected override void Die () {
         // TODO: Animation
         Destroy (gameObject);
+    }
+
+    protected override void isMovable (float dist) {
+        if (dist <= PlayerDetectArea) {
+            FaceTarget ();
+            agent.SetDestination (player.position);
+            if (dist <= AttackScript.Area)
+                AttackScript.ShootToPlayer (dist);
+        } else movementScript.Spot (agent);
+    }
+    protected override void isStatic (float dist) {
+        if (dist <= PlayerDetectArea) {
+            FaceTarget ();
+            if (dist <= AttackScript.Area) AttackScript.ShootToPlayer (dist);
+        }
     }
 }
