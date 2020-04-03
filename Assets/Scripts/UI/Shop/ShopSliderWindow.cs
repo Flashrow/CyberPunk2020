@@ -58,7 +58,7 @@ public class ShopSliderWindow : MonoBehaviour
         if(mode == "BUY" && money.money - (item.number*item.cost) < 0)
         {
             slider.maxValue = (int)(money.money / item.cost);
-            maxValue.text = item.number.ToString();
+            maxValue.text = ((int)(money.money / item.cost)).ToString();
         }
         slider.minValue = 1;
     }
