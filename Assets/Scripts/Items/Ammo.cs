@@ -13,6 +13,9 @@ public class Ammo : Item
 
     public override Item CreateInstance()
     {
-        return new Ammo();
+        Ammo newAmmo = new Ammo();
+        newAmmo.cost = cost;
+        newAmmo.number = number;
+        return newAmmo;
     }
 }

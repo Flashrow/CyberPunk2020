@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
 public class ItemProbability {
     public Item item;
+    [Range(0,100)]
     public int probability;
-    public ItemProbability(Item item, int probability)
-    {
-        this.item = item;
-        this.probability = probability;
-    }
+    public int cost;
+    public int number;
+    public ItemType type;
 };
 
 public class ChestsInteractions : Interacted
@@ -18,19 +18,23 @@ public class ChestsInteractions : Interacted
     List<Item> items = new List<Item>();
     public ChestDisplay chestDisplayPrefab;
     private ChestDisplay chestDisplayPrefabUI;
-    public List<ItemProbability> itemProbability = new List<ItemProbability>();
 
     [SerializeField]
     private MoneySystem moneySystem;
     [SerializeField]
     private Inventory inventory;
 
+    [SerializeField]
+    public List<ItemProbability> itemProbability = new List<ItemProbability>();
+
     void LoadItemsDictionary()
     {
-        itemProbability.Add(new ItemProbability(new Ammo(), 100 ));
-        itemProbability.Add(new ItemProbability(new Coins(), 100 ));
-        itemProbability.Add(new ItemProbability(new Tools(), 100 ));
-        itemProbability.Add(new ItemProbability(new Phone(), 100 ));
+        foreach (ItemProbability item in itemProbability)
+        {
+            item.item = Item.CreateItemObjectByType(item.type);
+            item.item.cost = item.cost;
+            item.item.number = item.number;
+        }
     }
 
     void RandomItems()

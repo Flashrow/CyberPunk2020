@@ -13,6 +13,9 @@ public class Phone : Item
 
     public override Item CreateInstance()
     {
-        return new Phone();
+        Phone newPhone = new Phone();
+        newPhone.cost = cost;
+        newPhone.number = number;
+        return newPhone;
     }
 }

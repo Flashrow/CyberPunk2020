@@ -137,11 +137,17 @@
     <Compile Include="Assets\Scripts\MainMenu.cs" />
     <Compile Include="Assets\Scripts\MapScripts\Audio\AudioManager.cs" />
     <Compile Include="Assets\Scripts\MapScripts\Audio\Sound.cs" />
+    <Compile Include="Assets\Scripts\Shop.cs" />
     <Compile Include="Assets\Scripts\Systems\MoneySystem.cs" />
     <Compile Include="Assets\Scripts\UI\BitCoinsBar.cs" />
     <Compile Include="Assets\Scripts\UI\Chest\ChestDisplay.cs" />
     <Compile Include="Assets\Scripts\UI\Chest\ChestListItemDisplay.cs" />
     <Compile Include="Assets\Scripts\UI\HpBar.cs" />
+    <Compile Include="Assets\Scripts\UI\Shop\ShopCharacterItem.cs" />
+    <Compile Include="Assets\Scripts\UI\Shop\ShopItem.cs" />
+    <Compile Include="Assets\Scripts\UI\Shop\ShopItems.cs" />
+    <Compile Include="Assets\Scripts\UI\Shop\ShopSliderWindow.cs" />
+    <Compile Include="Assets\Scripts\UI\Shop\ShopUI.cs" />
     <Compile Include="Assets\Scripts\UI\UITextScript.cs" />
     <Compile Include="Assets\Scripts\UI\UImanager.cs" />
     <Compile Include="Assets\Scripts\Weapons\Gun.cs" />

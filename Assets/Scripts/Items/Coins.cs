@@ -13,6 +13,9 @@ public class Coins : Item
 
     public override Item CreateInstance()
     {
-        return new Coins();
+        Coins newCoins = new Coins();
+        newCoins.number = number;
+        newCoins.cost = cost;
+        return newCoins;
     }
 }

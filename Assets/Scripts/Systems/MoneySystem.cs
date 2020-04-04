@@ -26,6 +26,7 @@ public class MoneySystem : ScriptableObject
     {
         if (money - value >= 0)
         {
+            money -= value;
             onMoneyChange(money);
             return true;
         }
