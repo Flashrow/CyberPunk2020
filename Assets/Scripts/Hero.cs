@@ -9,7 +9,7 @@ public class Hero : MonoBehaviour {
     public string playerName = "Cyber";
     public ushort playerAmmo = 60;
     public ushort inGunAmmo = 16;
-
+    
     public Inventory inventory;
 
     private void Awake () {

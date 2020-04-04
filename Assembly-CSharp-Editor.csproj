@@ -67,13 +67,8 @@
     <Compile Include="Assets\JMO Assets\Cartoon FX Easy Editor\Editor\CFXEasyEditor.cs" />
     <Compile Include="Assets\JMO Assets\WarFX\Editor\CFX_SpawnSystemEditor.cs" />
     <Compile Include="Assets\LeanTween\Editor\LeanTweenDocumentationEditor.cs" />
-    <Compile Include="Assets\Scripts\Dialogues\Editor\DialogueGraph.cs" />
-    <Compile Include="Assets\Scripts\Dialogues\Editor\DialogueGraphView.cs" />
-    <Compile Include="Assets\Scripts\Dialogues\Editor\DialogueNode.cs" />
-    <Compile Include="Assets\Scripts\Dialogues\Editor\GraphSaveUtility.cs" />
     <None Include="Assets\AssetStoreOriginals\_SNAPS_PrototypingAssets\Scripts\Editor\PackageChecker\settings\PackageImportList_ShaderGraph.txt" />
     <None Include="Assets\AssetStoreOriginals\_SNAPS_PrototypingAssets\Scripts\Editor\PackageChecker\PackageImportList.txt" />
-    <None Include="Assets\Scripts\Dialogues\Editor\Resources\DialogueGraph.uss" />
     <Reference Include="UnityEditor.TestRunner">
       <HintPath>S:/CyberPunk2020/CyberPunk2020/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
     </Reference>
@@ -701,6 +696,14 @@
     <ProjectReference Include="Assembly-CSharp-Editor-firstpass.csproj">
       <Project>{23B6AD91-1ACB-5D4B-88F6-E905575B05C3}</Project>
       <Name>Assembly-CSharp-Editor-firstpass</Name>
+    </ProjectReference>
+    <ProjectReference Include="Runtime.csproj">
+      <Project>{0A6D69BF-BF4B-F9A8-0DB0-94880C8ACBE7}</Project>
+      <Name>Runtime</Name>
+    </ProjectReference>
+    <ProjectReference Include="Editor.csproj">
+      <Project>{4EA49475-420C-2F26-3BCC-3B93689FBEA6}</Project>
+      <Name>Editor</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
