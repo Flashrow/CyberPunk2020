@@ -1,12 +1,11 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public enum ItemType {Coins, Gun, Ammo, Phone, Tools};
+public enum ItemType { Coins, Gun, Ammo, Phone, Tools }
 
-public class Item
-{
+public class Item {
     public string itemId;
     public int number;
     public int cost = 0;
@@ -18,16 +17,14 @@ public class Item
     //public int maxNumber;
     //public Sprite sprite;
 
-    public Item() { }
+    public Item () { }
 
-    public Item(string spriteName, string scriptName)
-    {
+    public Item (string spriteName, string scriptName) {
         //LoadSprite(spriteName);
-        LoadScriptableObject(scriptName);
-    } 
-    
-    public Item(Item item)
-    {
+        LoadScriptableObject (scriptName);
+    }
+
+    public Item (Item item) {
         itemId = item.itemId;
         //defaultNumber = item.defaultNumber;
         //minNumber = item.minNumber;
@@ -37,19 +34,17 @@ public class Item
         //model = item.model;
         //sprite = item.sprite;
     }
-    
-    public void LoadSprite(string spriteName) {
+
+    public void LoadSprite (string spriteName) {
         //this.sprite = Resources.Load<Sprite>("Sprites/Items/" + spriteName);
     }
 
-    public void LoadScriptableObject(string scriptName)
-    {
-        this.data = Resources.Load<ItemScriptable>("Items/" + scriptName);
+    public void LoadScriptableObject (string scriptName) {
+        this.data = Resources.Load<ItemScriptable> ("Items/" + scriptName);
     }
 
-    public virtual Item CreateInstance()
-    {
-        return new Item();
+    public virtual Item CreateInstance () {
+        return new Item ();
     }
 
     static public Item CreateItemObjectByType(ItemType type)

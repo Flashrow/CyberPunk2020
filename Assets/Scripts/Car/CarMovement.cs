@@ -1,7 +1,6 @@
-using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-
+using UnityEngine;
 
 [System.Serializable]
 public class AxleInfo {
@@ -15,26 +14,24 @@ public class CarMovement : MonoBehaviour {
     public float maxMotorTorque;
     public float maxSteeringAngle;
 
-    public void ApplyLocalPositionToVisuals(WheelCollider collider)
-    {
+    public void ApplyLocalPositionToVisuals (WheelCollider collider) {
         if (collider.transform.childCount == 0) {
             return;
         }
 
-        Transform visualWheel = collider.transform.GetChild(0);
+        Transform visualWheel = collider.transform.GetChild (0);
 
         Vector3 position;
         Quaternion rotation;
-        collider.GetWorldPose(out position, out rotation);
+        collider.GetWorldPose (out position, out rotation);
 
         visualWheel.transform.position = position;
         visualWheel.transform.rotation = rotation;
     }
 
-    public void FixedUpdate()
-    {
-        float motor = maxMotorTorque * Input.GetAxis("Vertical");
-        float steering = maxSteeringAngle * Input.GetAxis("Horizontal");
+    public void FixedUpdate () {
+        float motor = maxMotorTorque * Input.GetAxis ("Vertical");
+        float steering = maxSteeringAngle * Input.GetAxis ("Horizontal");
 
         foreach (AxleInfo axleInfo in axleInfos) {
             if (axleInfo.steering) {
@@ -43,7 +40,7 @@ public class CarMovement : MonoBehaviour {
             if (axleInfo.motor) {
                 axleInfo.Wheel.motorTorque = motor;
             }
-            ApplyLocalPositionToVisuals(axleInfo.Wheel);
+            ApplyLocalPositionToVisuals (axleInfo.Wheel);
         }
     }
 }

@@ -10,8 +10,6 @@ public class cameraMovement : MonoBehaviour {
     public bool cursorVisibility = false;
     public float rotationSpeed = 100f;
 
-    public Transform playerTransform;
-
     // Start is called before the first frame update
     void Start () {
         Cursor.visible = cursorVisibility;
@@ -28,6 +26,6 @@ public class cameraMovement : MonoBehaviour {
         rotationX = Mathf.Clamp (rotationX, -90f, 90f);
 
         transform.localRotation = Quaternion.Euler (rotationX, 0f, 0f);
-        playerTransform.Rotate (Vector3.up * mouseX);
+        PlayerManager.Instance.Player.transform.Rotate (Vector3.up * mouseX);
     }
 }

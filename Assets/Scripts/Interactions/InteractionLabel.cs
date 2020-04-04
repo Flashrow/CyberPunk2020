@@ -1,24 +1,20 @@
-﻿using UnityEngine;
-using UnityEngine.UI;
 using System.Collections;
+using UnityEngine;
+using UnityEngine.UI;
 
-public class InteractionLabel : MonoBehaviour
-{
+public class InteractionLabel : MonoBehaviour {
     public Text text;
     // Use this for initialization
-    void Start()
-    {
+    void Start () {
 
     }
 
     // Update is called once per frame
-    void Update()
-    {
+    void Update () {
 
     }
 
-    public void SetLabel(string value)
-    {
+    public void SetLabel (string value) {
         text.text = value;
     }
 }
