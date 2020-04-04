@@ -21,7 +21,6 @@ public class ChestsInteractions : Interacted {
     List<Item> items = new List<Item> ();
     public ChestDisplay chestDisplayPrefab;
     private ChestDisplay chestDisplayPrefabUI;
-    public List<ItemProbability> itemProbability = new List<ItemProbability> ();
 
     [SerializeField]
     private MoneySystem moneySystem;
@@ -39,13 +38,8 @@ public class ChestsInteractions : Interacted {
             item.item.cost = item.cost;
             item.item.number = item.number;
         }
-    void LoadItemsDictionary () {
-        itemProbability.Add (new ItemProbability (new Ammo (), 100));
-        itemProbability.Add (new ItemProbability (new Coins (), 100));
-        itemProbability.Add (new ItemProbability (new Tools (), 100));
-        itemProbability.Add (new ItemProbability (new Phone (), 100));
     }
-
+ 
     void RandomItems () {
         LoadItemsDictionary ();
         foreach (ItemProbability item in itemProbability) {
