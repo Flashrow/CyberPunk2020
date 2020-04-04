@@ -26,7 +26,7 @@ public abstract class NPCCharacter : MonoBehaviour {
     protected void Update () {
         float distance = Vector3.Distance (player.position, transform.position);
         autoDetectUpdate (distance);
-        if (currentHealth < 0) Die ();
+        if (currentHealth <= 0) Die ();
     }
     protected void FaceTarget () {
         Vector3 direction = (player.position - transform.position).normalized;
