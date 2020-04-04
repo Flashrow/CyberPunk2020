@@ -67,8 +67,13 @@
     <Compile Include="Assets\JMO Assets\Cartoon FX Easy Editor\Editor\CFXEasyEditor.cs" />
     <Compile Include="Assets\JMO Assets\WarFX\Editor\CFX_SpawnSystemEditor.cs" />
     <Compile Include="Assets\LeanTween\Editor\LeanTweenDocumentationEditor.cs" />
+    <Compile Include="Assets\Scripts\Dialogues\Editor\DialogueGraph.cs" />
+    <Compile Include="Assets\Scripts\Dialogues\Editor\DialogueGraphView.cs" />
+    <Compile Include="Assets\Scripts\Dialogues\Editor\DialogueNode.cs" />
+    <Compile Include="Assets\Scripts\Dialogues\Editor\GraphSaveUtility.cs" />
     <None Include="Assets\AssetStoreOriginals\_SNAPS_PrototypingAssets\Scripts\Editor\PackageChecker\settings\PackageImportList_ShaderGraph.txt" />
     <None Include="Assets\AssetStoreOriginals\_SNAPS_PrototypingAssets\Scripts\Editor\PackageChecker\PackageImportList.txt" />
+    <None Include="Assets\Scripts\Dialogues\Editor\Resources\DialogueGraph.uss" />
     <Reference Include="UnityEditor.TestRunner">
       <HintPath>S:/CyberPunk2020/CyberPunk2020/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
     </Reference>

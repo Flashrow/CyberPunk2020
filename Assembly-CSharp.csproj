@@ -128,6 +128,9 @@
     <Compile Include="Assets\Scripts\Character\Movement\stabilizeModel.cs" />
     <Compile Include="Assets\Scripts\Character\Player.cs" />
     <Compile Include="Assets\Scripts\Character\cameraMovement.cs" />
+    <Compile Include="Assets\Scripts\Dialogues\Runtime\DialogueContainer.cs" />
+    <Compile Include="Assets\Scripts\Dialogues\Runtime\DialogueNodeData.cs" />
+    <Compile Include="Assets\Scripts\Dialogues\Runtime\NodeLinkData.cs" />
     <Compile Include="Assets\Scripts\Hero.cs" />
     <Compile Include="Assets\Scripts\Interactions\ChestsInteractions.cs" />
     <Compile Include="Assets\Scripts\Interactions\FlyingItem.cs" />
