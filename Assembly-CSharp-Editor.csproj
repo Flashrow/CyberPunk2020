@@ -697,14 +697,6 @@
       <Project>{23B6AD91-1ACB-5D4B-88F6-E905575B05C3}</Project>
       <Name>Assembly-CSharp-Editor-firstpass</Name>
     </ProjectReference>
-    <ProjectReference Include="Runtime.csproj">
-      <Project>{0A6D69BF-BF4B-F9A8-0DB0-94880C8ACBE7}</Project>
-      <Name>Runtime</Name>
-    </ProjectReference>
-    <ProjectReference Include="Editor.csproj">
-      <Project>{4EA49475-420C-2F26-3BCC-3B93689FBEA6}</Project>
-      <Name>Editor</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
