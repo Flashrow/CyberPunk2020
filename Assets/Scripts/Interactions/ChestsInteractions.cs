@@ -1,70 +1,94 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ChestsInteractions : MonoBehaviour
-{
+[System.Serializable]
+public class ItemProbability {
+    public Item item;
+    [Range(0,100)]
+    public int probability;
+    public int cost;
+    public int number;
+    public ItemType type;
+    public ItemProbability (Item item, int probability) {
+        this.item = item;
+        this.probability = probability;
+    }
+};
+
+public class ChestsInteractions : Interacted {
     bool isActive = false;
-    public List<Item> items = new List<Item>();
+    List<Item> items = new List<Item> ();
     public ChestDisplay chestDisplayPrefab;
     private ChestDisplay chestDisplayPrefabUI;
-    MoneySystem moneySystem;
 
-    void Awake()
-    {
-        moneySystem = GameObject.FindObjectOfType<MoneySystem>();
-    }
+    [SerializeField]
+    private MoneySystem moneySystem;
+    [SerializeField]
+    private Inventory inventory;
 
-    void Start()
-    {
-        
-    }
+    [SerializeField]
+    public List<ItemProbability> itemProbability = new List<ItemProbability>();
 
-    void Update()
+    void LoadItemsDictionary()
     {
-        if (isActive && Input.GetKeyDown(KeyCode.Escape)) {
-            CloseUI();
-        }
-        if (isActive && Input.GetKeyDown(KeyCode.Q))
+        foreach (ItemProbability item in itemProbability)
         {
-            receiveItems();
-            Debug.Log($"Items receiverd, amount: {items.Count}");
-            items.Clear();
-            CloseUI();
+            item.item = Item.CreateItemObjectByType(item.type);
+            item.item.cost = item.cost;
+            item.item.number = item.number;
         }
     }
+ 
+    void RandomItems () {
+        LoadItemsDictionary ();
+        foreach (ItemProbability item in itemProbability) {
+            if (Random.Range (0, 101) < item.probability) items.Add (item.item);
+        }
+    }
 
-    void receiveItems()
-    {
-        items.ForEach(delegate(Item item)
-        {
-            switch (item.type)
-            {
-                case ItemType.Coins:
-                    moneySystem.Add(item.number);
-                    break;
+    void Start () {
+        RandomItems ();
+        foreach (Item item in items) {
+            item.number = Random.Range (item.data.minNumber, item.data.maxNumber + 1);
+        }
+    }
+
+    void Update () {
+        if (isActive && Input.GetKeyDown (KeyCode.Escape)) {
+            CloseUI ();
+        }
+        if (isActive && Input.GetKeyDown (KeyCode.Q)) {
+            receiveItems ();
+            Debug.Log ($"Items receiverd, amount: {items.Count}");
+            items.Clear ();
+            CloseUI ();
+        }
+    }
+
+    void receiveItems () {
+        items.ForEach (delegate (Item item) {
+            if (item is Coins) {
+                moneySystem.Add (item.number);
+            } else {
+                inventory.AddItem (item);
             }
         });
     }
 
-    void CloseUI()
-    {
-        DestroyImmediate(chestDisplayPrefabUI.gameObject);
+    void CloseUI () {
+        DestroyImmediate (chestDisplayPrefabUI.gameObject);
         isActive = false;
     }
 
-    public void Interact()
-    {
+    public override void OnInteract () {
         if (isActive) return;
-        AudioManager.instance.playSound("interaction");
-        Debug.Log("Chest Interaction");
         isActive = true;
-        foreach (Item item in items)
-        {
-            System.Random rnd = new System.Random();
-            item.number = rnd.Next(item.minNumber, item.maxNumber);
-        }
-        chestDisplayPrefabUI = (ChestDisplay)Instantiate(chestDisplayPrefab);
-        chestDisplayPrefabUI.Prime(items);
+        chestDisplayPrefabUI = (ChestDisplay) Instantiate (chestDisplayPrefab);
+        chestDisplayPrefabUI.Prime (items);
+    }
+
+    public override void OnCancelIntegration () {
+        CloseUI ();
     }
 }
