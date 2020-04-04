@@ -25,6 +25,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78c14a9d65a2cb749993f7abf8d3c94b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  label: {fileID: 6728592566127269928, guid: fe77483b64e94e1479b398bb43c153f6, type: 3}
+  labelText: Open
+  labelPosition: {x: 0, y: 0, z: 0}
   chestDisplayPrefab: {fileID: 791763820697891791, guid: f07bc86cb0e3a4f4296d9ffca01b23b8,
     type: 3}
   moneySystem: {fileID: 11400000, guid: 877f4996af4457546a7e1b14b99b9588, type: 2}

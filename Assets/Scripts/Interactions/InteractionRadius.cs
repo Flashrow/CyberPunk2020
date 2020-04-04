@@ -10,6 +10,9 @@ public class InteractionRadius : MonoBehaviour
 
     public InteractionLabel label;
     InteractionLabel labelTemp;
+
+    public delegate void OnIntegrate(string name);
+    public static OnIntegrate onIntegrate;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,8 +23,8 @@ public class InteractionRadius : MonoBehaviour
     void Update()
     {
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, radius);
-        int i = 0;
         GameObject nearest = null;
+        int i = 0;
         float minLength = radius;
         while (i < hitColliders.Length)
         {
@@ -35,41 +38,23 @@ public class InteractionRadius : MonoBehaviour
             }
             i++;
         }
-        if (nearest != null)
+        if (nearest != null && nearest.TryGetComponent<Interacted>(out Interacted interaction2))
         {
-            OnKeyPress(nearest);
-            if (labelTemp == null)
-            {
-                labelTemp = (InteractionLabel)Instantiate(label , nearest.transform.position, Quaternion.identity);
-            }            
-            labelTemp.SetLabel("Open");
-            labelTemp.transform.position = nearest.transform.position + new Vector3(0, 1, 0);
+            interaction2.Interact(nearest.transform, nearest.GetComponent<Collider>().bounds.size.y);
         }
-        else
-        {
-            if(labelTemp != null)
-                DestroyImmediate(labelTemp.gameObject);
+        try
+        {            
+            if(nearest == null)
+                onIntegrate("");
+            else
+                onIntegrate(nearest.name);
         }
+        catch { }
     }
 
     bool isObjectInCamera(Vector3 targetPosition)
     {
         Vector3 screenPoint = mainCamera.WorldToViewportPoint(targetPosition);        
         return (screenPoint.z > 0 && screenPoint.x > 0 && screenPoint.x < 1 && screenPoint.y > 0 && screenPoint.y < 1);
-    }
-
-    void OnKeyPress(GameObject nearest)
-    {
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            if(nearest.TryGetComponent<ChestsInteractions>(out ChestsInteractions chests))
-            {
-                chests.Interact();
-            }
-            if (nearest.TryGetComponent<FlyingItem>(out FlyingItem item))
-            {
-                item.Interact();
-            }
-        }
     }
 }

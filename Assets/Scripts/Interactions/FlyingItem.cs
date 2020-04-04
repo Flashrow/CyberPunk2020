@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class FlyingItem : MonoBehaviour
+public class FlyingItem : Interacted
 {
     Item item;
 
@@ -22,7 +22,7 @@ public class FlyingItem : MonoBehaviour
 
     }
 
-    public void Interact()
+    public override void OnInteract()
     {
         inventory.AddItem(item);
         Destroy(gameObject);
