@@ -1,9 +1,8 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Shop : Interacted
-{
+public class Shop : Interacted {
     [SerializeField]
     private ShopItems shopItems;
 
@@ -11,24 +10,20 @@ public class Shop : Interacted
     private ShopUI shopUI;
     private ShopUI shopUITemp;
     // Start is called before the first frame update
-    void Start()
-    {
-        
+    void Start () {
+
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        
+    void Update () {
+
     }
 
-    public override void OnInteract()
-    {
-        if (shopUITemp == null)
-        {
-            shopUITemp = (ShopUI)Instantiate(shopUI);
-            Debug.Log(shopItems.items.Count);
-            shopUITemp.Prime(shopItems);
+    public override void OnInteract () {
+        if (shopUITemp == null) {
+            shopUITemp = (ShopUI) Instantiate (shopUI);
+            Debug.Log (shopItems.items.Count);
+            shopUITemp.Prime (shopItems);
         }
     }
 }

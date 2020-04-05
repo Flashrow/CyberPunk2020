@@ -14,10 +14,10 @@ public class NPCQuest : NPCCharacter {
     protected override void isMovable (float dist) {
         if (dist <= PlayerDetectArea) {
             FaceTarget ();
-            if (dist <= agent.stoppingDistance) {
-                agent.SetDestination (player.position);
+            if (dist <= movementScript.Agent.stoppingDistance) {
+                movementScript.Agent.SetDestination (player.position);
             }
-        } else movementScript.Spot (agent);
+        } else movementScript.Spot ();
     }
     protected override void isStatic (float dist) {
         if (dist <= PlayerDetectArea) {

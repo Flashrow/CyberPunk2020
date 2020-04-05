@@ -9,9 +9,8 @@ public class Phone : Item {
         number = 0;
     }
 
-    public override Item CreateInstance()
-    {
-        Phone newPhone = new Phone();
+    public override Item CreateInstance () {
+        Phone newPhone = new Phone ();
         newPhone.cost = cost;
         newPhone.number = number;
         return newPhone;

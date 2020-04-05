@@ -9,11 +9,15 @@ public class NPCEnemyAttack : MonoBehaviour {
     public float Area = 30f;
     public GameObject ImpactEffect;
     public Transform WPX;
+    private NPCEnemyAnimation anim = null;
+    void Awake () {
+        anim = GetComponentInChildren<NPCEnemyAnimation> ();
+    }
     void Start () {
         if (Luck < 0 || Luck > 100) Luck = 50;
     }
     public void ShootToPlayer (float distance) {
-        //TODO: ANIMATION + AUDIO
+        //TODO: AUDIO
         RaycastHit hit;
         if (Physics.Raycast (WPX.position, WPX.forward, out hit, Mathf.Infinity)) {
             if (hit.transform.name == "Player") {

@@ -9,9 +9,8 @@ public class Ammo : Item {
         number = 0;
     }
 
-    public override Item CreateInstance()
-    {
-        Ammo newAmmo = new Ammo();
+    public override Item CreateInstance () {
+        Ammo newAmmo = new Ammo ();
         newAmmo.cost = cost;
         newAmmo.number = number;
         return newAmmo;

@@ -16,32 +16,26 @@ public class Inventory : ScriptableObject {
 
     public FlyingItem FlyingItemPreFab;
 
-    public void AddItem(Item item)
-    {
-        if (!items.ContainsKey(item.data.type))
-        {
-            items.Add(item.data.type, item);
-            try
-            {
-                onAddItemInventory(item);
-            }
-            catch { }
-        }
-        else
-        {
+    public void AddItem (Item item) {
+        if (!items.ContainsKey (item.data.type)) {
+            items.Add (item.data.type, item);
+            try {
+                onAddItemInventory (item);
+            } catch { }
+        } else {
             items[item.data.type].number += item.number;
         }
     }
 
     public void IncreaseItem (ItemType type, int value) {
         items[type].number += value;
-        onInventoryChange();
+        onInventoryChange ();
     }
 
     public void DecreaseItem (ItemType type, int value) {
         items[type].number -= value;
-        if (items[type].number <= 0) items.Remove(type);
-        onInventoryChange();
+        if (items[type].number <= 0) items.Remove (type);
+        onInventoryChange ();
     }
 
     public void RemoveItem (ItemType type) {

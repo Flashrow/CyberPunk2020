@@ -19,12 +19,10 @@ public class MoneySystem : ScriptableObject {
         onMoneyChange (money);
     }
 
-    public bool Buy(int value)
-    {
-        if (money - value >= 0)
-        {
+    public bool Buy (int value) {
+        if (money - value >= 0) {
             money -= value;
-            onMoneyChange(money);
+            onMoneyChange (money);
             return true;
         }
         return false;

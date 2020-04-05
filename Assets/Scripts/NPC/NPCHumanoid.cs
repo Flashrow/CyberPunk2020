@@ -15,7 +15,7 @@ public class NPCHumanoid : NPCCharacter {
     protected override void isMovable (float dist) {
         if (dist <= PlayerDetectArea) {
             FaceTarget ();
-        } else movementScript.Spot (agent);
+        } else movementScript.Spot ();
     }
     protected override void isStatic (float dist) {
         if (dist <= PlayerDetectArea) {

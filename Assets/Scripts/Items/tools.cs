@@ -9,9 +9,8 @@ public class Tools : Item {
         number = 0;
     }
 
-    public override Item CreateInstance()
-    {
-        Tools newTools = new Tools();
+    public override Item CreateInstance () {
+        Tools newTools = new Tools ();
         newTools.cost = cost;
         newTools.number = number;
         return newTools;

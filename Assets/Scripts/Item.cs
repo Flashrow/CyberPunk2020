@@ -47,20 +47,18 @@ public class Item {
         return new Item ();
     }
 
-    static public Item CreateItemObjectByType(ItemType type)
-    {
-        switch (type)
-        {
+    static public Item CreateItemObjectByType (ItemType type) {
+        switch (type) {
             case ItemType.Ammo:
-                return new Ammo();
+                return new Ammo ();
             case ItemType.Coins:
-                return new Coins();
+                return new Coins ();
             case ItemType.Phone:
-                return new Phone();
+                return new Phone ();
             case ItemType.Tools:
-                return new Tools();
+                return new Tools ();
             default:
-                return new Item();
+                return new Item ();
         }
     }
 }

@@ -1,51 +1,43 @@
-﻿using UnityEngine;
 using System.Collections;
-using UnityEngine.UI;
+using UnityEngine;
 using UnityEngine.EventSystems;
-public class ShopItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
-{
+using UnityEngine.UI;
+public class ShopItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler {
     public Text amount;
     public Image image;
-    public Item item = new Item();
-    
-    public delegate void OnPointerEnterItem(Item item);
+    public Item item = new Item ();
+
+    public delegate void OnPointerEnterItem (Item item);
     public static OnPointerEnterItem onPointerEnterItem;
-    public delegate void OnShopItemClick(Item item);
+    public delegate void OnShopItemClick (Item item);
     public static OnShopItemClick onShopItemClick;
 
     [SerializeField]
     private ShopItems items;
 
-    void Start()
-    {
+    void Start () {
 
     }
 
-    public void Prime(Item item)
-    {
+    public void Prime (Item item) {
         this.item = item;
         amount.text = $"{item.number}";
         image.sprite = item.data.sprite;
     }
 
-    public void OnPointerEnter(PointerEventData eventData)
-    {
-        LeanTween.scale(this.gameObject, new Vector3(1.1f, 1.1f, 1), 0.03f);
-        try
-        {
-            onPointerEnterItem(item);
-        }
-        catch { };
+    public void OnPointerEnter (PointerEventData eventData) {
+        LeanTween.scale (this.gameObject, new Vector3 (1.1f, 1.1f, 1), 0.03f);
+        try {
+            onPointerEnterItem (item);
+        } catch { };
     }
 
-    public void OnPointerExit(PointerEventData eventData)
-    {
-        LeanTween.scale(this.gameObject, new Vector3(1, 1, 1), 0.03f);
+    public void OnPointerExit (PointerEventData eventData) {
+        LeanTween.scale (this.gameObject, new Vector3 (1, 1, 1), 0.03f);
     }
 
-    public void OnPointerClick(PointerEventData eventData)
-    {
-        onShopItemClick(item);
+    public void OnPointerClick (PointerEventData eventData) {
+        onShopItemClick (item);
     }
 
 }
