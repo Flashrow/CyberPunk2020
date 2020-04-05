@@ -9,10 +9,6 @@ public class NPCEnemyAttack : MonoBehaviour {
     public float Area = 30f;
     public GameObject ImpactEffect;
     public Transform WPX;
-    private NPCAnimation anim = null;
-    void Awake () {
-        anim = GetComponentInChildren<NPCAnimation> ();
-    }
     void Start () {
         if (Luck < 0 || Luck > 100) Luck = 50;
     }
