@@ -118,55 +118,95 @@ public class StoryGraphView : GraphView
 
     public void CreateNewDialogueNode(string nodeName, Vector2 position)
     {
-        LastNodePosition = position;
-        AddElement(CreateNode(nodeName, position));
+        LastNodePosition = position + new Vector2(20, 20);
+        AddElement(CreateNode(new DialogueNodeData {DialogueText = nodeName }, position));
     }
 
-    public DialogueNode CreateNode(string nodeName, Vector2 position)
+    public void CreateNewDialogueNodeNPC(string nodeName, Vector2 position)
+    {
+        LastNodePosition = this.graphElements.Last().GetPosition().position + new Vector2(20, 20);
+        AddElement(CreateNode(new DialogueNodeData { DialogueText = nodeName, Speaker = "NPC" }, position));
+    }
+
+    public void CreateNewDialogueNodePlayer(string nodeName, Vector2 position)
+    {
+        LastNodePosition = this.graphElements.Last().GetPosition().position + new Vector2(20, 20);
+        AddElement(CreateNode(new DialogueNodeData { DialogueText = nodeName, Speaker = "Player" }, position));
+    }
+
+    public DialogueNode CreateNode(DialogueNodeData node, Vector2 position)
     {
         var tempDialogueNode = new DialogueNode()
         {
-            title = nodeName,
-            DialogueText = nodeName,
+            title = node.Speaker,
+            DialogueText = node.DialogueText,
+            Callback = node.Callback,
+            Speaker = node.Speaker,
             GUID = Guid.NewGuid().ToString()
         };
-        tempDialogueNode.styleSheets.Add(Resources.Load<StyleSheet>("Node"));
+        switch (tempDialogueNode.Speaker)
+        {
+            case "NPC":
+                tempDialogueNode.styleSheets.Add(Resources.Load<StyleSheet>("NodeNPC"));
+                break;
+            case "Player":
+                tempDialogueNode.styleSheets.Add(Resources.Load<StyleSheet>("Node"));
+                break;
+            default:
+                tempDialogueNode.styleSheets.Add(Resources.Load<StyleSheet>("Node"));
+                break;
+        }
         var inputPort = GetPortInstance(tempDialogueNode, Direction.Input, Port.Capacity.Multi);
         inputPort.portName = "Input";
+        tempDialogueNode.title = tempDialogueNode.title;
         tempDialogueNode.inputContainer.Add(inputPort);
         tempDialogueNode.RefreshExpandedState();
         tempDialogueNode.RefreshPorts();
-        tempDialogueNode.SetPosition(new Rect(position,
-            DefaultNodeSize)); //To-Do: implement screen center instantiation positioning
+        tempDialogueNode.SetPosition(new Rect(position, DefaultNodeSize)); //To-Do: implement screen center instantiation positioning
 
-        var textFieldTitle = new TextField("");
-
-        textFieldTitle.RegisterValueChangedCallback(evt =>
+        var textFieldCallback = new TextField("Callback");
+        textFieldCallback.RegisterValueChangedCallback(evt =>
         {
-            tempDialogueNode.title = evt.newValue;
+            tempDialogueNode.Callback = evt.newValue;
         });
-        textFieldTitle.SetValueWithoutNotify(tempDialogueNode.title);
-        textFieldTitle.multiline = true;
-        textFieldTitle.label = "Player";
-        textFieldTitle.style.minWidth = 300;
-        textFieldTitle.style.maxWidth = 600;
-        textFieldTitle.style.flexWrap = Wrap.Wrap;
+        textFieldCallback.SetValueWithoutNotify(tempDialogueNode.Callback);
+        textFieldCallback.style.minWidth = 300;
+        textFieldCallback.style.maxWidth = 600;
+        textFieldCallback.style.flexWrap = Wrap.Wrap;
 
-        var textField = new TextField("");
+        var textField = new TextField("Message");
         textField.RegisterValueChangedCallback(evt =>
         {
             tempDialogueNode.DialogueText = evt.newValue;
         });
-
-        textField.SetValueWithoutNotify(tempDialogueNode.title);
+        textField.SetValueWithoutNotify(tempDialogueNode.DialogueText);
         textField.multiline = true;
-        textField.label = "Message";
         textField.style.minWidth = 300;
         textField.style.maxWidth = 600;
         textField.style.flexWrap = Wrap.Wrap;
 
-        tempDialogueNode.mainContainer.Add(textFieldTitle);
+        //var NpcToogle = new UnityEngine.UIElements.Toggle("NPC");
+        //NpcToogle.RegisterValueChangedCallback(evt =>
+        //{
+
+        //});
+        //var PlayerToggle = new UnityEngine.UIElements.Toggle("Player");
+        //PlayerToggle.RegisterValueChangedCallback(evt =>
+        //{
+
+        //});
+        
+        //var container = new IMGUIContainer();
+        //container.Add(PlayerToggle);
+        //container.Add(NpcToogle);
+        //container.style.justifyContent = Justify.Center;
+        //container.style.display = DisplayStyle.Flex;
+        //container.style.flexDirection = FlexDirection.Row;
+        //tempDialogueNode.mainContainer.Add(PlayerToggle);
+        //tempDialogueNode.mainContainer.Add(NpcToogle);
+        //tempDialogueNode.mainContainer.Add(container);
         tempDialogueNode.mainContainer.Add(textField);
+        tempDialogueNode.mainContainer.Add(textFieldCallback);
 
         var button = new Button(() => { AddChoicePort(tempDialogueNode); })
         {

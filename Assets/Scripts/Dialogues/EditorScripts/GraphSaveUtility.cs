@@ -66,6 +66,8 @@ public class GraphSaveUtility
             {
                 NodeGUID = node.GUID,
                 DialogueText = node.DialogueText,
+                Speaker = node.Speaker,
+                Callback = node.Callback,
                 Position = node.GetPosition().position
             });
         }
@@ -133,7 +135,7 @@ public class GraphSaveUtility
     {
         foreach (var perNode in _dialogueContainer.DialogueNodeData)
         {
-            var tempNode = _graphView.CreateNode(perNode.DialogueText, Vector2.zero);
+            var tempNode = _graphView.CreateNode(perNode, Vector2.zero);
             tempNode.GUID = perNode.NodeGUID;
             _graphView.AddElement(tempNode);
 

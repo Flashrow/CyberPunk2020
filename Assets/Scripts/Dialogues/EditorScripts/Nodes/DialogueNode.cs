@@ -9,7 +9,7 @@ public class DialogueNode : Node
 {
     public string DialogueText;
     public string GUID;
-    public string Player;
+    public string Speaker;
     public string Callback;
     public bool EntyPoint = false;
 }

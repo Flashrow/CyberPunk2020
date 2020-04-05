@@ -13,15 +13,63 @@ MonoBehaviour:
   m_Name: 123
   m_EditorClassIdentifier: 
   NodeLinks:
-  - BaseNodeGUID: 6c41e3c4-6faf-486b-8778-dccd943ce694
+  - BaseNodeGUID: d86ef9a8-3f84-40fe-927d-fd693f3f4b73
     PortName: Next
-    TargetNodeGUID: d04627dc-4eb3-4122-b9e7-8977264b402f
+    TargetNodeGUID: da8c90cb-2287-4c65-9042-bd94e1549d91
+  - BaseNodeGUID: da8c90cb-2287-4c65-9042-bd94e1549d91
+    PortName: Option 1
+    TargetNodeGUID: c8e8baeb-1143-4b29-b787-79e6827f2aa4
+  - BaseNodeGUID: da8c90cb-2287-4c65-9042-bd94e1549d91
+    PortName: Option 2
+    TargetNodeGUID: ffbb746d-76b2-4258-9ac8-d1bdb8d9d0b5
+  - BaseNodeGUID: c8e8baeb-1143-4b29-b787-79e6827f2aa4
+    PortName: Option 3
+    TargetNodeGUID: b15e6ea7-8364-4923-a9c5-4b8cd6b14f6a
+  - BaseNodeGUID: b15e6ea7-8364-4923-a9c5-4b8cd6b14f6a
+    PortName: Option 1
+    TargetNodeGUID: 15cac933-11a7-433f-b7ae-bd53e7de3295
+  - BaseNodeGUID: c8e8baeb-1143-4b29-b787-79e6827f2aa4
+    PortName: Option 2
+    TargetNodeGUID: 725ccde8-bef0-4a85-b776-bccd349ab8b2
+  - BaseNodeGUID: c8e8baeb-1143-4b29-b787-79e6827f2aa4
+    PortName: Option 3
+    TargetNodeGUID: 1f01f301-bee7-4db4-bdc5-7de2d0f8b16e
   DialogueNodeData:
-  - NodeGUID: d04627dc-4eb3-4122-b9e7-8977264b402f
+  - NodeGUID: da8c90cb-2287-4c65-9042-bd94e1549d91
+    DialogueText: frsdfsdf
+    Speaker: Player
+    Callback: dddd
+    Position: {x: 275, y: 123}
+  - NodeGUID: ffbb746d-76b2-4258-9ac8-d1bdb8d9d0b5
     DialogueText: Dialogue Node
-    Player: 
+    Speaker: NPC
     Callback: 
-    Position: {x: 382, y: 52}
+    Position: {x: 743, y: 230}
+  - NodeGUID: c8e8baeb-1143-4b29-b787-79e6827f2aa4
+    DialogueText: Dialogue Node
+    Speaker: NPC
+    Callback: 
+    Position: {x: 734, y: -39}
+  - NodeGUID: b15e6ea7-8364-4923-a9c5-4b8cd6b14f6a
+    DialogueText: Dialogue Node
+    Speaker: Player
+    Callback: 
+    Position: {x: 1149, y: -219}
+  - NodeGUID: 725ccde8-bef0-4a85-b776-bccd349ab8b2
+    DialogueText: Dialogue Node
+    Speaker: Player
+    Callback: 
+    Position: {x: 1152, y: -12}
+  - NodeGUID: 1f01f301-bee7-4db4-bdc5-7de2d0f8b16e
+    DialogueText: Dialogue Node
+    Speaker: Player
+    Callback: 
+    Position: {x: 1158, y: 150}
+  - NodeGUID: 15cac933-11a7-433f-b7ae-bd53e7de3295
+    DialogueText: Dialogue Node
+    Speaker: Player
+    Callback: 
+    Position: {x: 1542, y: -216}
   ExposedProperties: []
   CommentBlockData: []
   fileName: 123

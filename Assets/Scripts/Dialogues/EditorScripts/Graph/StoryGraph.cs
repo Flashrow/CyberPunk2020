@@ -53,7 +53,8 @@ public class StoryGraph : EditorWindow
         toolbar.Add(new Button(() => RequestDataOperation(true)) {text = "Save Data"});
 
         toolbar.Add(new Button(() => RequestDataOperation(false)) {text = "Load Data"});
-        toolbar.Add(new Button(() => _graphView.CreateNewDialogueNode("Dialogue Node", _graphView.LastNodePosition)) {text = "New Node"});
+        toolbar.Add(new Button(() => _graphView.CreateNewDialogueNodePlayer("Dialogue Node", _graphView.LastNodePosition)) {text = "Player Node"});
+        toolbar.Add(new Button(() => _graphView.CreateNewDialogueNodeNPC("Dialogue Node", _graphView.LastNodePosition)) {text = "NPC Node"});
         rootVisualElement.Add(toolbar);
     }
 
