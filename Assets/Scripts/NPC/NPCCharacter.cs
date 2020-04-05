@@ -5,7 +5,6 @@ using UnityEngine;
 using UnityEngine.AI;
 
 public abstract class NPCCharacter : MonoBehaviour {
-    public float PlayerDetectArea = 10f;
     protected float currentHealth { get; set; }
     protected Transform player;
     protected NPCMovement movementScript = null;

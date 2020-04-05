@@ -136,10 +136,8 @@
      <Compile Include="Assets\Scripts\NPC\NPCAnimation.cs" />
      <Compile Include="Assets\Scripts\NPC\NPCCharacter.cs" />
      <Compile Include="Assets\Scripts\NPC\NPCEnemy.cs" />
-     <Compile Include="Assets\Scripts\NPC\NPCEnemyAnimation.cs" />
      <Compile Include="Assets\Scripts\NPC\NPCEnemyAttack.cs" />
      <Compile Include="Assets\Scripts\NPC\NPCHumanoid.cs" />
-     <Compile Include="Assets\Scripts\NPC\NPCHumanoidAnimation.cs" />
      <Compile Include="Assets\Scripts\NPC\NPCMovement.cs" />
      <Compile Include="Assets\Scripts\NPC\NPCQuest.cs" />
      <Compile Include="Assets\Scripts\NPC\NPCQuestAnimation.cs" />

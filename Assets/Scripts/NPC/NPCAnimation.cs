@@ -2,24 +2,31 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class NPCAnimation : MonoBehaviour {
+public class NPCAnimation : MonoBehaviour {
     protected Animator anim { get; private set; }
     void Awake () {
         anim = GetComponent<Animator> ();
+        onAwake ();
     }
-    public void SetSpeed (int speed) {
+    public void AnimSetSpeed (int speed) {
         if (speed < 0) throw null;
         anim.SetInteger ("speed", speed);
     }
-    public void Idle () {
+    public void AnimIdle () {
         anim.SetInteger ("speed", 0);
     }
-    public void Hit () {
+    public void AnimHit () {
         anim.SetTrigger ("hit");
     }
-    public void Die (GameObject go) {
-        anim.SetTrigger ("dead");
-        // TOOD: Check if animation end
-        Destroy (go);
+    public void AnimStartFire () {
+        anim.SetBool ("fire", true);
     }
+    public void AnimStopFire () {
+        anim.SetBool ("fire", false);
+    }
+    public void AnimDie (GameObject go) {
+        anim.SetTrigger ("dead");
+        Destroy (go, 2.2f);
+    }
+    protected virtual void onAwake () { }
 }
