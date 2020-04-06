@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEditor;
 
 
@@ -12,6 +13,11 @@ public class DialogueContainer : ScriptableObject
     public List<ExposedProperty> ExposedProperties = new List<ExposedProperty>();
     public List<CommentBlockData> CommentBlockData = new List<CommentBlockData>();
     public string fileName;
+
+    public void Start()
+    {
+
+    }
 }
 
 

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class DialogueParser : MonoBehaviour
@@ -12,6 +13,14 @@ public class DialogueParser : MonoBehaviour
     [SerializeField] private TextMeshProUGUI dialogueText;
     [SerializeField] private Button choicePrefab;
     [SerializeField] private Transform buttonContainer;
+    [SerializeField] List<CallbackListItem> callbacks;
+
+    [Serializable]
+    class CallbackListItem
+    {
+        [SerializeField] string name;
+        [SerializeField] UnityEvent callback;
+    }
 
     private void Start()
     {

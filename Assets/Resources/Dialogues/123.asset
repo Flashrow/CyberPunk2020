@@ -25,15 +25,27 @@ MonoBehaviour:
   - BaseNodeGUID: c8e8baeb-1143-4b29-b787-79e6827f2aa4
     PortName: Option 3
     TargetNodeGUID: b15e6ea7-8364-4923-a9c5-4b8cd6b14f6a
-  - BaseNodeGUID: b15e6ea7-8364-4923-a9c5-4b8cd6b14f6a
-    PortName: Option 1
-    TargetNodeGUID: 15cac933-11a7-433f-b7ae-bd53e7de3295
   - BaseNodeGUID: c8e8baeb-1143-4b29-b787-79e6827f2aa4
     PortName: Option 2
     TargetNodeGUID: 725ccde8-bef0-4a85-b776-bccd349ab8b2
   - BaseNodeGUID: c8e8baeb-1143-4b29-b787-79e6827f2aa4
     PortName: Option 3
     TargetNodeGUID: 1f01f301-bee7-4db4-bdc5-7de2d0f8b16e
+  - BaseNodeGUID: b15e6ea7-8364-4923-a9c5-4b8cd6b14f6a
+    PortName: Option 1
+    TargetNodeGUID: 15cac933-11a7-433f-b7ae-bd53e7de3295
+  - BaseNodeGUID: 15cac933-11a7-433f-b7ae-bd53e7de3295
+    PortName: Option 1
+    TargetNodeGUID: b981272e-18ec-4acf-a96f-7408fa162b5e
+  - BaseNodeGUID: b981272e-18ec-4acf-a96f-7408fa162b5e
+    PortName: Option 1
+    TargetNodeGUID: 1966cf22-f90f-40b8-bc73-f63a4f939c43
+  - BaseNodeGUID: 1966cf22-f90f-40b8-bc73-f63a4f939c43
+    PortName: Option 1
+    TargetNodeGUID: d6dea762-f321-4230-a055-cf0105191ece
+  - BaseNodeGUID: 1966cf22-f90f-40b8-bc73-f63a4f939c43
+    PortName: Option 2
+    TargetNodeGUID: d99f206c-d9e8-4593-9663-89d674129e18
   DialogueNodeData:
   - NodeGUID: da8c90cb-2287-4c65-9042-bd94e1549d91
     DialogueText: frsdfsdf
@@ -70,6 +82,26 @@ MonoBehaviour:
     Speaker: Player
     Callback: 
     Position: {x: 1542, y: -216}
+  - NodeGUID: b981272e-18ec-4acf-a96f-7408fa162b5e
+    DialogueText: Dialogue Node
+    Speaker: NPC
+    Callback: 
+    Position: {x: 1935, y: -190}
+  - NodeGUID: 1966cf22-f90f-40b8-bc73-f63a4f939c43
+    DialogueText: Dialogue Node
+    Speaker: Player
+    Callback: 
+    Position: {x: 2300, y: -60}
+  - NodeGUID: d6dea762-f321-4230-a055-cf0105191ece
+    DialogueText: Dialogue Node
+    Speaker: Player
+    Callback: 
+    Position: {x: 2706, y: -135}
+  - NodeGUID: d99f206c-d9e8-4593-9663-89d674129e18
+    DialogueText: Dialogue Node
+    Speaker: Player
+    Callback: 
+    Position: {x: 2687, y: 78}
   ExposedProperties: []
   CommentBlockData: []
   fileName: 123
