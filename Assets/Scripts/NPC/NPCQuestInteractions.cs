@@ -15,6 +15,7 @@ public class NPCQuestInteractions : Interacted {
                 isActive = false;
                 QuestCamera.SetActive (false);
                 CameraManager.Instance.Current.gameObject.SetActive (true);
+                PlayerManager.Instance.Player.GetComponent<CharacterController>().enabled = true;
                 anim.AnimEndInteraction ();
             }
             // TODO Kamil: Interactions
@@ -23,6 +24,7 @@ public class NPCQuestInteractions : Interacted {
 
     public override void OnInteract () {
         if (isActive) return;
+        PlayerManager.Instance.Player.GetComponent<CharacterController>().enabled = false;
         anim.AnimStartInteraction ();
         isActive = true;
         CameraManager.Instance.Current.gameObject.SetActive (false);
