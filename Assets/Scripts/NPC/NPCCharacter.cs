@@ -5,28 +5,29 @@ using UnityEngine;
 using UnityEngine.AI;
 
 public abstract class NPCCharacter : MonoBehaviour {
-    public float PlayerDetectArea = 10f;
-    public float MaxHealth;
     protected float currentHealth { get; set; }
     protected Transform player;
-    protected NavMeshAgent agent = null;
     protected NPCMovement movementScript = null;
-    protected delegate void AutoDetectUpdateDelegate (float dist);
-    protected AutoDetectUpdateDelegate autoDetectUpdate = null;
+    protected delegate void OnUpdateDelegate (float dist);
+    protected OnUpdateDelegate onUpdate = null;
+    void Awake () {
+        movementScript = GetComponent<NPCMovement> ();
+        if (movementScript != null) {
+            onUpdate = new OnUpdateDelegate (isMovable);
+        } else onUpdate = new OnUpdateDelegate (isStatic);
+        onAwake ();
+    }
     void Start () {
-        currentHealth = MaxHealth;
         player = PlayerManager.Instance.Player.transform;
-        agent = GetComponent<NavMeshAgent> ();
-        if (agent != null) {
-            movementScript = GetComponent<NPCMovement> ();
-            autoDetectUpdate = new AutoDetectUpdateDelegate (isMovable);
-        } else autoDetectUpdate = new AutoDetectUpdateDelegate (isStatic);
-
+        onStart ();
     }
     protected void Update () {
         float distance = Vector3.Distance (player.position, transform.position);
-        autoDetectUpdate (distance);
-        if (currentHealth <= 0) Die ();
+        try {
+            onUpdate (distance);
+        } catch (NPCDie) {
+            onDie ();
+        }
     }
     protected void FaceTarget () {
         Vector3 direction = (player.position - transform.position).normalized;
@@ -37,7 +38,9 @@ public abstract class NPCCharacter : MonoBehaviour {
     protected abstract void isStatic (float dist); // ex. firing turret - only rotate
     public abstract void OnDrawGizmosSelected ();
     public abstract void OnHit (float val);
-    protected virtual void Die () { }
+    protected virtual void onDie () { }
+    protected virtual void onAwake () { }
+    protected virtual void onStart () { }
 }
 
 public class NPCShootedException : System.Exception {
@@ -45,3 +48,5 @@ public class NPCShootedException : System.Exception {
         Debug.Log (ex);
     }
 }
+
+public class NPCDie : System.Exception { }

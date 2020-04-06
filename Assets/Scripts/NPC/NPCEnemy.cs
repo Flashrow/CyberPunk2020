@@ -4,41 +4,62 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class NPCEnemy : NPCCharacter {
+    public float DetectPlayerRadius = 25f;
+    public float MaxHealth = 100;
     public Slider HealthbarHandler;
     public Text HealthbarTextHandler;
-    private NPCEnemyAttack attackScript;
+    private NPCEnemyAttack attackScript = null;
+    private NPCAnimation anim = null;
     public override void OnDrawGizmosSelected () {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere (transform.position, PlayerDetectArea);
+        Gizmos.DrawWireSphere (transform.position, DetectPlayerRadius);
     }
-    void Awake () {
+    protected override void onAwake () {
         HealthbarTextHandler.text = $"{MaxHealth}";
         attackScript = GetComponent<NPCEnemyAttack> ();
+        anim = GetComponentInChildren<NPCAnimation> ();
     }
-
+    protected override void onStart () {
+        currentHealth = MaxHealth;
+    }
     public override void OnHit (float val) {
+        anim.AnimHit ();
         currentHealth -= val;
-        float valHealth = currentHealth / MaxHealth;
-        HealthbarHandler.value = valHealth;
-        HealthbarTextHandler.text = $"{currentHealth} / {MaxHealth}";
+        if(currentHealth > 0) {
+            HealthbarHandler.value = currentHealth / MaxHealth;
+            HealthbarTextHandler.text = $"{currentHealth} / {MaxHealth}";
+        } else {
+            currentHealth = 0;
+            HealthbarHandler.value = 0;
+            HealthbarTextHandler.text = $"{currentHealth} / {MaxHealth}";
+        }
     }
-    protected override void Die () {
-        // TODO: Animation
-        Destroy (gameObject);
+    protected override void onDie () {
+        anim.AnimDie (gameObject);
     }
 
     protected override void isMovable (float dist) {
-        if (dist <= PlayerDetectArea) {
+        if(currentHealth <= 0) throw new NPCDie ();
+        anim.AnimSetSpeed ((int) movementScript.Agent.speed);
+        if (dist <= DetectPlayerRadius) {
             FaceTarget ();
-            agent.SetDestination (player.position);
-            if (dist <= attackScript.Area)
+            movementScript.Agent.SetDestination (player.position);
+            if (dist <= movementScript.Agent.stoppingDistance)
+                movementScript.Idle ();
+            else
+                movementScript.Running ();
+            if (dist <= attackScript.Area) {
+                anim.AnimStartFire ();
                 attackScript.ShootToPlayer (dist);
-        } else movementScript.Spot (agent);
+            } else anim.AnimStopFire ();
+        } else movementScript.Spot ();
     }
     protected override void isStatic (float dist) {
-        if (dist <= PlayerDetectArea) {
+        if(currentHealth <= 0) throw new NPCDie ();
+        if (dist <= DetectPlayerRadius) {
             FaceTarget ();
-            if (dist <= attackScript.Area) attackScript.ShootToPlayer (dist);
+            if (dist <= attackScript.Area)
+                attackScript.ShootToPlayer (dist);
         }
     }
 }
