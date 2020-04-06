@@ -173,6 +173,7 @@
     <Compile Include="Assets\Scripts\UI\BitCoinsBar.cs" />
     <Compile Include="Assets\Scripts\UI\Chest\ChestDisplay.cs" />
     <Compile Include="Assets\Scripts\UI\Chest\ChestListItemDisplay.cs" />
+    <Compile Include="Assets\Scripts\UI\Dialogue\DialogueUI.cs" />
     <Compile Include="Assets\Scripts\UI\HpBar.cs" />
     <Compile Include="Assets\Scripts\UI\Shop\ShopCharacterItem.cs" />
     <Compile Include="Assets\Scripts\UI\Shop\ShopItem.cs" />

@@ -1,0 +1,94 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78b3fd9154634ebdb8c8a48960b9a16a, type: 3}
+  m_Name: TestowyDialog
+  m_EditorClassIdentifier: 
+  NodeLinks:
+  - BaseNodeGUID: e10f3896-af54-4847-8b7c-29281258213e
+    PortName: Next
+    TargetNodeGUID: 19c8f4ec-6462-4754-b329-a8f1497b3f6e
+  - BaseNodeGUID: 19c8f4ec-6462-4754-b329-a8f1497b3f6e
+    PortName: Option 1
+    TargetNodeGUID: 74c5b520-e775-4498-8a3b-0c95c20a23b2
+  - BaseNodeGUID: 74c5b520-e775-4498-8a3b-0c95c20a23b2
+    PortName: Option 1
+    TargetNodeGUID: bdcd63c5-1320-44bc-a360-4f27c04c416a
+  - BaseNodeGUID: 74c5b520-e775-4498-8a3b-0c95c20a23b2
+    PortName: Option 2
+    TargetNodeGUID: bc56afcb-cf59-4e8d-94ec-f084b90419a7
+  - BaseNodeGUID: bdcd63c5-1320-44bc-a360-4f27c04c416a
+    PortName: Option 1
+    TargetNodeGUID: a8e3e310-9c76-477e-ac4e-2dbff9459417
+  - BaseNodeGUID: bc56afcb-cf59-4e8d-94ec-f084b90419a7
+    PortName: Option 1
+    TargetNodeGUID: de9f38ef-57eb-496f-b3a9-2b2a8a2729f2
+  - BaseNodeGUID: a8e3e310-9c76-477e-ac4e-2dbff9459417
+    PortName: Option 1
+    TargetNodeGUID: 678e29e6-541f-4547-b9cb-71b0e3b88b3a
+  - BaseNodeGUID: de9f38ef-57eb-496f-b3a9-2b2a8a2729f2
+    PortName: Option 1
+    TargetNodeGUID: 13ea250a-2c03-4e08-ae72-eccdb21cd1b0
+  - BaseNodeGUID: 678e29e6-541f-4547-b9cb-71b0e3b88b3a
+    PortName: Option 1
+    TargetNodeGUID: 13ea250a-2c03-4e08-ae72-eccdb21cd1b0
+  - BaseNodeGUID: 13ea250a-2c03-4e08-ae72-eccdb21cd1b0
+    PortName: Option 1
+    TargetNodeGUID: fd4de1c5-7d3d-4035-a37e-6e90c49b1580
+  DialogueNodeData:
+  - NodeGUID: 19c8f4ec-6462-4754-b329-a8f1497b3f6e
+    DialogueText: Co tu robisz?
+    Speaker: Player
+    Callback: 
+    Position: {x: 258, y: 86}
+  - NodeGUID: 74c5b520-e775-4498-8a3b-0c95c20a23b2
+    DialogueText: "Siedz\u0119 sobie, nie wida\u0107?"
+    Speaker: NPC
+    Callback: 
+    Position: {x: 674, y: 86}
+  - NodeGUID: bdcd63c5-1320-44bc-a360-4f27c04c416a
+    DialogueText: Nie
+    Speaker: Player
+    Callback: 
+    Position: {x: 1115, y: -124}
+  - NodeGUID: bc56afcb-cf59-4e8d-94ec-f084b90419a7
+    DialogueText: Tak
+    Speaker: Player
+    Callback: 
+    Position: {x: 1118, y: 18}
+  - NodeGUID: a8e3e310-9c76-477e-ac4e-2dbff9459417
+    DialogueText: "Nie widz\u0119, \u015Blepy jestem"
+    Speaker: Player
+    Callback: 
+    Position: {x: 1519, y: -127}
+  - NodeGUID: de9f38ef-57eb-496f-b3a9-2b2a8a2729f2
+    DialogueText: "Wida\u0107, przepraszam"
+    Speaker: Player
+    Callback: 
+    Position: {x: 1522, y: 15}
+  - NodeGUID: 678e29e6-541f-4547-b9cb-71b0e3b88b3a
+    DialogueText: "Ooo, przepraszam, w czym mog\u0119 pomo\u0107?"
+    Speaker: NPC
+    Callback: 
+    Position: {x: 2007, y: -126}
+  - NodeGUID: 13ea250a-2c03-4e08-ae72-eccdb21cd1b0
+    DialogueText: "Szuakm kogo\u015B, mo\u017Ce go znasz, Ravelan"
+    Speaker: Player
+    Callback: 
+    Position: {x: 2522, y: 10}
+  - NodeGUID: fd4de1c5-7d3d-4035-a37e-6e90c49b1580
+    DialogueText: "Prosz\u0119 za mn\u0105"
+    Speaker: NPC
+    Callback: 
+    Position: {x: 2995, y: 12}
+  ExposedProperties: []
+  CommentBlockData: []
+  fileName: TestowyDialog
