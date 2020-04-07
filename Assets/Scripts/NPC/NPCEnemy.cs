@@ -25,7 +25,7 @@ public class NPCEnemy : NPCCharacter {
     public override void OnHit (float val) {
         anim.AnimHit ();
         currentHealth -= val;
-        if(currentHealth > 0) {
+        if (currentHealth > 0) {
             HealthbarHandler.value = currentHealth / MaxHealth;
             HealthbarTextHandler.text = $"{currentHealth} / {MaxHealth}";
         } else {
@@ -39,7 +39,7 @@ public class NPCEnemy : NPCCharacter {
     }
 
     protected override void isMovable (float dist) {
-        if(currentHealth <= 0) throw new NPCDie ();
+        if (currentHealth <= 0) throw new NPCDie ();
         anim.AnimSetSpeed ((int) movementScript.Agent.speed);
         if (dist <= DetectPlayerRadius) {
             FaceTarget ();
@@ -55,7 +55,7 @@ public class NPCEnemy : NPCCharacter {
         } else movementScript.Spot ();
     }
     protected override void isStatic (float dist) {
-        if(currentHealth <= 0) throw new NPCDie ();
+        if (currentHealth <= 0) throw new NPCDie ();
         if (dist <= DetectPlayerRadius) {
             FaceTarget ();
             if (dist <= attackScript.Area)

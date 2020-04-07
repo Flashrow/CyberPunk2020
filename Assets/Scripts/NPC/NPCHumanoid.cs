@@ -19,10 +19,9 @@ public class NPCHumanoid : NPCCharacter {
     protected override void isMovable (float dist) {
         anim.AnimSetSpeed ((int) movementScript.Agent.speed);
         movementScript.Spot ();
-        if (dist <= movementScript.Agent.stoppingDistance)
-        {
-             FaceTarget ();
-             movementScript.Idle ();
+        if (dist <= movementScript.Agent.stoppingDistance) {
+            FaceTarget ();
+            movementScript.Idle ();
         }
     }
     protected override void isStatic (float dist) {
