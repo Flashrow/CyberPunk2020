@@ -12,14 +12,12 @@ public class InventoryUI : MonoBehaviour {
 
     [SerializeField]
     private Inventory inventory;
-
     void Start () { }
 
     // Update is called once per frame
     void Update () {
 
     }
-
     void DisplayItem (Item item) {
         InventoryItem display = (InventoryItem) Instantiate (itemPreFab);
         if (item is Ammo) {

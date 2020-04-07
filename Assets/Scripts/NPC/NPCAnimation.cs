@@ -25,7 +25,7 @@ public class NPCAnimation : MonoBehaviour {
         anim.SetBool ("fire", false);
     }
     public void AnimDie (GameObject go) {
-        anim.Play("Falling Back Death");
+        anim.Play ("Falling Back Death");
         Destroy (go, 3f);
     }
     protected virtual void onAwake () { }
