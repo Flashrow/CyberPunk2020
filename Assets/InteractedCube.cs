@@ -17,7 +17,7 @@ public class InteractedCube : Interacted
         parser.onEndDialog.AddListener(onEnd);
     }
 
-    void onEnd()
+    public void onEnd()
     {
         Debug.Log("koniec dialogu");
     }

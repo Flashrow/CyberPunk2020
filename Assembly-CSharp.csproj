@@ -130,7 +130,7 @@
     <Compile Include="Assets\Scripts\Character\Player.cs" />
     <Compile Include="Assets\Scripts\Character\cameraMovement.cs" />
     <Compile Include="Assets\Scripts\DialogueParser.cs" />
-    <Compile Include="Assets\Scripts\Dialogues\DialogueQueueConatiner.cs" />
+    <Compile Include="Assets\Scripts\Dialogues\DialoguesConatiner.cs" />
     <Compile Include="Assets\Scripts\Dialogues\EditorScripts\Graph\NodeSearchWindow.cs" />
     <Compile Include="Assets\Scripts\Dialogues\EditorScripts\Graph\StoryGraph.cs" />
     <Compile Include="Assets\Scripts\Dialogues\EditorScripts\Graph\StoryGraphView.cs" />

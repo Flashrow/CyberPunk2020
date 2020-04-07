@@ -47,12 +47,12 @@ MonoBehaviour:
   - NodeGUID: 19c8f4ec-6462-4754-b329-a8f1497b3f6e
     DialogueText: Co tu robisz?
     Speaker: Player
-    Callback: 
+    Callback: test
     Position: {x: 258, y: 86}
   - NodeGUID: 74c5b520-e775-4498-8a3b-0c95c20a23b2
     DialogueText: "Siedz\u0119 sobie, nie wida\u0107?"
     Speaker: NPC
-    Callback: 
+    Callback: 123
     Position: {x: 674, y: 86}
   - NodeGUID: bdcd63c5-1320-44bc-a360-4f27c04c416a
     DialogueText: Nie

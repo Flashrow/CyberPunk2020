@@ -57,7 +57,9 @@ public class DialogueParser : MonoBehaviour
                 dialogueUITemp.DisplayPlayerText(text);
                 break;
         }
-        //callbacks.Where(callback => callback.name == GetDialogueNode(narrativeDataGUID).Callback).ToList().ForEach(callback => callback.callback.Invoke());
+
+        callbacks.Where(callback => callback.name == GetDialogueNode(narrativeDataGUID).Callback).ToList().ForEach(callback => callback.callback.Invoke());
+
         if (choices.Count > 1)
         {
             var buttons = dialogueUITemp.DisplayChoices(GetChoices(narrativeDataGUID));

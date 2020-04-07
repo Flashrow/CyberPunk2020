@@ -17,11 +17,8 @@ public class DialoguesConatiner : ScriptableObject
 
     public void OnEnable()
     {
-        Debug.Log("item added nic");
-
         questDialoguesList.ForEach(item =>
         {
-            Debug.Log("item added" + item.questId);
             if (questDialogues.ContainsKey(item.questId))
             {
                 questDialogues[item.questId].Enqueue(item.dialogue);
