@@ -15,11 +15,22 @@ public class DialoguesConatiner : ScriptableObject
     [SerializeField] List<DialoguesConatinerListItem> questDialoguesList = new List<DialoguesConatinerListItem>();
     public Dictionary<string, Queue<DialogueContainer>> questDialogues = new Dictionary<string, Queue<DialogueContainer>>();
 
-    private void Awake()
+    public void OnEnable()
     {
+        Debug.Log("item added nic");
+
         questDialoguesList.ForEach(item =>
         {
-            questDialogues[item.questId].Enqueue(item.dialogue);
+            Debug.Log("item added" + item.questId);
+            if (questDialogues.ContainsKey(item.questId))
+            {
+                questDialogues[item.questId].Enqueue(item.dialogue);
+            }
+            else
+            {
+                questDialogues.Add(item.questId, new Queue<DialogueContainer>());
+                questDialogues[item.questId].Enqueue(item.dialogue);
+            }
         });
     }
    

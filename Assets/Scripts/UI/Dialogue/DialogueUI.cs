@@ -15,13 +15,13 @@ public class DialogueUI : MonoBehaviour
 
     }
 
-    public List<Button> DisplayChoices(List<DialogueNodeData> choices)
+    public List<Button> DisplayChoices(List<NodeLinkData> choices)
     {
         var list = new List<Button>();
         choices.ForEach(choice =>
         {
             list.Add((Button)Instantiate(choiceButton, buttonsContainer));
-            list[list.Count - 1].transform.GetComponentInChildren<Text>().text = choice.DialogueText;
+            list[list.Count - 1].transform.GetComponentInChildren<Text>().text = choice.PortName;
         });
         return list;
     }

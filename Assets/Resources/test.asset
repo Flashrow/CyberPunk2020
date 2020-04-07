@@ -12,4 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: test
   m_EditorClassIdentifier: Assembly-CSharp::DialoguesConatiner
-  questDialoguesList: []
+  questDialoguesList:
+  - questId: 
+    dialogue: {fileID: 0}

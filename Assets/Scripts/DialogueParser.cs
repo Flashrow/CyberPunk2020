@@ -7,31 +7,39 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
-public class DialogueParser : Interacted
+public class DialogueParser : MonoBehaviour
 {
-    [SerializeField] private DialogueContainer dialogue;
     [SerializeField] List<CallbackListItem> callbacks;
-    [SerializeField] private DialogueUI dialogueUI;
+    [SerializeField] private DialoguesConatiner dialogues;
+    private DialogueContainer dialogue;
+    private DialogueUI dialogueUI;
     private DialogueUI dialogueUITemp;
+
+    [NonSerialized] public UnityEvent onEndDialog = new UnityEvent();
 
     [Serializable]
     class CallbackListItem
     {
-        [SerializeField] string name;
-        [SerializeField] UnityEvent callback;
+        [SerializeField] public string name;
+        [SerializeField] public UnityEvent callback;
     }
 
     string nodeGUID;
 
-    public override void OnInteract()
+    private void Awake()
     {
-        if(dialogueUITemp == null)
+        dialogueUI = Resources.Load<DialogueUI>("PreFabs/UI/Dialogue/DialogueUI");
+    }
+
+    public void Parse(string questId)
+    {
+        if (dialogueUITemp == null)
         {
+            dialogue = dialogues.GetQuestDialogues(questId).Peek();
             dialogueUITemp = (DialogueUI)Instantiate(dialogueUI);
             var narrativeData = dialogue.NodeLinks.First(); //Entrypoint node
             StartCoroutine(ProceedToNarrative(narrativeData.TargetNodeGUID));
-        }        
-
+        }
     }
 
     private IEnumerator ProceedToNarrative(string narrativeDataGUID)
@@ -49,17 +57,17 @@ public class DialogueParser : Interacted
                 dialogueUITemp.DisplayPlayerText(text);
                 break;
         }
-
+        //callbacks.Where(callback => callback.name == GetDialogueNode(narrativeDataGUID).Callback).ToList().ForEach(callback => callback.callback.Invoke());
         if (choices.Count > 1)
         {
-            var buttons = dialogueUITemp.DisplayChoices(PrepareChoicesList(narrativeDataGUID));
+            var buttons = dialogueUITemp.DisplayChoices(GetChoices(narrativeDataGUID));
             buttons.ForEach(button =>
             {
                 button.onClick.AddListener(() =>
                 {
                     var buttonText = button.transform.GetComponentInChildren<Text>().text;
                     dialogueUITemp.ClearButtons();
-                    StartCoroutine(ProceedToNarrative(dialogue.DialogueNodeData.Find(x => x.DialogueText == buttonText).NodeGUID));
+                    StartCoroutine(ProceedToNarrative(GetChoices(narrativeDataGUID).Find(node => node.PortName == buttonText).TargetNodeGUID));
                 });
             });
         } else
@@ -70,16 +78,11 @@ public class DialogueParser : Interacted
             if (GetChoices(nodeGUID).Count == 0)
             {
                 dialogueUITemp.FinishDialogue();
-                Debug.Log("koniec");
+                onEndDialog.Invoke();
                 yield break;
             }
             StartCoroutine(ProceedToNarrative(GetChoices(nodeGUID).First().TargetNodeGUID));
         }
-    }
-
-    private void Update()
-    {
-
     }
 
     private DialogueNodeData GetDialogueNode(string id)
