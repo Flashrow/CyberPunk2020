@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Interacted : MonoBehaviour {
-    [SerializeField, Header ("Label Settings")]
-    InteractionLabel label;
+    [Header ("Label Settings")]
     InteractionLabel labelTemp;
 
     [SerializeField]
@@ -21,7 +20,7 @@ public class Interacted : MonoBehaviour {
 
     void CreateLabel (Transform transform) {
         if (labelTemp == null) {
-            labelTemp = (InteractionLabel) Instantiate (label, transform);
+            labelTemp = (InteractionLabel) Instantiate (Resources.Load<InteractionLabel>("PreFabs/InteractionLabel"), transform);
             labelTemp.SetLabel (labelText);
             InteractionRadius.onIntegrate += DestroyIfNotActive;
             try {
