@@ -31,6 +31,7 @@ public class DialogueParser : Interacted
             var narrativeData = dialogue.NodeLinks.First(); //Entrypoint node
             StartCoroutine(ProceedToNarrative(narrativeData.TargetNodeGUID));
         }        
+
     }
 
     private IEnumerator ProceedToNarrative(string narrativeDataGUID)
@@ -39,7 +40,6 @@ public class DialogueParser : Interacted
         var text = GetDialogueNode(narrativeDataGUID).DialogueText;
         var spekaer = dialogue.DialogueNodeData.Find(x => x.NodeGUID == narrativeDataGUID).Speaker;
         var choices = GetChoices(narrativeDataGUID);
-
         switch (spekaer)
         {
             case "NPC":

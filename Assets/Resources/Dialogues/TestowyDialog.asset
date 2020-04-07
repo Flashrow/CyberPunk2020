@@ -80,7 +80,7 @@ MonoBehaviour:
     Callback: 
     Position: {x: 2007, y: -126}
   - NodeGUID: 13ea250a-2c03-4e08-ae72-eccdb21cd1b0
-    DialogueText: "Szuakm kogo\u015B, mo\u017Ce go znasz, Ravelan"
+    DialogueText: "Szukam kogo\u015B, mo\u017Ce go znasz, Ravelan"
     Speaker: Player
     Callback: 
     Position: {x: 2522, y: 10}
