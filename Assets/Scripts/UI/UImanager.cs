@@ -1,44 +1,40 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UImanager : MonoBehaviour {
-    bool isInventoryActive = false;
-    bool isQuickMenuActive = false;
-    static bool state;
-    public GameObject QuickMenu;
-    public GameObject inventoryUI;
-    public GameObject gameIntervaceUI;
+public class UIManager : MonoBehaviour {
+    [SerializeField] private GameObject gameInterface;
+    [SerializeField] private GameObject quickMenu;
+    [SerializeField] private GameObject invetory;
+    private GameObject current = null;
+    static public bool isOpen { get; set; }
     void Awake () {
-        inventoryUI.SetActive (false);
-        QuickMenu.SetActive (false);
+        isOpen = false;
     }
     void Update () {
-        if (isInventoryActive == false && Input.GetKeyDown (KeyCode.E))
-            OpenUI (ref inventoryUI, ref isInventoryActive);
-        if (Input.GetKeyDown (KeyCode.Escape)) {
-            if (isInventoryActive == true)
-                CloseUI (ref inventoryUI, ref isInventoryActive);
-            else if (isQuickMenuActive == false)
-                OpenUI (ref QuickMenu, ref isQuickMenuActive);
-            else CloseUI (ref QuickMenu, ref isQuickMenuActive);
+        if (isOpen == false && Input.GetKeyDown (KeyCode.E)) {
+            UIOpen (ref invetory);
+        }
+        if (isOpen == true && Input.GetKeyDown (KeyCode.Escape)) {
+            UIClose ();
+        } else if (isOpen == false && Input.GetKeyDown (KeyCode.Escape)) {
+            UIOpen (ref quickMenu);
         }
     }
-
-    public void OpenUI (ref GameObject go, ref bool type) {
-        gameIntervaceUI.SetActive (false);
-        go.SetActive (true);
-        type = true;
-        state = true;
+    public void UIOpen (ref GameObject go) {
+        if (current != null) return;
+        current = go;
+        gameInterface.SetActive (false);
+        current.SetActive (true);
+        isOpen = true;
     }
-    public void CloseUI (ref GameObject go, ref bool type) {
-        gameIntervaceUI.SetActive (true);
-        go.SetActive (false);
-        type = false;
-        state = false;
-    }
-    static public bool GetUIState () {
-        return state;
+    public void UIClose () {
+        if (current == null) return;
+        gameInterface.SetActive (true);
+        current.SetActive (false);
+        current = null;
+        isOpen = false;
     }
 }

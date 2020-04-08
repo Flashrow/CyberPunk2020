@@ -21,7 +21,11 @@ public class Interacted : MonoBehaviour {
 
     void CreateLabel (Transform transform) {
         if (labelTemp == null) {
+<<<<<<< Updated upstream
             labelTemp = (InteractionLabel) Instantiate (label, transform);
+=======
+            labelTemp = (InteractionLabel) Instantiate (Resources.Load<InteractionLabel> ("PreFabs/InteractionLabel"), transform);
+>>>>>>> Stashed changes
             labelTemp.SetLabel (labelText);
             InteractionRadius.onIntegrate += DestroyIfNotActive;
             try {
@@ -38,6 +42,7 @@ public class Interacted : MonoBehaviour {
         if (name != this.name) {
             try {
                 OnCancelIntegration ();
+                UIManager.isOpen = false;
             } catch { }
             DestroyLabel ();
             InteractionRadius.onIntegrate -= DestroyIfNotActive;
@@ -57,6 +62,7 @@ public class Interacted : MonoBehaviour {
     void KeyListener () {
         if (Input.GetKeyDown (KeyCode.F)) {
             OnInteract ();
+            UIManager.isOpen = true;
         }
     }
 

@@ -6,18 +6,11 @@ public class InventoryUI : MonoBehaviour {
     public Transform characterItems;
     public Transform items;
     public Transform weapons;
-
     public InventoryItem itemPreFab;
     public InventoryItem itemCharacterPreFab;
-
     [SerializeField]
     private Inventory inventory;
-    void Start () { }
 
-    // Update is called once per frame
-    void Update () {
-
-    }
     void DisplayItem (Item item) {
         InventoryItem display = (InventoryItem) Instantiate (itemPreFab);
         if (item is Ammo) {
