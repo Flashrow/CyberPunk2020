@@ -20066,7 +20066,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 299204065}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7be2286e50156094d88303d5e8d3dbb9, type: 3}
+  m_Script: {fileID: 11500000, guid: 47f21b235aa7ab04f8fe1c445220bcab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   gameInterface: {fileID: 423212568}
@@ -28180,7 +28180,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 299204067}
+      - m_Target: {fileID: 0}
         m_MethodName: CloseInventory
         m_Mode: 1
         m_Arguments:
@@ -103505,7 +103505,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 299204067}
+      - m_Target: {fileID: 0}
         m_MethodName: CloseInventory
         m_Mode: 1
         m_Arguments:
@@ -136308,7 +136308,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 299204067}
+      - m_Target: {fileID: 0}
         m_MethodName: CloseInventory
         m_Mode: 1
         m_Arguments:
