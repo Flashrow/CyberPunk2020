@@ -1,44 +1,62 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UImanager : MonoBehaviour {
-    bool isInventoryActive = false;
-    bool isQuickMenuActive = false;
-    static bool state;
-    public GameObject QuickMenu;
-    public GameObject inventoryUI;
-    public GameObject gameIntervaceUI;
+public class UIManager : MonoBehaviour {
+    static private GameObject gameInterface;
+    [SerializeField] private GameObject quickMenu;
+    static private List<GameObject> elements = new List<GameObject> ();
+    static public bool isOpen { get; private set; }
+    static public bool isBlock { get; private set; }
     void Awake () {
-        inventoryUI.SetActive (false);
-        QuickMenu.SetActive (false);
+        gameInterface = GameObject.Find ("GameInterface");
+        isOpen = false;
+        isBlock = false;
     }
     void Update () {
-        if (isInventoryActive == false && Input.GetKeyDown (KeyCode.E))
-            OpenUI (ref inventoryUI, ref isInventoryActive);
-        if (Input.GetKeyDown (KeyCode.Escape)) {
-            if (isInventoryActive == true)
-                CloseUI (ref inventoryUI, ref isInventoryActive);
-            else if (isQuickMenuActive == false)
-                OpenUI (ref QuickMenu, ref isQuickMenuActive);
-            else CloseUI (ref QuickMenu, ref isQuickMenuActive);
+        if (isBlock == false) {
+            if (isOpen == true && Input.GetKeyDown (KeyCode.Escape)) {
+                UIPermentClose ();
+            } else if (isOpen == false && Input.GetKeyDown (KeyCode.Escape)) {
+                UIOpen (ref quickMenu);
+            }
         }
     }
-
-    public void OpenUI (ref GameObject go, ref bool type) {
-        gameIntervaceUI.SetActive (false);
-        go.SetActive (true);
-        type = true;
-        state = true;
+    static public void UIOpen (ref GameObject go) {
+        if (elements.Count == 0) {
+            gameInterface.SetActive (false);
+            isOpen = true;
+        } else {
+            elements[elements.Count - 1].SetActive (false);
+        }
+        elements.Add (go);
+        elements[elements.Count - 1].SetActive (true);
     }
-    public void CloseUI (ref GameObject go, ref bool type) {
-        gameIntervaceUI.SetActive (true);
-        go.SetActive (false);
-        type = false;
-        state = false;
+    static public void UIReturn () {
+        elements[elements.Count - 1].SetActive (false);
+        elements.RemoveAt (elements.Count - 1);
+        if (elements.Count == 0) {
+            gameInterface.SetActive (true);
+            isOpen = false;
+        } else {
+            elements[elements.Count - 1].SetActive (true);
+        }
     }
-    static public bool GetUIState () {
-        return state;
+    static public void UIPermentClose () {
+        foreach (var item in elements)
+            item.SetActive (false);
+        elements.Clear ();
+        gameInterface.SetActive (true);
+        isOpen = false;
+    }
+    static public void UIBlock () {
+        isBlock = true;
+    }
+    static public void UIUnlock () {
+        isBlock = false;
     }
 }
+
+public class UIException : System.Exception { }

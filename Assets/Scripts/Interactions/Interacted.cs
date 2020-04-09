@@ -46,7 +46,9 @@ public class Interacted : MonoBehaviour {
     public void DestroyLabel () {
         try {
             DestroyImmediate (labelTemp.gameObject);
-        } catch { }
+        } catch { }finally {
+            UIManager.UIUnlock ();
+        }
     }
 
     void SetLabelPosition (float height) {
@@ -56,6 +58,7 @@ public class Interacted : MonoBehaviour {
     void KeyListener () {
         if (Input.GetKeyDown (KeyCode.F)) {
             OnInteract ();
+            UIManager.UIBlock ();
         }
     }
 
