@@ -1,55 +1,61 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour {
-    [SerializeField] private GameObject gameInterface;
+    static private GameObject gameInterface;
     [SerializeField] private GameObject quickMenu;
-    [SerializeField] private GameObject invetory;
-    static private GameObject current = null;
-    static private bool isOpen = false;
+    static private List<GameObject> elements = new List<GameObject> ();
+    static public bool isOpen { get; private set; }
+    static public bool isBlock { get; private set; }
+    void Awake () {
+        gameInterface = GameObject.Find ("GameInterface");
+        isOpen = false;
+        isBlock = false;
+    }
     void Update () {
-        if (isOpen == false && Input.GetKeyDown (KeyCode.E)) {
-            this.UIOpen (ref invetory);
+        if (isBlock == false) {
+            if (isOpen == true && Input.GetKeyDown (KeyCode.Escape)) {
+                UIPermentClose ();
+            } else if (isOpen == false && Input.GetKeyDown (KeyCode.Escape)) {
+                UIOpen (ref quickMenu);
+            }
         }
-        if (isOpen == true && Input.GetKeyDown (KeyCode.Escape)) {
-            this.UIClose ();
-        } else if (isOpen == false && Input.GetKeyDown (KeyCode.Escape)) {
-            this.UIOpen (ref quickMenu);
-        }
     }
-    private void UIOpen (ref GameObject go) {
-        if (current != null) return;
-        current = go;
-        gameInterface.SetActive (false);
-        current.SetActive (true);
-        isOpen = true;
-    }
-    private void UIClose () {
-        if (current == null) return;
-        gameInterface.SetActive (true);
-        current.SetActive (false);
-        current = null;
-        isOpen = false;
-    }
-    static public void SetUIasOpen () {
-        if (current == null)
+    static public void UIOpen (ref GameObject go) {
+        if (elements.Count == 0) {
+            gameInterface.SetActive (false);
             isOpen = true;
-        else throw new UIException ();
+        } else {
+            elements[elements.Count - 1].SetActive (false);
+        }
+        elements.Add (go);
+        elements[elements.Count - 1].SetActive (true);
     }
-    static public void SetUIasClose () {
-        if (current == null)
+    static public void UIReturn () {
+        elements[elements.Count - 1].SetActive (false);
+        elements.RemoveAt (elements.Count - 1);
+        if (elements.Count == 0) {
+            gameInterface.SetActive (true);
             isOpen = false;
-        else throw new UIException ();
+        } else {
+            elements[elements.Count - 1].SetActive (true);
+        }
     }
-    static public bool IsUIOpen () {
-        return isOpen;
-    }
-    static public void SetCurrentNullable () {
-        current = null;
+    static public void UIPermentClose () {
+        foreach (var item in elements)
+            item.SetActive (false);
+        elements.Clear ();
+        gameInterface.SetActive (true);
         isOpen = false;
+    }
+    static public void UIBlock () {
+        isBlock = true;
+    }
+    static public void UIUnlock () {
+        isBlock = false;
     }
 }
 

@@ -8,7 +8,7 @@ public class QuickMenu : MonoBehaviour {
         Debug.Log ("EndMission ()");
     }
     public void CloseQuickMenu () {
-        UIManager.SetCurrentNullable ();
+        UIManager.UIPermentClose ();
     }
     public void QuitGame () {
         SceneManager.LoadScene ("MenuStart");
