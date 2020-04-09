@@ -169,8 +169,8 @@
      <Compile Include="Assets\Scripts\UI\Shop\ShopSliderWindow.cs" />
      <Compile Include="Assets\Scripts\UI\Shop\ShopUI.cs" />
      <Compile Include="Assets\Scripts\UI\UIBehaviour.cs" />
-     <Compile Include="Assets\Scripts\UI\UIManager.cs" />
      <Compile Include="Assets\Scripts\UI\UITextScript.cs" />
+     <Compile Include="Assets\Scripts\UI\UIManager.cs" />
      <Compile Include="Assets\Scripts\Weapons\Gun.cs" />
      <Compile Include="Assets\Scripts\Weapons\LaserBehaviour.cs" />
      <Compile Include="Assets\Scripts\lookAtTarget.cs" />
