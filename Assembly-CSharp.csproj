@@ -145,6 +145,8 @@
     <Compile Include="Assets\Scripts\Items\Coins.cs" />
     <Compile Include="Assets\Scripts\Items\ItemScriptable.cs" />
     <Compile Include="Assets\Scripts\Items\Phone.cs" />
+    <Compile Include="Assets\Scripts\Items\Weapon.cs" />
+    <Compile Include="Assets\Scripts\Items\WeaponScriptable.cs" />
     <Compile Include="Assets\Scripts\Items\tools.cs" />
     <Compile Include="Assets\Scripts\MainMenu.cs" />
     <Compile Include="Assets\Scripts\Managers\CameraManager.cs" />
@@ -172,6 +174,7 @@
     <Compile Include="Assets\Scripts\UI\UITextScript.cs" />
     <Compile Include="Assets\Scripts\UI\UImanager.cs" />
     <Compile Include="Assets\Scripts\Weapons\Gun.cs" />
+    <Compile Include="Assets\Scripts\Weapons\WeaponManager.cs" />
     <Compile Include="Assets\Scripts\lookAtTarget.cs" />
     <Compile Include="Assets\Scripts\lookAtTargetWithoutAnimate.cs" />
     <Compile Include="Assets\SpaceSkies Free\Demo\Scripts\LookCamera.cs" />

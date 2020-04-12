@@ -39,7 +39,7 @@ public class Item {
         //this.sprite = Resources.Load<Sprite>("Sprites/Items/" + spriteName);
     }
 
-    public void LoadScriptableObject (string scriptName) {
+    public virtual void LoadScriptableObject (string scriptName) {
         this.data = Resources.Load<ItemScriptable> ("Items/" + scriptName);
     }
 
@@ -59,6 +59,9 @@ public class Item {
                 return new Phone();
             case ItemType.Tools:
                 return new Tools();
+            case ItemType.Gun:
+                Debug.Log("Item: Create weapon");
+                return new Weapon("rifle","rifle");
             default:
                 return new Item();
         }

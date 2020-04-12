@@ -31,7 +31,7 @@ public class AnimationControl : MonoBehaviour
 
     void PistolVisibility(bool active)
     {
-        //var hand = character.transform.Find("mixamorig:Hips/mixamorig:Spine/mixamorig:Spine1/mixamorig:Spine2/mixamorig:RightShoulder/mixamorig:RightArm/mixamorig:RightForeArm/mixamorig:RightHand");
+        //var hand = character.transform.Find("mixamorig:Hips/mixamorig:Spine/mixamorig:Spine1/mixamorig:Spine2/mixamorig:RightShoulder/mixamorig:RightArm/mixamorig:RightForeArm/mixamorig:Primary");
         pistol.SetActive(active);
     }
 }

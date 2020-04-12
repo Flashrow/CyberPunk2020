@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
-public enum Slots { LeftHand, RightHand }
+public enum Slots { Secondary, Primary }
 
 [CreateAssetMenu (fileName = "ItemData", menuName = "Inventory/Item")]
 public class ItemScriptable : ScriptableObject {

@@ -29,7 +29,8 @@ public class ShopItems : ScriptableObject
         Debug.Log("elo");
         foreach(ListItem item in list)
         {
-            items.Add(item.type, CreateItemObjectByType(item.type));
+            Debug.Log("ShopItems: " + item.type);
+            items.Add(item.type, Item.CreateItemObjectByType(item.type));
             items[item.type].number = item.number;
             items[item.type].cost = item.cost;
         }
@@ -39,22 +40,5 @@ public class ShopItems : ScriptableObject
     void Update()
     {
 
-    }
-
-    Item CreateItemObjectByType(ItemType type)
-    {
-        switch (type)
-        {
-            case ItemType.Ammo:
-                return new Ammo();
-            case ItemType.Coins:
-                return new Coins();
-            case ItemType.Phone:
-                return new Phone();
-            case ItemType.Tools:
-                return new Tools();
-            default:
-                return new Item();
-        }
     }
 }

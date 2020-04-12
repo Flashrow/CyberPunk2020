@@ -25,6 +25,19 @@ public class ShopItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
         this.item = item;
         amount.text = $"{item.number}";
+
+        if (item is Weapon)
+
+            try { Debug.Log("ShopItem: found weapon #" + ((WeaponScriptable)item.data).itemId + "#"); }
+            catch
+            {
+                Debug.Log("ShopItem: found, ale zjebane");
+            }
+
+        else
+            Debug.Log("ShopItem: weapon not found");
+
+
         image.sprite = item.data.sprite;
     }
 
