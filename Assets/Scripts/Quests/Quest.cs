@@ -8,7 +8,6 @@ public abstract class Quest : MonoBehaviour
 {
     public string QuestId;
     public QuestData data;
-    public Dictionary<string, Task> tasks = new Dictionary<string, Task>();
     public Task activeTask;
 
     public void UnmountQuest()

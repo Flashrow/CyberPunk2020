@@ -1,14 +1,21 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.Events;
 
 public class PathContainer : MonoBehaviour
 {
-    public string QuestId;
-    public string TaskId;
-
-    private int step = 0;
+    //public string QuestId;
+    //public string TaskId;
+    public class PathEventHandler : UnityEvent<Collider, int> { };
+    public PathEventHandler pathEventHandler;
+    
     // Use this for initialization
+
+    private void Awake()
+    {
+        if (pathEventHandler == null) pathEventHandler = new PathEventHandler();
+    }
     void Start()
     {
 
@@ -16,12 +23,7 @@ public class PathContainer : MonoBehaviour
 
     public void PullTrigger(Collider other, int order)
     {
-        if (other.TryGetComponent<Hero>(out Hero hero) && order == step)
-        {
-            step++;
-            EventListener.instance.Path.Invoke(new PathElementData { order = order, QuestId = this.QuestId, TaskId = this.TaskId });
-            Debug.Log($"Step {step}");
-        }
+        pathEventHandler.Invoke(other, order);
     }
 
     // Update is called once per frame

@@ -17,3 +17,6 @@ MonoBehaviour:
   description: Opis
   status: 2
   QuestClassString: Quest1
+  tasks:
+  - {fileID: 11400000, guid: a037fbd3f4ba36545ad234a138872944, type: 2}
+  - {fileID: 11400000, guid: f11d8d9eee160e442b315ad598eb9fb8, type: 2}

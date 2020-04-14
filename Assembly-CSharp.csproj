@@ -184,6 +184,7 @@
     <Compile Include="Assets\Scripts\Quests\QuestManager.cs" />
     <Compile Include="Assets\Scripts\Quests\Quests\Quest1.cs" />
     <Compile Include="Assets\Scripts\Quests\Task.cs" />
+    <Compile Include="Assets\Scripts\Quests\Tasks\TaskGoTo.cs" />
     <Compile Include="Assets\Scripts\Shop.cs" />
     <Compile Include="Assets\Scripts\Systems\MoneySystem.cs" />
     <Compile Include="Assets\Scripts\UI\BitCoinsBar.cs" />

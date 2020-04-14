@@ -29,7 +29,7 @@ public class QuestManager : MonoBehaviour
     public void MountQuest(QuestData questData)
     {
         gameObject.AddComponent(questData.QuestClass);
-        Quest quest = gameObject.GetComponent(questData.QuestClass) as Quest;
-        quest.LoadQuestData(questData);
+        activeQuest = gameObject.GetComponent(questData.QuestClass) as Quest;
+        activeQuest.LoadQuestData(questData);
     }
 }
