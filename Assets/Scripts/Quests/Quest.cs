@@ -7,10 +7,22 @@ public enum QuestStatus { IN_PROGRESS, DONE, TODO};
 public abstract class Quest : MonoBehaviour
 {
     public string QuestId;
-    public string title;
-    public string description;
-    public QuestStatus status;
-    public int order;
+    public QuestData data;
     public Dictionary<string, Task> tasks = new Dictionary<string, Task>();
     public Task activeTask;
+
+    public void UnmountQuest()
+    {
+        Destroy(this);
+    }
+
+    public void LoadQuestData(string dataFile)
+    {
+        data = Resources.Load<QuestData>($"Quests/{dataFile}");
+    }
+
+    public void LoadQuestData(QuestData dataFile)
+    {
+        data = dataFile;
+    }
 }
