@@ -16,11 +16,6 @@ public abstract class Quest : MonoBehaviour
         Destroy(this);
     }
 
-    public void LoadQuestData(string dataFile)
-    {
-        data = Resources.Load<QuestData>($"Quests/{dataFile}");
-    }
-
     public void LoadQuestData(QuestData dataFile)
     {
         data = dataFile;
