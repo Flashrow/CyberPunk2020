@@ -2,7 +2,8 @@
 using UnityEditor;
 using System;
 using System.Collections.Generic;
-
+using UnityEditor;
+using UnityEditorInternal;
 
 [CreateAssetMenu(fileName = "QuestData", menuName = "QuestInfo", order = 1)]
 public class QuestData : ScriptableObject
@@ -20,3 +21,4 @@ public class QuestData : ScriptableObject
         QuestClass = Type.GetType(QuestClassString);
     }
 }
+

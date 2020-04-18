@@ -72,6 +72,11 @@ public class ShopSliderWindow : MonoBehaviour {
             newItem.number = sliderValue;
             newItem.cost = item.cost;
             newItem.itemId = item.itemId;
+            EventListener.instance.Inventory.Invoke(new ItemData
+            {
+                item = newItem,
+                eventType = ItemEventType.BUYED
+            });
             inventory.AddItem (newItem);
         }
         if (mode == "SELL") {
@@ -83,6 +88,11 @@ public class ShopSliderWindow : MonoBehaviour {
             } else {
                 shopItems.items[item.data.type].number += sliderValue;
             }
+            EventListener.instance.Inventory.Invoke(new ItemData
+            {
+                item = item,
+                eventType = ItemEventType.SOLD
+            });
             inventory.DecreaseItem (item.data.type, sliderValue);
         }
         try {

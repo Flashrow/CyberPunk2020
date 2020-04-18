@@ -2,6 +2,8 @@
 using UnityEngine.Events;
 using System.Collections;
 using System.Collections.Generic;
+using System;
+using UnityEditor;
 
 public enum TaskType { KILL, BUY, SELL, TAKE, FIND ,TALK, GO };
 [System.Serializable]
@@ -29,6 +31,6 @@ public class Task : ScriptableObject
 
     public virtual void Finish()
     {
-
+        onFinish.Invoke();
     }
 }

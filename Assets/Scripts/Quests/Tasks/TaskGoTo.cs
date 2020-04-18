@@ -18,6 +18,7 @@ public class TaskGoTo : Task
 
     public override void Run()
     {
+        status = QuestStatus.IN_PROGRESS;
         pathContainerTemp = Instantiate(pathContainer);
         pathContainerTemp.pathEventHandler.AddListener((other, order) =>
         {
@@ -36,6 +37,7 @@ public class TaskGoTo : Task
 
     public override void Finish()
     {
+        status = QuestStatus.DONE;
         onFinish.Invoke();
         Destroy(pathContainerTemp.gameObject);
     }

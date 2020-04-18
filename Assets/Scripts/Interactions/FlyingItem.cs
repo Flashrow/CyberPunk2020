@@ -21,6 +21,11 @@ public class FlyingItem : Interacted {
 
     public override void OnInteract () {
         inventory.AddItem (item);
+        EventListener.instance.Inventory.Invoke(new ItemData
+        {
+            item = item,
+            eventType = ItemEventType.TAKEN
+        });
         Destroy (gameObject);
     }
 
