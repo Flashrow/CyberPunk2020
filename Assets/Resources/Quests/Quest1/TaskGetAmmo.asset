@@ -16,10 +16,11 @@ MonoBehaviour:
   QuestId: 
   title: 
   description: 
-  status: 2
+  status: 0
   order: 0
-  type: 0
+  type: 1
   onFinish:
     m_PersistentCalls:
       m_Calls: []
   item: {fileID: 11400000, guid: 361e78d97e5048c4abf1003b7b78e272, type: 2}
+  itemEventType: 0

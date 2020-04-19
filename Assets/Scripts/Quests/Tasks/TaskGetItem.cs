@@ -5,6 +5,7 @@ using UnityEngine.Events;
 public class TaskGetItem : Task
 {
     public ItemScriptable item;
+    public ItemEventType itemEventType;
 
     protected override void OnEnable()
     {
@@ -19,7 +20,7 @@ public class TaskGetItem : Task
 
     private void OnItemAdded(ItemData itemData)
     {
-        if (itemData.item.data.type == item.type) Finish();
+        if (itemData.item.data.type == item.type && itemEventType == itemData.eventType) Finish();
     }
 
     public override void Finish()
