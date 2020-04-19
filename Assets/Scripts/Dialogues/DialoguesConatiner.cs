@@ -1,12 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 
 [CreateAssetMenu(fileName = "DialogueContainer", menuName = "DialogueContainer")]
 public class DialoguesConatiner : ScriptableObject
 {
     [System.Serializable]
-    class DialoguesConatinerListItem
+    public class DialoguesConatinerListItem
     {
         [SerializeField] public string questId;
         [SerializeField] public DialogueContainer dialogue;
@@ -39,5 +40,38 @@ public class DialoguesConatiner : ScriptableObject
     public void RemoveDialog(string questId)
     {
         questDialogues[questId].Dequeue();
+    }
+}
+
+namespace Mochineko.SimpleReorderableList.Samples.Editor
+{
+    [CustomEditor(typeof(DialoguesConatiner))]
+    public class MultiPropertySampleEditor : UnityEditor.Editor
+    {
+        private ReorderableList reorderableList;
+
+        private void OnEnable()
+        {
+            reorderableList = new ReorderableList(
+                serializedObject.FindProperty("questDialoguesList")
+            );
+        }
+
+        public override void OnInspectorGUI()
+        {
+            serializedObject.Update();
+            //DrawDefaultInspector();
+            EditorGUI.BeginChangeCheck();
+            {
+                EditorFieldUtility.ReadOnlyComponentField(target as MonoBehaviour, this);
+
+                if (reorderableList != null)
+                    reorderableList.Layout();
+            }
+            if (EditorGUI.EndChangeCheck())
+            {
+                serializedObject.ApplyModifiedProperties();
+            }
+        }
     }
 }

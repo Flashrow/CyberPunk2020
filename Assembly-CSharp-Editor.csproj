@@ -67,6 +67,12 @@
     <Compile Include="Assets\JMO Assets\Cartoon FX Easy Editor\Editor\CFXEasyEditor.cs" />
     <Compile Include="Assets\JMO Assets\WarFX\Editor\CFX_SpawnSystemEditor.cs" />
     <Compile Include="Assets\LeanTween\Editor\LeanTweenDocumentationEditor.cs" />
+    <Compile Include="Assets\Mochineko\SimpleReorderableListSamples\DropDown\Editor\DropDownSampleEditor.cs" />
+    <Compile Include="Assets\Mochineko\SimpleReorderableListSamples\FixedElementCount\Editor\FixedElementCountSampleEditor.cs" />
+    <Compile Include="Assets\Mochineko\SimpleReorderableListSamples\FullyFixed\Editor\FullyFixedSampleEditor.cs" />
+    <Compile Include="Assets\Mochineko\SimpleReorderableListSamples\MultiProperty\Editor\MultiPropertySampleEditor.cs" />
+    <Compile Include="Assets\Mochineko\SimpleReorderableListSamples\NestedMultiProperty\Editor\NestedMultiPropertySampleEditor.cs" />
+    <Compile Include="Assets\Mochineko\SimpleReorderableListSamples\SingleProperty\Editor\SinglePropertySampleEditor.cs" />
     <None Include="Assets\AssetStoreOriginals\_SNAPS_PrototypingAssets\Scripts\Editor\PackageChecker\settings\PackageImportList_ShaderGraph.txt" />
     <None Include="Assets\AssetStoreOriginals\_SNAPS_PrototypingAssets\Scripts\Editor\PackageChecker\PackageImportList.txt" />
     <Reference Include="UnityEditor.TestRunner">
@@ -699,6 +705,10 @@
     <ProjectReference Include="Assembly-CSharp-Editor-firstpass.csproj">
       <Project>{23B6AD91-1ACB-5D4B-88F6-E905575B05C3}</Project>
       <Name>Assembly-CSharp-Editor-firstpass</Name>
+    </ProjectReference>
+    <ProjectReference Include="Mochineko.SimpleReorderableList.Editor.csproj">
+      <Project>{24D2CE6F-4575-C670-9453-9DDCDF71086E}</Project>
+      <Name>Mochineko.SimpleReorderableList.Editor</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

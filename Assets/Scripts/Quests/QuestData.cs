@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using UnityEditorInternal;
 
-[CreateAssetMenu(fileName = "QuestData", menuName = "QuestInfo", order = 1)]
+[CreateAssetMenu(fileName = "QuestData", menuName = "QuestInfo", order = 1), System.Serializable]
 public class QuestData : ScriptableObject
 {
     public string QuestId;
@@ -36,7 +36,7 @@ public class myClassEditor : Editor
         _myList = new ReorderableList(serializedObject, serializedObject.FindProperty("tasks"), true, true, true, true);
 
         _myList.drawHeaderCallback = rect => {
-            EditorGUI.LabelField(rect, "My Reorderable List", EditorStyles.boldLabel);
+            EditorGUI.LabelField(rect, "Tasks", EditorStyles.boldLabel);
         };
 
         _myList.drawElementCallback =
