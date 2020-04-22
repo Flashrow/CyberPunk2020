@@ -120,6 +120,7 @@
     <Compile Include="Assets\Mochineko\SimpleReorderableListSamples\MultiProperty\MultiPropertySample.cs" />
     <Compile Include="Assets\Mochineko\SimpleReorderableListSamples\NestedMultiProperty\NestedMultiPropertySample.cs" />
     <Compile Include="Assets\Mochineko\SimpleReorderableListSamples\SingleProperty\SinglePropertySample.cs" />
+    <Compile Include="Assets\Mountain Terrain\Misc\CameraDefault.cs" />
     <Compile Include="Assets\Resources\Models\3D\Characters\Player\Ch03\AnimationControl.cs" />
     <Compile Include="Assets\Samples\Cinemachine\2.5.0\Cinemachine Example Scenes\Scenes\OverTheShoulderAim\ActivateOnKeypress.cs" />
     <Compile Include="Assets\Samples\Cinemachine\2.5.0\Cinemachine Example Scenes\Scenes\Scripting\ScriptingExample.cs" />
