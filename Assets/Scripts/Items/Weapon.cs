@@ -4,10 +4,6 @@ using UnityEngine;
 
 [System.Serializable]
 public class Weapon : Item {
-    [SerializeField]
-    private int magazineCapacity=0;
-    [SerializeField]
-    private int currentlyInGunAmmo=0;
 
     private string spriteName;
     private string scriptName;
@@ -49,40 +45,42 @@ public class Weapon : Item {
 
     public bool needReload()
     {
-        if (currentlyInGunAmmo == 0) return true;
+        if (getData().inGunAmmo == 0) return true;
         else return false;
     }
 
     public void setMagazineCapacity(int capacity)
     {
-        magazineCapacity = capacity;
+        getData().magazineAmmo = capacity;
     }
 
-    public void singleShoot()
+    public bool singleShoot()
     {
-        if (currentlyInGunAmmo > 0)
+        if (getData().inGunAmmo > 0)
         {
-            currentlyInGunAmmo--;
+            getData().inGunAmmo--;
+            return true;
         }
+        return false;
     }
 
     public int getInGunAmmo()
     {
-        return currentlyInGunAmmo;
+        return getData().inGunAmmo;
     }
 
     public int getMagazineCapacity()
     {
-        return magazineCapacity;
+        return getData().magazineAmmo;
     }
 
     public int reload(int ammoToReload)         // returns not loaded ammo
     {
-        currentlyInGunAmmo += ammoToReload;
-        if (currentlyInGunAmmo > magazineCapacity)
+        getData().inGunAmmo += ammoToReload;
+        if (getData().inGunAmmo > getData().magazineAmmo)
         {
-            currentlyInGunAmmo = magazineCapacity;
-            return ammoToReload - currentlyInGunAmmo;
+            getData().inGunAmmo = getData().magazineAmmo;
+            return ammoToReload - getData().inGunAmmo;
         }
         else
         {

@@ -7,6 +7,9 @@ public class WeaponScriptable : ItemScriptable
 {
     public int number = 1;
 
+    public int inGunAmmo;
+    public int magazineAmmo;
+
     public int fireRate = 5;
     public float range = 100f;
     public float dispersionRadius = 0f;
@@ -17,6 +20,6 @@ public class WeaponScriptable : ItemScriptable
     public bool isAutomatic = false;
     public bool meele = false;
 
-    public ParticleSystem gunFlash;
+    public GameObject gunFlash;
     public GameObject impactEffect;
 }

@@ -21,12 +21,14 @@ MonoBehaviour:
   type: 1
   slot: 1
   number: 1
+  inGunAmmo: 0
+  magazineAmmo: 32
   fireRate: 5
-  range: 100
+  range: 307.11
   dispersionRadius: 0
   dispersionVariance: 0
   damage: 10
   isAutomatic: 0
   meele: 0
-  gunFlash: {fileID: 0}
-  impactEffect: {fileID: 0}
+  gunFlash: {fileID: 100000, guid: 8eaaa4f553116f44b8459bc24201c514, type: 3}
+  impactEffect: {fileID: 100002, guid: ac1aa04288fad804ba1cd769f4377aaf, type: 3}
