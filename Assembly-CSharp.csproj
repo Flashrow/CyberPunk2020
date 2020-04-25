@@ -120,7 +120,6 @@
     <Compile Include="Assets\Mochineko\SimpleReorderableListSamples\MultiProperty\MultiPropertySample.cs" />
     <Compile Include="Assets\Mochineko\SimpleReorderableListSamples\NestedMultiProperty\NestedMultiPropertySample.cs" />
     <Compile Include="Assets\Mochineko\SimpleReorderableListSamples\SingleProperty\SinglePropertySample.cs" />
-    <Compile Include="Assets\Mountain Terrain\Misc\CameraDefault.cs" />
     <Compile Include="Assets\Resources\Models\3D\Characters\Player\Ch03\AnimationControl.cs" />
     <Compile Include="Assets\SampleScenes\Menu\Scripts\MenuSceneLoader.cs" />
     <Compile Include="Assets\SampleScenes\Menu\Scripts\PauseMenu.cs" />
