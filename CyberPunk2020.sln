@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{E2D58704-E7D0-E49C-D0A1-B83E5B35E2DE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-firstpass", "Assembly-CSharp-firstpass.csproj", "{C80EC8E1-591F-2F9A-3710-76176FA13528}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor", "Assembly-CSharp-Editor.csproj", "{FA3DE472-7FD2-112D-0B3A-FC228D0FBDB0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mochineko.SimpleReorderableList.Editor", "Mochineko.SimpleReorderableList.Editor.csproj", "{24D2CE6F-4575-C670-9453-9DDCDF71086E}"
@@ -19,6 +21,10 @@ Global
 		{E2D58704-E7D0-E49C-D0A1-B83E5B35E2DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E2D58704-E7D0-E49C-D0A1-B83E5B35E2DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E2D58704-E7D0-E49C-D0A1-B83E5B35E2DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C80EC8E1-591F-2F9A-3710-76176FA13528}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C80EC8E1-591F-2F9A-3710-76176FA13528}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C80EC8E1-591F-2F9A-3710-76176FA13528}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C80EC8E1-591F-2F9A-3710-76176FA13528}.Release|Any CPU.Build.0 = Release|Any CPU
 		{FA3DE472-7FD2-112D-0B3A-FC228D0FBDB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{FA3DE472-7FD2-112D-0B3A-FC228D0FBDB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FA3DE472-7FD2-112D-0B3A-FC228D0FBDB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
