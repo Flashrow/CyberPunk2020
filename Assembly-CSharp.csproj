@@ -360,6 +360,11 @@
     <Compile Include="Assets\VolumetricLines\Scripts\VolumetricLineBehavior.cs" />
     <Compile Include="Assets\VolumetricLines\Scripts\VolumetricLineStripBehavior.cs" />
     <Compile Include="Assets\VolumetricLines\Scripts\VolumetricLineVertexData.cs" />
+    <Compile Include="Assets\WorldBuilder\Scripts\Heightmapbuilder.cs" />
+    <Compile Include="Assets\WorldBuilder\Scripts\Helpers\Threading.cs" />
+    <Compile Include="Assets\WorldBuilder\Scripts\TerrainFoliage.cs" />
+    <Compile Include="Assets\WorldBuilder\Scripts\TerrainGeneration.cs" />
+    <Compile Include="Assets\WorldBuilder\Scripts\TerrainTexturing.cs" />
     <None Include="Assets\UnityAssets\Standard Assets\Prototyping\Shaders\WorldCoordDiffuse.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
     <None Include="Assets\JMO Assets\WarFX\Shaders\WFX_S Multiply Soft.shader" />
@@ -682,6 +687,9 @@
     </Reference>
     <Reference Include="UnityEngine.XRModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.XRModule.dll</HintPath>
+    </Reference>
+    <Reference Include="CoherentNoise">
+      <HintPath>S:/CyberPunk2020/CyberPunk2020/Assets/WorldBuilder/Scripts/Helpers/CoherentNoise.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.3f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>
