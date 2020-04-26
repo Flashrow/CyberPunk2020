@@ -73,8 +73,12 @@
     <Compile Include="Assets\Mochineko\SimpleReorderableListSamples\MultiProperty\Editor\MultiPropertySampleEditor.cs" />
     <Compile Include="Assets\Mochineko\SimpleReorderableListSamples\NestedMultiProperty\Editor\NestedMultiPropertySampleEditor.cs" />
     <Compile Include="Assets\Mochineko\SimpleReorderableListSamples\SingleProperty\Editor\SinglePropertySampleEditor.cs" />
-    <Compile Include="Assets\WorldBuilder\Editor\World.cs" />
-    <Compile Include="Assets\WorldBuilder\Editor\WorldGen.cs" />
+    <Compile Include="Assets\UnityAssets\Standard Assets\Editor\CrossPlatformInput\CrossPlatformInputInitialize.cs" />
+    <Compile Include="Assets\UnityAssets\Standard Assets\Editor\Water\Water4\GerstnerDisplaceEditor.cs" />
+    <Compile Include="Assets\UnityAssets\Standard Assets\Editor\Water\Water4\PlanarReflectionEditor.cs" />
+    <Compile Include="Assets\UnityAssets\Standard Assets\Editor\Water\Water4\SpecularLightingEditor.cs" />
+    <Compile Include="Assets\UnityAssets\Standard Assets\Editor\Water\Water4\WaterBaseEditor.cs" />
+    <Compile Include="Assets\UnityAssets\Standard Assets\Editor\Water\Water4\WaterEditorUtility.cs" />
     <None Include="Assets\AssetStoreOriginals\_SNAPS_PrototypingAssets\Scripts\Editor\PackageChecker\settings\PackageImportList_ShaderGraph.txt" />
     <None Include="Assets\AssetStoreOriginals\_SNAPS_PrototypingAssets\Scripts\Editor\PackageChecker\PackageImportList.txt" />
     <Reference Include="UnityEditor.TestRunner">
@@ -346,9 +350,6 @@
     </Reference>
     <Reference Include="sfw.net">
       <HintPath>S:/CyberPunk2020/CyberPunk2020/Assets/Plugins/GitHub/Editor/sfw.net.dll</HintPath>
-    </Reference>
-    <Reference Include="CoherentNoise">
-      <HintPath>S:/CyberPunk2020/CyberPunk2020/Assets/WorldBuilder/Scripts/Helpers/CoherentNoise.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
       <HintPath>S:/CyberPunk2020/CyberPunk2020/Library/PackageCache/com.unity.ext.nunit@1.0.0/net35/unity-custom/nunit.framework.dll</HintPath>
@@ -709,10 +710,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{C80EC8E1-591F-2F9A-3710-76176FA13528}</Project>
-      <Name>Assembly-CSharp-firstpass</Name>
-    </ProjectReference>
     <ProjectReference Include="Assembly-CSharp.csproj">
       <Project>{E2D58704-E7D0-E49C-D0A1-B83E5B35E2DE}</Project>
       <Name>Assembly-CSharp</Name>
