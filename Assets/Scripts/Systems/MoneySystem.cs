@@ -4,7 +4,7 @@ using UnityEngine;
 
 [CreateAssetMenu (fileName = "MoneyData", menuName = "MoneySystem", order = 2)]
 public class MoneySystem : ScriptableObject {
-    public int money { get; private set; } = 1000;
+    public int money { get; private set; } = 2000;
 
     public delegate void OnMoneyChange (int newValue);
     public static OnMoneyChange onMoneyChange;

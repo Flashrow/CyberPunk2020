@@ -16,13 +16,22 @@ public class Inventory : ScriptableObject {
 
     public FlyingItem FlyingItemPreFab;
 
-    public void AddItem (Item item) {
-        if (!items.ContainsKey (item.data.type)) {
-            items.Add (item.data.type, item);
-            try {
-                onAddItemInventory (item);
-            } catch { }
-        } else {
+    public void AddItem(Item item)
+    {
+        if (!items.ContainsKey(item.data.type))
+        {
+            items.Add(item.data.type, item);
+            try
+            {
+                onAddItemInventory(item);
+            }
+            catch 
+            {
+                Debug.LogError("Inventory: onAddItemInventory()");
+            }
+        }
+        else
+        {
             items[item.data.type].number += item.number;
         }
     }
@@ -44,23 +53,24 @@ public class Inventory : ScriptableObject {
 
     public void MoveItemToCharacter (Item item) {
         switch (item.data.slot) {
-            case Slots.LeftHand:
-                if (slots.ContainsKey (Slots.LeftHand))
-                    MoveItemToInventory (Slots.LeftHand);
-                slots.Add (Slots.LeftHand, items[item.data.type].CreateInstance ());
+            case Slots.Secondary:
+                if (slots.ContainsKey (Slots.Secondary))
+                    MoveItemToInventory (Slots.Secondary);
+                slots.Add (Slots.Secondary, items[item.data.type].CreateInstance ());
                 items[item.data.type].number -= 1;
-                slots[Slots.LeftHand].number = 1;
+                slots[Slots.Secondary].number = 1;
                 break;
-            case Slots.RightHand:
-                if (slots.ContainsKey (Slots.RightHand))
-                    MoveItemToInventory (Slots.RightHand);
-                slots.Add (Slots.RightHand, items[item.data.type].CreateInstance ());
+            case Slots.Primary:
+                if (slots.ContainsKey (Slots.Primary))
+                    MoveItemToInventory (Slots.Primary);
+                slots.Add (Slots.Primary, items[item.data.type].CreateInstance ());
                 items[item.data.type].number -= 1;
-                slots[Slots.RightHand].number = 1;
+                slots[Slots.Primary].number = 1;
                 break;
         }
         if (items[item.data.type].number <= 0) items.Remove (item.data.type);
         onInventoryChange ();
+        WeaponManager.instance.updateWeapon();
     }
 
     public void MoveItemToInventory (Slots slot) {

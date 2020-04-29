@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f2c52e3362b5df4e86bf1148713c9e5, type: 3}
+  m_Name: rifle
+  m_EditorClassIdentifier: 
+  itemId: rifle
+  defaultNumber: 1
+  minNumber: 0
+  maxNumber: 1
+  sprite: {fileID: 21300000, guid: 8300a9ba7349b444ea1547d753a2fbce, type: 3}
+  model: {fileID: -927199367670048503, guid: 985ec21f2df520846ae0123f2b7e79e5, type: 3}
+  type: 1
+  slot: 1
+  number: 1
+  inGunAmmo: 4
+  magazineAmmo: 32
+  reloadingTime: 2
+  fireRate: 7
+  range: 307.11
+  dispersionRadius: 0
+  dispersionVariance: 0
+  damage: 10
+  isAutomatic: 1
+  meele: 0
+  gunFlash: {fileID: 100000, guid: 8eaaa4f553116f44b8459bc24201c514, type: 3}
+  impactEffect: {fileID: 100002, guid: ac1aa04288fad804ba1cd769f4377aaf, type: 3}
