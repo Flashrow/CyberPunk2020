@@ -62,27 +62,31 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\AssetStoreOriginals\_SNAPS_PrototypingAssets\About\Scripts\Editor\ReadmeEditor.cs" />
-    <Compile Include="Assets\AssetStoreOriginals\_SNAPS_PrototypingAssets\Scripts\Editor\PackageChecker\PackageChecker.cs" />
-    <Compile Include="Assets\JMO Assets\Cartoon FX Easy Editor\Editor\CFXEasyEditor.cs" />
-    <Compile Include="Assets\JMO Assets\WarFX\Editor\CFX_SpawnSystemEditor.cs" />
-    <Compile Include="Assets\LeanTween\Editor\LeanTweenDocumentationEditor.cs" />
-    <Compile Include="Assets\Mochineko\SimpleReorderableListSamples\DropDown\Editor\DropDownSampleEditor.cs" />
-    <Compile Include="Assets\Mochineko\SimpleReorderableListSamples\FixedElementCount\Editor\FixedElementCountSampleEditor.cs" />
-    <Compile Include="Assets\Mochineko\SimpleReorderableListSamples\FullyFixed\Editor\FullyFixedSampleEditor.cs" />
-    <Compile Include="Assets\Mochineko\SimpleReorderableListSamples\MultiProperty\Editor\MultiPropertySampleEditor.cs" />
-    <Compile Include="Assets\Mochineko\SimpleReorderableListSamples\NestedMultiProperty\Editor\NestedMultiPropertySampleEditor.cs" />
-    <Compile Include="Assets\Mochineko\SimpleReorderableListSamples\SingleProperty\Editor\SinglePropertySampleEditor.cs" />
+    <Compile Include="Assets\UnityAssets\AssetStoreOriginals\_SNAPS_PrototypingAssets\About\Scripts\Editor\ReadmeEditor.cs" />
+    <Compile Include="Assets\UnityAssets\AssetStoreOriginals\_SNAPS_PrototypingAssets\Scripts\Editor\PackageChecker\PackageChecker.cs" />
+    <Compile Include="Assets\UnityAssets\JMO Assets\Cartoon FX Easy Editor\Editor\CFXEasyEditor.cs" />
+    <Compile Include="Assets\UnityAssets\JMO Assets\WarFX\Editor\CFX_SpawnSystemEditor.cs" />
+    <Compile Include="Assets\UnityAssets\LeanTween\Editor\LeanTweenDocumentationEditor.cs" />
+    <Compile Include="Assets\UnityAssets\Mochineko\SimpleReorderableListSamples\DropDown\Editor\DropDownSampleEditor.cs" />
+    <Compile Include="Assets\UnityAssets\Mochineko\SimpleReorderableListSamples\FixedElementCount\Editor\FixedElementCountSampleEditor.cs" />
+    <Compile Include="Assets\UnityAssets\Mochineko\SimpleReorderableListSamples\FullyFixed\Editor\FullyFixedSampleEditor.cs" />
+    <Compile Include="Assets\UnityAssets\Mochineko\SimpleReorderableListSamples\MultiProperty\Editor\MultiPropertySampleEditor.cs" />
+    <Compile Include="Assets\UnityAssets\Mochineko\SimpleReorderableListSamples\NestedMultiProperty\Editor\NestedMultiPropertySampleEditor.cs" />
+    <Compile Include="Assets\UnityAssets\Mochineko\SimpleReorderableListSamples\SingleProperty\Editor\SinglePropertySampleEditor.cs" />
+    <Compile Include="Assets\UnityAssets\Plugins\GitHub\Editor\ExtensionLoader.cs" />
+    <Compile Include="Assets\UnityAssets\Plugins\GitHub\Editor\UnityAPIWrapper.cs" />
     <Compile Include="Assets\UnityAssets\Standard Assets\Editor\CrossPlatformInput\CrossPlatformInputInitialize.cs" />
     <Compile Include="Assets\UnityAssets\Standard Assets\Editor\Water\Water4\GerstnerDisplaceEditor.cs" />
     <Compile Include="Assets\UnityAssets\Standard Assets\Editor\Water\Water4\PlanarReflectionEditor.cs" />
     <Compile Include="Assets\UnityAssets\Standard Assets\Editor\Water\Water4\SpecularLightingEditor.cs" />
     <Compile Include="Assets\UnityAssets\Standard Assets\Editor\Water\Water4\WaterBaseEditor.cs" />
     <Compile Include="Assets\UnityAssets\Standard Assets\Editor\Water\Water4\WaterEditorUtility.cs" />
-    <Compile Include="Assets\WorldBuilder\Editor\World.cs" />
-    <Compile Include="Assets\WorldBuilder\Editor\WorldGen.cs" />
-    <None Include="Assets\AssetStoreOriginals\_SNAPS_PrototypingAssets\Scripts\Editor\PackageChecker\settings\PackageImportList_ShaderGraph.txt" />
-    <None Include="Assets\AssetStoreOriginals\_SNAPS_PrototypingAssets\Scripts\Editor\PackageChecker\PackageImportList.txt" />
+    <Compile Include="Assets\UnityAssets\WorldBuilder\Editor\World.cs" />
+    <Compile Include="Assets\UnityAssets\WorldBuilder\Editor\WorldGen.cs" />
+    <None Include="Assets\UnityAssets\Plugins\GitHub\Editor\credits.txt" />
+    <None Include="Assets\UnityAssets\Plugins\GitHub\Editor\eula.txt" />
+    <None Include="Assets\UnityAssets\AssetStoreOriginals\_SNAPS_PrototypingAssets\Scripts\Editor\PackageChecker\settings\PackageImportList_ShaderGraph.txt" />
+    <None Include="Assets\UnityAssets\AssetStoreOriginals\_SNAPS_PrototypingAssets\Scripts\Editor\PackageChecker\PackageImportList.txt" />
     <Reference Include="UnityEditor.TestRunner">
       <HintPath>S:/CyberPunk2020/CyberPunk2020/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
     </Reference>
@@ -326,6 +330,9 @@
     <Reference Include="UnityEngine.XRModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.XRModule.dll</HintPath>
     </Reference>
+    <Reference Include="Assembly-CSharp-Editor-firstpass">
+      <HintPath>S:/CyberPunk2020/CyberPunk2020/Library/ScriptAssemblies/Assembly-CSharp-Editor-firstpass.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEditor.VR">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.3f1/Editor/Data/UnityExtensions/Unity/UnityVR/Editor/UnityEditor.VR.dll</HintPath>
     </Reference>
@@ -338,23 +345,23 @@
     <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
       <HintPath>C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/15.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
-    <Reference Include="GitHub.Api.45">
-      <HintPath>S:/CyberPunk2020/CyberPunk2020/Assets/Plugins/GitHub/Editor/GitHub.Api.45.dll</HintPath>
+    <Reference Include="CoherentNoise">
+      <HintPath>S:/CyberPunk2020/CyberPunk2020/Assets/UnityAssets/WorldBuilder/Scripts/Helpers/CoherentNoise.dll</HintPath>
     </Reference>
-    <Reference Include="GitHub.Logging">
-      <HintPath>S:/CyberPunk2020/CyberPunk2020/Assets/Plugins/GitHub/Editor/GitHub.Logging.dll</HintPath>
+    <Reference Include="GitHub.Api.45">
+      <HintPath>S:/CyberPunk2020/CyberPunk2020/Assets/UnityAssets/Plugins/GitHub/Editor/GitHub.Api.45.dll</HintPath>
     </Reference>
     <Reference Include="GitHub.Unity.45">
-      <HintPath>S:/CyberPunk2020/CyberPunk2020/Assets/Plugins/GitHub/Editor/GitHub.Unity.45.dll</HintPath>
-    </Reference>
-    <Reference Include="GitHub.UnityShim">
-      <HintPath>S:/CyberPunk2020/CyberPunk2020/Assets/Plugins/GitHub/Editor/GitHub.UnityShim.dll</HintPath>
+      <HintPath>S:/CyberPunk2020/CyberPunk2020/Assets/UnityAssets/Plugins/GitHub/Editor/GitHub.Unity.45.dll</HintPath>
     </Reference>
     <Reference Include="sfw.net">
-      <HintPath>S:/CyberPunk2020/CyberPunk2020/Assets/Plugins/GitHub/Editor/sfw.net.dll</HintPath>
+      <HintPath>S:/CyberPunk2020/CyberPunk2020/Assets/UnityAssets/Plugins/GitHub/Editor/sfw.net.dll</HintPath>
     </Reference>
-    <Reference Include="CoherentNoise">
-      <HintPath>S:/CyberPunk2020/CyberPunk2020/Assets/WorldBuilder/Scripts/Helpers/CoherentNoise.dll</HintPath>
+    <Reference Include="GitHub.UnityShim">
+      <HintPath>S:/CyberPunk2020/CyberPunk2020/Assets/UnityAssets/Plugins/GitHub/Editor/GitHub.UnityShim.dll</HintPath>
+    </Reference>
+    <Reference Include="GitHub.Logging">
+      <HintPath>S:/CyberPunk2020/CyberPunk2020/Assets/UnityAssets/Plugins/GitHub/Editor/GitHub.Logging.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
       <HintPath>S:/CyberPunk2020/CyberPunk2020/Library/PackageCache/com.unity.ext.nunit@1.0.0/net35/unity-custom/nunit.framework.dll</HintPath>
@@ -718,10 +725,6 @@
     <ProjectReference Include="Assembly-CSharp.csproj">
       <Project>{E2D58704-E7D0-E49C-D0A1-B83E5B35E2DE}</Project>
       <Name>Assembly-CSharp</Name>
-    </ProjectReference>
-    <ProjectReference Include="Assembly-CSharp-Editor-firstpass.csproj">
-      <Project>{23B6AD91-1ACB-5D4B-88F6-E905575B05C3}</Project>
-      <Name>Assembly-CSharp-Editor-firstpass</Name>
     </ProjectReference>
     <ProjectReference Include="Mochineko.SimpleReorderableList.Editor.csproj">
       <Project>{24D2CE6F-4575-C670-9453-9DDCDF71086E}</Project>
