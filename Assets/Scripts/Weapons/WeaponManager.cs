@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class WeaponManager : MonoBehaviour
 {
+    public static WeaponManager instance;
+
     public GameObject player;
 
     public Inventory inventory;
@@ -13,9 +15,24 @@ public class WeaponManager : MonoBehaviour
 
     public Weapon weapon = null;
 
-    private float lastShoot;
-    private bool reloading = false;
+    private float lastShootTime;
     private Item ammo;
+
+    private enum State{readyToShoot, reloading, shooting};
+    State state;
+
+    private void Awake()
+    {
+        if (instance != null)
+        {
+            Debug.LogError("More than one AudioManager in the scene");
+        }
+        else
+        {
+            instance = this;
+        }
+
+    }
 
     private void Start()
     {
@@ -24,24 +41,25 @@ public class WeaponManager : MonoBehaviour
 
     private void Update()
     {
-        try
-        {
-            updateWeapon();         // TODO: call it only when items in hand are changing
-        }
-        catch { }
-
         if (weapon != null
-            && inventory.slots.ContainsKey(Slots.Primary)                      // has weapon in hand
+            && inventory.slots.ContainsKey(Slots.Primary)                      
             && inventory.slots[Slots.Primary].data.type == ItemType.Gun)
         {
-            
-            if (weapon.getData().isAutomatic)                                  // auto
+            if (hasAmmo())
             {
-                autoWeaponHandler();
+                if (weapon.getData().isAutomatic)                                  
+                {
+                    autoWeaponHandler();
+                }
+                else
+                {
+                    singleWeaponHandler();
+                }
+                lastShootTime += Time.deltaTime;
             }
-            else
+            else if(Input.GetButtonDown("Fire1"))
             {
-                singleWeaponHandler();
+                Debug.Log("WeaponManager: no ammo in inventory");
             }
         }
         else if (Input.GetButtonDown("Fire1"))
@@ -53,7 +71,9 @@ public class WeaponManager : MonoBehaviour
 
     private bool hasAmmo()
     {
-        if (inventory.items[ItemType.Ammo].number > 0)
+        if ((inventory.items.ContainsKey(ItemType.Ammo)
+            && inventory.items[ItemType.Ammo].number > 0)
+            || weapon.getInGunAmmo() > 0)
         {
             return true;
         }
@@ -65,45 +85,55 @@ public class WeaponManager : MonoBehaviour
 
     private void singleWeaponHandler()
     {
-        //Debug.Log("WeaponManager: single shooting waiting for Fire1 down");
-        if (Input.GetButtonDown("Fire1"))
+        if (state != State.reloading)
         {
-            //Debug.Log("WeaponManager: single shot - checking gun");
-            if (!weapon.needReload())
+            if (Input.GetButtonDown("Fire1"))
             {
-                Debug.Log("WeaponManager: single shot");
-                shoot();
+                if (!weapon.needReload())
+                {
+                    Debug.Log("WeaponManager: single shot");
+                    shoot();
+                    lastShootTime = 0;
+                }
+                else
+                {
+                    state = State.reloading;
+                    Debug.Log("WeaponManager: single shot - reloading");
+                    inventory.items[ItemType.Ammo].number = weapon.reload(inventory.items[ItemType.Ammo].number);
+                }
             }
-            else
-            {
-                Debug.Log("WeaponManager: single shot - reloading");
-                inventory.items[ItemType.Ammo].number = weapon.reload(inventory.items[ItemType.Ammo].number);
-            }
+        }
+        else if (lastShootTime >= weapon.getData().reloadingTime)
+        {
+            state = State.readyToShoot;
         }
     }
 
     private void autoWeaponHandler()
     {
-        if (Input.GetButton("Fire1"))                              // wait for fire button
+        if (state != State.reloading)                                           // check if reloading
         {
-            if(lastShoot >= (1 / weapon.getData().fireRate))    // check if ready to shoot
+            if (Input.GetButton("Fire1"))                                       // wait for fire button
             {
-                if (!weapon.needReload())                       // check if there is ammo in weapon
+                if (lastShootTime >= (1.0f / weapon.getData().fireRate))        // check if ready to shoot
                 {
-                    Debug.Log("WeaponManager:  shooting");
-                    shoot();
+                    if (!weapon.needReload())                                   // check if there is ammo in weapon
+                    {
+                        Debug.Log("WeaponManager:  shooting, last shoot:" + lastShootTime);
+                        shoot();
+                    }
+                    else
+                    {
+                        state = State.reloading;
+                        inventory.items[ItemType.Ammo].number = weapon.reload(inventory.items[ItemType.Ammo].number);
+                    }
+                    lastShootTime = 0;
                 }
-                else
-                {
-                    inventory.items[ItemType.Ammo].number = weapon.reload(inventory.items[ItemType.Ammo].number);
-                }
-                lastShoot = 0;
             }
-            else
-            {
-                lastShoot += Time.deltaTime;
-            }
-            
+        }
+        else if (lastShootTime >= weapon.getData().reloadingTime)
+        {
+            state = State.readyToShoot;
         }
     }
 
@@ -118,7 +148,6 @@ public class WeaponManager : MonoBehaviour
         {
             if (inventory.slots[Slots.Primary].data.type == ItemType.Gun)
             {
-                //Debug.Log("update weapon: " + inventory.slots[Slots.Primary].itemId);
                 weapon = (Weapon)inventory.slots[Slots.Primary];
             }
             else
@@ -141,13 +170,9 @@ public class WeaponManager : MonoBehaviour
             {
                 Debug.Log("WeaponManager: Raycast hit");
 
-                //weapon.getData().gunFlash.Play();
-
                 Instantiate(weapon.getData().impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
-                //Instantiate(weapon.getData().gunFlash, fpsCamera.transform);
-                //Instantiate(weapon.getData().gunFlash);
 
-                findShootedNPC(hit);
+                findShotNPC(hit);
 
             }
         }
@@ -155,7 +180,7 @@ public class WeaponManager : MonoBehaviour
     }
 
     // TODO: NOW MUST HAVE UNICATE ID (NAME)
-    private void findShootedNPC(RaycastHit hit)
+    private void findShotNPC(RaycastHit hit)
     {
         var objShooted = GameObject.Find(hit.transform.name);
         try

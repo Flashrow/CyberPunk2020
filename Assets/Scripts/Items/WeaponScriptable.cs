@@ -9,6 +9,7 @@ public class WeaponScriptable : ItemScriptable
 
     public int inGunAmmo;
     public int magazineAmmo;
+    public float reloadingTime = 2.0f;
 
     public int fireRate = 5;
     public float range = 100f;

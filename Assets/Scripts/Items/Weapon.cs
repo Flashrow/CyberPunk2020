@@ -7,7 +7,6 @@ public class Weapon : Item {
 
     private string spriteName;
     private string scriptName;
-    //public new WeaponScriptable data;
 
     public Weapon()
     {
@@ -24,7 +23,6 @@ public class Weapon : Item {
 
     public override void LoadScriptableObject(string scriptName)
     {
-        //this.data = Resources.Load<WeaponScriptable>("Items/Weapons/" + scriptName);
         this.data = Resources.Load<WeaponScriptable>("Items/Weapons/" + scriptName);
         Debug.Log("Weapon: id - " + this.data.itemId);
         Debug.Log("Weapon: type - " + this.data.type);
@@ -86,5 +84,10 @@ public class Weapon : Item {
         {
             return 0;
         }
+    }
+
+    public void setModel(Transform transformStickTo)
+    {
+
     }
 }

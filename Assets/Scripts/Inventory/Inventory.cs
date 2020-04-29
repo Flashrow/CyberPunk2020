@@ -70,6 +70,7 @@ public class Inventory : ScriptableObject {
         }
         if (items[item.data.type].number <= 0) items.Remove (item.data.type);
         onInventoryChange ();
+        WeaponManager.instance.updateWeapon();
     }
 
     public void MoveItemToInventory (Slots slot) {
