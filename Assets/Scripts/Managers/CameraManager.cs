@@ -1,12 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
+/*
+cameraType:
+    0 - FirstPersonCamera
+    1 - ThirdPersonCamera
+Priority:
+    Player View -> 10
+    > 10 example Quest Interactions
+*/
 public class CameraManager : MonoBehaviour {
-    ushort FirstPearsonCamera = 0;
-    ushort ThirdPearsonCamera = 1;
-    public ushort CameraStart;
-    public ushort cameraType { get; private set; }
+    public bool FirstPearsonDefault;
 
     #region Singleton
     public static CameraManager Instance;
@@ -15,19 +21,13 @@ public class CameraManager : MonoBehaviour {
     }
     #endregion
 
-    public CameraManager () {
-        cameraType = CameraStart;
-    }
-
     void Start () {
-        if (cameraType == FirstPearsonCamera) {
-            FirstPearson.SetActive (true);
-            ThirdPearson.SetActive (false);
-            Current = FirstPearson;
+        if (FirstPearsonDefault) {
+            FirstPearson.Priority = 10;
+            ThirdPearson.Priority = 0;
         } else {
-            FirstPearson.SetActive (true);
-            ThirdPearson.SetActive (false);
-            Current = ThirdPearson;
+            FirstPearson.Priority = 0;
+            ThirdPearson.Priority = 10;
         }
     }
 
@@ -37,22 +37,21 @@ public class CameraManager : MonoBehaviour {
 
     void switchCamera () {
         if (Input.GetKeyDown (KeyCode.V)) {
-            if (cameraType == FirstPearsonCamera) {
-                cameraType = ThirdPearsonCamera;
-                FirstPearson.SetActive (false);
-                ThirdPearson.SetActive (true);
-                Current = ThirdPearson;
-            } else {
-                cameraType = FirstPearsonCamera;
-                FirstPearson.SetActive (true);
-                ThirdPearson.SetActive (false);
-                Current = FirstPearson;
+            if (Brain.IsLive(FirstPearson))
+            {
+                FirstPearson.Priority = 0;
+                ThirdPearson.Priority = 10;
+            }
+            else if (Brain.IsLive(ThirdPearson))
+            {
+                FirstPearson.Priority = 10;
+                ThirdPearson.Priority = 0;
             }
         }
     }
 
-    public Camera Brain;
-    public GameObject FirstPearson;
-    public GameObject ThirdPearson;
-    public GameObject Current { get; private set; }
+    public Camera MainCamera;
+    public CinemachineBrain Brain;
+    public CinemachineVirtualCamera FirstPearson;
+    public CinemachineVirtualCamera ThirdPearson;
 }

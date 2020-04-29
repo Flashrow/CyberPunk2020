@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using Cinemachine;
 
 public class NPCQuestInteractions : Interacted {
     bool isActive = false;
     public string NpcId;
-    public GameObject QuestCamera;
+    public CinemachineVirtualCamera QuestCamera;
     private NPCQuestAnimation anim = null;
     void Awake () {
         anim = GetComponentInChildren<NPCQuestAnimation> ();
@@ -15,8 +16,7 @@ public class NPCQuestInteractions : Interacted {
         if (isActive) {
             if (Input.GetKeyDown (KeyCode.Escape)) {
                 isActive = false;
-                QuestCamera.SetActive (false);
-                CameraManager.Instance.Current.gameObject.SetActive (true);
+                QuestCamera.Priority = 0;
                 PlayerManager.Instance.Player.GetComponent<CharacterController> ().enabled = true;
                 anim.AnimEndInteraction ();
             }
@@ -30,8 +30,7 @@ public class NPCQuestInteractions : Interacted {
         PlayerManager.Instance.Player.GetComponent<CharacterController> ().enabled = false;
         anim.AnimStartInteraction ();
         isActive = true;
-        CameraManager.Instance.Current.gameObject.SetActive (false);
-        QuestCamera.SetActive (true);
+        QuestCamera.Priority = 100;
     }
 
     public override void InInteraction () { }
