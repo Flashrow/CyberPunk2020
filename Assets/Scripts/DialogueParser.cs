@@ -31,15 +31,17 @@ public class DialogueParser : MonoBehaviour
         dialogueUI = Resources.Load<DialogueUI>("PreFabs/UI/Dialogue/DialogueUI");
     }
 
-    public void Parse(string questId)
+    public UnityEvent Parse(string dialogueId)
     {
         if (dialogueUITemp == null)
         {
-            dialogue = dialogues.GetQuestDialogues(questId).Peek();
+            dialogue = dialogues.GetDialogue(dialogueId);
             dialogueUITemp = (DialogueUI)Instantiate(dialogueUI);
             var narrativeData = dialogue.NodeLinks.First(); //Entrypoint node
             StartCoroutine(ProceedToNarrative(narrativeData.TargetNodeGUID));
+            return onEndDialog;
         }
+        return onEndDialog;
     }
 
     private IEnumerator ProceedToNarrative(string narrativeDataGUID)

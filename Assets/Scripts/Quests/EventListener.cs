@@ -9,6 +9,7 @@ public class EventListener : MonoBehaviour
     public class KillsEvent : UnityEvent<KillData> { };
     public class DialoguesEvent : UnityEvent { };
     public class PathEvent : UnityEvent<PathElementData> { };
+    public class InteractionEvent : UnityEvent<InteractionData> { };
 
     public static EventListener instance;
 
@@ -16,6 +17,7 @@ public class EventListener : MonoBehaviour
     public KillsEvent Kills;
     public DialoguesEvent Dialogues;
     public PathEvent Path;
+    public InteractionEvent Interaction;
 
     void Awake()
     {
@@ -32,7 +34,8 @@ public class EventListener : MonoBehaviour
             Kills = new KillsEvent();
         if (Inventory == null)
             Inventory = new InventoryEvent();
-
+        if (Interaction == null)
+            Interaction = new InteractionEvent();
         DontDestroyOnLoad(this);
     }
 }
