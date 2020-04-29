@@ -69,6 +69,10 @@ public class ChestsInteractions : Interacted {
             if (item is Coins) {
                 moneySystem.Add (item.number);
             } else {
+                EventListener.instance.Inventory.Invoke(new ItemData {
+                    item = item,
+                    eventType = ItemEventType.TAKEN
+                });
                 inventory.AddItem (item);
             }
         });

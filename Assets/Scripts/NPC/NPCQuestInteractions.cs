@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class NPCQuestInteractions : Interacted {
     bool isActive = false;
+    public string NpcId;
     public GameObject QuestCamera;
     private NPCQuestAnimation anim = null;
     void Awake () {
@@ -24,6 +26,7 @@ public class NPCQuestInteractions : Interacted {
 
     public override void OnInteract () {
         if (isActive) return;
+        EventListener.instance.Interaction.Invoke(new InteractionData { NpcId = this.NpcId, gameObject = this.gameObject });
         PlayerManager.Instance.Player.GetComponent<CharacterController> ().enabled = false;
         anim.AnimStartInteraction ();
         isActive = true;

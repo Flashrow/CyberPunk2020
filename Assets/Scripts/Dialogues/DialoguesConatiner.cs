@@ -1,43 +1,76 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 
 [CreateAssetMenu(fileName = "DialogueContainer", menuName = "DialogueContainer")]
 public class DialoguesConatiner : ScriptableObject
 {
     [System.Serializable]
-    class DialoguesConatinerListItem
+    public class DialoguesConatinerListItem
     {
-        [SerializeField] public string questId;
+        [SerializeField] public string dialogueId;
         [SerializeField] public DialogueContainer dialogue;
     }
 
     [SerializeField] List<DialoguesConatinerListItem> questDialoguesList = new List<DialoguesConatinerListItem>();
-    public Dictionary<string, Queue<DialogueContainer>> questDialogues = new Dictionary<string, Queue<DialogueContainer>>();
+    public Dictionary<string, DialogueContainer> questDialogues = new Dictionary<string, DialogueContainer>();
 
     public void OnEnable()
     {
         questDialoguesList.ForEach(item =>
         {
-            if (questDialogues.ContainsKey(item.questId))
+            if (questDialogues.ContainsKey(item.dialogueId))
             {
-                questDialogues[item.questId].Enqueue(item.dialogue);
+                //questDialogues.Add(item.dialogueId,item.dialogue);
             }
             else
             {
-                questDialogues.Add(item.questId, new Queue<DialogueContainer>());
-                questDialogues[item.questId].Enqueue(item.dialogue);
+                questDialogues.Add(item.dialogueId, item.dialogue);
             }
         });
     }
    
-    public Queue<DialogueContainer> GetQuestDialogues(string questId)
+    public DialogueContainer GetDialogue(string dialogueId)
     {
-        return questDialogues[questId];
+        return questDialogues[dialogueId];
     }
 
-    public void RemoveDialog(string questId)
+    public void RemoveDialog(string dialogueId)
     {
-        questDialogues[questId].Dequeue();
+        questDialogues.Remove(dialogueId);
+    }
+}
+
+namespace Mochineko.SimpleReorderableList.Samples.Editor
+{
+    [CustomEditor(typeof(DialoguesConatiner))]
+    public class MultiPropertySampleEditor : UnityEditor.Editor
+    {
+        private ReorderableList reorderableList;
+
+        private void OnEnable()
+        {
+            reorderableList = new ReorderableList(
+                serializedObject.FindProperty("questDialoguesList")
+            );
+        }
+
+        public override void OnInspectorGUI()
+        {
+            serializedObject.Update();
+            //DrawDefaultInspector();
+            EditorGUI.BeginChangeCheck();
+            {
+                EditorFieldUtility.ReadOnlyComponentField(target as MonoBehaviour, this);
+
+                if (reorderableList != null)
+                    reorderableList.Layout();
+            }
+            if (EditorGUI.EndChangeCheck())
+            {
+                serializedObject.ApplyModifiedProperties();
+            }
+        }
     }
 }

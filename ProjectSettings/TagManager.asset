@@ -6,6 +6,7 @@ TagManager:
   tags:
   - InteractObject
   - QuickMenu
+  - Target
   layers:
   - Default
   - TransparentFX
@@ -15,8 +16,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - Minimap
+  - No Minimap
   - 
   - 
   - 
