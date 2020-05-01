@@ -47,7 +47,7 @@ public class Interacted : MonoBehaviour {
         try {
             DestroyImmediate (labelTemp.gameObject);
         } catch { }finally {
-            UIManager.UIUnlock ();
+            UImanager.UIUnlock ();
         }
     }
 
@@ -58,7 +58,7 @@ public class Interacted : MonoBehaviour {
     void KeyListener () {
         if (Input.GetKeyDown (KeyCode.F)) {
             OnInteract ();
-            UIManager.UIBlock ();
+            UImanager.UIBlock ();
         }
     }
 

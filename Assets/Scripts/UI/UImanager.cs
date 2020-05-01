@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UIManager : MonoBehaviour {
+public class UImanager : MonoBehaviour {
     static private GameObject gameInterface;
-    [SerializeField] private GameObject quickMenu;
+    [SerializeField] private GameObject quickMenuCanvas;
     static private List<GameObject> elements = new List<GameObject> ();
     static public bool isOpen { get; private set; }
     static public bool isBlock { get; private set; }
@@ -20,7 +20,7 @@ public class UIManager : MonoBehaviour {
             if (isOpen == true && Input.GetKeyDown (KeyCode.Escape)) {
                 UIPermentClose ();
             } else if (isOpen == false && Input.GetKeyDown (KeyCode.Escape)) {
-                UIOpen (ref quickMenu);
+                UIOpen (ref quickMenuCanvas);
             }
         }
     }
