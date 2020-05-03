@@ -106,8 +106,11 @@
     <Compile Include="Assets\Scripts\Managers\PlayerManager.cs" />
     <Compile Include="Assets\Scripts\MapScripts\Audio\AudioManager.cs" />
     <Compile Include="Assets\Scripts\MapScripts\Audio\Sound.cs" />
-    <Compile Include="Assets\Scripts\MapScripts\Minimap.cs" />
+    <Compile Include="Assets\Scripts\MapScripts\Marker.cs" />
+    <Compile Include="Assets\Scripts\MapScripts\MinimapCamera.cs" />
+    <Compile Include="Assets\Scripts\MapScripts\MinimapEvents.cs" />
     <Compile Include="Assets\Scripts\MapScripts\MinimapTargetsRender.cs" />
+    <Compile Include="Assets\Scripts\MapScripts\SetMarkerColor.cs" />
     <Compile Include="Assets\Scripts\Menus\MainMenu.cs" />
     <Compile Include="Assets\Scripts\Menus\QuickMenu.cs" />
     <Compile Include="Assets\Scripts\NPC\NPCAnimation.cs" />
@@ -130,7 +133,6 @@
     <Compile Include="Assets\Scripts\Quests\QuestData.cs" />
     <Compile Include="Assets\Scripts\Quests\QuestManager.cs" />
     <Compile Include="Assets\Scripts\Quests\Quests\Quest1.cs" />
-    <Compile Include="Assets\Scripts\Quests\TargetArrowScript.cs" />
     <Compile Include="Assets\Scripts\Quests\Task.cs" />
     <Compile Include="Assets\Scripts\Quests\Tasks\TaskGetItem.cs" />
     <Compile Include="Assets\Scripts\Quests\Tasks\TaskGoTo.cs" />
