@@ -27,7 +27,7 @@ public class Inventory : ScriptableObject {
             }
             catch 
             {
-                Debug.LogError("Inventory: onAddItemInventory()");
+                Debug.Log("Inventory: onAddItemInventory()");
             }
         }
         else
