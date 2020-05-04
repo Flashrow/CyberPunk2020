@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c873c5ec4de2f25419787ec463fbb016, type: 3}
   m_Name: TaskGetAmmo
   m_EditorClassIdentifier: 
-  id: 
-  QuestId: 
-  title: 
-  description: 
+  id: task0
+  QuestId: Quest1
+  title: GetAmmo
+  description: GetAmmoDescription
   status: 0
   order: 0
   type: 1

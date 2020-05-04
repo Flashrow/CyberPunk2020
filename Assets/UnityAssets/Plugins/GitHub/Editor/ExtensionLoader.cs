@@ -25,7 +25,7 @@ namespace GitHub.Unity
 
         private static bool inSourceMode = false;
         private const string sourceModePath = "Assets/Editor/build/";
-        private const string realPath = "Assets/Plugins/GitHub/Editor/";
+        private const string realPath = "Assets/UnityAssets/Plugins/GitHub/Editor/";
 
         private static string[] assemblies20 = { "System.Threading.dll", "AsyncBridge.Net35.dll", "ReadOnlyCollectionsInterfaces.dll", "GitHub.Api.dll", "GitHub.Unity.dll" };
         private static string[] assemblies45 = { "GitHub.Api.45.dll", "GitHub.Unity.45.dll" };

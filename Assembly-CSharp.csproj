@@ -132,6 +132,7 @@
     <Compile Include="Assets\Scripts\Quests\Quest.cs" />
     <Compile Include="Assets\Scripts\Quests\QuestData.cs" />
     <Compile Include="Assets\Scripts\Quests\QuestManager.cs" />
+    <Compile Include="Assets\Scripts\Quests\QuestUICanvas.cs" />
     <Compile Include="Assets\Scripts\Quests\Quests\Quest1.cs" />
     <Compile Include="Assets\Scripts\Quests\Task.cs" />
     <Compile Include="Assets\Scripts\Quests\Tasks\TaskGetItem.cs" />
