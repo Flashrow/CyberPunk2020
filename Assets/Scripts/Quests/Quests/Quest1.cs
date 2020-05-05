@@ -31,4 +31,14 @@ public class Quest1 : Quest
     {
 
     }
+
+    public override void PlayerAboartQuest()
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public override void PlayerAcceptQuest()
+    {
+        throw new System.NotImplementedException();
+    }
 }

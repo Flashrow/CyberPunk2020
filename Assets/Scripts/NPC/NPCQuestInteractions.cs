@@ -9,6 +9,7 @@ public class NPCQuestInteractions : Interacted {
     public string NpcId;
     public CinemachineVirtualCamera QuestCamera;
     private NPCQuestAnimation anim = null;
+    [SerializeField] QuestData questData = null;
     void Awake () {
         anim = GetComponentInChildren<NPCQuestAnimation> ();
     }
@@ -17,7 +18,6 @@ public class NPCQuestInteractions : Interacted {
             if (Input.GetKeyDown (KeyCode.Escape)) {
                 OnEscape();
             }
-            // TODO Kamil: Interactions
         }
     }
 
@@ -32,13 +32,14 @@ public class NPCQuestInteractions : Interacted {
 
     public override void OnInteract () {
         if (isActive) return;
+        QuestManager.instance.MountQuest(questData);
         EventListener.instance.Interaction.Invoke(new InteractionData {
             NpcId = this.NpcId,
             gameObject = this.gameObject,
             EndInteraction = () => OnEscape(),
             DialogueParser = gameObject.GetComponent<DialogueParser>()
         });
-        gameObject.GetComponent<DialogueParser>().Parse(NpcId).AddListener(() =>
+        gameObject.GetComponent<DialogueParser>().Parse(NpcId, questData.QuestId).AddListener(() =>
         {
             OnEscape();
             Debug.Log("Koniec Dialogu");

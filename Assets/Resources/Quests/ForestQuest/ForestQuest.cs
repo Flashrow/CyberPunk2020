@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ForestQuest : Quest
 {
+    private string NpcId = "GrandMa";
     // Start is called before the first frame update
     void Start()
     {
@@ -17,7 +18,7 @@ public class ForestQuest : Quest
 
         EventListener.instance.Interaction.AddListener(data =>
         {
-            if (data.NpcId == "GrandMa")
+            if (data.NpcId == NpcId)
             {
                 /*data.DialogueParser.Parse(data.NpcId).AddListener(() =>
                 {
@@ -49,6 +50,16 @@ public class ForestQuest : Quest
     void Update()
     {
         
+    }
+
+    public override void PlayerAboartQuest()
+    {
+        Debug.Log("Quest aboard");
+    }
+
+    public override void PlayerAcceptQuest()
+    {
+        QuestManager.instance.Quests["ForestQuest"].isActive = true;
     }
 
     private void Awake()

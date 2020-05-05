@@ -7,6 +7,7 @@ public enum QuestStatus { IN_PROGRESS, DONE, TODO};
 public abstract class Quest : MonoBehaviour
 {
     public string QuestId;
+    public bool isActive = false;
     public QuestData data;
     public Task activeTask;
     public Dictionary<string, Queue<string>> dialoguesQueue = new Dictionary<string, Queue<string>>();
@@ -25,5 +26,8 @@ public abstract class Quest : MonoBehaviour
     {
         dialoguesQueue.Add(NPCid, new Queue<string>());
     }
+
+    public abstract void PlayerAboartQuest();
+    public abstract void PlayerAcceptQuest();
 }
 

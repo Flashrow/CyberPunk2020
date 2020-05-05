@@ -16,6 +16,7 @@ public class DialogueParser : MonoBehaviour
     private DialogueUI dialogueUI;
     private DialogueUI dialogueUITemp;
     private string NPCid;
+    private string questId;
 
     [NonSerialized] public UnityEvent onEndDialog = new UnityEvent();
 
@@ -33,12 +34,13 @@ public class DialogueParser : MonoBehaviour
         dialogueUI = Resources.Load<DialogueUI>("PreFabs/UI/Dialogue/DialogueUI");
     }
 
-    public UnityEvent Parse(string NPCid)
+    public UnityEvent Parse(string NPCid, string questId)
     {
         if (dialogueUITemp == null)
         {
             this.NPCid = NPCid;
-            dialogue = dialogues.GetDialogue(QuestManager.instance.activeQuest.dialoguesQueue[NPCid].Dequeue());
+            this.questId = questId;
+            dialogue = dialogues.GetDialogue(QuestManager.instance.Quests[questId].dialoguesQueue[NPCid].Dequeue());
             dialogueUITemp = (DialogueUI)Instantiate(dialogueUI);
             var narrativeData = dialogue.NodeLinks.First(); //Entrypoint node
             StartCoroutine(ProceedToNarrative(narrativeData.TargetNodeGUID));
@@ -98,17 +100,17 @@ public class DialogueParser : MonoBehaviour
     {
         if (dialogues.GetDialogue(GetDialogueNode(narrativeDataGUID).Callback))
         {
-            QuestManager.instance.activeQuest.dialoguesQueue[NPCid].Enqueue(GetDialogueNode(narrativeDataGUID).Callback);
+           QuestManager.instance.Quests[this.questId].dialoguesQueue[NPCid].Enqueue(GetDialogueNode(narrativeDataGUID).Callback);
         }
     }
 
     private void RunQuestMethodIfExists(string narrativeDataGUID)
     {
         string methodName = GetDialogueNode(narrativeDataGUID).Callback;
-        MethodInfo mi = QuestManager.instance.activeQuest.GetType().GetMethod(methodName);
+        MethodInfo mi = QuestManager.instance.Quests[this.questId].GetType().GetMethod(methodName);
         try
         {
-            mi.Invoke(QuestManager.instance.activeQuest, null);
+            mi.Invoke(QuestManager.instance.Quests[this.questId], null);
         } catch { };
     }
 

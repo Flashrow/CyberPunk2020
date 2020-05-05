@@ -15,21 +15,30 @@ public class QuestUICanvas : MonoBehaviour
     {
         if (QuestManager.instance.Quests.Count > 0)
         {
-            QuestManager.instance.Quests.ForEach(el =>
+            foreach(KeyValuePair<string, Quest> entry in QuestManager.instance.Quests)
             {
+                if (entry.Value.isActive == false) continue;
+                Debug.Log("Some active quest");
                 GameObject go = Resources.Load("PreFabs/UI/Quests/QuestBtn") as GameObject;
                 GameObject clone = Instantiate(go);
                 clone.transform.parent = questsBox;
                 clone.transform.localScale = new Vector3Int(1, 1, 1);
-                if (el.title == null)
+                if (entry.Value.data.title == null)
                     clone.GetComponentInChildren<Text>().text = "";
                 else
-                    clone.GetComponentInChildren<Text>().text = el.title;
-                clone.GetComponent<Button>().onClick.AddListener(() => {
-                    this.ShowQuestContent(el);
+                    clone.GetComponentInChildren<Text>().text = entry.Value.data.title;
+                clone.GetComponent<Button>().onClick.AddListener(() =>
+                {
+                    this.ShowQuestContent(entry.Value.data);
                 });
-            });
-            this.ShowQuestContent(QuestManager.instance.Quests[0]);
+            }
+            foreach (KeyValuePair<string, Quest> entry in QuestManager.instance.Quests)
+            {
+                if(entry.Value.isActive) { 
+                    this.ShowQuestContent(entry.Value.data);
+                    break;
+                }
+            }
         }
     }
 
