@@ -9,9 +9,8 @@ public class Coins : Item {
         number = 0;
     }
 
-    public override Item CreateInstance()
-    {
-        Coins newCoins = new Coins();
+    public override Item CreateInstance () {
+        Coins newCoins = new Coins ();
         newCoins.number = number;
         newCoins.cost = cost;
         return newCoins;

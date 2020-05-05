@@ -1,26 +1,43 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+using Cinemachine;
 
 public class NPCQuestInteractions : Interacted {
     bool isActive = false;
-    public GameObject QuestCamera;
+    public string NpcId;
+    public CinemachineVirtualCamera QuestCamera;
+    private NPCQuestAnimation anim = null;
+    void Awake () {
+        anim = GetComponentInChildren<NPCQuestAnimation> ();
+    }
     void Update () {
         if (isActive) {
             if (Input.GetKeyDown (KeyCode.Escape)) {
-                isActive = false;
-                QuestCamera.SetActive (false);
-                CameraManager.Instance.Current.gameObject.SetActive (true);
+                OnEscape();
             }
             // TODO Kamil: Interactions
         }
     }
 
+    void OnEscape()
+    {
+        QuestCamera.Priority = 0;
+        anim.AnimEndInteraction();
+        MinimapEvents.TurnOn.Invoke();
+        PlayerManager.EnableMovement.Invoke();
+        isActive = false;
+    }
+
     public override void OnInteract () {
         if (isActive) return;
+        EventListener.instance.Interaction.Invoke(new InteractionData { NpcId = this.NpcId, gameObject = this.gameObject, EndInteraction = () => OnEscape() });
+        PlayerManager.DisableMovement.Invoke();
+        QuestCamera.Priority = 100;
+        MinimapEvents.TurnOff.Invoke();
+        anim.AnimStartInteraction();
         isActive = true;
-        CameraManager.Instance.Current.gameObject.SetActive (false);
-        QuestCamera.SetActive (true);
     }
 
     public override void InInteraction () { }

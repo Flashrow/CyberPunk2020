@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 121c4fc29e57898459a998fb91cc4c77, type: 3}
+  m_Name: QuestData
+  m_EditorClassIdentifier: 
+  QuestId: Quest1
+  title: Testowy Quest
+  description: Opis
+  status: 2
+  QuestClassString: Quest1
+  tasks:
+  - {fileID: 11400000, guid: 9fbd1e845eac8954393af7300adf3dcb, type: 2}
+  - {fileID: 11400000, guid: f11d8d9eee160e442b315ad598eb9fb8, type: 2}
+  - {fileID: 11400000, guid: f11d8d9eee160e442b315ad598eb9fb8, type: 2}

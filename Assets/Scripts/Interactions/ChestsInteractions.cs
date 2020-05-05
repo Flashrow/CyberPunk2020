@@ -5,7 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public class ItemProbability {
     public Item item;
-    [Range(0,100)]
+    [Range (0, 100)]
     public int probability;
     public int cost;
     public int number;
@@ -28,18 +28,16 @@ public class ChestsInteractions : Interacted {
     private Inventory inventory;
 
     [SerializeField]
-    public List<ItemProbability> itemProbability = new List<ItemProbability>();
+    public List<ItemProbability> itemProbability = new List<ItemProbability> ();
 
-    void LoadItemsDictionary()
-    {
-        foreach (ItemProbability item in itemProbability)
-        {
-            item.item = Item.CreateItemObjectByType(item.type);
+    void LoadItemsDictionary () {
+        foreach (ItemProbability item in itemProbability) {
+            item.item = Item.CreateItemObjectByType (item.type);
             item.item.cost = item.cost;
             item.item.number = item.number;
         }
     }
- 
+
     void RandomItems () {
         LoadItemsDictionary ();
         foreach (ItemProbability item in itemProbability) {
@@ -71,6 +69,10 @@ public class ChestsInteractions : Interacted {
             if (item is Coins) {
                 moneySystem.Add (item.number);
             } else {
+                EventListener.instance.Inventory.Invoke(new ItemData {
+                    item = item,
+                    eventType = ItemEventType.TAKEN
+                });
                 inventory.AddItem (item);
             }
         });

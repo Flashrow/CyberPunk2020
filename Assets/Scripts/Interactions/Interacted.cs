@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Interacted : MonoBehaviour {
-    [SerializeField, Header ("Label Settings")]
-    InteractionLabel label;
+    [Header ("Label Settings")]
     InteractionLabel labelTemp;
 
     [SerializeField]
@@ -21,7 +20,7 @@ public class Interacted : MonoBehaviour {
 
     void CreateLabel (Transform transform) {
         if (labelTemp == null) {
-            labelTemp = (InteractionLabel) Instantiate (label, transform);
+            labelTemp = (InteractionLabel) Instantiate (Resources.Load<InteractionLabel>("PreFabs/InteractionLabel"), transform);
             labelTemp.SetLabel (labelText);
             InteractionRadius.onIntegrate += DestroyIfNotActive;
             try {
@@ -47,7 +46,9 @@ public class Interacted : MonoBehaviour {
     public void DestroyLabel () {
         try {
             DestroyImmediate (labelTemp.gameObject);
-        } catch { }
+        } catch { }finally {
+            UImanager.UIUnlock ();
+        }
     }
 
     void SetLabelPosition (float height) {
@@ -57,6 +58,7 @@ public class Interacted : MonoBehaviour {
     void KeyListener () {
         if (Input.GetKeyDown (KeyCode.F)) {
             OnInteract ();
+            UImanager.UIBlock ();
         }
     }
 

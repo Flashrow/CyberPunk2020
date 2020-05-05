@@ -14,7 +14,7 @@ public class InteractionRadius : MonoBehaviour {
     public static OnIntegrate onIntegrate;
     // Start is called before the first frame update
     void Start () {
-        mainCamera = CameraManager.Instance.Brain;
+        mainCamera = CameraManager.Instance.MainCamera;
     }
 
     // Update is called once per frame

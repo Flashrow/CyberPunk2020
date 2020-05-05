@@ -39,7 +39,7 @@ public class Item {
         //this.sprite = Resources.Load<Sprite>("Sprites/Items/" + spriteName);
     }
 
-    public void LoadScriptableObject (string scriptName) {
+    public virtual void LoadScriptableObject (string scriptName) {
         this.data = Resources.Load<ItemScriptable> ("Items/" + scriptName);
     }
 
@@ -47,20 +47,21 @@ public class Item {
         return new Item ();
     }
 
-    static public Item CreateItemObjectByType(ItemType type)
-    {
-        switch (type)
-        {
+    static public Item CreateItemObjectByType (ItemType type) {
+        switch (type) {
             case ItemType.Ammo:
-                return new Ammo();
+                return new Ammo ();
             case ItemType.Coins:
-                return new Coins();
+                return new Coins ();
             case ItemType.Phone:
-                return new Phone();
+                return new Phone ();
             case ItemType.Tools:
                 return new Tools();
+            case ItemType.Gun:
+                Debug.Log("Item: Create weapon");
+                return new Weapon("rifle","rifle");
             default:
-                return new Item();
+                return new Item ();
         }
     }
 }

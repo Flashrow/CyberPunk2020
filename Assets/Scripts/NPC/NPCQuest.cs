@@ -4,23 +4,28 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class NPCQuest : NPCCharacter {
+    public float DetectPlayerRadius = 7f;
+    private NPCQuestAnimation anim = null;
+    protected override void onAwake () {
+        anim = GetComponentInChildren<NPCQuestAnimation> ();
+    }
     public override void OnDrawGizmosSelected () {
         Gizmos.color = Color.green;
-        Gizmos.DrawWireSphere (transform.position, PlayerDetectArea);
+        Gizmos.DrawWireSphere (transform.position, DetectPlayerRadius);
     }
     public override void OnHit (float val) {
+        anim.AnimHit ();
         throw new NPCShootedException ("YOU HIT: NPC_QUEST");
     }
     protected override void isMovable (float dist) {
-        if (dist <= PlayerDetectArea) {
+        anim.AnimSetSpeed ((int) movementScript.Agent.speed);
+        if (dist <= DetectPlayerRadius) {
             FaceTarget ();
-            if (dist <= agent.stoppingDistance) {
-                agent.SetDestination (player.position);
-            }
-        } else movementScript.Spot (agent);
+            movementScript.Idle ();
+        } else movementScript.Spot ();
     }
     protected override void isStatic (float dist) {
-        if (dist <= PlayerDetectArea) {
+        if (dist <= DetectPlayerRadius) {
             FaceTarget ();
         }
     }

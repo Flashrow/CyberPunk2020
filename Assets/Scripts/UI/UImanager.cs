@@ -1,30 +1,62 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class UImanager : MonoBehaviour {
-    // Start is called before the first frame update
-    public GameObject inventoryUI;
-    public GameObject gameIntervaceUI;
-
-    void Start () {
-        inventoryUI.SetActive (false);
+    static private GameObject gameInterface;
+    [SerializeField] private GameObject quickMenuCanvas;
+    static private List<GameObject> elements = new List<GameObject> ();
+    static public bool isOpen { get; private set; }
+    static public bool isBlock { get; private set; }
+    void Awake () {
+        gameInterface = GameObject.Find ("GameInterface");
+        isOpen = false;
+        isBlock = false;
     }
-
-    // Update is called once per frame
     void Update () {
-        if (Input.GetKeyDown (KeyCode.E)) {
-            inventoryUI.SetActive (true);
-            gameIntervaceUI.SetActive (false);
-        }
-        if (Input.GetKeyDown (KeyCode.Escape)) {
-            CloseInventory ();
+        if (isBlock == false) {
+            if (isOpen == true && Input.GetKeyDown (KeyCode.Escape)) {
+                UIPermentClose ();
+            } else if (isOpen == false && Input.GetKeyDown (KeyCode.Escape)) {
+                UIOpen (ref quickMenuCanvas);
+            }
         }
     }
-
-    public void CloseInventory () {
-        inventoryUI.SetActive (false);
-        gameIntervaceUI.SetActive (true);
+    static public void UIOpen (ref GameObject go) {
+        if (elements.Count == 0) {
+            gameInterface.SetActive (false);
+            isOpen = true;
+        } else {
+            elements[elements.Count - 1].SetActive (false);
+        }
+        elements.Add (go);
+        elements[elements.Count - 1].SetActive (true);
+    }
+    static public void UIReturn () {
+        elements[elements.Count - 1].SetActive (false);
+        elements.RemoveAt (elements.Count - 1);
+        if (elements.Count == 0) {
+            gameInterface.SetActive (true);
+            isOpen = false;
+        } else {
+            elements[elements.Count - 1].SetActive (true);
+        }
+    }
+    static public void UIPermentClose () {
+        foreach (var item in elements)
+            item.SetActive (false);
+        elements.Clear ();
+        gameInterface.SetActive (true);
+        isOpen = false;
+    }
+    static public void UIBlock () {
+        isBlock = true;
+    }
+    static public void UIUnlock () {
+        isBlock = false;
     }
 }
+
+public class UIException : System.Exception { }

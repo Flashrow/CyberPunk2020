@@ -26,37 +26,48 @@ public class basMovement : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        moveDirection = transform.right * Input.GetAxis ("Horizontal") +
-            transform.forward * Input.GetAxis ("Vertical");
+        if(PlayerManager.Instance.Player.GetComponent<CharacterController>().enabled == true)
+        {
+            moveDirection = transform.right * Input.GetAxis("Horizontal") +
+           transform.forward * Input.GetAxis("Vertical");
 
-        if (controller.isGrounded &&
-            velocity.y <= 0) {
-            velocity.y = -2f;
-        }
-
-        if (controller.isGrounded && Input.GetButtonDown ("Jump")) {
-            velocity.y = Mathf.Sqrt (jumpHeight * 2f * gravity);
-        }
-
-        velocity.y -= gravity * Time.deltaTime;
-
-        if (moveDirection != Vector3.zero) {
-            if (Input.GetKey (KeyCode.LeftShift)) {
-                if (controller.isGrounded) {
-                    stepSound (stepType.sprint);
-                }
-
-                controller.Move (sprintSpeed * moveDirection * Time.deltaTime);
-            } else {
-                if (controller.isGrounded) {
-                    stepSound (stepType.trot);
-                }
-
-                controller.Move (trotSpeed * moveDirection * Time.deltaTime);
+            if (controller.isGrounded &&
+                velocity.y <= 0)
+            {
+                velocity.y = -2f;
             }
-        }
 
-        controller.Move (velocity * Time.deltaTime);
+            if (controller.isGrounded && Input.GetButtonDown("Jump"))
+            {
+                velocity.y = Mathf.Sqrt(jumpHeight * 2f * gravity);
+            }
+
+            velocity.y -= gravity * Time.deltaTime;
+
+            if (moveDirection != Vector3.zero)
+            {
+                if (Input.GetKey(KeyCode.LeftShift))
+                {
+                    if (controller.isGrounded)
+                    {
+                        stepSound(stepType.sprint);
+                    }
+
+                    controller.Move(sprintSpeed * moveDirection * Time.deltaTime);
+                }
+                else
+                {
+                    if (controller.isGrounded)
+                    {
+                        stepSound(stepType.trot);
+                    }
+
+                    controller.Move(trotSpeed * moveDirection * Time.deltaTime);
+                }
+            }
+
+            controller.Move(velocity * Time.deltaTime);
+        }
     }
 
     private void stepSound (stepType type) {

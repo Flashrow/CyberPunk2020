@@ -22,3 +22,6 @@ MonoBehaviour:
   - number: 2
     cost: 1000
     type: 3
+  - number: 1
+    cost: 1
+    type: 1
