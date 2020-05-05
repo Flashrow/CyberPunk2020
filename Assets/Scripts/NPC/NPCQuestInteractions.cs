@@ -15,19 +15,24 @@ public class NPCQuestInteractions : Interacted {
     void Update () {
         if (isActive) {
             if (Input.GetKeyDown (KeyCode.Escape)) {
-                QuestCamera.Priority = 0;
-                anim.AnimEndInteraction ();
-                MinimapEvents.TurnOn.Invoke();
-                PlayerManager.EnableMovement.Invoke();
-                isActive = false;
+                OnEscape();
             }
             // TODO Kamil: Interactions
         }
     }
 
+    void OnEscape()
+    {
+        QuestCamera.Priority = 0;
+        anim.AnimEndInteraction();
+        MinimapEvents.TurnOn.Invoke();
+        PlayerManager.EnableMovement.Invoke();
+        isActive = false;
+    }
+
     public override void OnInteract () {
         if (isActive) return;
-        EventListener.instance.Interaction.Invoke(new InteractionData { NpcId = this.NpcId, gameObject = this.gameObject });
+        EventListener.instance.Interaction.Invoke(new InteractionData { NpcId = this.NpcId, gameObject = this.gameObject, EndInteraction = () => OnEscape() });
         PlayerManager.DisableMovement.Invoke();
         QuestCamera.Priority = 100;
         MinimapEvents.TurnOff.Invoke();
