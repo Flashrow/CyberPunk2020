@@ -38,6 +38,11 @@ public class NPCQuestInteractions : Interacted {
             EndInteraction = () => OnEscape(),
             DialogueParser = gameObject.GetComponent<DialogueParser>()
         });
+        gameObject.GetComponent<DialogueParser>().Parse(NpcId).AddListener(() =>
+        {
+            OnEscape();
+            Debug.Log("Koniec Dialogu");
+        });
         PlayerManager.DisableMovement.Invoke();
         QuestCamera.Priority = 100;
         MinimapEvents.TurnOff.Invoke();

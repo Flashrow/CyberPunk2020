@@ -14,15 +14,16 @@ public class ForestQuest : Quest
 
     void InitQuest()
     {
+
         EventListener.instance.Interaction.AddListener(data =>
         {
             if (data.NpcId == "GrandMa")
             {
-                data.DialogueParser.Parse(data.NpcId).AddListener(() =>
+                /*data.DialogueParser.Parse(data.NpcId).AddListener(() =>
                 {
                     data.EndInteraction();
                     Debug.Log("Koniec Dialogu");
-                });
+                });*/
             }
         });
     }
