@@ -13,6 +13,7 @@ public class DialogueContainer : ScriptableObject
     public List<DialogueNodeData> DialogueNodeData = new List<DialogueNodeData>();
     public List<ExposedProperty> ExposedProperties = new List<ExposedProperty>();
     public List<CommentBlockData> CommentBlockData = new List<CommentBlockData>();
+    public string questFolder;
     public string fileName;
 }
 

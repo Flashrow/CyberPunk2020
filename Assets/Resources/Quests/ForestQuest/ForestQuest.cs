@@ -18,7 +18,7 @@ public class ForestQuest : Quest
         {
             if (data.NpcId == "GrandMa")
             {
-                data.gameObject.GetComponent<DialogueParser>().Parse("init").AddListener(() =>
+                data.DialogueParser.Parse(data.NpcId).AddListener(() =>
                 {
                     data.EndInteraction();
                     Debug.Log("Koniec Dialogu");
@@ -48,5 +48,16 @@ public class ForestQuest : Quest
     void Update()
     {
         
+    }
+
+    private void Awake()
+    {
+        InitNPC("GrandMa");
+        dialoguesQueue["GrandMa"].Enqueue("init");
+    }
+
+    public void init()
+    {
+        Debug.Log("Wszyszto dziala");
     }
 }

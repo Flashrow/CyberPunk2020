@@ -32,7 +32,12 @@ public class NPCQuestInteractions : Interacted {
 
     public override void OnInteract () {
         if (isActive) return;
-        EventListener.instance.Interaction.Invoke(new InteractionData { NpcId = this.NpcId, gameObject = this.gameObject, EndInteraction = () => OnEscape() });
+        EventListener.instance.Interaction.Invoke(new InteractionData {
+            NpcId = this.NpcId,
+            gameObject = this.gameObject,
+            EndInteraction = () => OnEscape(),
+            DialogueParser = gameObject.GetComponent<DialogueParser>()
+        });
         PlayerManager.DisableMovement.Invoke();
         QuestCamera.Priority = 100;
         MinimapEvents.TurnOff.Invoke();

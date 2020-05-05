@@ -9,6 +9,7 @@ public abstract class Quest : MonoBehaviour
     public string QuestId;
     public QuestData data;
     public Task activeTask;
+    public Dictionary<string, Queue<string>> dialoguesQueue = new Dictionary<string, Queue<string>>();
 
     public void UnmountQuest()
     {
@@ -18,6 +19,11 @@ public abstract class Quest : MonoBehaviour
     public void LoadQuestData(QuestData dataFile)
     {
         data = dataFile;
+    }
+
+    public void InitNPC(string NPCid)
+    {
+        dialoguesQueue.Add(NPCid, new Queue<string>());
     }
 }
 

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Reflection;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +15,7 @@ public class DialogueParser : MonoBehaviour
     private DialogueContainer dialogue;
     private DialogueUI dialogueUI;
     private DialogueUI dialogueUITemp;
+    private string NPCid;
 
     [NonSerialized] public UnityEvent onEndDialog = new UnityEvent();
 
@@ -31,11 +33,12 @@ public class DialogueParser : MonoBehaviour
         dialogueUI = Resources.Load<DialogueUI>("PreFabs/UI/Dialogue/DialogueUI");
     }
 
-    public UnityEvent Parse(string dialogueId)
+    public UnityEvent Parse(string NPCid)
     {
         if (dialogueUITemp == null)
         {
-            dialogue = dialogues.GetDialogue(dialogueId);
+            this.NPCid = NPCid;
+            dialogue = dialogues.GetDialogue(QuestManager.instance.activeQuest.dialoguesQueue[NPCid].Dequeue());
             dialogueUITemp = (DialogueUI)Instantiate(dialogueUI);
             var narrativeData = dialogue.NodeLinks.First(); //Entrypoint node
             StartCoroutine(ProceedToNarrative(narrativeData.TargetNodeGUID));
@@ -61,6 +64,8 @@ public class DialogueParser : MonoBehaviour
         }
 
         callbacks.Where(callback => callback.name == GetDialogueNode(narrativeDataGUID).Callback).ToList().ForEach(callback => callback.callback.Invoke());
+        AddNextDialogueIfExists(narrativeDataGUID);// Dodaje kolejny  dialog to kolejki jesli istnieje
+        RunQuestMethodIfExists(narrativeDataGUID);// Uruchamia metode w activeQuest;
 
         if (choices.Count > 1)
         {
@@ -87,6 +92,24 @@ public class DialogueParser : MonoBehaviour
             }
             StartCoroutine(ProceedToNarrative(GetChoices(nodeGUID).First().TargetNodeGUID));
         }
+    }
+
+    private void AddNextDialogueIfExists(string narrativeDataGUID)
+    {
+        if (dialogues.GetDialogue(GetDialogueNode(narrativeDataGUID).Callback))
+        {
+            QuestManager.instance.activeQuest.dialoguesQueue[NPCid].Enqueue(GetDialogueNode(narrativeDataGUID).Callback);
+        }
+    }
+
+    private void RunQuestMethodIfExists(string narrativeDataGUID)
+    {
+        string methodName = GetDialogueNode(narrativeDataGUID).Callback;
+        MethodInfo mi = QuestManager.instance.activeQuest.GetType().GetMethod(methodName);
+        try
+        {
+            mi.Invoke(QuestManager.instance.activeQuest, null);
+        } catch { };
     }
 
     private DialogueNodeData GetDialogueNode(string id)

@@ -13,14 +13,9 @@ public class InteractedCube : Interacted
 
     public override void OnInteract()
     {
-        parser.Parse("Quest");
-        parser.onEndDialog.AddListener(onEnd);
-    }
 
-    public void onEnd()
-    {
-        Debug.Log("koniec dialogu");
     }
+    
     // Update is called once per frame
     void Update()
     {

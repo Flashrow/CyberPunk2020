@@ -6,4 +6,5 @@ public class InteractionData
     public string NpcId;
     public GameObject gameObject;
     public Action EndInteraction;
+    public DialogueParser DialogueParser;
 }

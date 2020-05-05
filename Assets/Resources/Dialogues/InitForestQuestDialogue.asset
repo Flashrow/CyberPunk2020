@@ -19,9 +19,6 @@ MonoBehaviour:
   - BaseNodeGUID: 67e2dcfc-7aed-4a2a-b02d-7f04f0d1a0fd
     PortName: Option 1
     TargetNodeGUID: 01c771e8-6301-43b1-bf68-a8be54ad8f21
-  - BaseNodeGUID: 9c5638cf-f536-4c68-b621-73cd9b225ac6
-    PortName: Option 1
-    TargetNodeGUID: 5138f0d5-cf33-4a9f-bde6-15375486e573
   - BaseNodeGUID: 5138f0d5-cf33-4a9f-bde6-15375486e573
     PortName: Option 1
     TargetNodeGUID: df4e673e-6eb8-49a3-ac48-377ae6f80a0e
@@ -40,6 +37,9 @@ MonoBehaviour:
   - BaseNodeGUID: 2fd9c7ec-21fa-47f5-9790-a24fdd79d475
     PortName: Option 1
     TargetNodeGUID: 2e861f92-a366-45da-9bad-1b79ec2632a1
+  - BaseNodeGUID: 9c5638cf-f536-4c68-b621-73cd9b225ac6
+    PortName: Option 1
+    TargetNodeGUID: 5138f0d5-cf33-4a9f-bde6-15375486e573
   - BaseNodeGUID: 2e861f92-a366-45da-9bad-1b79ec2632a1
     PortName: Option 1
     TargetNodeGUID: b98a96b2-8fde-4c89-95da-94e5862f866b
@@ -85,7 +85,7 @@ MonoBehaviour:
   - NodeGUID: f491c717-95d3-454a-8d90-a3bf9791fbaf
     DialogueText: "Mam do zrobienia wa\u017Cniejsze rzeczy."
     Speaker: Player
-    Callback: 
+    Callback: init
     Position: {x: 1856, y: 171}
   - NodeGUID: 2e861f92-a366-45da-9bad-1b79ec2632a1
     DialogueText: "Oko\u0142o 15"

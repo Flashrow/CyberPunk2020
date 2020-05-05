@@ -33,7 +33,9 @@ public class DialoguesConatiner : ScriptableObject
    
     public DialogueContainer GetDialogue(string dialogueId)
     {
-        return questDialogues[dialogueId];
+        if (questDialogues.ContainsKey(dialogueId))
+            return questDialogues[dialogueId];
+        else return null;
     }
 
     public void RemoveDialog(string dialogueId)
