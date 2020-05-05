@@ -11,6 +11,7 @@ using UnityEngine.UIElements;
 public class StoryGraph : EditorWindow
 {
     private string _fileName = "New Narrative";
+    private string _path = "Assets/Resources/Quests";
 
     private StoryGraphView _graphView;
     private DialogueContainer _dialogueContainer;
@@ -22,9 +23,10 @@ public class StoryGraph : EditorWindow
         window.titleContent = new GUIContent("Narrative Graph");
     }
 
-    public void CreateGraphEditViewWindow(string fileName)
+    public void CreateGraphEditViewWindow(string fileName, string path)
     {
         _fileName = fileName;
+        _path = path;
         var window = GetWindow<StoryGraph>();
         window.titleContent = new GUIContent("Narrative Graph");
     }
@@ -64,9 +66,9 @@ public class StoryGraph : EditorWindow
         {
             var saveUtility = GraphSaveUtility.GetInstance(_graphView);
             if (save)
-                saveUtility.SaveGraph(_fileName);
+                saveUtility.SaveGraph(_fileName, _path);
             else
-                saveUtility.LoadNarrative(_fileName);
+                saveUtility.LoadNarrative(_fileName, _path);
         }
         else
         {

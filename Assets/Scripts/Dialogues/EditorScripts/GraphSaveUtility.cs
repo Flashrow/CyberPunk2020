@@ -29,7 +29,7 @@ public class GraphSaveUtility
         };
     }
 
-    public void SaveGraph(string fileName)
+    public void SaveGraph(string fileName, string path)
     {
         var dialogueContainerObject = ScriptableObject.CreateInstance<DialogueContainer>();
         if (!SaveNodes(fileName, dialogueContainerObject)) return;
@@ -40,7 +40,10 @@ public class GraphSaveUtility
         if (!AssetDatabase.IsValidFolder("Assets/Resources"))
             AssetDatabase.CreateFolder("Assets", "Resources");
 
-        AssetDatabase.CreateAsset(dialogueContainerObject, $"Assets/Resources/Dialogues/{fileName}.asset");
+        if(path.Contains(".asset"))
+            AssetDatabase.CreateAsset(dialogueContainerObject, path);
+        else
+            AssetDatabase.CreateAsset(dialogueContainerObject, $"{path}/{fileName}.asset");
         AssetDatabase.SaveAssets();
     }
 
@@ -97,9 +100,9 @@ public class GraphSaveUtility
         }
     }
 
-    public void LoadNarrative(string fileName)
+    public void LoadNarrative(string fileName, string path)
     {
-        _dialogueContainer = Resources.Load<DialogueContainer>($"Dialogues/{fileName}");
+        _dialogueContainer = AssetDatabase.LoadAssetAtPath<DialogueContainer>(path);
         if (_dialogueContainer == null)
         {
             EditorUtility.DisplayDialog("File Not Found", "Target Narrative Data does not exist!", "OK");

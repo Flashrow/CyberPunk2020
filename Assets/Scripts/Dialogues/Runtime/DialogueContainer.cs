@@ -26,10 +26,9 @@ public class DialogueContainerEditor : Editor
         DrawDefaultInspector();
         if (GUILayout.Button("Edit Dialogue"))
         {
-            Debug.Log(AssetDatabase.GetAssetPath(Selection.activeInstanceID));
             DialogueContainer Target = (DialogueContainer)target;
             StoryGraph storyGraph = new StoryGraph();
-            storyGraph.CreateGraphEditViewWindow(Target.fileName);
+            storyGraph.CreateGraphEditViewWindow(Target.fileName, AssetDatabase.GetAssetPath(Selection.activeInstanceID));
             storyGraph.RequestDataOperation(false);
         }
     }

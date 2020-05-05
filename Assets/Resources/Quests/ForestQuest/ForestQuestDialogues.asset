@@ -15,3 +15,5 @@ MonoBehaviour:
   questDialoguesList:
   - dialogueId: init
     dialogue: {fileID: 11400000, guid: 1b0fa3afae3ee5843922413b10c24d2c, type: 2}
+  - dialogueId: afterWait
+    dialogue: {fileID: 11400000, guid: 34b718e33d80b5b4c8546bb8f8f32337, type: 2}

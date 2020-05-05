@@ -45,7 +45,7 @@ MonoBehaviour:
     TargetNodeGUID: b98a96b2-8fde-4c89-95da-94e5862f866b
   DialogueNodeData:
   - NodeGUID: 67e2dcfc-7aed-4a2a-b02d-7f04f0d1a0fd
-    DialogueText: Pomocy!!!
+    DialogueText: Pomocy!!!!
     Speaker: NPC
     Callback: 
     Position: {x: 287, y: 155}
@@ -74,7 +74,7 @@ MonoBehaviour:
   - NodeGUID: ed2cd246-9be7-4c65-9be9-29c3e4cfdb60
     DialogueText: "Zaraz wr\xF3c\u0119"
     Speaker: Player
-    Callback: 
+    Callback: afterWait
     Position: {x: 1949, y: 471}
   - NodeGUID: 9c5638cf-f536-4c68-b621-73cd9b225ac6
     DialogueText: "Spa\u0142am sobie w domku, gdy nagle us\u0142ysza\u0142am, \u017Ce
@@ -85,7 +85,7 @@ MonoBehaviour:
   - NodeGUID: f491c717-95d3-454a-8d90-a3bf9791fbaf
     DialogueText: "Mam do zrobienia wa\u017Cniejsze rzeczy."
     Speaker: Player
-    Callback: init
+    Callback: 
     Position: {x: 1856, y: 171}
   - NodeGUID: 2e861f92-a366-45da-9bad-1b79ec2632a1
     DialogueText: "Oko\u0142o 15"
@@ -95,8 +95,9 @@ MonoBehaviour:
   - NodeGUID: b98a96b2-8fde-4c89-95da-94e5862f866b
     DialogueText: "Postaram si\u0119 Ci pom\xF3c, id\u0119."
     Speaker: Player
-    Callback: 
+    Callback: RunAction
     Position: {x: 2781, y: 323}
   ExposedProperties: []
   CommentBlockData: []
+  questFolder: 
   fileName: InitForestQuestDialogue

@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78b3fd9154634ebdb8c8a48960b9a16a, type: 3}
+  m_Name: afterWaitDialogue
+  m_EditorClassIdentifier: 
+  NodeLinks:
+  - BaseNodeGUID: 14588024-b0de-4230-8e91-3763e75bb9e2
+    PortName: Next
+    TargetNodeGUID: 9782b4f0-dde0-4250-bf76-908df6469a8e
+  - BaseNodeGUID: 9782b4f0-dde0-4250-bf76-908df6469a8e
+    PortName: Tak
+    TargetNodeGUID: 137a6a44-3e1f-473b-8db6-c264df085b05
+  - BaseNodeGUID: 9782b4f0-dde0-4250-bf76-908df6469a8e
+    PortName: "Zaraz wr\xF3c\u0119"
+    TargetNodeGUID: 5814ae1e-5906-4b33-8fec-cb70572d63c7
+  DialogueNodeData:
+  - NodeGUID: 9782b4f0-dde0-4250-bf76-908df6469a8e
+    DialogueText: "Witaj, masz czas mi teraz pom\xF3c?"
+    Speaker: NPC
+    Callback: 
+    Position: {x: 231, y: 192}
+  - NodeGUID: 137a6a44-3e1f-473b-8db6-c264df085b05
+    DialogueText: "Id\u0119 po twoje rzeczy"
+    Speaker: Player
+    Callback: RunAction
+    Position: {x: 685, y: 122}
+  - NodeGUID: 5814ae1e-5906-4b33-8fec-cb70572d63c7
+    DialogueText: Poczekaj tutaj
+    Speaker: Player
+    Callback: afterWait
+    Position: {x: 697, y: 276}
+  ExposedProperties: []
+  CommentBlockData: []
+  questFolder: 
+  fileName: afterWaitDialogue
