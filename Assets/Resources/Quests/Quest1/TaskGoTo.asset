@@ -17,7 +17,7 @@ MonoBehaviour:
   title: GoTo
   description: Opis
   status: 0
-  order: 0
+  order: 2
   type: 6
   onFinish:
     m_PersistentCalls:

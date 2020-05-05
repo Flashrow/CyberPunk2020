@@ -26,7 +26,7 @@ public class QuestManager : MonoBehaviour
 
     private void Update()
     {
-
+        
     }
 
     public void MountQuest(QuestData questData)

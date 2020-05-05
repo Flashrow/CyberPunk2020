@@ -20,6 +20,7 @@ public class ForestQuest : Quest
             {
                 data.gameObject.GetComponent<DialogueParser>().Parse("init").AddListener(() =>
                 {
+                    data.EndInteraction();
                     Debug.Log("Koniec Dialogu");
                 });
             }
