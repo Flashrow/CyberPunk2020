@@ -157,6 +157,8 @@
     <Compile Include="Assets\Scripts\lookAtTarget.cs" />
     <Compile Include="Assets\Scripts\lookAtTargetWithoutAnimate.cs" />
     <Compile Include="Assets\UnityAssets\AssetStoreOriginals\_SNAPS_PrototypingAssets\About\Scripts\Readme.cs" />
+    <Compile Include="Assets\UnityAssets\BrokenVector\LowPolyFencePack\Scripts\DoorController.cs" />
+    <Compile Include="Assets\UnityAssets\BrokenVector\LowPolyFencePack\Scripts\DoorToggle.cs" />
     <Compile Include="Assets\UnityAssets\JMO Assets\WarFX\Demo\Assets\CFX_AutoStopLoopedEffect.cs" />
     <Compile Include="Assets\UnityAssets\JMO Assets\WarFX\Demo\Assets\CFX_Demo_RandomDir.cs" />
     <Compile Include="Assets\UnityAssets\JMO Assets\WarFX\Demo\Assets\CFX_Demo_RotateCamera.cs" />
@@ -404,6 +406,7 @@
     <None Include="Assets\UnityAssets\Standard Assets\Vehicles\Aircraft\AircraftGuidelines.txt" />
     <None Include="Assets\UnityAssets\JMO Assets\WarFX\Shaders\WFX_S Particle Add A8.shader" />
     <None Include="Assets\UnityAssets\Standard Assets\Cameras\CameraGuidelines.txt" />
+    <None Include="Assets\UnityAssets\Stonewall\readme.txt" />
     <None Include="Assets\UnityAssets\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
     <None Include="Assets\UnityAssets\VolumetricLines\BuiltInRenderPipeline\Shaders\LineStrip-TextureAlphaBlended.shader" />
     <None Include="Assets\UnityAssets\JMO Assets\WarFX\Shaders\WFX_S Smoke Scroll.shader" />
