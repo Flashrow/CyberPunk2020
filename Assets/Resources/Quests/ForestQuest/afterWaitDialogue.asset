@@ -31,7 +31,7 @@ MonoBehaviour:
   - NodeGUID: 137a6a44-3e1f-473b-8db6-c264df085b05
     DialogueText: "Id\u0119 po twoje rzeczy"
     Speaker: Player
-    Callback: PlayerAcceptQuest
+    Callback: ChangeQuestToInProgress
     Position: {x: 685, y: 122}
   - NodeGUID: 5814ae1e-5906-4b33-8fec-cb70572d63c7
     DialogueText: Poczekaj tutaj

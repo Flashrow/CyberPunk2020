@@ -130,10 +130,11 @@
     <Compile Include="Assets\Scripts\Quests\PathContainer.cs" />
     <Compile Include="Assets\Scripts\Quests\PathElement.cs" />
     <Compile Include="Assets\Scripts\Quests\Quest.cs" />
+    <Compile Include="Assets\Scripts\Quests\QuestActiveUI.cs" />
     <Compile Include="Assets\Scripts\Quests\QuestData.cs" />
+    <Compile Include="Assets\Scripts\Quests\QuestInactiveUI.cs" />
     <Compile Include="Assets\Scripts\Quests\QuestManager.cs" />
-    <Compile Include="Assets\Scripts\Quests\QuestUICanvas.cs" />
-    <Compile Include="Assets\Scripts\Quests\Quests\Quest1.cs" />
+    <Compile Include="Assets\Scripts\Quests\QuestUI.cs" />
     <Compile Include="Assets\Scripts\Quests\Task.cs" />
     <Compile Include="Assets\Scripts\Quests\Tasks\TaskGetItem.cs" />
     <Compile Include="Assets\Scripts\Quests\Tasks\TaskGoTo.cs" />

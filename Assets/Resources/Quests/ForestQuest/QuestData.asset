@@ -13,11 +13,10 @@ MonoBehaviour:
   m_Name: QuestData
   m_EditorClassIdentifier: 
   QuestId: ForestQuest
-  NpcId: GrandMa
   title: Babcia w potrzebie
   description: "Pomo\u017C babci odzyska\u0107 jej dobra z otoczonego przez wrog\xF3w
     domku w \u015Brodku lasu"
-  status: 2
+  status: 3
   QuestClassString: ForestQuest
   tasks:
   - {fileID: 11400000, guid: a7d43d6751720a34fbdd2ddbd46d766e, type: 2}

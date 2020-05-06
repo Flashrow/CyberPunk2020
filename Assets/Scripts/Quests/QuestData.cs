@@ -10,7 +10,7 @@ public class QuestData : ScriptableObject
     public string QuestId;
     public string title;
     public string description;
-    public QuestStatus status;
+    public QuestStatus status = QuestStatus.EXCLUDED;
     public string QuestClassString;
     public Type QuestClass;
     public List<Task> tasks = new List<Task>();

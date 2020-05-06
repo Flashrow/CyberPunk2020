@@ -52,14 +52,20 @@ public class ForestQuest : Quest
         
     }
 
-    public override void PlayerAboartQuest()
+    public override void RemoveQuest()
     {
-        Debug.Log("Quest aboard");
+        // TODO: add remove component from unity (NPC)
+        QuestManager.instance.Quests.Remove("ForestQuest");
     }
 
-    public override void PlayerAcceptQuest()
+    public override void ChangeQuestToTodo()
     {
-        QuestManager.instance.Quests["ForestQuest"].isActive = true;
+        QuestManager.instance.Quests["ForestQuest"].data.status = QuestStatus.TODO;
+    }
+
+    public override void ChangeQuestToInProgress()
+    {
+        QuestManager.instance.Quests["ForestQuest"].data.status = QuestStatus.IN_PROGRESS;
     }
 
     private void Awake()
