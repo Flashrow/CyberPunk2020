@@ -20,6 +20,7 @@ public class NPCEnemy : NPCCharacter {
         anim = GetComponentInChildren<NPCAnimation> ();
     }
     protected override void onStart () {
+        MinimapTargetsRender.AddTarget(transform); // MINIMAP TEST
         currentHealth = MaxHealth;
     }
     public override void OnHit (float val) {

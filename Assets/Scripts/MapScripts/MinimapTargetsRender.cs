@@ -1,13 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
+using UnityEngine.Events;
 
+// NPCEnemy have test in method onStart() !!!
 public class MinimapTargetsRender : MonoBehaviour
 {
-    [SerializeField] Transform target = null; // TODO: PODLACZYC DO QUEST MANAGERS !!!
-    private GameObject marker = null;
+    static Dictionary<Transform, GameObject> data = new Dictionary<Transform, GameObject>();
     Camera cam;
+
+    static public void AddTarget(Transform target)
+    {
+        data.Add(target, target.GetComponent<Marker>().Get());
+    }
 
     Vector2 A, T1, B, T2, C, T3, D, T4, camPos, tarPos;
 
@@ -16,20 +21,17 @@ public class MinimapTargetsRender : MonoBehaviour
         cam = GetComponentInChildren<Camera>();
     }
 
-    void Start()
-    {
-        if(target)
-        {
-            marker = target.GetComponent<Marker>().Get();
-        }
-    }
-
     void Update()
     {
-        if(target)
+        foreach (KeyValuePair<Transform, GameObject> entry in data)
         {
+            if(entry.Key == null)
+            {
+                data.Remove(entry.Key);
+                break;
+            }
             camPos = new Vector2(cam.transform.position.x, cam.transform.position.z);
-            tarPos = new Vector2(target.position.x, target.position.z); // ROTATION SAME AS PLAYER!!!
+            tarPos = new Vector2(entry.Key.position.x, entry.Key.position.z);
 
             T1 = new Vector2(camPos.x, camPos.y + 45);
             T3 = new Vector2(camPos.x, camPos.y - 45);
@@ -47,15 +49,15 @@ public class MinimapTargetsRender : MonoBehaviour
                if(tarPos.x < A.x)
                {
                     //Debug.Log("1 MINIMAP SQUARE");
-                    marker.transform.position = new Vector3(A.x, 75, A.y);
+                    entry.Value.transform.position = new Vector3(A.x, 75, A.y);
                } else if(tarPos.x > B.x)
                {
                     //Debug.Log("3 MINIMAP SQUARE");
-                    marker.transform.position = new Vector3(B.x, 75, B.y);
+                    entry.Value.transform.position = new Vector3(B.x, 75, B.y);
                 } else
                 {
                     //Debug.Log("2 MINIMAP SQUARE");
-                    marker.transform.position = new Vector3(tarPos.x, 75, A.y);
+                    entry.Value.transform.position = new Vector3(tarPos.x, 75, A.y);
                 }
             } else if(tarPos.y < D.y)
             {
@@ -63,17 +65,17 @@ public class MinimapTargetsRender : MonoBehaviour
                 if (tarPos.x < A.x)
                 {
                     //Debug.Log("7 MINIMAP SQUARE");
-                    marker.transform.position = new Vector3(D.x, 75, D.y);
+                    entry.Value.transform.position = new Vector3(D.x, 75, D.y);
                 }
                 else if (tarPos.x > B.x)
                 {
                     //Debug.Log("9 MINIMAP SQUARE");
-                    marker.transform.position = new Vector3(C.x, 75, C.y);
+                    entry.Value.transform.position = new Vector3(C.x, 75, C.y);
                 }
                 else
                 {
                     //Debug.Log("8 MINIMAP SQUARE");
-                    marker.transform.position = new Vector3(tarPos.x, 75, D.y);
+                    entry.Value.transform.position = new Vector3(tarPos.x, 75, D.y);
                 }
             } else
             {
@@ -81,22 +83,21 @@ public class MinimapTargetsRender : MonoBehaviour
                 if (tarPos.x < A.x)
                 {
                     //Debug.Log("4 MINIMAP SQUARE");
-                    marker.transform.position = new Vector3(A.x, 75, tarPos.y);
+                    entry.Value.transform.position = new Vector3(A.x, 75, tarPos.y);
                 }
                 else if (tarPos.x > B.x)
                 {
                     //Debug.Log("6 MINIMAP SQUARE");
-                    marker.transform.position = new Vector3(B.x, 75, tarPos.y);
+                    entry.Value.transform.position = new Vector3(B.x, 75, tarPos.y);
 
                 }
                 else
                 {
                     //Debug.Log("5 MINIMAP SQUARE - MINIMAP VIEW");
-                    marker.transform.position = new Vector3(tarPos.x, 75, tarPos.y);
+                    entry.Value.transform.position = new Vector3(tarPos.x, 75, tarPos.y);
 
                 }
             } 
         }
-        else if (marker) Destroy(marker);
     }
 }
