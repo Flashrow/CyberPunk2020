@@ -8,32 +8,32 @@ using UnityEditor;
 public class QuestManager : MonoBehaviour
 {
     public static QuestManager instance;
-    public List<QuestData> Quests = new List<QuestData>();
-    public Quest activeQuest;
+    public Dictionary<string, Quest> Quests = new Dictionary<string, Quest>();
 
     private void Awake()
     {
-        if (instance != null)
-        {
-            Debug.LogError("More than one QuestManager in the scene");
-        }
-        else
-        {
-            instance = this;
-        }
-        MountQuest(Quests[0]);
-    }
-
-    private void Update()
-    {
-        
+       instance = this;
     }
 
     public void MountQuest(QuestData questData)
     {
-        gameObject.AddComponent(questData.QuestClass);
-        activeQuest = gameObject.GetComponent(questData.QuestClass) as Quest;
-        activeQuest.LoadQuestData(questData);
+        if(Quests.ContainsKey(questData.QuestId) == false)
+        {
+            gameObject.AddComponent(questData.QuestClass);
+            var obj = gameObject.GetComponent(questData.QuestClass) as Quest;
+            obj.LoadQuestData(questData);
+            Quests.Add(questData.QuestId, obj);
+        } else
+        {
+            if (Quests[questData.QuestId].data.status == QuestStatus.EXCLUDED)
+            {
+                Debug.LogWarning($"Quest { questData.tasks} was aboard by user earlier");
+            }
+            else
+            {
+                Debug.Log($"Quest {questData.tasks} in progress...");
+            }
+        }
     }
 }
 

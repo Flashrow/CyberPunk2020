@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
-public enum QuestStatus { IN_PROGRESS, DONE, TODO};
+public enum QuestStatus { IN_PROGRESS, DONE, TODO, EXCLUDED};
 public abstract class Quest : MonoBehaviour
 {
     public string QuestId;
@@ -25,5 +25,13 @@ public abstract class Quest : MonoBehaviour
     {
         dialoguesQueue.Add(NPCid, new Queue<string>());
     }
+
+    public abstract void AboardQuest();
+    public virtual  void RemoveQuest()
+    {
+        QuestManager.instance.Quests.Remove(QuestId);
+    }
+    public abstract void ChangeQuestToTodo();
+    public abstract void ChangeQuestToInProgress();
 }
 

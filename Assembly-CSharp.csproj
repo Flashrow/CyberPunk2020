@@ -2,8 +2,6 @@
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <LangVersion>latest</LangVersion>
-    <CscToolPath>C:\Program Files\Unity\Hub\Editor\2019.3.3f1\Editor\Data\Tools\RoslynScripts</CscToolPath>
-    <CscToolExe>unity_csc.bat</CscToolExe>
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -54,6 +52,9 @@
     <UnityVersion>2019.3.3f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
+  </ItemGroup>
+  <ItemGroup>
     <Reference Include="UnityEngine">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2019.3.3f1\Editor\Data\Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
@@ -63,7 +64,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Resources\Models\3D\Characters\Player\Ch03\AnimationControl.cs" />
-    <Compile Include="Assets\Resources\Quests\ForestQuest\ForestQuest.cs" />
     <Compile Include="Assets\Scripts\Car\CarMovement.cs" />
     <Compile Include="Assets\Scripts\Character\Movement\basMovement.cs" />
     <Compile Include="Assets\Scripts\Character\Movement\stabilizeModel.cs" />
@@ -129,10 +129,12 @@
     <Compile Include="Assets\Scripts\Quests\PathContainer.cs" />
     <Compile Include="Assets\Scripts\Quests\PathElement.cs" />
     <Compile Include="Assets\Scripts\Quests\Quest.cs" />
+    <Compile Include="Assets\Scripts\Quests\QuestActiveUI.cs" />
     <Compile Include="Assets\Scripts\Quests\QuestData.cs" />
+    <Compile Include="Assets\Scripts\Quests\QuestInactiveUI.cs" />
     <Compile Include="Assets\Scripts\Quests\QuestManager.cs" />
-    <Compile Include="Assets\Scripts\Quests\QuestUICanvas.cs" />
-    <Compile Include="Assets\Scripts\Quests\Quests\Quest1.cs" />
+    <Compile Include="Assets\Scripts\Quests\QuestUI.cs" />
+    <Compile Include="Assets\Scripts\Quests\Quests\ForestQuest.cs" />
     <Compile Include="Assets\Scripts\Quests\Task.cs" />
     <Compile Include="Assets\Scripts\Quests\Tasks\TaskGetItem.cs" />
     <Compile Include="Assets\Scripts\Quests\Tasks\TaskGoTo.cs" />
@@ -580,64 +582,64 @@
     <None Include="Assets\UnityAssets\Standard Assets\Fonts\OpenSans\License!.txt" />
     <None Include="Assets\UnityAssets\TextMesh Pro\Examples &amp; Extras\Fonts\Bangers - OFL.txt" />
     <Reference Include="Unity.Timeline.Editor">
-      <HintPath>S:/CyberPunk2020/CyberPunk2020/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+      <HintPath>D:/Dokumenty/AEI/TMP/SEM_IV/PK_LAB_E/CyberPunk2020/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Cinemachine">
-      <HintPath>S:/CyberPunk2020/CyberPunk2020/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
+      <HintPath>D:/Dokumenty/AEI/TMP/SEM_IV/PK_LAB_E/CyberPunk2020/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
     </Reference>
     <Reference Include="Unity.ProGrids">
-      <HintPath>S:/CyberPunk2020/CyberPunk2020/Library/ScriptAssemblies/Unity.ProGrids.dll</HintPath>
+      <HintPath>D:/Dokumenty/AEI/TMP/SEM_IV/PK_LAB_E/CyberPunk2020/Library/ScriptAssemblies/Unity.ProGrids.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
-      <HintPath>S:/CyberPunk2020/CyberPunk2020/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+      <HintPath>D:/Dokumenty/AEI/TMP/SEM_IV/PK_LAB_E/CyberPunk2020/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.ProBuilder">
-      <HintPath>S:/CyberPunk2020/CyberPunk2020/Library/ScriptAssemblies/Unity.ProBuilder.dll</HintPath>
+      <HintPath>D:/Dokumenty/AEI/TMP/SEM_IV/PK_LAB_E/CyberPunk2020/Library/ScriptAssemblies/Unity.ProBuilder.dll</HintPath>
     </Reference>
     <Reference Include="Unity.ProBuilder.Editor">
-      <HintPath>S:/CyberPunk2020/CyberPunk2020/Library/ScriptAssemblies/Unity.ProBuilder.Editor.dll</HintPath>
+      <HintPath>D:/Dokumenty/AEI/TMP/SEM_IV/PK_LAB_E/CyberPunk2020/Library/ScriptAssemblies/Unity.ProBuilder.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.ProBuilder.AssetIdRemapUtility">
-      <HintPath>S:/CyberPunk2020/CyberPunk2020/Library/ScriptAssemblies/Unity.ProBuilder.AssetIdRemapUtility.dll</HintPath>
+      <HintPath>D:/Dokumenty/AEI/TMP/SEM_IV/PK_LAB_E/CyberPunk2020/Library/ScriptAssemblies/Unity.ProBuilder.AssetIdRemapUtility.dll</HintPath>
     </Reference>
     <Reference Include="Unity.ProGrids.Editor">
-      <HintPath>S:/CyberPunk2020/CyberPunk2020/Library/ScriptAssemblies/Unity.ProGrids.Editor.dll</HintPath>
+      <HintPath>D:/Dokumenty/AEI/TMP/SEM_IV/PK_LAB_E/CyberPunk2020/Library/ScriptAssemblies/Unity.ProGrids.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>S:/CyberPunk2020/CyberPunk2020/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>D:/Dokumenty/AEI/TMP/SEM_IV/PK_LAB_E/CyberPunk2020/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>S:/CyberPunk2020/CyberPunk2020/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+      <HintPath>D:/Dokumenty/AEI/TMP/SEM_IV/PK_LAB_E/CyberPunk2020/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-      <HintPath>S:/CyberPunk2020/CyberPunk2020/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+      <HintPath>D:/Dokumenty/AEI/TMP/SEM_IV/PK_LAB_E/CyberPunk2020/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>S:/CyberPunk2020/CyberPunk2020/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>D:/Dokumenty/AEI/TMP/SEM_IV/PK_LAB_E/CyberPunk2020/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Postprocessing.Editor">
-      <HintPath>S:/CyberPunk2020/CyberPunk2020/Library/ScriptAssemblies/Unity.Postprocessing.Editor.dll</HintPath>
+      <HintPath>D:/Dokumenty/AEI/TMP/SEM_IV/PK_LAB_E/CyberPunk2020/Library/ScriptAssemblies/Unity.Postprocessing.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
-      <HintPath>S:/CyberPunk2020/CyberPunk2020/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+      <HintPath>D:/Dokumenty/AEI/TMP/SEM_IV/PK_LAB_E/CyberPunk2020/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Sprite.Editor">
-      <HintPath>S:/CyberPunk2020/CyberPunk2020/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
+      <HintPath>D:/Dokumenty/AEI/TMP/SEM_IV/PK_LAB_E/CyberPunk2020/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Postprocessing.Runtime">
-      <HintPath>S:/CyberPunk2020/CyberPunk2020/Library/ScriptAssemblies/Unity.Postprocessing.Runtime.dll</HintPath>
+      <HintPath>D:/Dokumenty/AEI/TMP/SEM_IV/PK_LAB_E/CyberPunk2020/Library/ScriptAssemblies/Unity.Postprocessing.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="com.unity.cinemachine.editor">
-      <HintPath>S:/CyberPunk2020/CyberPunk2020/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
+      <HintPath>D:/Dokumenty/AEI/TMP/SEM_IV/PK_LAB_E/CyberPunk2020/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.ProBuilder.AddOns.Editor">
-      <HintPath>S:/CyberPunk2020/CyberPunk2020/Library/ScriptAssemblies/Unity.ProBuilder.AddOns.Editor.dll</HintPath>
+      <HintPath>D:/Dokumenty/AEI/TMP/SEM_IV/PK_LAB_E/CyberPunk2020/Library/ScriptAssemblies/Unity.ProBuilder.AddOns.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>S:/CyberPunk2020/CyberPunk2020/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>D:/Dokumenty/AEI/TMP/SEM_IV/PK_LAB_E/CyberPunk2020/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-      <HintPath>S:/CyberPunk2020/CyberPunk2020/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+      <HintPath>D:/Dokumenty/AEI/TMP/SEM_IV/PK_LAB_E/CyberPunk2020/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -817,7 +819,7 @@
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.XRModule.dll</HintPath>
     </Reference>
     <Reference Include="CoherentNoise">
-      <HintPath>S:/CyberPunk2020/CyberPunk2020/Assets/UnityAssets/WorldBuilder/Scripts/Helpers/CoherentNoise.dll</HintPath>
+      <HintPath>D:/Dokumenty/AEI/TMP/SEM_IV/PK_LAB_E/CyberPunk2020/Assets/UnityAssets/WorldBuilder/Scripts/Helpers/CoherentNoise.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.3f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>
