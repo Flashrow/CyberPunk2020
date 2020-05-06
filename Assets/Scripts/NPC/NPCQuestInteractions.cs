@@ -33,22 +33,24 @@ public class NPCQuestInteractions : Interacted {
     public override void OnInteract () {
         if (isActive) return;
         QuestManager.instance.MountQuest(questData);
-        EventListener.instance.Interaction.Invoke(new InteractionData {
-            NpcId = this.NpcId,
-            gameObject = this.gameObject,
-            EndInteraction = () => OnEscape(),
-            DialogueParser = gameObject.GetComponent<DialogueParser>()
-        });
-        gameObject.GetComponent<DialogueParser>().Parse(NpcId, questData.QuestId).AddListener(() =>
-        {
+        try { 
+            gameObject.GetComponent<DialogueParser>().Parse(NpcId, questData.QuestId).AddListener(OnEscape);
+            EventListener.instance.Interaction.Invoke(new InteractionData
+            {
+                NpcId = this.NpcId,
+                gameObject = this.gameObject,
+                EndInteraction = () => OnEscape(),
+                DialogueParser = gameObject.GetComponent<DialogueParser>()
+            });
+            PlayerManager.DisableMovement.Invoke();
+            QuestCamera.Priority = 100;
+            MinimapEvents.TurnOff.Invoke();
+            anim.AnimStartInteraction();
+            isActive = true;
+        } catch {
+            Debug.LogWarning("No dialogs");
             OnEscape();
-            Debug.Log("Koniec Dialogu");
-        });
-        PlayerManager.DisableMovement.Invoke();
-        QuestCamera.Priority = 100;
-        MinimapEvents.TurnOff.Invoke();
-        anim.AnimStartInteraction();
-        isActive = true;
+        }
     }
 
     public override void InInteraction () { }

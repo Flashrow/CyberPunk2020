@@ -26,7 +26,11 @@ public abstract class Quest : MonoBehaviour
         dialoguesQueue.Add(NPCid, new Queue<string>());
     }
 
-    public abstract void RemoveQuest();
+    public abstract void AboardQuest();
+    public virtual  void RemoveQuest()
+    {
+        QuestManager.instance.Quests.Remove(QuestId);
+    }
     public abstract void ChangeQuestToTodo();
     public abstract void ChangeQuestToInProgress();
 }

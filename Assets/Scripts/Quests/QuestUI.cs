@@ -17,7 +17,7 @@ public abstract class QuestUI : MonoBehaviour
                 if (entry.Value.data.status != type) continue;
                 GameObject go = Resources.Load("PreFabs/UI/Quests/QuestBtn") as GameObject;
                 GameObject clone = Instantiate(go);
-                clone.transform.parent = questsBox;
+                clone.transform.SetParent(questsBox);
                 clone.transform.localScale = new Vector3Int(1, 1, 1);
                 if (entry.Value.data.title == null)
                     clone.GetComponentInChildren<Text>().text = "";

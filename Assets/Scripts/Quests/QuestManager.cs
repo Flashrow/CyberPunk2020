@@ -25,7 +25,14 @@ public class QuestManager : MonoBehaviour
             Quests.Add(questData.QuestId, obj);
         } else
         {
-            Debug.Log("CONTAIN KEY");
+            if (Quests[questData.QuestId].data.status == QuestStatus.EXCLUDED)
+            {
+                Debug.LogWarning($"Quest { questData.tasks} was aboard by user earlier");
+            }
+            else
+            {
+                Debug.Log($"Quest {questData.tasks} in progress...");
+            }
         }
     }
 }

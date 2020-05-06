@@ -64,7 +64,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Resources\Models\3D\Characters\Player\Ch03\AnimationControl.cs" />
-    <Compile Include="Assets\Resources\Quests\ForestQuest\ForestQuest.cs" />
     <Compile Include="Assets\Scripts\Car\CarMovement.cs" />
     <Compile Include="Assets\Scripts\Character\Movement\basMovement.cs" />
     <Compile Include="Assets\Scripts\Character\Movement\stabilizeModel.cs" />
@@ -135,6 +134,7 @@
     <Compile Include="Assets\Scripts\Quests\QuestInactiveUI.cs" />
     <Compile Include="Assets\Scripts\Quests\QuestManager.cs" />
     <Compile Include="Assets\Scripts\Quests\QuestUI.cs" />
+    <Compile Include="Assets\Scripts\Quests\Quests\ForestQuest.cs" />
     <Compile Include="Assets\Scripts\Quests\Task.cs" />
     <Compile Include="Assets\Scripts\Quests\Tasks\TaskGetItem.cs" />
     <Compile Include="Assets\Scripts\Quests\Tasks\TaskGoTo.cs" />

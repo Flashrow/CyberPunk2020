@@ -83,7 +83,7 @@ MonoBehaviour:
   - NodeGUID: f491c717-95d3-454a-8d90-a3bf9791fbaf
     DialogueText: "Mam do zrobienia wa\u017Cniejsze rzeczy."
     Speaker: Player
-    Callback: RemoveQuest
+    Callback: AboardQuest
     Position: {x: 1856, y: 171}
   - NodeGUID: 2e861f92-a366-45da-9bad-1b79ec2632a1
     DialogueText: "Oko\u0142o 15"

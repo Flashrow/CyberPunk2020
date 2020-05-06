@@ -5,30 +5,27 @@ using UnityEngine;
 public class ForestQuest : Quest
 {
     private string NpcId = "GrandMa";
-    // Start is called before the first frame update
+    private void Awake()
+    {
+        InitNPC("GrandMa");
+        dialoguesQueue["GrandMa"].Enqueue("init");
+    }
     void Start()
     {
         Debug.Log(data.description);
         RunTasksQueue(0);
         InitQuest();
     }
-
     void InitQuest()
     {
-
         EventListener.instance.Interaction.AddListener(data =>
         {
             if (data.NpcId == NpcId)
             {
-                /*data.DialogueParser.Parse(data.NpcId).AddListener(() =>
-                {
-                    data.EndInteraction();
-                    Debug.Log("Koniec Dialogu");
-                });*/
+
             }
         });
     }
-
     private void RunTasksQueue(int i)
     {
         if (data.tasks.Count > i)
@@ -43,39 +40,19 @@ public class ForestQuest : Quest
         else
         {
             //Finish Quest
+            QuestManager.instance.Quests["ForestQuest"].data.status = QuestStatus.DONE;
         }
     }
-
-    // Update is called once per frame
-    void Update()
+    public override void AboardQuest()
     {
-        
+        QuestManager.instance.Quests["ForestQuest"].data.status = QuestStatus.EXCLUDED;
     }
-
-    public override void RemoveQuest()
-    {
-        // TODO: add remove component from unity (NPC)
-        QuestManager.instance.Quests.Remove("ForestQuest");
-    }
-
     public override void ChangeQuestToTodo()
     {
         QuestManager.instance.Quests["ForestQuest"].data.status = QuestStatus.TODO;
     }
-
     public override void ChangeQuestToInProgress()
     {
         QuestManager.instance.Quests["ForestQuest"].data.status = QuestStatus.IN_PROGRESS;
-    }
-
-    private void Awake()
-    {
-        InitNPC("GrandMa");
-        dialoguesQueue["GrandMa"].Enqueue("init");
-    }
-
-    public void init()
-    {
-        Debug.Log("Wszyszto dziala");
     }
 }
