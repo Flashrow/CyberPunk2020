@@ -110,6 +110,7 @@
     <Compile Include="Assets\Scripts\MapScripts\MinimapEvents.cs" />
     <Compile Include="Assets\Scripts\MapScripts\MinimapTargetsRender.cs" />
     <Compile Include="Assets\Scripts\MapScripts\SetMarkerColor.cs" />
+    <Compile Include="Assets\Scripts\MapScripts\TargetsDataMinimap.cs" />
     <Compile Include="Assets\Scripts\Menus\MainMenu.cs" />
     <Compile Include="Assets\Scripts\Menus\QuickMenu.cs" />
     <Compile Include="Assets\Scripts\NPC\NPCAnimation.cs" />
@@ -238,6 +239,9 @@
     <Compile Include="Assets\UnityAssets\Samples\Cinemachine\2.5.0\Cinemachine Example Scenes\Shared\Scripts\PlayerMove.cs" />
     <Compile Include="Assets\UnityAssets\Samples\Cinemachine\2.5.0\Cinemachine Example Scenes\Shared\Scripts\PlayerMoveOnSphere.cs" />
     <Compile Include="Assets\UnityAssets\Samples\Cinemachine\2.5.0\Cinemachine Example Scenes\Shared\Scripts\PlayerMovePhysics.cs" />
+    <Compile Include="Assets\UnityAssets\SerializableDictionary\Example\SerializableDictionaryExample.cs" />
+    <Compile Include="Assets\UnityAssets\SerializableDictionary\Example\UserSerializableDictionaries.cs" />
+    <Compile Include="Assets\UnityAssets\SerializableDictionary\SerializableDictionary.cs" />
     <Compile Include="Assets\UnityAssets\SpaceSkies Free\Demo\Scripts\LookCamera.cs" />
     <Compile Include="Assets\UnityAssets\SpaceSkies Free\Demo\Scripts\SkyboxChanger.cs" />
     <Compile Include="Assets\UnityAssets\Standard Assets\2D\Scripts\Camera2DFollow.cs" />

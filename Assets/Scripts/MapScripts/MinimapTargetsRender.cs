@@ -1,33 +1,30 @@
-﻿using System.Collections;
+﻿using CoherentNoise.Generation.Combination;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Video;
 
-// NPCEnemy have test in method onStart() !!!
 public class MinimapTargetsRender : MonoBehaviour
 {
-    static Dictionary<Transform, GameObject> data = new Dictionary<Transform, GameObject>();
+    TargetsDataMinimap tg;
     Camera cam;
-
-    static public void AddTarget(Transform target)
-    {
-        data.Add(target, target.GetComponent<Marker>().Get());
-    }
 
     Vector2 A, T1, B, T2, C, T3, D, T4, camPos, tarPos;
 
     private void Awake()
     {
         cam = GetComponentInChildren<Camera>();
+        tg = Resources.Load<TargetsDataMinimap>("TargetsDataMinimap");
     }
 
     void Update()
     {
-        foreach (KeyValuePair<Transform, GameObject> entry in data)
+        foreach (KeyValuePair<Transform, GameObject> entry in tg.Get())
         {
             if(entry.Key == null)
             {
-                data.Remove(entry.Key);
+                tg.Remove(entry.Key);
                 break;
             }
             camPos = new Vector2(cam.transform.position.x, cam.transform.position.z);

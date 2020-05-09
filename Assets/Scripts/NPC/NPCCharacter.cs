@@ -10,6 +10,7 @@ public abstract class NPCCharacter : MonoBehaviour {
     protected NPCMovement movementScript = null;
     protected delegate void OnUpdateDelegate (float dist);
     protected OnUpdateDelegate onUpdate = null;
+    protected TargetsDataMinimap tg = null;
     void Awake () {
         movementScript = GetComponent<NPCMovement> ();
         if (movementScript != null) {

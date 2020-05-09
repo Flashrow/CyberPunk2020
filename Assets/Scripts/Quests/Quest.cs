@@ -10,6 +10,12 @@ public abstract class Quest : MonoBehaviour
     public QuestData data;
     public Task activeTask;
     public Dictionary<string, Queue<string>> dialoguesQueue = new Dictionary<string, Queue<string>>();
+    TargetsDataMinimap tg;
+
+    void Awake()
+    {
+        tg = Resources.Load<TargetsDataMinimap>("TargetsDataMinimap");
+    }
 
     public void UnmountQuest()
     {
@@ -19,6 +25,7 @@ public abstract class Quest : MonoBehaviour
     public void LoadQuestData(QuestData dataFile)
     {
         data = dataFile;
+        // TODO: implement TargetsDataMinimap - only if player should see target all time
     }
 
     public void InitNPC(string NPCid)

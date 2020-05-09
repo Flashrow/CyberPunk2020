@@ -18,9 +18,10 @@ public class NPCEnemy : NPCCharacter {
         HealthbarTextHandler.text = $"{MaxHealth}";
         attackScript = GetComponent<NPCEnemyAttack> ();
         anim = GetComponentInChildren<NPCAnimation> ();
+        tg = Resources.Load<TargetsDataMinimap>("TargetsDataMinimap");
     }
     protected override void onStart () {
-        MinimapTargetsRender.AddTarget(transform); // MINIMAP TEST
+        tg.Add(transform); // MINIMAP TEST
         currentHealth = MaxHealth;
     }
     public override void OnHit (float val) {

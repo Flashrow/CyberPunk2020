@@ -89,6 +89,8 @@
     <Compile Include="Assets\UnityAssets\Mochineko\SimpleReorderableListSamples\SingleProperty\Editor\SinglePropertySampleEditor.cs" />
     <Compile Include="Assets\UnityAssets\Plugins\GitHub\Editor\ExtensionLoader.cs" />
     <Compile Include="Assets\UnityAssets\Plugins\GitHub\Editor\UnityAPIWrapper.cs" />
+    <Compile Include="Assets\UnityAssets\SerializableDictionary\Editor\SerializableDictionaryPropertyDrawer.cs" />
+    <Compile Include="Assets\UnityAssets\SerializableDictionary\Example\Editor\UserSerializableDictionaryPropertyDrawers.cs" />
     <Compile Include="Assets\UnityAssets\Standard Assets\Editor\CrossPlatformInput\CrossPlatformInputInitialize.cs" />
     <Compile Include="Assets\UnityAssets\Standard Assets\Editor\Water\Water4\GerstnerDisplaceEditor.cs" />
     <Compile Include="Assets\UnityAssets\Standard Assets\Editor\Water\Water4\PlanarReflectionEditor.cs" />
