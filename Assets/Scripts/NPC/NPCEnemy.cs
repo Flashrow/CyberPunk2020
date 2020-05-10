@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class NPCEnemy : NPCCharacter {
     public float DetectPlayerRadius = 25f;
     public float MaxHealth = 100;
+    public string NPCid;
     public Slider HealthbarHandler;
     public Text HealthbarTextHandler;
     private NPCEnemyAttack attackScript = null;
@@ -37,6 +38,7 @@ public class NPCEnemy : NPCCharacter {
         }
     }
     protected override void onDie () {
+        EventListener.instance.Kills.Invoke(new KillData { NpcId = this.NPCid, position = transform.position });
         anim.AnimDie (gameObject);
     }
 

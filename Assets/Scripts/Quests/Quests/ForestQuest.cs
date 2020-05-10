@@ -13,7 +13,6 @@ public class ForestQuest : Quest
     void Start()
     {
         Debug.Log(data.description);
-        RunTasksQueue(0);
         InitQuest();
     }
     void InitQuest()
@@ -43,6 +42,13 @@ public class ForestQuest : Quest
             QuestManager.instance.Quests["ForestQuest"].data.status = QuestStatus.DONE;
         }
     }
+
+    public void RunAction()
+    {
+        RunTasksQueue(0);
+        ChangeQuestToInProgress();
+    }
+
     public override void AboardQuest()
     {
         QuestManager.instance.Quests["ForestQuest"].data.status = QuestStatus.EXCLUDED;
