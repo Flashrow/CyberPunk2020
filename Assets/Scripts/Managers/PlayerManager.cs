@@ -37,11 +37,21 @@ public class PlayerManager : MonoBehaviour {
     static private void enable()
     {
         Instance.Player.GetComponent<CharacterController>().enabled = true;
+        Instance.Player.GetComponent<InteractionRadius>().enabled = true;
+        Instance.Player.GetComponent<basMovement>().enabled = true;
+
+        GameObject.Find("CM_PL_1").GetComponent<cameraMovement>().enabled = true;
+        GameObject.Find("CM_PL_3").GetComponent<cameraMovement>().enabled = true;
     }
 
     static private void disable()
     {
         Instance.Player.GetComponent<CharacterController>().enabled = false;
+        Instance.Player.GetComponent<InteractionRadius>().enabled = false;
+        Instance.Player.GetComponent<basMovement>().enabled = false;
+
+        GameObject.Find("CM_PL_1").GetComponent<cameraMovement>().enabled = false;
+        GameObject.Find("CM_PL_3").GetComponent<cameraMovement>().enabled = false;
     }
 
 }

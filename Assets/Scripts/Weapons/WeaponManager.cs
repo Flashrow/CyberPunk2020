@@ -16,7 +16,6 @@ public class WeaponManager : MonoBehaviour
     public Weapon weapon = null;
 
     private float lastShootTime;
-    private Item ammo;
 
     private enum State{readyToShoot, reloading, shooting};
     State state;
@@ -36,7 +35,7 @@ public class WeaponManager : MonoBehaviour
 
     private void Start()
     {
-        
+        AmmoAmount.UpdateAmmoUI();
     }
 
     private void Update()
@@ -81,6 +80,15 @@ public class WeaponManager : MonoBehaviour
         {
             return false;
         }
+    }
+
+    private string getAmmoString()
+    {
+        if ((inventory.items.ContainsKey(ItemType.Ammo) && inventory.items[ItemType.Ammo].number > 0)
+          || weapon.getInGunAmmo() > 0)
+            return $"{weapon.getInGunAmmo()}/{inventory.items[ItemType.Ammo].number}";
+        else
+            return "0";
     }
 
     private void singleWeaponHandler()
@@ -135,6 +143,7 @@ public class WeaponManager : MonoBehaviour
         {
             state = State.readyToShoot;
         }
+        AmmoAmount.UpdateAmmoUI(getAmmoString());
     }
 
     private bool readyToShoot()
@@ -176,7 +185,7 @@ public class WeaponManager : MonoBehaviour
 
             }
         }
-            
+        AmmoAmount.UpdateAmmoUI(getAmmoString());
     }
 
     // TODO: NOW MUST HAVE UNICATE ID (NAME)

@@ -10,15 +10,9 @@ public class NPCQuestInteractions : Interacted {
     public CinemachineVirtualCamera QuestCamera;
     private NPCQuestAnimation anim = null;
     [SerializeField] QuestData questData = null;
+
     void Awake () {
         anim = GetComponentInChildren<NPCQuestAnimation> ();
-    }
-    void Update () {
-        if (isActive) {
-            if (Input.GetKeyDown (KeyCode.Escape)) {
-                OnEscape();
-            }
-        }
     }
 
     void OnEscape()
@@ -28,6 +22,7 @@ public class NPCQuestInteractions : Interacted {
         MinimapEvents.TurnOn.Invoke();
         PlayerManager.EnableMovement.Invoke();
         isActive = false;
+        _endInteractedEvent.Invoke();
     }
 
     public override void OnInteract () {

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Interacted : MonoBehaviour {
     [Header ("Label Settings")]
@@ -8,6 +9,16 @@ public class Interacted : MonoBehaviour {
 
     [SerializeField]
     private string labelText;
+
+    static public UnityEvent _endInteractedEvent = new UnityEvent();
+
+    private void Awake()
+    {
+        _endInteractedEvent.AddListener(() =>
+        {
+            EnableUI();
+        });
+    }
 
     public void Interact (Transform transform, float height) {
         try {
@@ -43,12 +54,13 @@ public class Interacted : MonoBehaviour {
         }
     }
 
-    public void DestroyLabel () {
-        try {
-            DestroyImmediate (labelTemp.gameObject);
-        } catch { }finally {
-            UImanager.UIUnlock ();
+    public void DestroyLabel()
+    {
+        try
+        {
+            DestroyImmediate(labelTemp.gameObject);
         }
+        catch { }
     }
 
     void SetLabelPosition (float height) {
@@ -58,7 +70,7 @@ public class Interacted : MonoBehaviour {
     void KeyListener () {
         if (Input.GetKeyDown (KeyCode.F)) {
             OnInteract ();
-            UImanager.UIBlock ();
+            DisableUI();
         }
     }
 
@@ -66,6 +78,16 @@ public class Interacted : MonoBehaviour {
         try {
             InteractionRadius.onIntegrate -= DestroyIfNotActive;
         } catch { }
+    }
+
+    protected void DisableUI()
+    {
+        UImanager.UIBlock();
+    }
+
+    protected void EnableUI()
+    {
+        UImanager.UIUnlock();
     }
 
     public virtual void OnInteract () { }

@@ -102,7 +102,10 @@ public class ShopUI : MonoBehaviour {
     }
 
     void OnEscPress () {
-        if (Input.GetKeyDown (KeyCode.Escape)) DestroyMe ();
+        if (Input.GetKeyDown (KeyCode.Escape))
+        {
+            DestroyMe();
+        }
     }
 
     public void DestroyMe () {

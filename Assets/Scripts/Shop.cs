@@ -9,6 +9,8 @@ public class Shop : Interacted {
     [SerializeField]
     private ShopUI shopUI;
     private ShopUI shopUITemp;
+
+    private bool active = false;
     // Start is called before the first frame update
     void Start () {
 
@@ -16,7 +18,11 @@ public class Shop : Interacted {
 
     // Update is called once per frame
     void Update () {
-
+        if (active && shopUITemp == null)
+        {
+            _endInteractedEvent.Invoke();
+            active = false;
+        }
     }
 
     public override void OnInteract () {
@@ -24,6 +30,7 @@ public class Shop : Interacted {
             shopUITemp = (ShopUI) Instantiate (shopUI);
             Debug.Log (shopItems.items.Count);
             shopUITemp.Prime (shopItems);
+            active = true;
         }
     }
 }
