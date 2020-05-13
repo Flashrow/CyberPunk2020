@@ -22,7 +22,6 @@ public class ShopItems : ScriptableObject {
     public Dictionary<ItemType, Item> items = new Dictionary<ItemType, Item> ();
     // Use this for initialization
     void OnEnable () {
-        Debug.Log ("elo");
         foreach (ListItem item in list) {
             items.Add (item.type, Item.CreateItemObjectByType (item.type));
             items[item.type].number = item.number;
