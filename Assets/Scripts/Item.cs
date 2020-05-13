@@ -58,7 +58,6 @@ public class Item {
             case ItemType.Tools:
                 return new Tools();
             case ItemType.Gun:
-                Debug.Log("Item: Create weapon");
                 return new Weapon("rifle","rifle");
             default:
                 return new Item ();

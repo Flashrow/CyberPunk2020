@@ -17,16 +17,12 @@ public class Weapon : Item {
         spriteName = _spriteName;
         scriptName = _scriptName;
         itemId = "gun";
-        Debug.Log("Weapon: Weapon");
         LoadScriptableObject(scriptName);
     }
 
     public override void LoadScriptableObject(string scriptName)
     {
         this.data = Resources.Load<WeaponScriptable>("Items/Weapons/" + scriptName);
-        Debug.Log("Weapon: id - " + this.data.itemId);
-        Debug.Log("Weapon: type - " + this.data.type);
-        Debug.Log("Weapon: range - " + this.getData().range);
     }
 
     public override Item CreateInstance()
