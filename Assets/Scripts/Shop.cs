@@ -10,7 +10,6 @@ public class Shop : Interacted {
     private ShopUI shopUI;
     private ShopUI shopUITemp;
 
-    private bool active = false;
     // Start is called before the first frame update
     void Start () {
 
@@ -18,10 +17,10 @@ public class Shop : Interacted {
 
     // Update is called once per frame
     void Update () {
-        if (active && shopUITemp == null)
+        if (shopUITemp == null)
         {
             _endInteractedEvent.Invoke();
-            active = false;
+            isActive = false;
         }
     }
 
@@ -30,7 +29,7 @@ public class Shop : Interacted {
             shopUITemp = (ShopUI) Instantiate (shopUI);
             Debug.Log (shopItems.items.Count);
             shopUITemp.Prime (shopItems);
-            active = true;
+            isActive = true;
         }
     }
 }

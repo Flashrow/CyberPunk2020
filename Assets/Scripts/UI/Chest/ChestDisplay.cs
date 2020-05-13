@@ -6,14 +6,15 @@ using UnityEngine.UI;
 public class ChestDisplay : MonoBehaviour {
     public Transform targetTransform;
     public ChestListItemDisplay itemListPreFabs;
-    // Start is called before the first frame update
-    void Start () {
-
-    }
 
     // Update is called once per frame
     void Update () {
+    
+    }
 
+    private void afterDestroy()
+    {
+        Interacted._endInteractedEvent.Invoke();
     }
 
     public void Prime (List<Item> items) {

@@ -5,7 +5,6 @@ using UnityEngine.Events;
 using Cinemachine;
 
 public class NPCQuestInteractions : Interacted {
-    bool isActive = false;
     public string NpcId;
     public CinemachineVirtualCamera QuestCamera;
     private NPCQuestAnimation anim = null;

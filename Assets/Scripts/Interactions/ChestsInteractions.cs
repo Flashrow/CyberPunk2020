@@ -17,7 +17,6 @@ public class ItemProbability {
 };
 
 public class ChestsInteractions : Interacted {
-    bool isActive = false;
     List<Item> items = new List<Item> ();
     public ChestDisplay chestDisplayPrefab;
     private ChestDisplay chestDisplayPrefabUI;
@@ -53,14 +52,19 @@ public class ChestsInteractions : Interacted {
     }
 
     void Update () {
-        if (isActive && Input.GetKeyDown (KeyCode.Escape)) {
-            CloseUI ();
-        }
-        if (isActive && Input.GetKeyDown (KeyCode.Q)) {
-            receiveItems ();
-            Debug.Log ($"Items receiverd, amount: {items.Count}");
-            items.Clear ();
-            CloseUI ();
+        if (isActive)
+        {
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                CloseUI();
+            }
+            else if (Input.GetKeyDown(KeyCode.Q))
+            {
+                receiveItems();
+                Debug.Log($"Items receiverd, amount: {items.Count}");
+                items.Clear();
+                CloseUI();
+            }
         }
     }
 
@@ -80,6 +84,8 @@ public class ChestsInteractions : Interacted {
 
     void CloseUI () {
         DestroyImmediate (chestDisplayPrefabUI.gameObject);
+        Input.ResetInputAxes();
+        _endInteractedEvent.Invoke();
         isActive = false;
     }
 

@@ -4,6 +4,9 @@ using UnityEngine;
 using UnityEngine.Events;
 
 public class Interacted : MonoBehaviour {
+
+    protected bool isActive = false;
+
     [Header ("Label Settings")]
     InteractionLabel labelTemp;
 
