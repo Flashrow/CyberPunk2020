@@ -27,11 +27,13 @@ public class QuestManager : MonoBehaviour
         {
             if (Quests[questData.QuestId].data.status == QuestStatus.EXCLUDED)
             {
-                Debug.LogWarning($"Quest { questData.tasks} was aboard by user earlier");
+                //Debug.LogWarning($"Quest { questData.tasks} was aboard by player earlier");
+                UImanager.Alert($"Quest: {questData.name} is inaccessible");
             }
             else
             {
-                Debug.Log($"Quest {questData.tasks} in progress...");
+                UImanager.Alert($"Quest: {questData.name} in progress");
+                //Debug.Log($"Quest {questData.tasks} in progress...");
             }
         }
     }

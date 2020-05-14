@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class HpBar : MonoBehaviour {
     // Start is called before the first frame update
     public RectTransform bar;
@@ -22,7 +23,17 @@ public class HpBar : MonoBehaviour {
 
     void refreshStats () {
         playerName.text = PlayerManager.Instance.HeroScript.playerName;
-        hpText.text = $"{(PlayerManager.Instance.HeroScript.Hp / PlayerManager.Instance.HeroScript.BaseHp) * 100}%";
-        bar.offsetMax = new Vector2 (-(width - ((PlayerManager.Instance.HeroScript.Hp / PlayerManager.Instance.HeroScript.BaseHp) * width)), bar.offsetMax.y);
+        if (PlayerManager.Instance.HeroScript.Hp > 0)
+        {
+            hpText.text = $"{(PlayerManager.Instance.HeroScript.Hp / PlayerManager.Instance.HeroScript.BaseHp) * 100}%";
+            bar.offsetMax = new Vector2(-(width - ((PlayerManager.Instance.HeroScript.Hp / PlayerManager.Instance.HeroScript.BaseHp) * width)), bar.offsetMax.y);
+        } else
+        {
+            hpText.text = "0%";
+            bar.offsetMax = new Vector2(0, 0);
+            Hero.OnDieEvent.Invoke();
+            Destroy(this);
+        }
     }
+   
 }

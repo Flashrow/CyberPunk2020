@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class Hero : MonoBehaviour {
     public float BaseHp = 1000;
@@ -12,8 +14,20 @@ public class Hero : MonoBehaviour {
     
     public Inventory inventory;
 
+    static public UnityEvent OnDieEvent = new UnityEvent();
+
     private void Awake () {
         inventory = new Inventory ();
+        OnDieEvent.AddListener(() =>
+        {
+            UImanager.Alert($"TODO:// Game Over !!!", 2.5f);
+            Invoke("goToMenu", 2.5f);
+        });
+    }
+
+    void goToMenu()
+    {
+        SceneManager.LoadScene("MenuStart");
     }
 
     public void setPlayerAmmo (ushort ammo) {
@@ -30,15 +44,5 @@ public class Hero : MonoBehaviour {
 
     public void HitPlayer (float val) {
         this.Hp -= val;
-    }
-
-    // Start is called before the first frame update
-    void Start () {
-
-    }
-
-    // Update is called once per frame
-    void Update () {
-
     }
 }

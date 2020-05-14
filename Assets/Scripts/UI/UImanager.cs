@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class UImanager : MonoBehaviour {
     static private GameObject gameInterface;
@@ -10,8 +11,10 @@ public class UImanager : MonoBehaviour {
     static private List<GameObject> elements = new List<GameObject> ();
     static public bool isOpen { get; private set; }
     static public bool isBlock { get; private set; }
+    static private Canvas alert;
     void Awake () {
         gameInterface = GameObject.Find ("GameInterface");
+        alert = Resources.Load<Canvas>("PreFabs/UI/Alert");
         isOpen = false;
         isBlock = false;
     }
@@ -23,6 +26,13 @@ public class UImanager : MonoBehaviour {
                 UIOpen (ref quickMenuCanvas);
             }
         }
+    }
+    static public void Alert(string text, float time = 2.5f)
+    {
+        var obj = GameObject.Instantiate(alert).transform;
+        obj.SetParent(GameObject.Find("UI").transform);
+        obj.GetComponentInChildren<TextMeshProUGUI>().SetText(text);
+        GameObject.Destroy(obj.gameObject, time);
     }
     static public void UIOpen (ref GameObject go) {
         if (elements.Count == 0) {

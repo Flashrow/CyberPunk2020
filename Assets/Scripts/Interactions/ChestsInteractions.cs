@@ -61,7 +61,9 @@ public class ChestsInteractions : Interacted {
             else if (Input.GetKeyDown(KeyCode.Q))
             {
                 receiveItems();
-                Debug.Log($"Items receiverd, amount: {items.Count}");
+                if(items.Count > 0)
+                    UImanager.Alert($"Items receiverd to inventory, amount: {items.Count}");
+                else UImanager.Alert($"Chest is empty");
                 items.Clear();
                 CloseUI();
             }

@@ -58,12 +58,14 @@ public class WeaponManager : MonoBehaviour
             }
             else if(Input.GetButtonDown("Fire1"))
             {
-                Debug.Log("WeaponManager: no ammo in inventory");
+                UImanager.Alert($"No ammo in inventory", 1f);
+                //Debug.Log("WeaponManager: no ammo in inventory");
             }
         }
         else if (Input.GetButtonDown("Fire1"))
         {
-            Debug.Log("WeaponManager: no weapon in hand");
+            UImanager.Alert($"No weapon in hand", 1f);
+            //Debug.Log("WeaponManager: no weapon in hand");
         }
 
     }
@@ -106,7 +108,8 @@ public class WeaponManager : MonoBehaviour
                 else
                 {
                     state = State.reloading;
-                    Debug.Log("WeaponManager: single shot - reloading");
+                    UImanager.Alert($"Reloading...", weapon.getData().reloadingTime);
+                    //Debug.Log("WeaponManager: single shot - reloading");
                     inventory.items[ItemType.Ammo].number = weapon.reload(inventory.items[ItemType.Ammo].number);
                 }
             }
@@ -133,6 +136,7 @@ public class WeaponManager : MonoBehaviour
                     else
                     {
                         state = State.reloading;
+                        UImanager.Alert($"Reloading...", weapon.getData().reloadingTime);
                         inventory.items[ItemType.Ammo].number = weapon.reload(inventory.items[ItemType.Ammo].number);
                     }
                     lastShootTime = 0;
@@ -188,7 +192,6 @@ public class WeaponManager : MonoBehaviour
         AmmoAmount.UpdateAmmoUI(getAmmoString());
     }
 
-    // TODO: NOW MUST HAVE UNICATE ID (NAME)
     private void findShotNPC(RaycastHit hit)
     {
         var objShooted = GameObject.Find(hit.transform.name);
