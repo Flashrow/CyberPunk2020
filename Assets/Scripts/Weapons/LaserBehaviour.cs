@@ -21,7 +21,6 @@ public class LaserBehaviour : MonoBehaviour {
                 Damage -= Tolerant;
             else Damage += Tolerant;
             PlayerManager.Instance.HeroScript.HitPlayer (Damage);
-            Debug.Log (Damage);
         }
         Destroy (this.gameObject);
     }

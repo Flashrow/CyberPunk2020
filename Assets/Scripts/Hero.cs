@@ -27,7 +27,8 @@ public class Hero : MonoBehaviour {
 
     void goToMenu()
     {
-        SceneManager.LoadScene("MenuStart");
+        Debug.Log("GAME OVER !!!");
+        //SceneManager.LoadScene("MenuStart");
     }
 
     public void setPlayerAmmo (ushort ammo) {

@@ -159,6 +159,7 @@
     <Compile Include="Assets\Scripts\Weapons\Gun.cs" />
     <Compile Include="Assets\Scripts\Weapons\LaserBehaviour.cs" />
     <Compile Include="Assets\Scripts\Weapons\WeaponManager.cs" />
+    <Compile Include="Assets\Scripts\lookAtPlayer.cs" />
     <Compile Include="Assets\Scripts\lookAtTarget.cs" />
     <Compile Include="Assets\Scripts\lookAtTargetWithoutAnimate.cs" />
     <Compile Include="Assets\UnityAssets\AssetStoreOriginals\_SNAPS_PrototypingAssets\About\Scripts\Readme.cs" />

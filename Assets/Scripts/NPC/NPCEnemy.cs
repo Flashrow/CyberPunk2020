@@ -26,7 +26,8 @@ public class NPCEnemy : NPCCharacter {
         currentHealth = MaxHealth;
     }
     public override void OnHit (float val) {
-        anim.AnimHit ();
+        if(anim)
+            anim.AnimHit ();
         currentHealth -= val;
         if (currentHealth > 0) {
             HealthbarHandler.value = currentHealth / MaxHealth;

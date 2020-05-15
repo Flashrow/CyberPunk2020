@@ -201,10 +201,7 @@ public class WeaponManager : MonoBehaviour
             NPCShooted.OnHit(10);
         }
         catch (NPCShootedException) { }
-        catch
-        {
-            Debug.Log("YOU ARE BLIND :D");
-        }
+        catch {}
     }
 
 }
