@@ -16,7 +16,7 @@ public class cameraMovement : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void Update () {
+    void FixedUpdate () {
 
         mouseX = rotationSpeed * Input.GetAxis ("Mouse X") * Time.deltaTime;
         mouseY = rotationSpeed * Input.GetAxis ("Mouse Y") * Time.deltaTime;
@@ -28,4 +28,5 @@ public class cameraMovement : MonoBehaviour {
         transform.localRotation = Quaternion.Euler (rotationX, 0f, 0f);
         PlayerManager.Instance.Player.transform.Rotate (Vector3.up * mouseX);
     }
+    
 }

@@ -9,6 +9,9 @@ public class basMovement : MonoBehaviour {
     public float gravity = 6 * 9.81f;
     public float jumpHeight = 4f;
 
+    public float maximumSlopeAngle = 20f;
+    public float slideFriction = 0.7f;
+
     Vector3 velocity = Vector3.zero;
 
     public CharacterController controller;
@@ -28,46 +31,101 @@ public class basMovement : MonoBehaviour {
     void Update () {
         if(PlayerManager.Instance.Player.GetComponent<CharacterController>().enabled == true)
         {
-            moveDirection = transform.right * Input.GetAxis("Horizontal") +
-           transform.forward * Input.GetAxis("Vertical");
+            getInput();
 
-            if (controller.isGrounded &&
-                velocity.y <= 0)
-            {
-                velocity.y = -2f;
-            }
-
-            if (controller.isGrounded && Input.GetButtonDown("Jump"))
-            {
-                velocity.y = Mathf.Sqrt(jumpHeight * 2f * gravity);
-            }
-
-            velocity.y -= gravity * Time.deltaTime;
-
-            if (moveDirection != Vector3.zero)
-            {
-                if (Input.GetKey(KeyCode.LeftShift))
+            if (controller.isGrounded)
+            { 
+               if(!slidingDown())
                 {
-                    if (controller.isGrounded)
-                    {
-                        stepSound(stepType.sprint);
-                    }
-
-                    controller.Move(sprintSpeed * moveDirection * Time.deltaTime);
+                    checkForJump();
                 }
                 else
                 {
-                    if (controller.isGrounded)
-                    {
-                        stepSound(stepType.trot);
-                    }
-
-                    controller.Move(trotSpeed * moveDirection * Time.deltaTime);
+                    wallJump();
                 }
+            } else
+            {
+                gravityPhysics();
+            }
+
+            if (moveDirection != Vector3.zero)
+            {
+                setMovingWay();
             }
 
             controller.Move(velocity * Time.deltaTime);
         }
+    }
+
+    private void wallJump()
+    {
+        
+    }
+
+    private void stickToWall()
+    {
+        
+    }
+
+    private bool slidingDown() // must check if is grounded
+    {
+        float groundAngle = 0f;
+        RaycastHit hit;
+
+        if(Physics.Raycast(transform.position, Vector3.down, out hit))
+        {
+            groundAngle = Vector3.Angle(Vector3.up, hit.normal);
+        }
+
+        if(groundAngle > maximumSlopeAngle)
+        {
+            moveDirection.x += hit.normal.x * slideFriction * (1.0f / (groundAngle / 360.0f));
+            moveDirection.z += hit.normal.z * slideFriction * (1.0f / (groundAngle / 360.0f));
+            return true;
+        }
+
+        return false;
+    }
+
+    private void setMovingWay()
+    {
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            if (controller.isGrounded)
+            {
+                stepSound(stepType.sprint);
+            }
+
+            controller.Move(sprintSpeed * moveDirection * Time.deltaTime);
+        }
+        else
+        {
+            if (controller.isGrounded)
+            {
+                stepSound(stepType.trot);
+            }
+
+            controller.Move(trotSpeed * moveDirection * Time.deltaTime);
+        }
+    }
+
+    private void getInput()
+    {
+        moveDirection = transform.right * Input.GetAxis("Horizontal") +
+                            transform.forward * Input.GetAxis("Vertical");
+    }
+
+    private void checkForJump()
+    {
+        if (Input.GetButtonDown("Jump"))
+        {
+            velocity.y = Mathf.Sqrt(jumpHeight * 2f * gravity);
+        }
+    }
+
+    private void gravityPhysics()
+    {
+        velocity.y -= gravity * Time.deltaTime;
     }
 
     private void stepSound (stepType type) {
