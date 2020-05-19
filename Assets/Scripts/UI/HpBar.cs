@@ -22,7 +22,7 @@ public class HpBar : MonoBehaviour {
 
     void refreshStats () {
         playerName.text = PlayerManager.Instance.HeroScript.playerName;
-        hpText.text = $"{(PlayerManager.Instance.HeroScript.Hp / PlayerManager.Instance.HeroScript.BaseHp) * 100}%";
-        bar.offsetMax = new Vector2 (-(width - ((PlayerManager.Instance.HeroScript.Hp / PlayerManager.Instance.HeroScript.BaseHp) * width)), bar.offsetMax.y);
+        hpText.text = $"{(PlayerManager.Instance.HeroScript.health / PlayerManager.Instance.HeroScript.BaseHp) * 100}%";
+        bar.offsetMax = new Vector2 (-(width - ((PlayerManager.Instance.HeroScript.health / PlayerManager.Instance.HeroScript.BaseHp) * width)), bar.offsetMax.y);
     }
 }

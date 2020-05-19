@@ -19,12 +19,13 @@ public class basMovement : MonoBehaviour {
     Vector3 moveDirection = Vector3.zero;
 
     private float stepTimer = 0f;
-
+    private Hero playerScript;
     private enum stepType { walk, trot, sprint }
 
     // Start is called before the first frame update
     void Start () {
         controller = GetComponent<CharacterController> ();
+        playerScript = transform.GetComponent<Hero>();
     }
 
     // Update is called once per frame
@@ -51,6 +52,10 @@ public class basMovement : MonoBehaviour {
             if (moveDirection != Vector3.zero)
             {
                 setMovingWay();
+            }
+            else
+            {
+                playerScript.setMovementState(MovementState.standing);
             }
 
             controller.Move(velocity * Time.deltaTime);
@@ -95,7 +100,7 @@ public class basMovement : MonoBehaviour {
             {
                 stepSound(stepType.sprint);
             }
-
+            playerScript.setMovementState(MovementState.running);
             controller.Move(sprintSpeed * moveDirection * Time.deltaTime);
         }
         else
@@ -104,7 +109,7 @@ public class basMovement : MonoBehaviour {
             {
                 stepSound(stepType.trot);
             }
-
+            playerScript.setMovementState(MovementState.walking);
             controller.Move(trotSpeed * moveDirection * Time.deltaTime);
         }
     }
