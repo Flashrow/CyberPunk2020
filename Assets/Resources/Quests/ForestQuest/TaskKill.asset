@@ -22,4 +22,8 @@ MonoBehaviour:
   onFinish:
     m_PersistentCalls:
       m_Calls: []
-  list: []
+  list:
+  - ForestQuestEnemy1
+  - ForestQuestEnemy2
+  - ForestQuestEnemy3
+  - ForestQuestEnemy4
