@@ -23,10 +23,10 @@ public class HpBar : MonoBehaviour {
 
     void refreshStats () {
         playerName.text = PlayerManager.Instance.HeroScript.playerName;
-        if (PlayerManager.Instance.HeroScript.Hp > 0)
+        if (PlayerManager.Instance.HeroScript.health > 0)
         {
-            hpText.text = $"{(PlayerManager.Instance.HeroScript.Hp / PlayerManager.Instance.HeroScript.BaseHp) * 100}%";
-            bar.offsetMax = new Vector2(-(width - ((PlayerManager.Instance.HeroScript.Hp / PlayerManager.Instance.HeroScript.BaseHp) * width)), bar.offsetMax.y);
+            hpText.text = $"{(PlayerManager.Instance.HeroScript.health / PlayerManager.Instance.HeroScript.BaseHp) * 100}%";
+            bar.offsetMax = new Vector2 (-(width - ((PlayerManager.Instance.HeroScript.health / PlayerManager.Instance.HeroScript.BaseHp) * width)), bar.offsetMax.y);
         } else
         {
             hpText.text = "0%";
@@ -35,5 +35,4 @@ public class HpBar : MonoBehaviour {
             Destroy(this);
         }
     }
-   
 }

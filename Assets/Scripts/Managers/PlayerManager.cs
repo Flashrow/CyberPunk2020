@@ -23,6 +23,7 @@ public class PlayerManager : MonoBehaviour {
 
     private void Start()
     {
+        HeroScript = Player.GetComponent<Hero>();
         EnableMovement.AddListener(() =>
         {
             enable();

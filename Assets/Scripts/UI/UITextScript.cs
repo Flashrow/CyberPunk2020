@@ -8,16 +8,16 @@ public class UITextScript : MonoBehaviour {
 
     // Start is called before the first frame update
     void Start () {
-        HPText.text = this.GetComponent<Player> ().health.ToString ();
-        PlayerAmmoText.text = this.GetComponent<Player> ().playerAmmo.ToString ();
-        GunAmmoText.text = this.GetComponent<Player> ().inGunAmmo.ToString ();
+        HPText.text = this.GetComponent<Hero> ().health.ToString ();
+        PlayerAmmoText.text = this.GetComponent<Hero> ().playerAmmo.ToString ();
+        GunAmmoText.text = this.GetComponent<Hero> ().inGunAmmo.ToString ();
 
     }
 
     // Update is called once per frame
     void Update () {
-        HPText.text = this.GetComponent<Player> ().health.ToString ();
-        PlayerAmmoText.text = this.GetComponent<Player> ().playerAmmo.ToString ();
-        GunAmmoText.text = this.GetComponent<Player> ().inGunAmmo.ToString ();
+        HPText.text = this.GetComponent<Hero> ().health.ToString ();
+        PlayerAmmoText.text = this.GetComponent<Hero> ().playerAmmo.ToString ();
+        GunAmmoText.text = this.GetComponent<Hero> ().inGunAmmo.ToString ();
     }
 }
