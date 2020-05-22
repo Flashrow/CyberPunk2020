@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public enum ItemType { Coins, Gun, Ammo, Phone, Tools }
+public enum ItemType { Coins, Gun, Ammo, Phone, Tools, Onion }
 
 public class Item {
     public string itemId;
@@ -44,7 +44,10 @@ public class Item {
     }
 
     public virtual Item CreateInstance () {
-        return new Item ();
+        Item newItem = new Item();
+        newItem.number = number;
+        newItem.cost = cost;
+        return newItem;
     }
 
     static public Item CreateItemObjectByType (ItemType type) {
@@ -59,6 +62,8 @@ public class Item {
                 return new Tools();
             case ItemType.Gun:
                 return new Weapon("rifle","rifle");
+            case ItemType.Onion:
+                return new Item("cebula","Onion");
             default:
                 return new Item ();
         }

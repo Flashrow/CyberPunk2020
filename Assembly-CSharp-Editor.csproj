@@ -106,6 +106,7 @@
     <Compile Include="Assets\UnityAssets\Tom's Terrain Tools\Editor\TerrainTools.cs" />
     <Compile Include="Assets\UnityAssets\WorldBuilder\Editor\World.cs" />
     <Compile Include="Assets\UnityAssets\WorldBuilder\Editor\WorldGen.cs" />
+    <Compile Include="Assets\UnityAssets\unity-chan!\Unity-chan! Model\Editor\CreateLocatorHere.cs" />
     <None Include="Assets\UnityAssets\Plugins\GitHub\Editor\credits.txt" />
     <None Include="Assets\UnityAssets\Plugins\GitHub\Editor\eula.txt" />
     <None Include="Assets\UnityAssets\AssetStoreOriginals\_SNAPS_PrototypingAssets\Scripts\Editor\PackageChecker\settings\PackageImportList_ShaderGraph.txt" />
