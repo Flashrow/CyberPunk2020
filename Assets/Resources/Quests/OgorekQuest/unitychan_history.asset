@@ -1,0 +1,72 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78b3fd9154634ebdb8c8a48960b9a16a, type: 3}
+  m_Name: unitychan_history
+  m_EditorClassIdentifier: 
+  NodeLinks:
+  - BaseNodeGUID: a5ce895d-0ee9-46b3-95ae-83c6478cd38e
+    PortName: Next
+    TargetNodeGUID: 5e588814-dd0e-4bdd-906c-5aaf138b335b
+  - BaseNodeGUID: 5e588814-dd0e-4bdd-906c-5aaf138b335b
+    PortName: Option 1
+    TargetNodeGUID: c17b942a-e67c-404f-9b84-7fa66661e8ad
+  - BaseNodeGUID: c17b942a-e67c-404f-9b84-7fa66661e8ad
+    PortName: "Sk\u0105d to wiesz?"
+    TargetNodeGUID: d527b885-1e76-46a8-b8be-010123c663e1
+  - BaseNodeGUID: c17b942a-e67c-404f-9b84-7fa66661e8ad
+    PortName: "Straci\u0142em pami\u0119\u0107... Gdzie my jeste\u015Bmy?"
+    TargetNodeGUID: fc7d1fc1-9893-4f80-9582-b2d25051f5ed
+  - BaseNodeGUID: fc7d1fc1-9893-4f80-9582-b2d25051f5ed
+    PortName: Option 1
+    TargetNodeGUID: 0758a41e-f22c-4357-a1a0-cfb95a1a97ad
+  - BaseNodeGUID: 0758a41e-f22c-4357-a1a0-cfb95a1a97ad
+    PortName: Option 1
+    TargetNodeGUID: e7e55027-173a-4cfd-8aec-c2e69ee87042
+  - BaseNodeGUID: d527b885-1e76-46a8-b8be-010123c663e1
+    PortName: Option 1
+    TargetNodeGUID: e7e55027-173a-4cfd-8aec-c2e69ee87042
+  DialogueNodeData:
+  - NodeGUID: c17b942a-e67c-404f-9b84-7fa66661e8ad
+    DialogueText: "Ty r\xF3wnie\u017C nie jeste\u015B z tych czas\xF3w Player-kun"
+    Speaker: NPC
+    Callback: 
+    Position: {x: 922, y: 179}
+  - NodeGUID: 5e588814-dd0e-4bdd-906c-5aaf138b335b
+    DialogueText: "Przyby\u0142am tu z przysz\u0142o\u015Bci, zreszt\u0105 sam widzisz,
+      \u017Ce nie pasuj\u0119 wygl\u0105dem do tego \u015Bwiata."
+    Speaker: NPC
+    Callback: 
+    Position: {x: 229, y: 185}
+  - NodeGUID: fc7d1fc1-9893-4f80-9582-b2d25051f5ed
+    DialogueText: "Ostatnie co pami\u0119tam to g\u0142o\u015Bny huk i b\xF3l g\u0142owy"
+    Speaker: Player
+    Callback: 
+    Position: {x: 1435, y: 292}
+  - NodeGUID: 0758a41e-f22c-4357-a1a0-cfb95a1a97ad
+    DialogueText: "Potem obudzi\u0142em si\u0119 w tym lesie..."
+    Speaker: Player
+    Callback: 
+    Position: {x: 2070, y: 291}
+  - NodeGUID: e7e55027-173a-4cfd-8aec-c2e69ee87042
+    DialogueText: Dialogue Node
+    Speaker: NPC
+    Callback: unitychan_history
+    Position: {x: 2502, y: 205}
+  - NodeGUID: d527b885-1e76-46a8-b8be-010123c663e1
+    DialogueText: "Sk\u0105d to wiesz? Co ja tu robi\u0119? Jak ja si\u0119 tu znalaz\u0142em?"
+    Speaker: Player
+    Callback: 
+    Position: {x: 1736, y: 115}
+  ExposedProperties: []
+  CommentBlockData: []
+  questFolder: 
+  fileName: unitychan_history

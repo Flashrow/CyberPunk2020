@@ -1,0 +1,559 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78b3fd9154634ebdb8c8a48960b9a16a, type: 3}
+  m_Name: ogorekQuest#1
+  m_EditorClassIdentifier: 
+  NodeLinks:
+  - BaseNodeGUID: 1ca61426-9f8a-4fd3-821f-130c84738c5c
+    PortName: Next
+    TargetNodeGUID: 88c78a72-3ef7-4bd7-858c-802a15fe9a6b
+  - BaseNodeGUID: 88c78a72-3ef7-4bd7-858c-802a15fe9a6b
+    PortName: Option 1
+    TargetNodeGUID: 28b7cdb9-416c-484a-8799-857378523306
+  - BaseNodeGUID: e62f1604-bbac-4492-8427-5d73f4c74a5c
+    PortName: Option 1
+    TargetNodeGUID: 913a332b-0a77-44ae-b949-efdcd02ac444
+  - BaseNodeGUID: 28b7cdb9-416c-484a-8799-857378523306
+    PortName: Option 1
+    TargetNodeGUID: e62f1604-bbac-4492-8427-5d73f4c74a5c
+  - BaseNodeGUID: 913a332b-0a77-44ae-b949-efdcd02ac444
+    PortName: Option 1
+    TargetNodeGUID: e8d57359-e69b-47eb-a8cb-8ddfc6aaa1e5
+  - BaseNodeGUID: e8d57359-e69b-47eb-a8cb-8ddfc6aaa1e5
+    PortName: Opowiadaj
+    TargetNodeGUID: 102ee315-ce89-44b8-81ab-15b2414bfd61
+  - BaseNodeGUID: e8d57359-e69b-47eb-a8cb-8ddfc6aaa1e5
+    PortName: Nie mam teraz czasu
+    TargetNodeGUID: e325d458-e43f-49cd-84b1-41d99041ea90
+  - BaseNodeGUID: 102ee315-ce89-44b8-81ab-15b2414bfd61
+    PortName: Option 1
+    TargetNodeGUID: dfd44ded-c1ea-4bc2-91a6-39cff7e4a52c
+  - BaseNodeGUID: e325d458-e43f-49cd-84b1-41d99041ea90
+    PortName: Option 1
+    TargetNodeGUID: 78604a5e-3909-437e-ab45-96ff170d1c71
+  - BaseNodeGUID: dfd44ded-c1ea-4bc2-91a6-39cff7e4a52c
+    PortName: Option 1
+    TargetNodeGUID: ca976be4-00a1-4ef3-a889-a31f9bfebcc1
+  - BaseNodeGUID: ca976be4-00a1-4ef3-a889-a31f9bfebcc1
+    PortName: "Sk\u0105d to wiesz?"
+    TargetNodeGUID: ebac8c85-3a71-4ac0-884e-d0d675fc4563
+  - BaseNodeGUID: ca976be4-00a1-4ef3-a889-a31f9bfebcc1
+    PortName: "Straci\u0142em pami\u0119\u0107... Gdzie my jeste\u015Bmy?"
+    TargetNodeGUID: 24e7c56c-3609-4387-9b42-32700cfd7744
+  - BaseNodeGUID: 24e7c56c-3609-4387-9b42-32700cfd7744
+    PortName: Option 1
+    TargetNodeGUID: 125706b9-8fdc-40b8-b7d0-b13c5f359e22
+  - BaseNodeGUID: ebac8c85-3a71-4ac0-884e-d0d675fc4563
+    PortName: Option 1
+    TargetNodeGUID: 24e7c56c-3609-4387-9b42-32700cfd7744
+  - BaseNodeGUID: 125706b9-8fdc-40b8-b7d0-b13c5f359e22
+    PortName: Option 1
+    TargetNodeGUID: d06143a5-a3df-4bd3-aa8b-68866b8129ab
+  - BaseNodeGUID: d06143a5-a3df-4bd3-aa8b-68866b8129ab
+    PortName: Option 1
+    TargetNodeGUID: c89df167-bfdb-4da1-af2a-b3abc9096ed1
+  - BaseNodeGUID: c89df167-bfdb-4da1-af2a-b3abc9096ed1
+    PortName: Option 1
+    TargetNodeGUID: 43029153-8916-4ae9-83ec-036110297b2f
+  - BaseNodeGUID: 43029153-8916-4ae9-83ec-036110297b2f
+    PortName: Option 1
+    TargetNodeGUID: a4325ee3-8dd9-441e-bb73-ea3a02da7bc7
+  - BaseNodeGUID: a4325ee3-8dd9-441e-bb73-ea3a02da7bc7
+    PortName: Option 1
+    TargetNodeGUID: 3984383c-2474-4f54-a332-807738242f0e
+  - BaseNodeGUID: 3984383c-2474-4f54-a332-807738242f0e
+    PortName: Option 1
+    TargetNodeGUID: 52980912-6137-4ac3-b2f2-5683ad711b18
+  - BaseNodeGUID: 4024b766-1261-436e-bb76-b13cbfa734c9
+    PortName: Option 1
+    TargetNodeGUID: 70f18dbc-8359-4ea6-879c-0ece682f6d21
+  - BaseNodeGUID: 52980912-6137-4ac3-b2f2-5683ad711b18
+    PortName: Co to za grupa?
+    TargetNodeGUID: 4024b766-1261-436e-bb76-b13cbfa734c9
+  - BaseNodeGUID: 52980912-6137-4ac3-b2f2-5683ad711b18
+    PortName: "Czy mo\u017Cesz powt\xF3rzy\u0107 co si\u0119 sta\u0142o?"
+    TargetNodeGUID: cac6b3be-6f2f-41e8-b2c7-30f341ca2ff8
+  - BaseNodeGUID: cac6b3be-6f2f-41e8-b2c7-30f341ca2ff8
+    PortName: Option 1
+    TargetNodeGUID: d06143a5-a3df-4bd3-aa8b-68866b8129ab
+  - BaseNodeGUID: 70f18dbc-8359-4ea6-879c-0ece682f6d21
+    PortName: Option 1
+    TargetNodeGUID: 44dc4497-51e8-4715-a56d-d4333b4f3ac1
+  - BaseNodeGUID: 44dc4497-51e8-4715-a56d-d4333b4f3ac1
+    PortName: Option 1
+    TargetNodeGUID: f8c6e5a1-3386-4de2-8957-c17c724f0681
+  - BaseNodeGUID: f8c6e5a1-3386-4de2-8957-c17c724f0681
+    PortName: Option 1
+    TargetNodeGUID: b52be863-2b48-4ab3-9e78-7c61e6c70f97
+  - BaseNodeGUID: b52be863-2b48-4ab3-9e78-7c61e6c70f97
+    PortName: Option 1
+    TargetNodeGUID: 581ec878-2e14-4c0a-9973-7406894975c3
+  - BaseNodeGUID: 9156cb15-e9cf-42d2-b742-fa9404c3b5a5
+    PortName: Option 1
+    TargetNodeGUID: 8c4f884e-892a-4f14-ba25-a7a6786d50b5
+  - BaseNodeGUID: 581ec878-2e14-4c0a-9973-7406894975c3
+    PortName: "A co si\u0119 sta\u0142o z t\u0105 substancj\u0105?"
+    TargetNodeGUID: 9156cb15-e9cf-42d2-b742-fa9404c3b5a5
+  - BaseNodeGUID: 581ec878-2e14-4c0a-9973-7406894975c3
+    PortName: "Czy wojna si\u0119 zako\u0144czy\u0142a?"
+    TargetNodeGUID: 5a4deaf4-e08a-4881-9f5e-1cc66ce2a88c
+  - BaseNodeGUID: 5a4deaf4-e08a-4881-9f5e-1cc66ce2a88c
+    PortName: Option 1
+    TargetNodeGUID: 0e49fe30-adef-48b2-962e-64f2bf7f1651
+  - BaseNodeGUID: 26251edb-8d05-4f98-812a-94746104a3e8
+    PortName: Option 1
+    TargetNodeGUID: 5b399850-fffb-4a37-a3d0-535a766282cb
+  - BaseNodeGUID: 739efe33-0e88-44f0-9540-b3dbea4b06b8
+    PortName: Option 1
+    TargetNodeGUID: 5b399850-fffb-4a37-a3d0-535a766282cb
+  - BaseNodeGUID: 5b399850-fffb-4a37-a3d0-535a766282cb
+    PortName: Option 1
+    TargetNodeGUID: 61705d89-c660-4b71-b2d4-8c830ae02495
+  - BaseNodeGUID: 61705d89-c660-4b71-b2d4-8c830ae02495
+    PortName: Option 1
+    TargetNodeGUID: 8e4e74fe-7520-41f1-947a-a6d93e1a0a35
+  - BaseNodeGUID: 8e4e74fe-7520-41f1-947a-a6d93e1a0a35
+    PortName: "Czy mo\u017Cesz powt\xF3rzy\u0107 co si\u0119 sta\u0142o z substancj\u0105?"
+    TargetNodeGUID: 67cd41d3-c757-4722-a2d8-edb5fa1c8bde
+  - BaseNodeGUID: 8e4e74fe-7520-41f1-947a-a6d93e1a0a35
+    PortName: "Jeszcze raz, czy wojna si\u0119 zako\u0144czy\u0142a?"
+    TargetNodeGUID: bdf867df-9441-4942-975c-a204b10a2afe
+  - BaseNodeGUID: 8e4e74fe-7520-41f1-947a-a6d93e1a0a35
+    PortName: "Dobrze, ale co mam zrobi\u0107?"
+    TargetNodeGUID: 8f0b789f-a8e4-46d5-ac17-41896cf48046
+  - BaseNodeGUID: e1f31c69-3a94-4c3f-b355-dc91561d4d06
+    PortName: Option 1
+    TargetNodeGUID: 9599f174-d4c0-416e-aeb2-c6d25896ca88
+  - BaseNodeGUID: 9599f174-d4c0-416e-aeb2-c6d25896ca88
+    PortName: Option 1
+    TargetNodeGUID: 44f221d5-9890-401b-a317-d2d1c839b46c
+  - BaseNodeGUID: 44f221d5-9890-401b-a317-d2d1c839b46c
+    PortName: Option 1
+    TargetNodeGUID: 605f59b5-daac-4301-bbb0-f3350ee7a09f
+  - BaseNodeGUID: 8c4f884e-892a-4f14-ba25-a7a6786d50b5
+    PortName: Option 1
+    TargetNodeGUID: 976612bc-912d-4a2b-b65d-6f69fdb1c78f
+  - BaseNodeGUID: 976612bc-912d-4a2b-b65d-6f69fdb1c78f
+    PortName: Option 1
+    TargetNodeGUID: 01579866-dde0-4a50-800a-578edf51c259
+  - BaseNodeGUID: 01579866-dde0-4a50-800a-578edf51c259
+    PortName: Option 1
+    TargetNodeGUID: 51847c73-15ae-4bc6-b0df-eba02329e4ce
+  - BaseNodeGUID: 0e49fe30-adef-48b2-962e-64f2bf7f1651
+    PortName: Option 1
+    TargetNodeGUID: 01579866-dde0-4a50-800a-578edf51c259
+  - BaseNodeGUID: 51847c73-15ae-4bc6-b0df-eba02329e4ce
+    PortName: Option 1
+    TargetNodeGUID: 8ecdbcbd-9593-4c52-8763-23b4807c7bc8
+  - BaseNodeGUID: 8ecdbcbd-9593-4c52-8763-23b4807c7bc8
+    PortName: Co zrobili foliarze?
+    TargetNodeGUID: 26251edb-8d05-4f98-812a-94746104a3e8
+  - BaseNodeGUID: 8ecdbcbd-9593-4c52-8763-23b4807c7bc8
+    PortName: Jaki efekt uboczny?
+    TargetNodeGUID: 739efe33-0e88-44f0-9540-b3dbea4b06b8
+  - BaseNodeGUID: 67cd41d3-c757-4722-a2d8-edb5fa1c8bde
+    PortName: Option 1
+    TargetNodeGUID: 8c4f884e-892a-4f14-ba25-a7a6786d50b5
+  - BaseNodeGUID: bdf867df-9441-4942-975c-a204b10a2afe
+    PortName: Option 1
+    TargetNodeGUID: 0e49fe30-adef-48b2-962e-64f2bf7f1651
+  - BaseNodeGUID: 8f0b789f-a8e4-46d5-ac17-41896cf48046
+    PortName: Option 1
+    TargetNodeGUID: 041099cd-0518-4166-9b1c-6f6a85a74120
+  - BaseNodeGUID: 041099cd-0518-4166-9b1c-6f6a85a74120
+    PortName: Option 1
+    TargetNodeGUID: 8cd9426b-aa46-4d6a-8407-600e1f52f297
+  - BaseNodeGUID: 8cd9426b-aa46-4d6a-8407-600e1f52f297
+    PortName: Option 1
+    TargetNodeGUID: abfb0ff1-3e6c-46e1-a780-6cb95d2fce93
+  - BaseNodeGUID: abfb0ff1-3e6c-46e1-a780-6cb95d2fce93
+    PortName: Option 1
+    TargetNodeGUID: 4663f100-3810-471f-ae1c-a35aa8fe8733
+  - BaseNodeGUID: 4663f100-3810-471f-ae1c-a35aa8fe8733
+    PortName: co
+    TargetNodeGUID: b89a7279-c537-4bd2-a052-c10f1f6b415b
+  - BaseNodeGUID: 4663f100-3810-471f-ae1c-a35aa8fe8733
+    PortName: Neutryproco?
+    TargetNodeGUID: c5326116-2b73-449e-8729-23a9004f958f
+  - BaseNodeGUID: 4663f100-3810-471f-ae1c-a35aa8fe8733
+    PortName: Neuroprytytto?
+    TargetNodeGUID: 073bf69f-f921-49b2-8cf9-5d3e94b261c8
+  - BaseNodeGUID: b89a7279-c537-4bd2-a052-c10f1f6b415b
+    PortName: Option 1
+    TargetNodeGUID: b8c72c74-614d-4494-a431-677dda5624e8
+  - BaseNodeGUID: c5326116-2b73-449e-8729-23a9004f958f
+    PortName: Option 1
+    TargetNodeGUID: b8c72c74-614d-4494-a431-677dda5624e8
+  - BaseNodeGUID: 073bf69f-f921-49b2-8cf9-5d3e94b261c8
+    PortName: Option 1
+    TargetNodeGUID: b8c72c74-614d-4494-a431-677dda5624e8
+  - BaseNodeGUID: b8c72c74-614d-4494-a431-677dda5624e8
+    PortName: Option 1
+    TargetNodeGUID: b3f5c97e-a0a5-44c9-961c-6b90b3f798d7
+  - BaseNodeGUID: 13660eb6-8fc4-4760-a425-9604b8f3e575
+    PortName: Option 1
+    TargetNodeGUID: 16218ccf-6690-4de7-877f-1405cf5b948d
+  - BaseNodeGUID: b3f5c97e-a0a5-44c9-961c-6b90b3f798d7
+    PortName: Option 1
+    TargetNodeGUID: 13660eb6-8fc4-4760-a425-9604b8f3e575
+  - BaseNodeGUID: 16218ccf-6690-4de7-877f-1405cf5b948d
+    PortName: Option 1
+    TargetNodeGUID: bf5a585f-7e2a-49ca-9726-cf3630caf4b9
+  - BaseNodeGUID: bf5a585f-7e2a-49ca-9726-cf3630caf4b9
+    PortName: Option 1
+    TargetNodeGUID: 92f6dbfb-0ef5-4aed-a77a-d18d4055e007
+  - BaseNodeGUID: 92f6dbfb-0ef5-4aed-a77a-d18d4055e007
+    PortName: Option 1
+    TargetNodeGUID: d754e4d0-5112-4289-bdc2-51044c9c7367
+  DialogueNodeData:
+  - NodeGUID: 88c78a72-3ef7-4bd7-858c-802a15fe9a6b
+    DialogueText: "Uh! Oh! To ty jeste\u015B Player-kun!"
+    Speaker: NPC
+    Callback: 
+    Position: {x: 271, y: 138}
+  - NodeGUID: e62f1604-bbac-4492-8427-5d73f4c74a5c
+    DialogueText: "Unity-chan... Sk\u0105d ci\u0119 kojarz\u0119?"
+    Speaker: Player
+    Callback: 
+    Position: {x: 1087, y: 136}
+  - NodeGUID: 28b7cdb9-416c-484a-8799-857378523306
+    DialogueText: "Nazywam si\u0119 Unity-chan"
+    Speaker: NPC
+    Callback: 
+    Position: {x: 694, y: 139}
+  - NodeGUID: 913a332b-0a77-44ae-b949-efdcd02ac444
+    DialogueText: "Wkr\xF3tce wszystko zrozumiesz"
+    Speaker: NPC
+    Callback: 
+    Position: {x: 1507, y: 135}
+  - NodeGUID: e8d57359-e69b-47eb-a8cb-8ddfc6aaa1e5
+    DialogueText: "Pozw\xF3l, \u017Ce opowiem Ci moj\u0105 histori\u0119, Player-kun"
+    Speaker: NPC
+    Callback: 
+    Position: {x: 1927, y: 138}
+  - NodeGUID: 102ee315-ce89-44b8-81ab-15b2414bfd61
+    DialogueText: Opowiadaj
+    Speaker: Player
+    Callback: unitychan_history
+    Position: {x: 2539, y: 137}
+  - NodeGUID: e325d458-e43f-49cd-84b1-41d99041ea90
+    DialogueText: "Nie mam czasu, mama wo\u0142a mnie na obiad"
+    Speaker: Player
+    Callback: 
+    Position: {x: 2360, y: 496}
+  - NodeGUID: 78604a5e-3909-437e-ab45-96ff170d1c71
+    DialogueText: "Ojej, mam nadziej\u0119, \u017Ce spotkamy si\u0119 wkr\xF3tce..."
+    Speaker: NPC
+    Callback: init
+    Position: {x: 2427, y: 705}
+  - NodeGUID: dfd44ded-c1ea-4bc2-91a6-39cff7e4a52c
+    DialogueText: "Przyby\u0142am tu z przysz\u0142o\u015Bci, zreszt\u0105 sam widzisz,
+      \u017Ce nie pasuj\u0119 wygl\u0105dem do tego \u015Bwiata."
+    Speaker: NPC
+    Callback: 
+    Position: {x: 2943, y: 125}
+  - NodeGUID: ca976be4-00a1-4ef3-a889-a31f9bfebcc1
+    DialogueText: "Ty r\xF3wnie\u017C nie jeste\u015B z tych czas\xF3w Player-kun"
+    Speaker: NPC
+    Callback: 
+    Position: {x: 3652, y: 126}
+  - NodeGUID: 24e7c56c-3609-4387-9b42-32700cfd7744
+    DialogueText: "Ostatnie co pami\u0119tam to g\u0142o\u015Bny huk i b\xF3l g\u0142owy"
+    Speaker: Player
+    Callback: 
+    Position: {x: 4227, y: 318}
+  - NodeGUID: ebac8c85-3a71-4ac0-884e-d0d675fc4563
+    DialogueText: "Sk\u0105d to wiesz? Co ja tu robi\u0119? Jak ja si\u0119 tu znalaz\u0142em?"
+    Speaker: Player
+    Callback: 
+    Position: {x: 4485, y: 62}
+  - NodeGUID: 125706b9-8fdc-40b8-b7d0-b13c5f359e22
+    DialogueText: "Potem obudzi\u0142em si\u0119 w tym lesie..."
+    Speaker: Player
+    Callback: 
+    Position: {x: 4755, y: 304}
+  - NodeGUID: d06143a5-a3df-4bd3-aa8b-68866b8129ab
+    DialogueText: "Przybyli\u015Bmy tu z roku 2020"
+    Speaker: NPC
+    Callback: 
+    Position: {x: 5249, y: 140}
+  - NodeGUID: c89df167-bfdb-4da1-af2a-b3abc9096ed1
+    DialogueText: "W naszych oryginalnych czasach nie dzieje si\u0119 dobrze"
+    Speaker: NPC
+    Callback: 
+    Position: {x: 5684, y: 137}
+  - NodeGUID: 43029153-8916-4ae9-83ec-036110297b2f
+    DialogueText: "Z laboratorium wydosta\u0142a si\u0119 gro\u017Ana substancja,
+      kt\xF3ra rozpowszechnia si\u0119 w powietrzu"
+    Speaker: NPC
+    Callback: 
+    Position: {x: 6199, y: 136}
+  - NodeGUID: a4325ee3-8dd9-441e-bb73-ea3a02da7bc7
+    DialogueText: "Nie uda\u0142o si\u0119 jej przebada\u0107, ludzie zacz\u0119li
+      umiera\u0107"
+    Speaker: NPC
+    Callback: 
+    Position: {x: 6869, y: 133}
+  - NodeGUID: 3984383c-2474-4f54-a332-807738242f0e
+    DialogueText: "W mi\u0119dzyczasie nieznana wcze\u015Bniej grupa terrorystyczna
+      zacz\u0119\u0142a rozpowszechnia\u0107 informacj\u0119 o tym, \u017Ce substancja
+      tak na prawd\u0119 nie istnieje!"
+    Speaker: NPC
+    Callback: 
+    Position: {x: 7482, y: 132}
+  - NodeGUID: 4024b766-1261-436e-bb76-b13cbfa734c9
+    DialogueText: Co to za grupa?
+    Speaker: Player
+    Callback: 
+    Position: {x: 8881, y: 128}
+  - NodeGUID: 52980912-6137-4ac3-b2f2-5683ad711b18
+    DialogueText: "Ludzie si\u0119 podzielili na frakcj\u0119 racjonalist\xF3w, kt\xF3rzy
+      chcieli zapobiec katastrofie i frakcj\u0119 zarz\u0105dzan\u0105 przez grup\u0119
+      terrorystyczn\u0105"
+    Speaker: NPC
+    Callback: 
+    Position: {x: 8171, y: 130}
+  - NodeGUID: cac6b3be-6f2f-41e8-b2c7-30f341ca2ff8
+    DialogueText: "Tak, Player-kun. Ale prosz\u0119 Ci\u0119, mamy ma\u0142o czasu..."
+    Speaker: NPC
+    Callback: 
+    Position: {x: 6607, y: 571}
+  - NodeGUID: 70f18dbc-8359-4ea6-879c-0ece682f6d21
+    DialogueText: "Ludzie nale\u017C\u0105cy do tej organizacji nazywaj\u0105 siebie
+      foliarzami"
+    Speaker: NPC
+    Callback: 
+    Position: {x: 9366, y: 127}
+  - NodeGUID: 44dc4497-51e8-4715-a56d-d4333b4f3ac1
+    DialogueText: Foliarze...
+    Speaker: Player
+    Callback: 
+    Position: {x: 10010, y: 126}
+  - NodeGUID: f8c6e5a1-3386-4de2-8957-c17c724f0681
+    DialogueText: "Co sta\u0142o si\u0119 potem?"
+    Speaker: Player
+    Callback: 
+    Position: {x: 10356, y: 125}
+  - NodeGUID: b52be863-2b48-4ab3-9e78-7c61e6c70f97
+    DialogueText: "W wyniku podzia\u0142u ludzi wybuch\u0142a ogromna wojna"
+    Speaker: NPC
+    Callback: 
+    Position: {x: 10757, y: 125}
+  - NodeGUID: 9156cb15-e9cf-42d2-b742-fa9404c3b5a5
+    DialogueText: "A co si\u0119 sta\u0142o z t\u0105 substancj\u0105?"
+    Speaker: Player
+    Callback: 
+    Position: {x: 11948, y: -28}
+  - NodeGUID: 581ec878-2e14-4c0a-9973-7406894975c3
+    DialogueText: "W naszych czasach ju\u017C przed wojn\u0105 post\u0119p technologiczny
+      by\u0142 szalenie szybki, ale po rozpocz\u0119ciu wojny praktycznie codziennie
+      naukowcy donosili o wynalezieniu ca\u0142kowicie nowych technologii"
+    Speaker: NPC
+    Callback: 
+    Position: {x: 11283, y: 124}
+  - NodeGUID: 5a4deaf4-e08a-4881-9f5e-1cc66ce2a88c
+    DialogueText: "Czy wojna si\u0119 zako\u0144czy\u0142a?"
+    Speaker: Player
+    Callback: 
+    Position: {x: 11997, y: 226}
+  - NodeGUID: 26251edb-8d05-4f98-812a-94746104a3e8
+    DialogueText: Co zrobili foliarze?
+    Speaker: Player
+    Callback: 
+    Position: {x: 15275, y: -1}
+  - NodeGUID: 739efe33-0e88-44f0-9540-b3dbea4b06b8
+    DialogueText: Jaki efekt uboczny?
+    Speaker: Player
+    Callback: 
+    Position: {x: 15274, y: 231}
+  - NodeGUID: 5b399850-fffb-4a37-a3d0-535a766282cb
+    DialogueText: "Player-kun, wiem \u017Ce ci\u0119\u017Cko mo\u017Ce by\u0107 teraz
+      to wszystko poj\u0105\u0107"
+    Speaker: NPC
+    Callback: 
+    Position: {x: 15690, y: 109}
+  - NodeGUID: 61705d89-c660-4b71-b2d4-8c830ae02495
+    DialogueText: "Dlatego musimy zacz\u0105\u0107 od odzyskania fragment\xF3w Twojej
+      pami\u0119ci"
+    Speaker: NPC
+    Callback: 
+    Position: {x: 16258, y: 103}
+  - NodeGUID: 8e4e74fe-7520-41f1-947a-a6d93e1a0a35
+    DialogueText: "Obiecuj\u0119, \u017Ce wszystko z czasem zrozumiesz i sobie przypomnisz!"
+    Speaker: NPC
+    Callback: 
+    Position: {x: 16876, y: 98}
+  - NodeGUID: e1f31c69-3a94-4c3f-b355-dc91561d4d06
+    DialogueText: "Istnia\u0142a pewna grupa naukowc\xF3w, kt\xF3rzy chcieli zapobiec
+      tej katastrofie przez wynalezienie sposobu na cofni\u0119cie czasu"
+    Speaker: NPC
+    Callback: 
+    Position: {x: 0, y: 0}
+  - NodeGUID: 9599f174-d4c0-416e-aeb2-c6d25896ca88
+    DialogueText: "Nigdy oficjalnie tego nie potwierdzono, ale naukowcom si\u0119
+      to uda\u0142o"
+    Speaker: NPC
+    Callback: 
+    Position: {x: 17272, y: -875}
+  - NodeGUID: 605f59b5-daac-4301-bbb0-f3350ee7a09f
+    DialogueText: "W tym momencie byli ju\u017C tak silni i przekonali do siebie
+      wi\u0119kszo\u015B\u0107 ludzi, \u017Ce uda\u0142o im si\u0119 to bez problemu"
+    Speaker: NPC
+    Callback: 
+    Position: {x: 18569, y: -878}
+  - NodeGUID: 44f221d5-9890-401b-a317-d2d1c839b46c
+    DialogueText: "Niestety foliarze w jaki\u015B spos\xF3b dowiedzieli si\u0119
+      o tym i uderzyli na centrum bada\u0144, w kt\xF3rym pracowano nad maszyn\u0105
+      czasu"
+    Speaker: NPC
+    Callback: 
+    Position: {x: 17894, y: -881}
+  - NodeGUID: c3920717-e999-4dbf-96bd-6cf6256318cd
+    DialogueText: "Z pomoc\u0105 wehiku\u0142u czasu"
+    Speaker: NPC
+    Callback: 
+    Position: {x: 0, y: 0}
+  - NodeGUID: 8c4f884e-892a-4f14-ba25-a7a6786d50b5
+    DialogueText: "Po niespe\u0142na roku uda\u0142o si\u0119 wynale\u017A\u0107
+      neutralizator, ludzie znowu mogli zacz\u0105\u0107 wychodzi\u0107 normalnie
+      z dom\xF3w"
+    Speaker: NPC
+    Callback: 
+    Position: {x: 12351, y: -73}
+  - NodeGUID: 976612bc-912d-4a2b-b65d-6f69fdb1c78f
+    DialogueText: "Ale to nie przerwa\u0142o wojny"
+    Speaker: NPC
+    Callback: 
+    Position: {x: 12992, y: -74}
+  - NodeGUID: 01579866-dde0-4a50-800a-578edf51c259
+    DialogueText: "Foliarze uznali, \u017Ce natychmiast trzeba zniszczy\u0107 ca\u0142\u0105
+      technologi\u0119, wymaza\u0107 ze \u015Bwiata nauk\u0119 i racjonalne my\u015Blenie"
+    Speaker: NPC
+    Callback: 
+    Position: {x: 13396, y: 82}
+  - NodeGUID: 0e49fe30-adef-48b2-962e-64f2bf7f1651
+    DialogueText: "Kiedy ludziom uda\u0142o si\u0119 zneutralizowa\u0107 gro\u017An\u0105
+      substancj\u0119 wojna trwa\u0142a nadal"
+    Speaker: NPC
+    Callback: 
+    Position: {x: 12516, y: 243}
+  - NodeGUID: 51847c73-15ae-4bc6-b0df-eba02329e4ce
+    DialogueText: "Boj\xF3wki foliarskie pojawia\u0142y si\u0119 wsz\u0119dzie"
+    Speaker: NPC
+    Callback: 
+    Position: {x: 14093, y: 79}
+  - NodeGUID: 8ecdbcbd-9593-4c52-8763-23b4807c7bc8
+    DialogueText: "Tym czasem okaza\u0142o si\u0119, \u017Ce gro\u017Ana substancja
+      mog\u0142a spowodowa\u0107 pewien efekt uboczny"
+    Speaker: NPC
+    Callback: 
+    Position: {x: 14585, y: 81}
+  - NodeGUID: 67cd41d3-c757-4722-a2d8-edb5fa1c8bde
+    DialogueText: "Czy mo\u017Cesz powt\xF3rzy\u0107 co si\u0119 sta\u0142o z t\u0105
+      gro\u017An\u0105 substancj\u0105?"
+    Speaker: Player
+    Callback: 
+    Position: {x: 17394, y: -422}
+  - NodeGUID: bdf867df-9441-4942-975c-a204b10a2afe
+    DialogueText: "Jeszcze raz, czy wojna si\u0119 zako\u0144czy\u0142a?"
+    Speaker: Player
+    Callback: 
+    Position: {x: 17329, y: 675}
+  - NodeGUID: 8f0b789f-a8e4-46d5-ac17-41896cf48046
+    DialogueText: "Dobrze, ale kompletnie nie mam poj\u0119cia co powinienem teraz
+      zrobi\u0107..."
+    Speaker: Player
+    Callback: 
+    Position: {x: 17574, y: 122}
+  - NodeGUID: 041099cd-0518-4166-9b1c-6f6a85a74120
+    DialogueText: "Nadal nic nie pami\u0119tam i nie wiem jak przywr\xF3ci\u0107
+      pami\u0119\u0107"
+    Speaker: Player
+    Callback: 
+    Position: {x: 18207, y: 121}
+  - NodeGUID: 8cd9426b-aa46-4d6a-8407-600e1f52f297
+    DialogueText: I dlaczego akurat ja tu jestem? Czemu mnie znasz?
+    Speaker: Player
+    Callback: 
+    Position: {x: 18814, y: 117}
+  - NodeGUID: abfb0ff1-3e6c-46e1-a780-6cb95d2fce93
+    DialogueText: "Prawda jest taka, \u017Ce jeste\u015B jedyn\u0105 osob\u0105,
+      kt\xF3ra mo\u017Ce uratowa\u0107 nasz \u015Bwiat przed foliarzami"
+    Speaker: NPC
+    Callback: 
+    Position: {x: 19384, y: 120}
+  - NodeGUID: 4663f100-3810-471f-ae1c-a35aa8fe8733
+    DialogueText: "\u017Beby odzyska\u0107 twoj\u0105 pami\u0119\u0107 u\u017Cyjemy
+      neurosceptrytysotra"
+    Speaker: NPC
+    Callback: 
+    Position: {x: 20091, y: 120}
+  - NodeGUID: b89a7279-c537-4bd2-a052-c10f1f6b415b
+    DialogueText: co
+    Speaker: Player
+    Callback: 
+    Position: {x: 20701, y: 371}
+  - NodeGUID: c5326116-2b73-449e-8729-23a9004f958f
+    DialogueText: Neutryproco?
+    Speaker: Player
+    Callback: 
+    Position: {x: 20714, y: 163}
+  - NodeGUID: 073bf69f-f921-49b2-8cf9-5d3e94b261c8
+    DialogueText: Neuroprytytto?
+    Speaker: Player
+    Callback: 
+    Position: {x: 20706, y: -15}
+  - NodeGUID: b8c72c74-614d-4494-a431-677dda5624e8
+    DialogueText: "To urz\u0105dzenie, kt\xF3re pozwoli w\u0142ama\u0107 Ci si\u0119
+      do m\xF3zgu i zakcelerowa\u0107 neurony w nieaktywnej sferze, dzi\u0119ki czemu
+      z wysokim prawdopodobie\u0144stwem odzyskasz utracone po\u0142\u0105czenia
+      nerwowe"
+    Speaker: NPC
+    Callback: 
+    Position: {x: 21108, y: 157}
+  - NodeGUID: 13660eb6-8fc4-4760-a425-9604b8f3e575
+    DialogueText: "... to taka magiczna czapka, kt\xF3ra ci wszystko przypomni"
+    Speaker: NPC
+    Callback: 
+    Position: {x: 22127, y: 155}
+  - NodeGUID: b3f5c97e-a0a5-44c9-961c-6b90b3f798d7
+    DialogueText: ...
+    Speaker: Player
+    Callback: 
+    Position: {x: 21767, y: 156}
+  - NodeGUID: 16218ccf-6690-4de7-877f-1405cf5b948d
+    DialogueText: Uuuu
+    Speaker: Player
+    Callback: 
+    Position: {x: 22701, y: 153}
+  - NodeGUID: bf5a585f-7e2a-49ca-9726-cf3630caf4b9
+    DialogueText: "Niestety w tej chwili m\xF3j neurosceptrytystor jest uszkodzony
+      i potrzebuj\u0119 kilka cz\u0119\u015Bci, kt\xF3re pozwol\u0105 go naprawi\u0107"
+    Speaker: NPC
+    Callback: 
+    Position: {x: 23104, y: 147}
+  - NodeGUID: 92f6dbfb-0ef5-4aed-a77a-d18d4055e007
+    DialogueText: "Prawdopodobnie znajdziesz wszystko gdzie\u015B w okolicy. Zaznacz\u0119
+      lokacje na Twojej mapie"
+    Speaker: NPC
+    Callback: 
+    Position: {x: 23792, y: 147}
+  - NodeGUID: d754e4d0-5112-4289-bdc2-51044c9c7367
+    DialogueText: "Teraz id\u017A i zdob\u0105d\u017A brakuj\u0105ce cz\u0119\u015Bci,
+      ale prosz\u0119 uwa\u017Caj na siebie. Wsz\u0119dzie roi si\u0119 od foliarzy."
+    Speaker: NPC
+    Callback: ChangeQuestToInProgress
+    Position: {x: 24458, y: 144}
+  ExposedProperties: []
+  CommentBlockData: []
+  questFolder: 
+  fileName: ogorekQuest#1

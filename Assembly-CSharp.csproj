@@ -64,6 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Resources\Models\3D\Characters\Player\Ch03\AnimationControl.cs" />
+    <Compile Include="Assets\Resources\Quests\OgorekQuest\OgorekQuest.cs" />
     <Compile Include="Assets\Scripts\Car\CarMovement.cs" />
     <Compile Include="Assets\Scripts\Character\Hero.cs" />
     <Compile Include="Assets\Scripts\Character\Movement\basMovement.cs" />
