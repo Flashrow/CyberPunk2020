@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78b3fd9154634ebdb8c8a48960b9a16a, type: 3}
+  m_Name: unitychan_duringGetPartQuest
+  m_EditorClassIdentifier: 
+  NodeLinks:
+  - BaseNodeGUID: 27308f8b-033a-428e-9928-b5545a2da617
+    PortName: Next
+    TargetNodeGUID: d9e9d19e-a38b-4a21-8d75-28204d0971df
+  DialogueNodeData:
+  - NodeGUID: d9e9d19e-a38b-4a21-8d75-28204d0971df
+    DialogueText: nie mam nic
+    Speaker: NPC
+    Callback: unitychan_duringGetPartQuest
+    Position: {x: 216, y: 188}
+  ExposedProperties: []
+  CommentBlockData: []
+  questFolder: 
+  fileName: unitychan_duringGetPartQuest

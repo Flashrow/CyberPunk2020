@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78b3fd9154634ebdb8c8a48960b9a16a, type: 3}
+  m_Name: unitychan_finish
+  m_EditorClassIdentifier: 
+  NodeLinks:
+  - BaseNodeGUID: 863c747b-540c-4dfb-8dc7-f4e712b371fe
+    PortName: Next
+    TargetNodeGUID: 962a8f72-d0f4-4c3b-bad3-e4bc93c684ae
+  DialogueNodeData:
+  - NodeGUID: 962a8f72-d0f4-4c3b-bad3-e4bc93c684ae
+    DialogueText: nice
+    Speaker: NPC
+    Callback: FinishQuest
+    Position: {x: 234, y: 209}
+  ExposedProperties: []
+  CommentBlockData: []
+  questFolder: 
+  fileName: unitychan_finish

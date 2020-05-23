@@ -38,7 +38,7 @@ public class basMovement : MonoBehaviour {
             { 
                if(!slidingDown())
                 {
-                    checkForJump();
+                    jump();
                 }
                 else
                 {
@@ -120,7 +120,15 @@ public class basMovement : MonoBehaviour {
                             transform.forward * Input.GetAxis("Vertical");
     }
 
-    private void checkForJump()
+    private void crouch()
+    {
+        if (Input.GetKey(KeyCode.LeftControl))
+        {
+            velocity.y = Mathf.Sqrt(jumpHeight * 2f * gravity);
+        }
+    }
+
+    private void jump()
     {
         if (Input.GetButtonDown("Jump"))
         {

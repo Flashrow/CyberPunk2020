@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78b3fd9154634ebdb8c8a48960b9a16a, type: 3}
+  m_Name: unitychan_short
+  m_EditorClassIdentifier: 
+  NodeLinks:
+  - BaseNodeGUID: 2f5683eb-e595-46b5-b634-65a0178619ef
+    PortName: Next
+    TargetNodeGUID: 36cabfed-924f-4688-a70c-510d3a1d6ea3
+  DialogueNodeData:
+  - NodeGUID: 36cabfed-924f-4688-a70c-510d3a1d6ea3
+    DialogueText: rozpocznij zadanie!
+    Speaker: NPC
+    Callback: RunAction
+    Position: {x: 251, y: 166}
+  ExposedProperties: []
+  CommentBlockData: []
+  questFolder: 
+  fileName: unitychan_short

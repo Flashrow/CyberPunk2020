@@ -20,7 +20,9 @@ public class TaskGetItem : Task
 
     private void OnItemAdded(ItemData itemData)
     {
-        if (itemData.item.data.type == item.type && itemEventType == itemData.eventType) Finish();
+        if (itemData.item.data.type == item.type 
+            && itemEventType == itemData.eventType) 
+            Finish();
     }
 
     public override void Finish()

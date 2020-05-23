@@ -14,4 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   questDialoguesList:
   - dialogueId: init
-    dialogue: {fileID: 11400000, guid: 51ccd51bc0578244b8db944d066486f4, type: 2}
+    dialogue: {fileID: 11400000, guid: a38db2f410bf5014f993ba28b1ace6ae, type: 2}
+  - dialogueId: unitychan_finish
+    dialogue: {fileID: 11400000, guid: cb481844ecc3f0349938a9074a7027e2, type: 2}
+  - dialogueId: unitychan_duringGetPartQuest
+    dialogue: {fileID: 11400000, guid: 867674ec3f2068640a8a905a16a91029, type: 2}
+  - dialogueId: unitychan_history
+    dialogue: {fileID: 11400000, guid: 03526023992712d47ab8f8e2bda96b21, type: 2}

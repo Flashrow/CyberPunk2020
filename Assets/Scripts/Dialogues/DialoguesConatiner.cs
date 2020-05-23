@@ -20,13 +20,9 @@ public class DialoguesConatiner : ScriptableObject
     {
         questDialoguesList.ForEach(item =>
         {
-            if (questDialogues.ContainsKey(item.dialogueId))
+            if (!questDialogues.ContainsKey(item.dialogueId))
             {
-                //questDialogues.Add(item.dialogueId,item.dialogue);
-            }
-            else
-            {
-                questDialogues.Add(item.dialogueId, item.dialogue);
+                questDialogues.Add(item.dialogueId,item.dialogue);
             }
         });
     }

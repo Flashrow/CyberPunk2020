@@ -12,11 +12,14 @@ public class DialogueParser : MonoBehaviour
 {
     [SerializeField] List<CallbackListItem> callbacks;
     [SerializeField] private DialoguesConatiner dialogues;
+    private float minimalDialogTime = 0f;
+    private bool skipDialog = false;
     private DialogueContainer dialogue;
     private DialogueUI dialogueUI;
     private DialogueUI dialogueUITemp;
     private string NPCid;
     private string questId;
+    private Hero player = null;
 
     [NonSerialized] public UnityEvent onEndDialog = new UnityEvent();
 
@@ -31,18 +34,33 @@ public class DialogueParser : MonoBehaviour
 
     private void Awake()
     {
+        player = GameObject.FindObjectOfType<Hero>();
         dialogueUI = Resources.Load<DialogueUI>("PreFabs/UI/Dialogue/DialogueUI");
+    }
+
+
+    private void Update()
+    {
+        Debug.Log("Dialogue Parser: player");
+        if (
+            player.getState() == State.dialog
+            && Input.GetKeyDown(KeyCode.Space))
+        {
+            skipDialog = true;
+        }
     }
 
     public UnityEvent Parse(string NPCid, string questId)
     {
         if (dialogueUITemp == null)
         {
+            player.setState(State.dialog);
             this.NPCid = NPCid;
             this.questId = questId;
             dialogue = dialogues.GetDialogue(QuestManager.instance.Quests[questId].dialoguesQueue[NPCid].Dequeue());
             dialogueUITemp = (DialogueUI)Instantiate(dialogueUI);
             var narrativeData = dialogue.NodeLinks.First(); //Entrypoint node
+            EventListener.instance.Dialogues.Invoke(new DialogData{NpcID = this.NPCid});
             StartCoroutine(ProceedToNarrative(narrativeData.TargetNodeGUID));
             return onEndDialog;
         }
@@ -51,6 +69,7 @@ public class DialogueParser : MonoBehaviour
 
     private IEnumerator ProceedToNarrative(string narrativeDataGUID)
     {
+        Debug.Log("Dialogue Parser: ProceedToNarrative");
         nodeGUID = narrativeDataGUID;
         var text = GetDialogueNode(narrativeDataGUID).DialogueText;
         var spekaer = dialogue.DialogueNodeData.Find(x => x.NodeGUID == narrativeDataGUID).Speaker;
@@ -85,10 +104,21 @@ public class DialogueParser : MonoBehaviour
         {
             char[] delimiters = new char[] { ' ', '\r', '\n' };
             float speed = (60f / 100f);
-            yield return new WaitForSeconds(speed*text.Split(delimiters, StringSplitOptions.RemoveEmptyEntries).Length);
+
+            for(int i = 0; i <= 50; i++)
+            {
+                yield return new WaitForSeconds((minimalDialogTime + speed * text.Split(delimiters, StringSplitOptions.RemoveEmptyEntries).Length)/50);
+                if (skipDialog)
+                {
+                    skipDialog = false;
+                    break;
+                }
+            }
+           
             if (GetChoices(nodeGUID).Count == 0)
             {
                 dialogueUITemp.FinishDialogue();
+                player.setState(State.playing);
                 onEndDialog.Invoke();
                 yield break;
             }

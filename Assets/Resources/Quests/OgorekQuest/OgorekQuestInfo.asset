@@ -15,6 +15,8 @@ MonoBehaviour:
   QuestId: OgorekQuest
   title: OgorekQuest
   description: 
-  status: 3
+  status: 0
   QuestClassString: OgorekQuest
-  tasks: []
+  tasks:
+  - {fileID: 11400000, guid: a235830542336d246afbd56d1255dfe7, type: 2}
+  - {fileID: 11400000, guid: 08b9b9f58950a2643a04a53271a8a722, type: 2}

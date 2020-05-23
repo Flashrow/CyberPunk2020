@@ -7,7 +7,7 @@ public class EventListener : MonoBehaviour
 {
     public class InventoryEvent : UnityEvent<ItemData> { };
     public class KillsEvent : UnityEvent<KillData> { };
-    public class DialoguesEvent : UnityEvent { };
+    public class DialoguesEvent : UnityEvent<DialogData> { };
     public class PathEvent : UnityEvent<PathElementData> { };
     public class InteractionEvent : UnityEvent<InteractionData> { };
 

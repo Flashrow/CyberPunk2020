@@ -21,6 +21,10 @@ public class MapItem : Interacted
         Item _item = Item.CreateItemObjectByType(item.type);
         _item.number = number;
         inventory.AddItem(_item);
+        EventListener.instance.Inventory.Invoke(new ItemData {
+            item = _item,
+            eventType = ItemEventType.TAKEN,
+        });
         Destroy(gameObject);
     }    
 }
