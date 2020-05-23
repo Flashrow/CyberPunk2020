@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEditor;
 
 public enum Slots { Secondary, Primary }
 

@@ -9,6 +9,7 @@ public class Interacted : MonoBehaviour {
 
     [Header ("Label Settings")]
     InteractionLabel labelTemp;
+    [SerializeField] bool disableUI = true; 
 
     [SerializeField]
     private string labelText;
@@ -73,7 +74,7 @@ public class Interacted : MonoBehaviour {
     void KeyListener () {
         if (Input.GetKeyDown (KeyCode.F)) {
             OnInteract ();
-            DisableUI();
+            if(disableUI) DisableUI();
         }
     }
 

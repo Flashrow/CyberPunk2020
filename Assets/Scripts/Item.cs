@@ -30,9 +30,11 @@ public class Item {
         //minNumber = item.minNumber;
         //maxNumber = item.maxNumber;
         number = item.number;
+        cost = item.cost;
         //type = item.type;
         //model = item.model;
         //sprite = item.sprite;
+        data = item.data;
     }
 
     public void LoadSprite (string spriteName) {
@@ -44,10 +46,7 @@ public class Item {
     }
 
     public virtual Item CreateInstance () {
-        Item newItem = new Item();
-        newItem.number = number;
-        newItem.cost = cost;
-        return newItem;
+        return new Item(this);
     }
 
     static public Item CreateItemObjectByType (ItemType type) {
@@ -68,4 +67,5 @@ public class Item {
                 return new Item ();
         }
     }
+
 }
