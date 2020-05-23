@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5e8e6e0545692f49ac1fdd5a0f16afd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  label: {fileID: 6728592566127269928, guid: fe77483b64e94e1479b398bb43c153f6, type: 3}
+  disableUI: 0
   labelText: Take it
   sprite: {fileID: 8462405466455799909}
   inventory: {fileID: 11400000, guid: c80ac1334756ae540bb9ef051d9bd981, type: 2}

@@ -18,5 +18,5 @@ MonoBehaviour:
   maxNumber: 1
   sprite: {fileID: 21300000, guid: d4faf1ced45070b48adeb191f3f86ef1, type: 3}
   model: {fileID: 1280560371742130, guid: 6e3343d6d7497bf4a8e0df516b672ad8, type: 3}
-  type: 0
+  type: 5
   slot: 0
