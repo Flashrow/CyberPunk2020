@@ -4,12 +4,8 @@ using UnityEngine;
 
 public class InteractionRadius : MonoBehaviour {
     public float radius = 3f;
-    public GameObject text;
     private Camera mainCamera;
-
-    public InteractionLabel label;
-    InteractionLabel labelTemp;
-
+    
     public delegate void OnIntegrate (string name);
     public static OnIntegrate onIntegrate;
     // Start is called before the first frame update
@@ -32,8 +28,14 @@ public class InteractionRadius : MonoBehaviour {
             }
             i++;
         }
-        if (nearest != null && nearest.TryGetComponent<Interacted> (out Interacted interaction2)) {
-            interaction2.Interact (nearest.transform, nearest.GetComponent<Collider> ().bounds.size.y);
+        if (nearest != null) {
+            if (nearest.TryGetComponent<Interacted>(out Interacted interaction2))
+            {
+                interaction2.Interact (nearest.transform, nearest.GetComponent<Collider> ().bounds.size.y);
+            } else
+            {
+                nearest.gameObject.SendMessage("Interact");
+            }
         }
         try {
             if (nearest == null)
