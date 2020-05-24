@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
-public class MapItem : Interacted
+[RequireComponent(typeof(Interaction))]
+public class MapItem : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField] public ItemScriptable item;
@@ -16,7 +17,7 @@ public class MapItem : Interacted
         inventory = Resources.Load<Inventory>("Inventory");
     }
 
-    public override void OnInteract()
+    public void OnInteract()
     {
         Item _item = Item.CreateItemObjectByType(item.type);
         _item.number = number;

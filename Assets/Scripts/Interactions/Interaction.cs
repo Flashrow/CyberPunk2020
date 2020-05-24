@@ -45,6 +45,7 @@ public class Interaction : MonoBehaviour
     {
         if (name != this.name)
         {
+            EnableUI();
             OnCancelInteraction.Invoke();
             labelTemp.gameObject.SetActive(false);
             InteractionRadius.onIntegrate -= DestroyIfNotActive;
