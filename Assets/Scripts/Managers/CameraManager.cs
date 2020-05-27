@@ -40,12 +40,16 @@ public class CameraManager : MonoBehaviour {
             if (Brain.IsLive(FirstPearson))
             {
                 FirstPearson.Priority = 0;
+                ThirdPearson.GetComponent<cameraMovement>().enabled = true;
                 ThirdPearson.Priority = 10;
+                FirstPearson.GetComponent<cameraMovement>().enabled = false;
             }
             else if (Brain.IsLive(ThirdPearson))
             {
+                FirstPearson.GetComponent<cameraMovement>().enabled = true;
                 FirstPearson.Priority = 10;
                 ThirdPearson.Priority = 0;
+                ThirdPearson.GetComponent<cameraMovement>().enabled = false;
             }
         }
     }
