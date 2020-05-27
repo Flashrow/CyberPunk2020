@@ -418,6 +418,12 @@
     <Reference Include="CoherentNoise">
       <HintPath>E:/Code/CyberPunk2020/CyberPunk2020/Assets/UnityAssets/WorldBuilder/Scripts/Helpers/CoherentNoise.dll</HintPath>
     </Reference>
+    <Reference Include="EasyRoads3Dv3">
+      <HintPath>E:/Code/CyberPunk2020/CyberPunk2020/Assets/EasyRoads3D/lib/EasyRoads3Dv3.dll</HintPath>
+    </Reference>
+    <Reference Include="EasyRoads3Dv3Editor">
+      <HintPath>E:/Code/CyberPunk2020/CyberPunk2020/Assets/EasyRoads3D/Editor/EasyRoads3Dv3Editor.dll</HintPath>
+    </Reference>
     <Reference Include="nunit.framework">
       <HintPath>E:/Code/CyberPunk2020/CyberPunk2020/Library/PackageCache/com.unity.ext.nunit@1.0.0/net35/unity-custom/nunit.framework.dll</HintPath>
     </Reference>

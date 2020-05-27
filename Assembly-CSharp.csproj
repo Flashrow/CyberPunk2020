@@ -527,6 +527,7 @@
     <None Include="Assets\UnityAssets\Standard Assets\Effects\Projectors\Shaders\ProjectorMultiply.shader" />
     <None Include="Assets\UnityAssets\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\DLAA.shader" />
     <None Include="Assets\Sun_Temple\PostProcessing\Resources\Shaders\GrainGen.shader" />
+    <None Include="Assets\EasyRoads3D\shaders\EasyRoads3D-Surface-Offset.shader" />
     <None Include="Assets\UnityAssets\VolumetricLines\BuiltInRenderPipeline\Shaders\_LineStripShader.cginc" />
     <None Include="Assets\Sun_Temple\PostProcessing\Editor Resources\Monitors\HistogramCompute.compute" />
     <None Include="Assets\UnityAssets\Standard Assets\Effects\ImageEffects\Shaders\frag_ao.cginc" />
@@ -539,7 +540,9 @@
     <None Include="Assets\UnityAssets\Standard Assets\Effects\ImageEffects\Shaders\CameraMotionBlurDX11.shader" />
     <None Include="Assets\UnityAssets\unity-chan!\Unity-chan! Model\Art\UnityChanShader\Shader\Unitychan_chara_akarami_blend.shader" />
     <None Include="Assets\UnityAssets\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />
+    <None Include="Assets\EasyRoads3D\Resources\custom prefabs\_custom prefabs.txt" />
     <None Include="Assets\UnityAssets\Standard Assets\Effects\ImageEffects\Shaders\VignettingShader.shader" />
+    <None Include="Assets\EasyRoads3D\prefab meshes\_custom prefabs.txt" />
     <None Include="Assets\UnityAssets\Standard Assets\Effects\ImageEffects\Shaders\ColorCorrectionCurves.shader" />
     <None Include="Assets\Sun_Temple\PostProcessing\Resources\Shaders\BuiltinDebugViews.shader" />
     <None Include="Assets\UnityAssets\Standard Assets\Effects\Projectors\Guidelines.txt" />
@@ -585,8 +588,10 @@
     <None Include="Assets\UnityAssets\Standard Assets\Vehicles\Car\CarGuidelines.txt" />
     <None Include="Assets\UnityAssets\Standard Assets\Effects\ImageEffects\Shaders\ColorCorrectionSelective.shader" />
     <None Include="Assets\UnityAssets\Standard Assets\Effects\ImageEffects\Shaders\RadialBlur.shader" />
+    <None Include="Assets\EasyRoads3D\_readme .txt" />
     <None Include="Assets\UnityAssets\JMO Assets\WarFX\_Effects (Mobile)\MuzzleFlashes\!MuzzleFlash Differences.txt" />
     <None Include="Assets\Sun_Temple\PostProcessing\Resources\Shaders\ColorGrading.cginc" />
+    <None Include="Assets\EasyRoads3D\shaders\EasyRoads3D-Road-Edit-Mode.shader" />
     <None Include="Assets\UnityAssets\Standard Assets\Vehicles\Aircraft\AircraftGuidelines.txt" />
     <None Include="Assets\UnityAssets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\VignetteShader.shader" />
     <None Include="Assets\UnityAssets\JMO Assets\WarFX\Shaders\WFX_S Particle Add A8.shader" />
@@ -614,6 +619,7 @@
     <None Include="Assets\UnityAssets\Standard Assets\Effects\ImageEffects\Shaders\ColorCorrectionEffect.shader" />
     <None Include="Assets\UnityAssets\Standard Assets\Effects\ImageEffects\Shaders\FisheyeShader.shader" />
     <None Include="Assets\UnityAssets\VolumetricLines\BuiltInRenderPipeline\Shaders\SingleLine-TextureAdditive.shader" />
+    <None Include="Assets\EasyRoads3D\shaders\EasyRoads3D - Unity 5 StandardSpecular.shader" />
     <None Include="Assets\UnityAssets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendOneOne.shader" />
     <None Include="Assets\UnityAssets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface.shader" />
     <None Include="Assets\UnityAssets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BrightPassFilter.shader" />
@@ -666,6 +672,7 @@
     <None Include="Assets\Sun_Temple\PostProcessing\Resources\Shaders\DiskKernels.cginc" />
     <None Include="Assets\UnityAssets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
     <None Include="Assets\Sun_Temple\PostProcessing\Resources\Bluenoise64\COPYING.txt" />
+    <None Include="Assets\EasyRoads3D\shaders\EasyRoads3D - Unity 5 Standard.shader" />
     <None Include="Assets\Sun_Temple\Content\Shaders\Cloth.shader" />
     <None Include="Assets\UnityAssets\Standard Assets\Effects\ImageEffects\Shaders\ChromaticAberrationShader.shader" />
     <None Include="Assets\Sun_Temple\PostProcessing\Editor Resources\UI\Trackball.shader" />
@@ -681,6 +688,7 @@
     <None Include="Assets\UnityAssets\Standard Assets\Characters\RollerBall\RollerBallGuidelines.txt" />
     <None Include="Assets\Sun_Temple\PostProcessing\Editor Resources\Monitors\VectorscopeRender.shader" />
     <None Include="Assets\UnityAssets\Standard Assets\Environment\Water\Water\Shaders\FXWaterPro.shader" />
+    <None Include="Assets\EasyRoads3D\Resources\dynamic prefabs\dynamic prefabs.txt" />
     <None Include="Assets\Sun_Temple\PostProcessing\Resources\Shaders\Bloom.shader" />
     <None Include="Assets\UnityAssets\Standard Assets\ParticleSystems\Shaders\PriorityParticleAdd.shader" />
     <None Include="Assets\UnityAssets\VolumetricLines\BuiltInRenderPipeline\Shaders\LineStrip-LightSaber.shader" />
@@ -713,6 +721,7 @@
     <None Include="Assets\UnityAssets\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Mobile.shader" />
     <None Include="Assets\Scripts\Dialogues\EditorScripts\Resources\NarrativeGraph.uss" />
     <None Include="Assets\UnityAssets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
+    <None Include="Assets\EasyRoads3D\shaders\EasyRoads3D - Unity Standard 2018.shader" />
     <None Include="Assets\UnityAssets\Sci-Fi Styled Modular Pack\Readme.txt" />
     <None Include="Assets\UnityAssets\Standard Assets\Effects\ImageEffects\Shaders\Contrast Stretch\Luminance.shader" />
     <None Include="Assets\UnityAssets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlurAndFlares.shader" />
@@ -721,6 +730,7 @@
     <None Include="Assets\UnityAssets\unity-chan!\Unity-chan! Model\Art\UnityChanShader\Shader\Unitychan_chara_hair.shader" />
     <None Include="Assets\UnityAssets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile.shader" />
     <None Include="Assets\UnityAssets\JMO Assets\WarFX\Shaders\WFX_S AlphaBlend NoSoftParticles.shader" />
+    <None Include="Assets\EasyRoads3D\prefab sources\_custom prefabs.txt" />
     <None Include="Assets\UnityAssets\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\FXAAPreset2.shader" />
     <None Include="Assets\UnityAssets\Standard Assets\Characters\ThirdPersonCharacter\ThirdPersonCharacterGuidelines.txt" />
     <None Include="Assets\UnityAssets\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\TiltShiftHdrLensBlur.shader" />
@@ -728,6 +738,7 @@
     <None Include="Assets\UnityAssets\unity-chan!\Unity-chan! Model\Art\UnityChanShader\Shader\Unitychan_chara_eye_blend.shader" />
     <None Include="Assets\Sun_Temple\Resources\TerrainShaders\Details\WavingGrass.shader" />
     <None Include="Assets\UnityAssets\TextMesh Pro\Resources\Shaders\TMP_Sprite.shader" />
+    <None Include="Assets\EasyRoads3D\_Release Notes.txt" />
     <None Include="Assets\UnityAssets\Standard Assets\Fonts\OpenSans\License!.txt" />
     <None Include="Assets\UnityAssets\TextMesh Pro\Examples &amp; Extras\Fonts\Bangers - OFL.txt" />
     <Reference Include="Unity.Timeline.Editor">
@@ -969,6 +980,9 @@
     </Reference>
     <Reference Include="CoherentNoise">
       <HintPath>E:/Code/CyberPunk2020/CyberPunk2020/Assets/UnityAssets/WorldBuilder/Scripts/Helpers/CoherentNoise.dll</HintPath>
+    </Reference>
+    <Reference Include="EasyRoads3Dv3">
+      <HintPath>E:/Code/CyberPunk2020/CyberPunk2020/Assets/EasyRoads3D/lib/EasyRoads3Dv3.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.3f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>
