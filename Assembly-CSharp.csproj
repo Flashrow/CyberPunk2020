@@ -978,11 +978,11 @@
     <Reference Include="UnityEngine.XRModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.XRModule.dll</HintPath>
     </Reference>
-    <Reference Include="CoherentNoise">
-      <HintPath>E:/Code/CyberPunk2020/CyberPunk2020/Assets/UnityAssets/WorldBuilder/Scripts/Helpers/CoherentNoise.dll</HintPath>
-    </Reference>
     <Reference Include="EasyRoads3Dv3">
       <HintPath>E:/Code/CyberPunk2020/CyberPunk2020/Assets/UnityAssets/EasyRoads3D/lib/EasyRoads3Dv3.dll</HintPath>
+    </Reference>
+    <Reference Include="CoherentNoise">
+      <HintPath>E:/Code/CyberPunk2020/CyberPunk2020/Assets/UnityAssets/WorldBuilder/Scripts/Helpers/CoherentNoise.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.3f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>
