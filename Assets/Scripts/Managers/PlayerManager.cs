@@ -33,6 +33,7 @@ public class PlayerManager : MonoBehaviour {
         {
             disable();
         });
+        
     }
 
     static private void enable()

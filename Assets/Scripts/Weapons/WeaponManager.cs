@@ -16,6 +16,7 @@ public class WeaponManager : MonoBehaviour
     public Weapon weapon = null;
 
     private float lastShootTime;
+    private WeaponModel modelHandler;
 
     private enum State{readyToShoot, reloading, shooting};
     State state;
@@ -30,7 +31,7 @@ public class WeaponManager : MonoBehaviour
         {
             instance = this;
         }
-
+        modelHandler = new WeaponModel(player.transform.Find("RightArm"));
     }
 
     private void Start()
@@ -162,6 +163,7 @@ public class WeaponManager : MonoBehaviour
             if (inventory.slots[Slots.Primary].data.type == ItemType.Gun)
             {
                 weapon = (Weapon)inventory.slots[Slots.Primary];
+                modelHandler.setModel(weapon.data.model);
             }
             else
             {
