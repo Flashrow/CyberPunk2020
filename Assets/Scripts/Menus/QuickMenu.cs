@@ -14,9 +14,22 @@ public class QuickMenu : MonoBehaviour {
         SceneManager.LoadScene ("MenuStart");
     }
     public void Save () {
-        Debug.Log ("Save ()");
+        try
+        {
+            if(SaveLoadSystem.System.Save("SAVE_LOAD_SYSTEM_TEST_3"))
+            {
+                UImanager.Alert("Game was save", 4.5f);
+            }
+        } catch
+        {
+            UImanager.Alert("Can't save game status!!!", 2.5f);
+        }
+
     }
     public void Load () {
-        Debug.Log ("Load ()");
+        if (SaveLoadSystem.System.Load("SAVE_LOAD_SYSTEM_TEST_3") == false)
+        {
+            UImanager.Alert("Can't load game status!!!", 2.5f);
+        }
     }
 }
