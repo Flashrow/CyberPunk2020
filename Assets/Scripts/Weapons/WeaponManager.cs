@@ -25,7 +25,7 @@ public class WeaponManager : MonoBehaviour
     {
         if (instance != null)
         {
-            Debug.LogError("More than one AudioManager in the scene");
+           // Debug.LogError("More than one WeaponManager in the scene");
         }
         else
         {
@@ -43,10 +43,14 @@ public class WeaponManager : MonoBehaviour
     {
         if (weapon != null
             && inventory.slots.ContainsKey(Slots.Primary)                      
-            && inventory.slots[Slots.Primary].data.type == ItemType.Gun)
+            && inventory.slots[Slots.Primary].data.type == ItemType.Rifle)
         {
+           //Debug.Log("WeaponManager: Update");
             if (hasAmmo())
             {
+                //Debug.Log("WeaponManager: lastShootTime add " + Time.deltaTime);
+                lastShootTime += Time.deltaTime;
+
                 if (weapon.getData().isAutomatic)                                  
                 {
                     autoWeaponHandler();
@@ -55,18 +59,18 @@ public class WeaponManager : MonoBehaviour
                 {
                     singleWeaponHandler();
                 }
-                lastShootTime += Time.deltaTime;
+                
             }
             else if(Input.GetButtonDown("Fire1"))
             {
                 UImanager.Alert($"No ammo in inventory", 1f);
-                //Debug.Log("WeaponManager: no ammo in inventory");
+               // Debug.Log("WeaponManager: no ammo in inventory");
             }
         }
         else if (Input.GetButtonDown("Fire1"))
         {
             UImanager.Alert($"No weapon in hand", 1f);
-            //Debug.Log("WeaponManager: no weapon in hand");
+           // Debug.Log("WeaponManager: no weapon in hand");
         }
 
     }
@@ -81,6 +85,7 @@ public class WeaponManager : MonoBehaviour
         }
         else
         {
+           // Debug.Log("WeaponManager: no ammo");
             return false;
         }
     }
@@ -100,9 +105,10 @@ public class WeaponManager : MonoBehaviour
         {
             if (Input.GetButtonDown("Fire1"))
             {
+               // Debug.Log("Try to shoot");
                 if (!weapon.needReload())
                 {
-                    Debug.Log("WeaponManager: single shot");
+                   // Debug.Log("WeaponManager: single shot");
                     shoot();
                     lastShootTime = 0;
                 }
@@ -110,7 +116,7 @@ public class WeaponManager : MonoBehaviour
                 {
                     state = State.reloading;
                     UImanager.Alert($"Reloading...", weapon.getData().reloadingTime);
-                    //Debug.Log("WeaponManager: single shot - reloading");
+                   // Debug.Log("WeaponManager: single shot - reloading");
                     inventory.items[ItemType.Ammo].number = weapon.reload(inventory.items[ItemType.Ammo].number);
                 }
             }
@@ -127,20 +133,26 @@ public class WeaponManager : MonoBehaviour
         {
             if (Input.GetButton("Fire1"))                                       // wait for fire button
             {
+               // Debug.Log("WeaponManager: Try to shoot");
                 if (lastShootTime >= (1.0f / weapon.getData().fireRate))        // check if ready to shoot
                 {
+                  // Debug.Log("WeaponManager: Ready To shoot, last: " + lastShootTime + ">=" + (1.0f / weapon.getData().fireRate));
                     if (!weapon.needReload())                                   // check if there is ammo in weapon
                     {
-                        Debug.Log("WeaponManager:  shooting, last shoot:" + lastShootTime);
+                       // Debug.Log("WeaponManager:  shooting, last shoot:" + lastShootTime);
                         shoot();
                     }
                     else
                     {
+                       // Debug.Log("WeaponManager: reloading");
                         state = State.reloading;
                         UImanager.Alert($"Reloading...", weapon.getData().reloadingTime);
                         inventory.items[ItemType.Ammo].number = weapon.reload(inventory.items[ItemType.Ammo].number);
                     }
-                    lastShootTime = 0;
+                }
+                else
+                {
+                   // Debug.Log("WeaponManager: fire rate waiting" + lastShootTime);
                 }
             }
         }
@@ -160,7 +172,7 @@ public class WeaponManager : MonoBehaviour
     {
         if (inventory.slots.ContainsKey(Slots.Primary))
         {
-            if (inventory.slots[Slots.Primary].data.type == ItemType.Gun)
+            if (inventory.slots[Slots.Primary].data.type == ItemType.Rifle)
             {
                 weapon = (Weapon)inventory.slots[Slots.Primary];
                 modelHandler.setModel(weapon.data.model);
@@ -183,13 +195,14 @@ public class WeaponManager : MonoBehaviour
                 fpsCamera.transform.forward, out hit,
                 weapon.getData().range))
             {
-                Debug.Log("WeaponManager: Raycast hit");
+               // Debug.Log("WeaponManager: Raycast hit");
 
                 Instantiate(weapon.getData().impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
 
                 findShotNPC(hit);
 
             }
+            lastShootTime = 0;
         }
         AmmoAmount.UpdateAmmoUI(getAmmoString());
     }

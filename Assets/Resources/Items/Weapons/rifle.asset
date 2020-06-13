@@ -21,14 +21,14 @@ MonoBehaviour:
   type: 1
   slot: 1
   number: 1
-  inGunAmmo: 4
+  inGunAmmo: 32
   magazineAmmo: 32
   reloadingTime: 2
   fireRate: 7
   range: 307.11
   dispersionRadius: 0
   dispersionVariance: 0
-  damage: 10
+  damage: 144.63
   isAutomatic: 1
   meele: 0
   gunFlash: {fileID: 100000, guid: 8eaaa4f553116f44b8459bc24201c514, type: 3}

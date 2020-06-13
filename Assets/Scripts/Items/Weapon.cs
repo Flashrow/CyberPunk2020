@@ -16,7 +16,7 @@ public class Weapon : Item {
     public Weapon(string _spriteName, string _scriptName) {
         spriteName = _spriteName;
         scriptName = _scriptName;
-        itemId = "gun";
+        itemId = "rifle";
         LoadScriptableObject(scriptName);
     }
 

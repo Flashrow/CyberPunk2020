@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public enum ItemType { Coins, Gun, Ammo, Phone, Tools, Onion }
+public enum ItemType { Coins, Rifle, Ammo, Phone, Tools, Onion }
 
 public class Item {
     public string itemId;
@@ -59,7 +59,7 @@ public class Item {
                 return new Phone ();
             case ItemType.Tools:
                 return new Tools();
-            case ItemType.Gun:
+            case ItemType.Rifle:
                 return new Weapon("rifle","rifle");
             case ItemType.Onion:
                 return new Item("cebula","Onion");
