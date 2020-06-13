@@ -6,6 +6,7 @@ using System.Collections.Generic;
 public class TaskKill : Task
 {
     [SerializeField] private List<string> list = new List<string>();
+
     
     protected override void OnEnable()
     {
@@ -14,14 +15,22 @@ public class TaskKill : Task
 
     public override void Run()
     {
+        int count = list.Count;
         EventListener.instance.Kills.AddListener(kill =>
        {
            if (list.Contains(kill.NpcId))
            {
                list.Remove(kill.NpcId);
+               ChangeDescription(count - list.Count, count);
                if (list.Count == 0) Finish();
            }
        });
+    }
+
+    private void ChangeDescription(int killed, int All)
+    {
+        description.Remove(description.IndexOf("["));
+        description.Insert(description.IndexOf("["), $"[{killed}/{All}]");
     }
 
     public override void Finish()

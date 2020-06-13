@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78b3fd9154634ebdb8c8a48960b9a16a, type: 3}
+  m_Name: afterQuest
+  m_EditorClassIdentifier: 
+  NodeLinks:
+  - BaseNodeGUID: db44a83a-744a-49f9-93c1-ff26a7792df3
+    PortName: Next
+    TargetNodeGUID: a2737d5c-bacf-46be-aaa1-873479ddf205
+  - BaseNodeGUID: a2737d5c-bacf-46be-aaa1-873479ddf205
+    PortName: Option 1
+    TargetNodeGUID: 4fe06c88-a0bd-467c-bec7-6c86e05020d2
+  DialogueNodeData:
+  - NodeGUID: a2737d5c-bacf-46be-aaa1-873479ddf205
+    DialogueText: "Cze\u015B\u0107"
+    Speaker: NPC
+    Callback: 
+    Position: {x: 334, y: 146}
+  - NodeGUID: 4fe06c88-a0bd-467c-bec7-6c86e05020d2
+    DialogueText: "Cze\u015B\u0107"
+    Speaker: Player
+    Callback: afterQuest
+    Position: {x: 720, y: 164}
+  ExposedProperties: []
+  CommentBlockData: []
+  questFolder: 
+  fileName: afterQuest

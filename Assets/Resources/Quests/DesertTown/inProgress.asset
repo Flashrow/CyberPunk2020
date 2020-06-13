@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78b3fd9154634ebdb8c8a48960b9a16a, type: 3}
+  m_Name: inProgress
+  m_EditorClassIdentifier: 
+  NodeLinks:
+  - BaseNodeGUID: e479760c-5cd9-40fd-88e6-1ef15a86ad29
+    PortName: Next
+    TargetNodeGUID: 18ff376f-e937-42db-97d9-3f88acd62982
+  DialogueNodeData:
+  - NodeGUID: 18ff376f-e937-42db-97d9-3f88acd62982
+    DialogueText: "Jeszcze nie sko\u0144czy\u0142em, zaraz wr\xF3c\u0119"
+    Speaker: Player
+    Callback: inProgress
+    Position: {x: 312, y: 204}
+  ExposedProperties: []
+  CommentBlockData: []
+  questFolder: 
+  fileName: inProgress

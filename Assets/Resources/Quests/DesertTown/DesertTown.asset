@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 121c4fc29e57898459a998fb91cc4c77, type: 3}
+  m_Name: DesertTown
+  m_EditorClassIdentifier: 
+  QuestId: DesertTown
+  title: Uwolnij miasto pustyni
+  description: "Miasto pustyni zosta\u0142o zaatakowane przez humanoidy, pomo\u017C
+    je ocali\u0107"
+  status: 0
+  QuestClassString: DesertTown
+  tasks:
+  - {fileID: 11400000, guid: 0e0dc8129ff071848957d5594b9fa843, type: 2}
+  - {fileID: 11400000, guid: d4be75702bdfa6349ad075d05e443e01, type: 2}

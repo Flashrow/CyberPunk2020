@@ -7,6 +7,7 @@ public class TaskGoTo : Task
 {
     [SerializeField] private PathContainer pathContainer;
     private PathContainer pathContainerTemp;
+    public string hierarchy = null;
 
     private int step = 0;
 
@@ -19,7 +20,15 @@ public class TaskGoTo : Task
     public override void Run()
     {
         status = QuestStatus.IN_PROGRESS;
-        pathContainerTemp = Instantiate(pathContainer);
+        if(hierarchy != null)
+        {
+            pathContainerTemp = Instantiate(pathContainer, GameObject.Find(hierarchy).transform);
+        }
+        else
+            pathContainerTemp = Instantiate(pathContainer);
+
+        Debug.Log($"Instantiate");
+
         pathContainerTemp.pathEventHandler.AddListener((other, order) =>
         {
             if (other.TryGetComponent<Hero>(out Hero hero) && order == step)

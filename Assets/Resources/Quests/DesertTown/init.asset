@@ -1,0 +1,102 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78b3fd9154634ebdb8c8a48960b9a16a, type: 3}
+  m_Name: init
+  m_EditorClassIdentifier: 
+  NodeLinks:
+  - BaseNodeGUID: a840fe2b-3758-4214-be8d-f4156a5db770
+    PortName: Next
+    TargetNodeGUID: bd258208-35d4-43f4-b7fb-f6238f025cae
+  - BaseNodeGUID: bd258208-35d4-43f4-b7fb-f6238f025cae
+    PortName: Option 1
+    TargetNodeGUID: 11fdf7d9-b44a-4b72-9164-ac04844ee4a5
+  - BaseNodeGUID: 11fdf7d9-b44a-4b72-9164-ac04844ee4a5
+    PortName: Option 1
+    TargetNodeGUID: 2c46bbc5-46c8-46f5-a5db-eedccfa29265
+  - BaseNodeGUID: 2c46bbc5-46c8-46f5-a5db-eedccfa29265
+    PortName: Option 1
+    TargetNodeGUID: c95f5b42-580d-4583-8f85-4edafcd12526
+  - BaseNodeGUID: c95f5b42-580d-4583-8f85-4edafcd12526
+    PortName: "Ja chc\u0119"
+    TargetNodeGUID: 7810228b-c081-4433-b63a-dc211f688904
+  - BaseNodeGUID: c95f5b42-580d-4583-8f85-4edafcd12526
+    PortName: Ciekawe
+    TargetNodeGUID: cc3852e9-0d2f-4e9a-b2a7-f8b558225859
+  - BaseNodeGUID: c95f5b42-580d-4583-8f85-4edafcd12526
+    PortName: To nie dla mnie
+    TargetNodeGUID: c3366089-3aa1-4114-8da0-945a1b11500f
+  - BaseNodeGUID: 7810228b-c081-4433-b63a-dc211f688904
+    PortName: Option 1
+    TargetNodeGUID: 1cc4b80d-2775-481c-a00d-6f8fd50dfb25
+  - BaseNodeGUID: 1cc4b80d-2775-481c-a00d-6f8fd50dfb25
+    PortName: Option 1
+    TargetNodeGUID: 9c5e7531-dc86-4818-87d6-efb5889b8ade
+  - BaseNodeGUID: 9c5e7531-dc86-4818-87d6-efb5889b8ade
+    PortName: Option 1
+    TargetNodeGUID: 80670370-1cee-4136-92a4-cb0d5032ca2c
+  DialogueNodeData:
+  - NodeGUID: bd258208-35d4-43f4-b7fb-f6238f025cae
+    DialogueText: Witaj
+    Speaker: NPC
+    Callback: 
+    Position: {x: 331, y: 156}
+  - NodeGUID: 11fdf7d9-b44a-4b72-9164-ac04844ee4a5
+    DialogueText: "Cze\u015B\u0107, co to za miasto za tob\u0105?"
+    Speaker: Player
+    Callback: 
+    Position: {x: 703, y: 152}
+  - NodeGUID: 2c46bbc5-46c8-46f5-a5db-eedccfa29265
+    DialogueText: "To miasto pustyni, niestety zosta\u0142o zaatakowane i jest okupowane
+      przez humanoidy"
+    Speaker: NPC
+    Callback: 
+    Position: {x: 1243, y: 151}
+  - NodeGUID: c95f5b42-580d-4583-8f85-4edafcd12526
+    DialogueText: "Nie ma nikogo kto chcia\u0142by je odbi\u0107"
+    Speaker: NPC
+    Callback: 
+    Position: {x: 1987, y: 167}
+  - NodeGUID: cc3852e9-0d2f-4e9a-b2a7-f8b558225859
+    DialogueText: "Powiedz wi\u0119cej"
+    Speaker: Player
+    Callback: 
+    Position: {x: 2588, y: 196}
+  - NodeGUID: c3366089-3aa1-4114-8da0-945a1b11500f
+    DialogueText: "Niestety \u015Bpiesz\u0119 si\u0119, mo\u017Ce innym razem"
+    Speaker: Player
+    Callback: abort
+    Position: {x: 2581, y: 359}
+  - NodeGUID: 7810228b-c081-4433-b63a-dc211f688904
+    DialogueText: "To co\u015B dla mnie"
+    Speaker: Player
+    Callback: 
+    Position: {x: 2584, y: 53}
+  - NodeGUID: 1cc4b80d-2775-481c-a00d-6f8fd50dfb25
+    DialogueText: "W takim razie zabij wszystkich, jak Ci si\u0119 uda zg\u0142o\u015B
+      si\u0119 do mnie po nagrod\u0119"
+    Speaker: NPC
+    Callback: 
+    Position: {x: 3013, y: 53}
+  - NodeGUID: 9c5e7531-dc86-4818-87d6-efb5889b8ade
+    DialogueText: Powodzenie
+    Speaker: NPC
+    Callback: 
+    Position: {x: 3745, y: 45}
+  - NodeGUID: 80670370-1cee-4136-92a4-cb0d5032ca2c
+    DialogueText: "Do zobaczenia, mam nadziej\u0119."
+    Speaker: Player
+    Callback: accept
+    Position: {x: 4214, y: 57}
+  ExposedProperties: []
+  CommentBlockData: []
+  questFolder: 
+  fileName: init

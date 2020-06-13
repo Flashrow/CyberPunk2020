@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78b3fd9154634ebdb8c8a48960b9a16a, type: 3}
+  m_Name: end
+  m_EditorClassIdentifier: 
+  NodeLinks:
+  - BaseNodeGUID: cb8d7205-0145-45c7-8407-810a516d895e
+    PortName: Next
+    TargetNodeGUID: cca53ec5-fdcb-4db1-905d-f49ac72869e5
+  - BaseNodeGUID: cca53ec5-fdcb-4db1-905d-f49ac72869e5
+    PortName: Option 1
+    TargetNodeGUID: d6b14848-e961-4443-9abf-4ce677023ce8
+  - BaseNodeGUID: d6b14848-e961-4443-9abf-4ce677023ce8
+    PortName: Option 1
+    TargetNodeGUID: 056bbc5c-6fde-4a3d-9a46-8948ed3b7018
+  - BaseNodeGUID: 056bbc5c-6fde-4a3d-9a46-8948ed3b7018
+    PortName: Option 1
+    TargetNodeGUID: 033c4aad-70b8-4100-b412-b261351c1511
+  - BaseNodeGUID: 033c4aad-70b8-4100-b412-b261351c1511
+    PortName: Option 1
+    TargetNodeGUID: a9faa0d5-aa25-4984-bf1c-099b49c0f7ca
+  DialogueNodeData:
+  - NodeGUID: cca53ec5-fdcb-4db1-905d-f49ac72869e5
+    DialogueText: "Brawo, nie s\u0105dzi\u0142em, \u017Ce sobie poradzisz"
+    Speaker: NPC
+    Callback: 
+    Position: {x: 278, y: 174}
+  - NodeGUID: d6b14848-e961-4443-9abf-4ce677023ce8
+    DialogueText: "Dzi\u0119ki"
+    Speaker: Player
+    Callback: 
+    Position: {x: 724, y: 163}
+  - NodeGUID: 056bbc5c-6fde-4a3d-9a46-8948ed3b7018
+    DialogueText: Oto twoja nagroda
+    Speaker: NPC
+    Callback: 
+    Position: {x: 1127, y: 157}
+  - NodeGUID: 033c4aad-70b8-4100-b412-b261351c1511
+    DialogueText: Do zobaczenia na szlaku
+    Speaker: NPC
+    Callback: afterQuest
+    Position: {x: 1531, y: 156}
+  - NodeGUID: a9faa0d5-aa25-4984-bf1c-099b49c0f7ca
+    DialogueText: Elo
+    Speaker: Player
+    Callback: award
+    Position: {x: 1968, y: 158}
+  ExposedProperties: []
+  CommentBlockData: []
+  questFolder: 
+  fileName: end
