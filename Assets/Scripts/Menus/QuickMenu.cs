@@ -4,10 +4,30 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class QuickMenu : MonoBehaviour {
 
-    RectTransform selectedLoadGame = null;
+    string fNameToLoad = null;
+
+    private void Start()
+    {
+        //TODO EVENT
+    }
+
+    public void Load()
+    {
+        try
+        {
+            SaveLoadSystem.System.Load(fNameToLoad);
+        }
+        catch (Exception ex)
+        {
+            UImanager.Alert("Can't load game status!!!", 2.5f);
+            Debug.LogWarning(ex.Message);
+        }
+        CloseQuickMenu();
+    }
 
     public void CloseQuickMenu () {
         UImanager.UIPermentClose ();
@@ -26,18 +46,6 @@ public class QuickMenu : MonoBehaviour {
         } catch (Exception ex)
         {
             UImanager.Alert($"Can't save game: {ex.Message}", 2.5f);
-            Debug.LogWarning(ex.Message);
-        }
-        CloseQuickMenu();
-    }
-
-    public void Load () {
-        try
-        {
-            SaveLoadSystem.System.Load("SAVE_LOAD_SYSTEM_TEST_3");
-        } catch (Exception ex)
-        {
-            UImanager.Alert("Can't load game status!!!", 2.5f);
             Debug.LogWarning(ex.Message);
         }
         CloseQuickMenu();

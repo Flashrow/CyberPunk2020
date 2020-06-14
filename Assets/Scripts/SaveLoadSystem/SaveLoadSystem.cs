@@ -15,9 +15,9 @@ namespace SaveLoadSystem
             if (fname.Length < 1) 
                 throw new InvalidDataException(fname);
             Game data = new Game();
-            string path = $"{Application.persistentDataPath}/Games/{data.day}/{data.time}";
+            string path = $"{Application.persistentDataPath}/Games/{fname}-{data.day}-{data.time}/";
             Directory.CreateDirectory(path);
-            Stream stream = File.Open($"{path}/{fname}.cjc", FileMode.Create);
+            Stream stream = File.Open($"{path}/save.cjc", FileMode.Create);
             BinaryFormatter bformatter = new BinaryFormatter();
             //bformatter.Binder = new VersionDeserializationBinder();
             bformatter.Serialize(stream, data);
@@ -28,9 +28,10 @@ namespace SaveLoadSystem
         public static void Load(string fname)
         {
             Debug.Log("LOADING...");
-            if (File.Exists($"{Application.persistentDataPath}/Games/{fname}.cjc"))
+            string path = $"{Application.persistentDataPath}/Games/{fname}/save.cjc";
+            if (File.Exists(path))
             {
-                Stream stream = File.Open($"{Application.persistentDataPath}/{fname}.cjc", FileMode.Open);
+                Stream stream = File.Open(path, FileMode.Open);
                 BinaryFormatter bformatter = new BinaryFormatter();
                 //bformatter.Binder = new VersionDeserializationBinder();
                 Game data = (Game)bformatter.Deserialize(stream);
