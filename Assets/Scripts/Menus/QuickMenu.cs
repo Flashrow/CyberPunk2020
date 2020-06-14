@@ -9,10 +9,15 @@ using UnityEngine.Events;
 public class QuickMenu : MonoBehaviour {
 
     string fNameToLoad = null;
+    public class fNameLoadEvent : UnityEvent<string> { };
+    static public fNameLoadEvent SetFileToLoadEvent = new fNameLoadEvent();
 
     private void Start()
     {
-        //TODO EVENT
+        SetFileToLoadEvent.AddListener(name =>
+        {
+            fNameToLoad = name;
+        });
     }
 
     public void Load()
@@ -25,8 +30,9 @@ public class QuickMenu : MonoBehaviour {
         {
             UImanager.Alert("Can't load game status!!!", 2.5f);
             Debug.LogWarning(ex.Message);
+        } finally { 
+            CloseQuickMenu();
         }
-        CloseQuickMenu();
     }
 
     public void CloseQuickMenu () {

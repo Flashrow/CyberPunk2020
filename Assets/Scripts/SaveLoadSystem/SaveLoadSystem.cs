@@ -37,20 +37,24 @@ namespace SaveLoadSystem
                 Game data = (Game)bformatter.Deserialize(stream);
                 stream.Close();
                 reloadGame(ref data);
-            } else throw new InvalidDataException();
+            } else
+            {
+                throw new InvalidDataException();
+            }
         }
 
         private static void reloadGame(ref Game data)
         {
-            Debug.Log(data.seed);
-            Debug.Log(data.player.posX);
-            Debug.Log(data.player.posY);
-            Debug.Log(data.player.posZ);
-            Debug.Log(data.player.health);
-            Debug.Log(data.player.coins);
-            Debug.Log(data.player.playerName);
-            Debug.Log(data.player.playerAmmo);
-            Debug.Log(data.player.inGunAmmo);
+            Debug.Log("ReloadGame(ref Game data):");
+            //Debug.Log(data.seed);
+            //Debug.Log(data.player.posX);
+            //Debug.Log(data.player.posY);
+            //Debug.Log(data.player.posZ);
+            Debug.Log($"Health: {data.player.health}");
+            //Debug.Log(data.player.coins);
+            //Debug.Log(data.player.playerName);
+            //Debug.Log(data.player.playerAmmo);
+            //Debug.Log(data.player.inGunAmmo);
         }
     }
 
@@ -80,6 +84,8 @@ namespace SaveLoadSystem
         public void GetObjectData(SerializationInfo info, StreamingContext ctxt)
         {
             info.AddValue("seed", seed);
+            info.AddValue("day", day);
+            info.AddValue("time", time);
             info.AddValue("player", player);
         }
     }
