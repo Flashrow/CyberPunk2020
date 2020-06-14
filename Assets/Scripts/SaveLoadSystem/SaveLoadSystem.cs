@@ -4,7 +4,7 @@ using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using System;
 using System.Runtime.Serialization;
-using System.Reflection;
+using UnityEditor.Compilation;
 
 namespace SaveLoadSystem
 {
@@ -12,40 +12,44 @@ namespace SaveLoadSystem
     {
         public static bool Save(string fname)
         {
+            if (fname.Length < 1) 
+                throw new InvalidDataException(fname);
             Game data = new Game();
-            Stream stream = File.Open($"{Application.persistentDataPath}/{fname}.cjc", FileMode.Create);
+            string path = $"{Application.persistentDataPath}/Games/{data.day}/{data.time}";
+            Directory.CreateDirectory(path);
+            Stream stream = File.Open($"{path}/{fname}.cjc", FileMode.Create);
             BinaryFormatter bformatter = new BinaryFormatter();
-            bformatter.Binder = new VersionDeserializationBinder();
+            //bformatter.Binder = new VersionDeserializationBinder();
             bformatter.Serialize(stream, data);
             stream.Close();
             return true;
         }
 
-        public static bool Load(string fname)
+        public static void Load(string fname)
         {
             Debug.Log("LOADING...");
-            if (File.Exists($"{Application.persistentDataPath}/{fname}.cjc"))
+            if (File.Exists($"{Application.persistentDataPath}/Games/{fname}.cjc"))
             {
                 Stream stream = File.Open($"{Application.persistentDataPath}/{fname}.cjc", FileMode.Open);
                 BinaryFormatter bformatter = new BinaryFormatter();
-                bformatter.Binder = new VersionDeserializationBinder();
+                //bformatter.Binder = new VersionDeserializationBinder();
                 Game data = (Game)bformatter.Deserialize(stream);
                 stream.Close();
-                Debug.Log(data.seed);
-                Debug.Log(data.player.posX);
-                Debug.Log(data.player.posY);
-                Debug.Log(data.player.posZ);
-                Debug.Log(data.player.health);
-                Debug.Log(data.player.Coins);
-                Debug.Log(data.player.playerName);
-                Debug.Log(data.player.playerAmmo);
-                Debug.Log(data.player.inGunAmmo);
-                return true;
-            } else
-            {
-                Debug.LogWarning("FILE NOT EXISTS !!!");
-                return false;
-            }
+                reloadGame(ref data);
+            } else throw new InvalidDataException();
+        }
+
+        private static void reloadGame(ref Game data)
+        {
+            Debug.Log(data.seed);
+            Debug.Log(data.player.posX);
+            Debug.Log(data.player.posY);
+            Debug.Log(data.player.posZ);
+            Debug.Log(data.player.health);
+            Debug.Log(data.player.coins);
+            Debug.Log(data.player.playerName);
+            Debug.Log(data.player.playerAmmo);
+            Debug.Log(data.player.inGunAmmo);
         }
     }
 
@@ -53,15 +57,22 @@ namespace SaveLoadSystem
     public class Game : ISerializable
     {
         public static Game current;
-        public DateTime seed;
+        public String seed;
+        public String day;
+        public String time;
         public Player player;
         public Game() {
-            seed = DateTime.Now;
+            seed = "";
+            day = DateTime.Now.ToString("MM/dd/yyyy");
+            time = DateTime.Now.ToString("HH/mm/ss");
             player = new Player();
         }
+
         public Game(SerializationInfo info, StreamingContext ctxt)
         {
-            seed = (DateTime)info.GetValue("seed", typeof(DateTime));
+            seed = (String)info.GetValue("seed", typeof(String));
+            day = (String)info.GetValue("day", typeof(String));
+            time = (String)info.GetValue("time", typeof(String));
             player = (Player)info.GetValue("player", typeof(Player));
         }
 
@@ -69,6 +80,27 @@ namespace SaveLoadSystem
         {
             info.AddValue("seed", seed);
             info.AddValue("player", player);
+        }
+    }
+
+    [Serializable]
+    public class Inventory : ISerializable
+    {
+        //public Dictionary<ItemType, Item> items = new Dictionary<ItemType, Item>();
+        //public Dictionary<Slots, Item> slots = new Dictionary<Slots, Item>();
+
+        public Inventory()
+        {
+
+        }
+
+        public Inventory(SerializationInfo info, StreamingContext ctxt)
+        {
+            //posX = (float)info.GetValue("posX", typeof(float));
+        }
+        public void GetObjectData(SerializationInfo info, StreamingContext ctxt)
+        {
+            ///info.AddValue("posX", posX);
         }
     }
 
@@ -83,20 +115,22 @@ namespace SaveLoadSystem
     [Serializable]
     public class Player : Character, ISerializable
     {
-        public float Coins { get; private set; }
+        public int coins { get; private set; }
         public string playerName { get; private set; }
         public ushort playerAmmo { get; private set; }
         public ushort inGunAmmo { get; private set; }
-        //Inventory inventory; 
+        Inventory inventory; 
+
         public Player() {
             posX = PlayerManager.Instance.Player.transform.position.x;
             posY = PlayerManager.Instance.Player.transform.position.y;
             posZ = PlayerManager.Instance.Player.transform.position.z;
             health = PlayerManager.Instance.HeroScript.health;
-            Coins = PlayerManager.Instance.HeroScript.Coins;
+            coins = 0; // TODO: change class type
             playerName = PlayerManager.Instance.HeroScript.playerName;
             playerAmmo = PlayerManager.Instance.HeroScript.playerAmmo;
             inGunAmmo = PlayerManager.Instance.HeroScript.inGunAmmo;
+            inventory = new Inventory();
         }
         public Player(SerializationInfo info, StreamingContext ctxt)
         {
@@ -104,10 +138,11 @@ namespace SaveLoadSystem
             posY = (float)info.GetValue("posY", typeof(float));
             posZ = (float)info.GetValue("posZ", typeof(float));
             health = (float)info.GetValue("health", typeof(float));
-            Coins = (float)info.GetValue("Coins", typeof(float));
+            coins = (int)info.GetValue("coins", typeof(int));
             playerName = (string)info.GetValue("playerName", typeof(string));
             playerAmmo = (ushort)info.GetValue("playerAmmo", typeof(ushort));
             inGunAmmo = (ushort)info.GetValue("inGunAmmo", typeof(ushort));
+            inventory = (Inventory)info.GetValue("inventory", typeof(Inventory));
 
         }
         public void GetObjectData(SerializationInfo info, StreamingContext ctxt)
@@ -116,10 +151,11 @@ namespace SaveLoadSystem
             info.AddValue("posY", posY);
             info.AddValue("posZ", posZ);
             info.AddValue("health", health);
-            info.AddValue("Coins", Coins);
+            info.AddValue("coins", coins);
             info.AddValue("playerName", playerName);
             info.AddValue("playerAmmo", playerAmmo);
             info.AddValue("inGunAmmo", inGunAmmo);
+            info.AddValue("inventory", inventory);
         }
     }
 
@@ -130,8 +166,8 @@ namespace SaveLoadSystem
             if (!string.IsNullOrEmpty(assemblyName) && !string.IsNullOrEmpty(typeName))
             {
                 Type typeToDeserialize = null;
-                assemblyName = Assembly.GetExecutingAssembly().FullName;
-                typeToDeserialize = Type.GetType(String.Format("{0}, {1}", typeName, assemblyName));
+                //assemblyName = Assembly.GetExecutingAssembly().FullName;
+                //typeToDeserialize = Type.GetType(String.Format("{0}, {1}", typeName, assemblyName));
                 return typeToDeserialize;
             }
             return null;

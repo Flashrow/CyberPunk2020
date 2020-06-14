@@ -7,7 +7,6 @@ using UnityEngine.SceneManagement;
 public class Hero : MonoBehaviour {
     public float BaseHp = 1000;
     public float health = 1000;
-    public int Coins = 16000;
     public string playerName = "Cyber";
     public ushort playerAmmo = 60;
     public ushort inGunAmmo = 16;

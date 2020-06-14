@@ -116,6 +116,7 @@
     <Compile Include="Assets\Scripts\MapScripts\MinimapTargetsRender.cs" />
     <Compile Include="Assets\Scripts\MapScripts\SetMarkerColor.cs" />
     <Compile Include="Assets\Scripts\MapScripts\TargetsDataMinimap.cs" />
+    <Compile Include="Assets\Scripts\Menus\LoadGameList.cs" />
     <Compile Include="Assets\Scripts\Menus\MainMenu.cs" />
     <Compile Include="Assets\Scripts\Menus\QuickMenu.cs" />
     <Compile Include="Assets\Scripts\NPC\NPCAnimation.cs" />

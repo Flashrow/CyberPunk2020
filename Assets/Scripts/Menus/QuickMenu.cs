@@ -1,35 +1,45 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class QuickMenu : MonoBehaviour {
-    public void EndMission () {
-        Debug.Log ("EndMission ()");
-    }
+
+    RectTransform selectedLoadGame = null;
+
     public void CloseQuickMenu () {
         UImanager.UIPermentClose ();
     }
     public void QuitGame () {
         SceneManager.LoadScene ("MenuStart");
     }
-    public void Save () {
+    public void Save (RectTransform saveInput) {
+        string fname = saveInput.GetComponent<Text>().text;
         try
         {
-            if(SaveLoadSystem.System.Save("SAVE_LOAD_SYSTEM_TEST_3"))
+            if(SaveLoadSystem.System.Save(fname))
             {
-                UImanager.Alert("Game was save", 4.5f);
+                UImanager.Alert($"Game was save: {fname}", 4.5f);
             }
-        } catch
+        } catch (Exception ex)
         {
-            UImanager.Alert("Can't save game status!!!", 2.5f);
+            UImanager.Alert($"Can't save game: {ex.Message}", 2.5f);
+            Debug.LogWarning(ex.Message);
         }
-
+        CloseQuickMenu();
     }
+
     public void Load () {
-        if (SaveLoadSystem.System.Load("SAVE_LOAD_SYSTEM_TEST_3") == false)
+        try
+        {
+            SaveLoadSystem.System.Load("SAVE_LOAD_SYSTEM_TEST_3");
+        } catch (Exception ex)
         {
             UImanager.Alert("Can't load game status!!!", 2.5f);
+            Debug.LogWarning(ex.Message);
         }
+        CloseQuickMenu();
     }
 }
