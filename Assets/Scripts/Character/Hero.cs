@@ -34,16 +34,26 @@ public class Hero : MonoBehaviour {
         //SceneManager.LoadScene("MenuStart");
     }
 
-    public void setPlayerAmmo (ushort ammo) {
+    public void setPlayerAmmo(ushort ammo)
+    {
         this.playerAmmo = ammo;
     }
 
-    public void setHealth (ushort hp) {
+    public void setPlayerName(string name) {
+        this.playerName = name;
+    }
+
+    public void setHealth(float hp) {
         this.health = hp;
     }
 
     public void setGunAmmo (ushort ammo) {
         this.playerAmmo = ammo;
+    }
+
+    public void setInGunAmmo(ushort inGunAmmo)
+    {
+        this.inGunAmmo = inGunAmmo;
     }
 
     public void HitPlayer (float val) {
