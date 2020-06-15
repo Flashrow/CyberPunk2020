@@ -80,8 +80,13 @@ public class Hero : MonoBehaviour {
     public void setInventory(InventorySerializable data)
     {
         inventory.slots = data.slots;
+        foreach(KeyValuePair<Slots, Item> item in data.slots)
+        {
+            Debug.LogWarning($"{item.Key} -> {item.Value.name}");
+            // TODO: ADD ITEM TO SLOT - ########KAMIL########
+        }
+        // TODO: ADD WEPON TO INVENTORY AND SLOT ########LUKASZ########
         inventory.items = data.items;
-        //inventory.FlyingItemPreFab = data.FlyingItemPreFab;
     }
 
     public MovementState getMovementState()

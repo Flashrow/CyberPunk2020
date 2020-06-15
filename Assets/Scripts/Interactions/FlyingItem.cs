@@ -2,27 +2,12 @@ using System.Collections;
 using System.Runtime.Serialization;
 using UnityEngine;
 
-[System.Serializable]
-public class FlyingItem : Interacted, ISerializable
+public class FlyingItem : Interacted
 {
     [SerializeField]
     Item item;
     
-    [SerializeField]
     private SpriteRenderer sprite;
-
-    public FlyingItem(SerializationInfo info, StreamingContext context)
-    {
-        item = (Item)info.GetValue("item", typeof(Item));
-        sprite = (SpriteRenderer)info.GetValue("sprite", typeof(SpriteRenderer));
-    }
-
-    public void GetObjectData(SerializationInfo info, StreamingContext ctxt)
-    {
-        info.AddValue("item", item);
-        info.AddValue("sprite", sprite);
-
-    }
 
     public override void OnInteract () {
         PlayerManager.Instance.HeroScript.inventory.AddItem (item);

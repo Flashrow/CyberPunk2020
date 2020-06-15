@@ -127,28 +127,27 @@ namespace SaveLoadSystem
     {
         public Dictionary<ItemType, Item> items = new Dictionary<ItemType, Item>();
         public Dictionary<Slots, Item> slots = new Dictionary<Slots, Item>();
-
-        //public FlyingItem FlyingItemPreFab;
+        public Weapon weapon;
 
         public InventorySerializable(Inventory inv)
         {
             items = inv.items;
             slots = inv.slots;
-            //FlyingItemPreFab = inv.FlyingItemPreFab;
+            weapon = WeaponManager.instance.weapon;
         }
 
         public InventorySerializable(SerializationInfo info, StreamingContext ctxt)
         {
             items = (Dictionary<ItemType, Item>)info.GetValue("items", typeof(Dictionary<ItemType, Item>));
             slots = (Dictionary<Slots, Item>)info.GetValue("slots", typeof(Dictionary<Slots, Item>));
-            //FlyingItemPreFab = (FlyingItem)info.GetValue("FlyingItemPreFab", typeof(FlyingItem));
+            weapon = (Weapon)info.GetValue("weapon", typeof(Weapon));
         }
 
         public void GetObjectData(SerializationInfo info, StreamingContext ctxt)
         {
             info.AddValue("items", items);
             info.AddValue("slots", slots);
-            //info.AddValue("FlyingItemPreFab", FlyingItemPreFab);
+            info.AddValue("weapon", weapon);
         }
     }
 

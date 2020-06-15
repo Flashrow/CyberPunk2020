@@ -7,8 +7,6 @@ public class WeaponManager : MonoBehaviour
 {
     public static WeaponManager instance;
 
-    public GameObject player;
-
     public GameObject fpsCamera;
 
     public Weapon weapon = null;
