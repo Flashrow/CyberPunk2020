@@ -29,7 +29,7 @@ public class QuickMenu : MonoBehaviour {
         catch (Exception ex)
         {
             UImanager.Alert("Can't load game status!!!", 2.5f);
-            Debug.LogWarning(ex.Message);
+            throw;
         } finally { 
             CloseQuickMenu();
         }

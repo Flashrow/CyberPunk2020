@@ -60,14 +60,11 @@ namespace SaveLoadSystem
             PlayerManager.Instance.HeroScript.setPlayerName(data.player.playerName);
             PlayerManager.Instance.HeroScript.setPlayerAmmo(data.player.playerAmmo);
             PlayerManager.Instance.HeroScript.setInGunAmmo(data.player.inGunAmmo);
+            PlayerManager.Instance.HeroScript.setMoneys(data.player.moneys);
             foreach (var file in data.scriptObjAllPaths)
             {
                 int pos = file.LastIndexOf("\\") + 1;
                 string name = file.Substring(pos, file.Length - pos);
-                Debug.LogWarning("Copy file:");
-                Debug.LogWarning($"{data.rootFolderPath}/{name}");
-                Debug.LogWarning("Copy to:");
-                Debug.LogWarning($"{file}");
                 // DISABLE ON DEBUG MODE
                 //File.Copy($"{data.rootFolderPath}/{name}", file, true);
             }
@@ -126,6 +123,7 @@ namespace SaveLoadSystem
     [Serializable]
     public class Player : Character, ISerializable
     {
+        public int moneys { get; private set; }
         public string playerName { get; private set; }
         public ushort playerAmmo { get; private set; }
         public ushort inGunAmmo { get; private set; }
@@ -135,6 +133,7 @@ namespace SaveLoadSystem
             posY = PlayerManager.Instance.Player.transform.position.y;
             posZ = PlayerManager.Instance.Player.transform.position.z;
             health = PlayerManager.Instance.HeroScript.health;
+            moneys = PlayerManager.Instance.HeroScript.moneys;
             playerName = PlayerManager.Instance.HeroScript.playerName;
             playerAmmo = PlayerManager.Instance.HeroScript.playerAmmo;
             inGunAmmo = PlayerManager.Instance.HeroScript.inGunAmmo;
@@ -145,6 +144,7 @@ namespace SaveLoadSystem
             posY = (float)info.GetValue("posY", typeof(float));
             posZ = (float)info.GetValue("posZ", typeof(float));
             health = (float)info.GetValue("health", typeof(float));
+            moneys = (int)info.GetValue("moneys", typeof(int));
             playerName = (string)info.GetValue("playerName", typeof(string));
             playerAmmo = (ushort)info.GetValue("playerAmmo", typeof(ushort));
             inGunAmmo = (ushort)info.GetValue("inGunAmmo", typeof(ushort));
@@ -156,6 +156,7 @@ namespace SaveLoadSystem
             info.AddValue("posY", posY);
             info.AddValue("posZ", posZ);
             info.AddValue("health", health);
+            info.AddValue("moneys", moneys);
             info.AddValue("playerName", playerName);
             info.AddValue("playerAmmo", playerAmmo);
             info.AddValue("inGunAmmo", inGunAmmo);

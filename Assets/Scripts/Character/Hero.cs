@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class Hero : MonoBehaviour {
     public float BaseHp = 1000;
     public float health = 1000;
+    public int moneys = 10000;
     public string playerName = "Cyber";
     public ushort playerAmmo = 60;
     public ushort inGunAmmo = 16;
@@ -54,6 +55,12 @@ public class Hero : MonoBehaviour {
     public void setInGunAmmo(ushort inGunAmmo)
     {
         this.inGunAmmo = inGunAmmo;
+    }
+
+    public void setMoneys(int coins)
+    {
+        this.moneys = coins;
+        BitCoinsBar.loadMoneyEvent.Invoke(coins);
     }
 
     public void HitPlayer (float val) {
