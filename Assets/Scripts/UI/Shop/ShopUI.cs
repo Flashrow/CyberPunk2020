@@ -5,8 +5,6 @@ using UnityEngine.UI;
 
 public class ShopUI : MonoBehaviour {
     [SerializeField]
-    private Inventory inventory;
-    [SerializeField]
     private ShopCharacterItem itemPreFab;
     [SerializeField]
     private ShopItem shopItemPreFab;
@@ -43,7 +41,7 @@ public class ShopUI : MonoBehaviour {
     }
 
     void Start () {
-        foreach (KeyValuePair<ItemType, Item> item in inventory.items) {
+        foreach (KeyValuePair<ItemType, Item> item in PlayerManager.Instance.HeroScript.inventory.items) {
             DisplayItem (item.Value);
         }
         DisplayShopItems ();

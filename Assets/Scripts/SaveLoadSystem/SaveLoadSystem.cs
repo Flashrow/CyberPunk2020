@@ -5,6 +5,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System;
 using System.Runtime.Serialization;
 using UnityEditor.Compilation;
+using System.Collections.Generic;
 
 namespace SaveLoadSystem
 {
@@ -61,6 +62,7 @@ namespace SaveLoadSystem
             PlayerManager.Instance.HeroScript.setPlayerAmmo(data.player.playerAmmo);
             PlayerManager.Instance.HeroScript.setInGunAmmo(data.player.inGunAmmo);
             PlayerManager.Instance.HeroScript.setMoneys(data.player.moneys);
+            PlayerManager.Instance.HeroScript.setInventory(data.player.inventory);
             foreach (var file in data.scriptObjAllPaths)
             {
                 int pos = file.LastIndexOf("\\") + 1;
@@ -121,12 +123,43 @@ namespace SaveLoadSystem
     }
 
     [Serializable]
+    public class InventorySerializable : ISerializable
+    {
+        public Dictionary<ItemType, Item> items = new Dictionary<ItemType, Item>();
+        public Dictionary<Slots, Item> slots = new Dictionary<Slots, Item>();
+
+        //public FlyingItem FlyingItemPreFab;
+
+        public InventorySerializable(Inventory inv)
+        {
+            items = inv.items;
+            slots = inv.slots;
+            //FlyingItemPreFab = inv.FlyingItemPreFab;
+        }
+
+        public InventorySerializable(SerializationInfo info, StreamingContext ctxt)
+        {
+            items = (Dictionary<ItemType, Item>)info.GetValue("items", typeof(Dictionary<ItemType, Item>));
+            slots = (Dictionary<Slots, Item>)info.GetValue("slots", typeof(Dictionary<Slots, Item>));
+            //FlyingItemPreFab = (FlyingItem)info.GetValue("FlyingItemPreFab", typeof(FlyingItem));
+        }
+
+        public void GetObjectData(SerializationInfo info, StreamingContext ctxt)
+        {
+            info.AddValue("items", items);
+            info.AddValue("slots", slots);
+            //info.AddValue("FlyingItemPreFab", FlyingItemPreFab);
+        }
+    }
+
+    [Serializable]
     public class Player : Character, ISerializable
     {
         public int moneys { get; private set; }
         public string playerName { get; private set; }
         public ushort playerAmmo { get; private set; }
         public ushort inGunAmmo { get; private set; }
+        public InventorySerializable inventory { get; private set; }
 
         public Player() {
             posX = PlayerManager.Instance.Player.transform.position.x;
@@ -137,6 +170,7 @@ namespace SaveLoadSystem
             playerName = PlayerManager.Instance.HeroScript.playerName;
             playerAmmo = PlayerManager.Instance.HeroScript.playerAmmo;
             inGunAmmo = PlayerManager.Instance.HeroScript.inGunAmmo;
+            inventory = new InventorySerializable(PlayerManager.Instance.HeroScript.inventory);
         }
         public Player(SerializationInfo info, StreamingContext ctxt)
         {
@@ -148,7 +182,7 @@ namespace SaveLoadSystem
             playerName = (string)info.GetValue("playerName", typeof(string));
             playerAmmo = (ushort)info.GetValue("playerAmmo", typeof(ushort));
             inGunAmmo = (ushort)info.GetValue("inGunAmmo", typeof(ushort));
-
+            inventory = (InventorySerializable)info.GetValue("inventory", typeof(InventorySerializable));
         }
         public void GetObjectData(SerializationInfo info, StreamingContext ctxt)
         {
@@ -160,6 +194,7 @@ namespace SaveLoadSystem
             info.AddValue("playerName", playerName);
             info.AddValue("playerAmmo", playerAmmo);
             info.AddValue("inGunAmmo", inGunAmmo);
+            info.AddValue("inventory", inventory);
         }
     }
 

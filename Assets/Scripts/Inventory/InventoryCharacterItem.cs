@@ -12,8 +12,6 @@ public class InventoryCharacterItem : MonoBehaviour, IPointerEnterHandler, IPoin
     [SerializeField]
     private Slots slot;
 
-    [SerializeField]
-    private Inventory inventory;
     // DetailsWindow Prefab
     InventoryItemDetailsWindow detailsWindowPreFab;
     public InventoryItemDetailsWindow detailsWindowPreFabTemp;
@@ -27,9 +25,9 @@ public class InventoryCharacterItem : MonoBehaviour, IPointerEnterHandler, IPoin
 
     public void OnPointerClick (PointerEventData pointerEventData) {
         if (pointerEventData.button == PointerEventData.InputButton.Left)
-            inventory.MoveItemToInventory (slot);
+            PlayerManager.Instance.HeroScript.inventory.MoveItemToInventory (slot);
         if (pointerEventData.button == PointerEventData.InputButton.Right)
-            inventory.DropItem (slot);
+            PlayerManager.Instance.HeroScript.inventory.DropItem (slot);
     }
 
     public void OnPointerEnter (PointerEventData eventData) {
@@ -40,13 +38,13 @@ public class InventoryCharacterItem : MonoBehaviour, IPointerEnterHandler, IPoin
 
     IEnumerator CreateDetailsWindow (PointerEventData eventData) {
         yield return new WaitForSeconds (.5f);
-        if (isPointerOver && !detailsWindowPreFab && !inventory.IsSlotEmpty (slot)) {
+        if (isPointerOver && !detailsWindowPreFab && !PlayerManager.Instance.HeroScript.inventory.IsSlotEmpty (slot)) {
             detailsWindowPreFab = (InventoryItemDetailsWindow) Instantiate (detailsWindowPreFabTemp, transform);
             RectTransform rt = (RectTransform) detailsWindowPreFab.transform;
             float width = rt.rect.width;
             float height = rt.rect.height;
             detailsWindowPreFab.transform.position = eventData.position + new Vector2 (width / 2, -height / 2);
-            detailsWindowPreFab.Prime (inventory.slots[slot]);
+            detailsWindowPreFab.Prime (PlayerManager.Instance.HeroScript.inventory.slots[slot]);
         }
     }
 
@@ -58,9 +56,9 @@ public class InventoryCharacterItem : MonoBehaviour, IPointerEnterHandler, IPoin
 
     void LoadData () {
         try {
-            text.text = inventory.slots[slot].itemId;
-            amount.text = $"{inventory.slots[slot].number}";
-            image.sprite = inventory.slots[slot].data.sprite;
+            text.text = PlayerManager.Instance.HeroScript.inventory.slots[slot].itemId;
+            amount.text = $"{PlayerManager.Instance.HeroScript.inventory.slots[slot].number}";
+            image.sprite = PlayerManager.Instance.HeroScript.inventory.slots[slot].data.sprite;
         } catch {
             text.text = "";
             amount.text = "";

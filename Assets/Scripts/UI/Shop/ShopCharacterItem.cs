@@ -17,13 +17,6 @@ public class ShopCharacterItem : MonoBehaviour, IPointerEnterHandler, IPointerEx
     bool isPointerOver = false;
     Vector3 position;
 
-    [SerializeField]
-    private Inventory inventory;
-
-    void Start () {
-
-    }
-
     public void OnPointerClick (PointerEventData eventData) {
         onCharacterItemClick (item);
     }
@@ -59,7 +52,7 @@ public class ShopCharacterItem : MonoBehaviour, IPointerEnterHandler, IPointerEx
     }
 
     private void refresh () {
-        if (inventory.HasItem (item.data.type))
+        if (PlayerManager.Instance.HeroScript.inventory.HasItem (item.data.type))
             Prime (item);
         else
             DestroyImmediate (gameObject);

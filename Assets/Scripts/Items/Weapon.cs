@@ -1,14 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Runtime.Serialization;
 
 [System.Serializable]
 public class Weapon : Item {
 
-    private string spriteName;
-    private string scriptName;
+    [SerializeField] private string spriteName;
+    [SerializeField] private string scriptName;
 
     public Weapon()
+    {
+
+    }
+
+    public Weapon(SerializationInfo info, StreamingContext context) : base(info, context)
     {
 
     }

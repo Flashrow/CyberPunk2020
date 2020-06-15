@@ -10,8 +10,6 @@ public class ShopSliderWindow : MonoBehaviour {
     int finalyPrice = 0;
 
     [SerializeField]
-    Inventory inventory;
-    [SerializeField]
     MoneySystem money;
     ShopItems shopItems;
 
@@ -77,7 +75,7 @@ public class ShopSliderWindow : MonoBehaviour {
                 item = newItem,
                 eventType = ItemEventType.BUYED
             });
-            inventory.AddItem (newItem);
+            PlayerManager.Instance.HeroScript.inventory.AddItem (newItem);
         }
         if (mode == "SELL") {
             money.Add (finalyPrice);
@@ -93,7 +91,7 @@ public class ShopSliderWindow : MonoBehaviour {
                 item = item,
                 eventType = ItemEventType.SOLD
             });
-            inventory.DecreaseItem (item.data.type, sliderValue);
+            PlayerManager.Instance.HeroScript.inventory.DecreaseItem (item.data.type, sliderValue);
         }
         try {
             onShopItemsChanged ();

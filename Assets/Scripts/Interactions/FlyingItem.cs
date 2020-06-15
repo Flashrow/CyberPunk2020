@@ -1,26 +1,31 @@
 using System.Collections;
+using System.Runtime.Serialization;
 using UnityEngine;
 
-public class FlyingItem : Interacted {
+[System.Serializable]
+public class FlyingItem : Interacted, ISerializable
+{
+    [SerializeField]
     Item item;
-
+    
     [SerializeField]
     private SpriteRenderer sprite;
 
-    [SerializeField]
-    private Inventory inventory;
-    // Use this for initialization
-    void Start () {
-
+    public FlyingItem(SerializationInfo info, StreamingContext context)
+    {
+        item = (Item)info.GetValue("item", typeof(Item));
+        sprite = (SpriteRenderer)info.GetValue("sprite", typeof(SpriteRenderer));
     }
 
-    // Update is called once per frame
-    void Update () {
+    public void GetObjectData(SerializationInfo info, StreamingContext ctxt)
+    {
+        info.AddValue("item", item);
+        info.AddValue("sprite", sprite);
 
     }
 
     public override void OnInteract () {
-        inventory.AddItem (item);
+        PlayerManager.Instance.HeroScript.inventory.AddItem (item);
         EventListener.instance.Inventory.Invoke(new ItemData
         {
             item = item,

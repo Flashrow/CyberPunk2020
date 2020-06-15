@@ -1,3 +1,4 @@
+using SaveLoadSystem;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -74,6 +75,13 @@ public class Hero : MonoBehaviour {
      public void setState(State state)
     {
         mainState = state;
+    }
+
+    public void setInventory(InventorySerializable data)
+    {
+        inventory.slots = data.slots;
+        inventory.items = data.items;
+        //inventory.FlyingItemPreFab = data.FlyingItemPreFab;
     }
 
     public MovementState getMovementState()
