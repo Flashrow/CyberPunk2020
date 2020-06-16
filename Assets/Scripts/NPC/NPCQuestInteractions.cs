@@ -22,11 +22,15 @@ public class NPCQuestInteractions : Interacted {
         PlayerManager.EnableMovement.Invoke();
         UImanager.alertDisable = false;
         isActive = false;
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
         _endInteractedEvent.Invoke();
     }
 
     public override void OnInteract () {
         if (isActive) return;
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
         UImanager.alertDisable = true;
         QuestManager.instance.MountQuest(questData);
         try { 

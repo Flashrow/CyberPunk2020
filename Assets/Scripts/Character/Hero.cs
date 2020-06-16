@@ -33,6 +33,8 @@ public class Hero : MonoBehaviour {
     void goToMenu()
     {
         Debug.Log("GAME OVER !!!");
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
         SceneManager.LoadScene("MenuStart");
     }
 
