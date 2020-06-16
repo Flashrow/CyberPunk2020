@@ -114,4 +114,13 @@ public class Inventory : ScriptableObject {
     public bool HasItem (ItemType type) {
         return items.ContainsKey (type);
     }
+
+    public void forceUpdate()
+    {
+        try
+        {
+            onInventoryChange();
+        }
+        catch { };
+    }
 }

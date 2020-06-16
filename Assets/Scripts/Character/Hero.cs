@@ -79,14 +79,28 @@ public class Hero : MonoBehaviour {
 
     public void setInventory(InventorySerializable data)
     {
-        inventory.slots = data.slots;
         foreach(KeyValuePair<Slots, Item> item in data.slots)
         {
             Debug.LogWarning($"{item.Key} -> {item.Value.name}");
-            // TODO: ADD ITEM TO SLOT - ########KAMIL########
+            switch (item.Key)
+            {
+                case Slots.Secondary:
+                    inventory.slots.Add(Slots.Secondary, item.Value.CreateInstance());
+                    inventory.slots[Slots.Secondary].number = 1;
+                    break;
+                case Slots.Primary:
+                    inventory.slots.Add(Slots.Primary, item.Value.CreateInstance());
+                    inventory.slots[Slots.Primary].number = 1;
+                    break;
+            }
         }
+        inventory.forceUpdate();
         // TODO: ADD WEPON TO INVENTORY AND SLOT ########LUKASZ########
-        inventory.items = data.items;
+        foreach (KeyValuePair<ItemType, Item> item in data.items)
+        {
+            inventory.AddItem(item.Value);
+        }
+        //inventory.items = data.items;
     }
 
     public MovementState getMovementState()
