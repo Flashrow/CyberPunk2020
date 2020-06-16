@@ -2,8 +2,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using System;
+#if UNITY_EDITOR
 using UnityEditorInternal;
 using UnityEditor;
+#endif
 
 public class QuestManager : MonoBehaviour
 {
@@ -39,7 +41,7 @@ public class QuestManager : MonoBehaviour
     }
 }
 
-
+#if UNITY_EDITOR
 [CustomEditor(typeof(QuestManager), true, isFallback = true)]
 public class QuestManagerEditor : Editor
 {
@@ -74,3 +76,4 @@ public class QuestManagerEditor : Editor
     }
 
 }
+#endif

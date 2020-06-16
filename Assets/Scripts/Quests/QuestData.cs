@@ -1,8 +1,10 @@
 ﻿using UnityEngine;
-using UnityEditor;
 using System;
 using System.Collections.Generic;
+#if UNITY_EDITOR
 using UnityEditorInternal;
+using UnityEditor;
+#endif
 
 [CreateAssetMenu(fileName = "QuestData", menuName = "QuestInfo", order = 1), System.Serializable]
 public class QuestData : ScriptableObject
@@ -21,6 +23,7 @@ public class QuestData : ScriptableObject
     }
 }
 
+#if UNITY_EDITOR
 [CustomEditor(typeof(QuestData), true, isFallback = true)]
 public class myClassEditor : Editor
 {
@@ -55,3 +58,4 @@ public class myClassEditor : Editor
     }
 
 }
+#endif

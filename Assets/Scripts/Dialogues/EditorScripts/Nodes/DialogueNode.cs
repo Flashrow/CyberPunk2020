@@ -1,4 +1,5 @@
-﻿using System;
+﻿#if UNITY_EDITOR
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Experimental.GraphView;
@@ -13,3 +14,4 @@ public class DialogueNode : Node
     public string Callback;
     public bool EntyPoint = false;
 }
+#endif

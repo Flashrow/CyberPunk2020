@@ -4,7 +4,9 @@ using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using System;
 using System.Runtime.Serialization;
+#if UNITY_EDITOR
 using UnityEditor.Compilation;
+#endif
 using System.Collections.Generic;
 
 namespace SaveLoadSystem
@@ -204,8 +206,10 @@ namespace SaveLoadSystem
             if (!string.IsNullOrEmpty(assemblyName) && !string.IsNullOrEmpty(typeName))
             {
                 Type typeToDeserialize = null;
+#if UNITY_EDITOR
                 //assemblyName = Assembly.GetExecutingAssembly().FullName;
                 //typeToDeserialize = Type.GetType(String.Format("{0}, {1}", typeName, assemblyName));
+#endif
                 return typeToDeserialize;
             }
             return null;

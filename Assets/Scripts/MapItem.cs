@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 
 [RequireComponent(typeof(Interaction))]
 public class MapItem : MonoBehaviour
@@ -23,6 +25,7 @@ public class MapItem : MonoBehaviour
     }    
 }
 
+#if UNITY_EDITOR
 [CustomEditor(typeof(MapItem))]
 public class ItemScriptableEditor : Editor
 {
@@ -36,3 +39,4 @@ public class ItemScriptableEditor : Editor
         }
     }
 }
+#endif

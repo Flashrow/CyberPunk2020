@@ -11,7 +11,7 @@ public class MainMenu : MonoBehaviour {
     }
 
     public void CreateNewGame () {
-        SceneManager.LoadScene("City");
+        SceneManager.LoadScene("OpenWorld");
     }
 
     public void QuitGame () {

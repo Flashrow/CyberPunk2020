@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 
 
 [Serializable]
@@ -17,7 +19,7 @@ public class DialogueContainer : ScriptableObject
     public string fileName;
 }
 
-
+#if UNITY_EDITOR
 [CustomEditor(typeof(DialogueContainer))]
 public class DialogueContainerEditor : Editor
 {
@@ -33,5 +35,6 @@ public class DialogueContainerEditor : Editor
         }
     }
 }
+#endif
 
 

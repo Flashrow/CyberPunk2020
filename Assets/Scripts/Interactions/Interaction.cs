@@ -1,7 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.Events;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 
 public class Interaction : MonoBehaviour
 {
@@ -71,6 +73,7 @@ public class Interaction : MonoBehaviour
     }
 }
 
+#if UNITY_EDITOR
 [CustomEditor(typeof(Interaction))]
 public class InteractionEditor : Editor
 {
@@ -87,3 +90,4 @@ public class InteractionEditor : Editor
         DrawDefaultInspector();
     }
 }
+#endif

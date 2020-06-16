@@ -1,4 +1,5 @@
-﻿using System;
+﻿#if UNITY_EDITOR
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -124,3 +125,4 @@ public class StoryGraph : EditorWindow
         rootVisualElement.Remove(_graphView);
     }
 }
+#endif

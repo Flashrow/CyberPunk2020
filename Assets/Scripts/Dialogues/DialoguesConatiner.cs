@@ -1,7 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 
 [CreateAssetMenu(fileName = "DialogueContainer", menuName = "DialogueContainer")]
 public class DialoguesConatiner : ScriptableObject
@@ -42,6 +44,7 @@ public class DialoguesConatiner : ScriptableObject
 
 namespace Mochineko.SimpleReorderableList.Samples.Editor
 {
+#if UNITY_EDITOR
     [CustomEditor(typeof(DialoguesConatiner))]
     public class MultiPropertySampleEditor : UnityEditor.Editor
     {
@@ -71,4 +74,5 @@ namespace Mochineko.SimpleReorderableList.Samples.Editor
             }
         }
     }
+#endif
 }
