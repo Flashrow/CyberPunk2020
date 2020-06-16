@@ -20,6 +20,16 @@ public class QuickMenu : MonoBehaviour {
         });
     }
 
+    private void OnEnable()
+    {
+        UImanager.alertDisable = true;
+    }
+
+    private void OnDisable()
+    {
+        UImanager.alertDisable = false;
+    }
+
     public void Load()
     {
         try
@@ -28,7 +38,9 @@ public class QuickMenu : MonoBehaviour {
         }
         catch (Exception ex)
         {
+            UImanager.alertDisable = false;
             UImanager.Alert("Can't load game status!!!", 2.5f);
+            UImanager.alertDisable = true;
             throw;
         } finally { 
             CloseQuickMenu();
@@ -47,11 +59,15 @@ public class QuickMenu : MonoBehaviour {
         {
             if(SaveLoadSystem.System.Save(fname))
             {
+                UImanager.alertDisable = false;
                 UImanager.Alert($"Game was save: {fname}", 4.5f);
+                UImanager.alertDisable = true;
             }
         } catch (Exception ex)
         {
+            UImanager.alertDisable = false;
             UImanager.Alert($"Can't save game: {ex.Message}", 2.5f);
+            UImanager.alertDisable = true;
             Debug.LogWarning(ex.Message);
         }
         CloseQuickMenu();

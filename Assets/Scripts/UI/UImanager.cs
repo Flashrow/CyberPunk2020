@@ -11,6 +11,7 @@ public class UImanager : MonoBehaviour {
     static private List<GameObject> elements = new List<GameObject> ();
     static public bool isOpen { get; private set; }
     static public bool isBlock { get; private set; }
+    static public bool alertDisable { get; set; } = false;
     static private Canvas alert;
     void Awake () {
         gameInterface = GameObject.Find ("GameInterface");
@@ -29,10 +30,13 @@ public class UImanager : MonoBehaviour {
     }
     static public void Alert(string text, float time = 2.5f)
     {
-        var obj = GameObject.Instantiate(alert).transform;
-        obj.SetParent(GameObject.Find("UI").transform);
-        obj.GetComponentInChildren<TextMeshProUGUI>().SetText(text);
-        GameObject.Destroy(obj.gameObject, time);
+        if (isBlock == false && alertDisable == false)
+        {
+            var obj = GameObject.Instantiate(alert).transform;
+            obj.SetParent(GameObject.Find("UI").transform);
+            obj.GetComponentInChildren<TextMeshProUGUI>().SetText(text);
+            GameObject.Destroy(obj.gameObject, time);
+        }
     }
     static public void UIOpen (ref GameObject go) {
         if (elements.Count == 0) {
@@ -59,6 +63,7 @@ public class UImanager : MonoBehaviour {
             item.SetActive (false);
         elements.Clear ();
         gameInterface.SetActive (true);
+        UImanager.alertDisable = false;
         isOpen = false;
     }
     static public void UIBlock () {

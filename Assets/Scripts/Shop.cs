@@ -8,14 +8,9 @@ public class Shop : Interacted {
 
     [SerializeField]
     private ShopUI shopUI;
+
     private ShopUI shopUITemp;
 
-    // Start is called before the first frame update
-    void Start () {
-
-    }
-
-    // Update is called once per frame
     void Update () {
         if (shopUITemp == null)
         {

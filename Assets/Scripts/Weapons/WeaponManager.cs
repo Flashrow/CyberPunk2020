@@ -21,13 +21,13 @@ public class WeaponManager : MonoBehaviour
     {
         if (instance != null)
         {
-           // Debug.LogError("More than one WeaponManager in the scene");
+            Debug.LogWarning("More than one WeaponManager in the scene");
         }
         else
         {
             instance = this;
         }
-        modelHandler = new WeaponModel(player.transform.Find("RightArm"));
+        modelHandler = new WeaponModel(PlayerManager.Instance.Player.transform.Find("RightArm"));
     }
 
     private void Start()
@@ -39,7 +39,7 @@ public class WeaponManager : MonoBehaviour
     {
         if (weapon != null
             && PlayerManager.Instance.HeroScript.inventory.slots.ContainsKey(Slots.Primary)                      
-            && PlayerManager.Instance.HeroScript.inventory.slots[Slots.Primary].data.type == ItemType.Gun)
+            && PlayerManager.Instance.HeroScript.inventory.slots[Slots.Primary].data.type == ItemType.Rifle)
         {
            //Debug.Log("WeaponManager: Update");
             if (hasAmmo())
@@ -168,7 +168,7 @@ public class WeaponManager : MonoBehaviour
     {
         if (PlayerManager.Instance.HeroScript.inventory.slots.ContainsKey(Slots.Primary))
         {
-            if (PlayerManager.Instance.HeroScript.inventory.slots[Slots.Primary].data.type == ItemType.Gun)
+            if (PlayerManager.Instance.HeroScript.inventory.slots[Slots.Primary].data.type == ItemType.Rifle)
             {
                 weapon = (Weapon)PlayerManager.Instance.HeroScript.inventory.slots[Slots.Primary];
             }

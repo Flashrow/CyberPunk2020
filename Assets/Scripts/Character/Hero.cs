@@ -33,7 +33,7 @@ public class Hero : MonoBehaviour {
     void goToMenu()
     {
         Debug.Log("GAME OVER !!!");
-        //SceneManager.LoadScene("MenuStart");
+        SceneManager.LoadScene("MenuStart");
     }
 
     public void setPlayerAmmo(ushort ammo)

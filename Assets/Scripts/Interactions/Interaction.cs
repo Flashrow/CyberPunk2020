@@ -8,7 +8,7 @@ public class Interaction : MonoBehaviour
     protected bool isActive = false;
     
     public InteractionLabel labelTemp;
-    [SerializeField] bool disableUI = true;
+    bool disableUI = true;
 
     [SerializeField]
     private string labelText;
@@ -45,7 +45,7 @@ public class Interaction : MonoBehaviour
     {
         if (name != this.name)
         {
-            EnableUI();
+            UImanager.UIUnlock();
             OnCancelInteraction.Invoke();
             labelTemp.gameObject.SetActive(false);
             InteractionRadius.onIntegrate -= DestroyIfNotActive;
@@ -57,7 +57,7 @@ public class Interaction : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F))
         {
             OnInteraction.Invoke();
-            if (disableUI) DisableUI();
+            if (disableUI) UImanager.UIBlock();
         }
     }
 
@@ -68,16 +68,6 @@ public class Interaction : MonoBehaviour
             InteractionRadius.onIntegrate -= DestroyIfNotActive;
         }
         catch { }
-    }
-
-    protected void DisableUI()
-    {
-        UImanager.UIBlock();
-    }
-
-    protected void EnableUI()
-    {
-        UImanager.UIUnlock();
     }
 }
 

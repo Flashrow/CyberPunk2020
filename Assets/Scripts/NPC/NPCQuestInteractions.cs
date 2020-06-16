@@ -20,12 +20,14 @@ public class NPCQuestInteractions : Interacted {
         anim.AnimEndInteraction();
         MinimapEvents.TurnOn.Invoke();
         PlayerManager.EnableMovement.Invoke();
+        UImanager.alertDisable = false;
         isActive = false;
         _endInteractedEvent.Invoke();
     }
 
     public override void OnInteract () {
         if (isActive) return;
+        UImanager.alertDisable = true;
         QuestManager.instance.MountQuest(questData);
         try { 
             gameObject.GetComponent<DialogueParser>().Parse(NpcId, questData.QuestId).AddListener(OnEscape);
