@@ -10,14 +10,6 @@ public class InventoryUI : MonoBehaviour {
     public InventoryItem itemPreFab;
     public InventoryItem itemCharacterPreFab;
 
-    [SerializeField]
-    private Inventory inventory;
-    void Start () { }
-
-    // Update is called once per frame
-    void Update () {
-
-    }
     void DisplayItem (Item item) {
         InventoryItem display = (InventoryItem) Instantiate (itemPreFab);
         if (item is Ammo) {
@@ -31,7 +23,7 @@ public class InventoryUI : MonoBehaviour {
 
     private void OnEnable () {
         Inventory.onAddItemInventory += DisplayItem;
-        foreach (KeyValuePair<ItemType, Item> item in inventory.items) {
+        foreach (KeyValuePair<ItemType, Item> item in PlayerManager.Instance.HeroScript.inventory.items) {
             DisplayItem (item.Value);
         }
     }

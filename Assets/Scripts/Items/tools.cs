@@ -2,11 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Runtime.Serialization;
 
-public class Tools : Item {
+[System.Serializable]
+public class Tools : Item, ISerializable{
     public Tools () : base ("tools", "Tools") {
         itemId = "tools";
         number = 0;
+    }
+
+    public Tools(SerializationInfo info, StreamingContext context) : base(info, context)
+    {
+
     }
 
     public override Item CreateInstance () {

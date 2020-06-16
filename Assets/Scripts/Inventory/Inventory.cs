@@ -5,6 +5,7 @@ using UnityEngine;
 
 [CreateAssetMenu (fileName = "Inventory", menuName = "Inventory/Inventory", order = 1)]
 public class Inventory : ScriptableObject {
+
     public Dictionary<ItemType, Item> items = new Dictionary<ItemType, Item> ();
     public Dictionary<Slots, Item> slots = new Dictionary<Slots, Item> ();
 
@@ -112,5 +113,14 @@ public class Inventory : ScriptableObject {
 
     public bool HasItem (ItemType type) {
         return items.ContainsKey (type);
+    }
+
+    public void forceUpdate()
+    {
+        try
+        {
+            onInventoryChange();
+        }
+        catch { };
     }
 }

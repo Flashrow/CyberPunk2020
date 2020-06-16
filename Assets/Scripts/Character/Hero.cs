@@ -1,3 +1,4 @@
+using SaveLoadSystem;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,7 +8,7 @@ using UnityEngine.SceneManagement;
 public class Hero : MonoBehaviour {
     public float BaseHp = 1000;
     public float health = 1000;
-    public int Coins = 16000;
+    public int moneys = 10000;
     public string playerName = "Cyber";
     public ushort playerAmmo = 60;
     public ushort inGunAmmo = 16;
@@ -35,16 +36,32 @@ public class Hero : MonoBehaviour {
         //SceneManager.LoadScene("MenuStart");
     }
 
-    public void setPlayerAmmo (ushort ammo) {
+    public void setPlayerAmmo(ushort ammo)
+    {
         this.playerAmmo = ammo;
     }
 
-    public void setHealth (ushort hp) {
+    public void setPlayerName(string name) {
+        this.playerName = name;
+    }
+
+    public void setHealth(float hp) {
         this.health = hp;
     }
 
     public void setGunAmmo (ushort ammo) {
         this.playerAmmo = ammo;
+    }
+
+    public void setInGunAmmo(ushort inGunAmmo)
+    {
+        this.inGunAmmo = inGunAmmo;
+    }
+
+    public void setMoneys(int coins)
+    {
+        this.moneys = coins;
+        BitCoinsBar.loadMoneyEvent.Invoke(coins);
     }
 
     public void HitPlayer (float val) {
@@ -58,6 +75,32 @@ public class Hero : MonoBehaviour {
      public void setState(State state)
     {
         mainState = state;
+    }
+
+    public void setInventory(InventorySerializable data)
+    {
+        foreach(KeyValuePair<Slots, Item> item in data.slots)
+        {
+            Debug.LogWarning($"{item.Key} -> {item.Value.name}");
+            switch (item.Key)
+            {
+                case Slots.Secondary:
+                    inventory.slots.Add(Slots.Secondary, item.Value.CreateInstance());
+                    inventory.slots[Slots.Secondary].number = 1;
+                    break;
+                case Slots.Primary:
+                    inventory.slots.Add(Slots.Primary, item.Value.CreateInstance());
+                    inventory.slots[Slots.Primary].number = 1;
+                    break;
+            }
+        }
+        inventory.forceUpdate();
+        // TODO: ADD WEPON TO INVENTORY AND SLOT ########LUKASZ########
+        foreach (KeyValuePair<ItemType, Item> item in data.items)
+        {
+            inventory.AddItem(item.Value);
+        }
+        //inventory.items = data.items;
     }
 
     public MovementState getMovementState()

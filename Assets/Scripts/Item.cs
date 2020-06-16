@@ -1,15 +1,19 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.Serialization;
 using UnityEngine;
 using UnityEngine.UI;
 
 public enum ItemType { Coins, Rifle, Ammo, Phone, Tools, Onion }
 
-public class Item {
-    public string itemId;
-    public int number;
-    public int cost = 0;
-    public ItemScriptable data;
+[System.Serializable]
+public class Item: ISerializable {
+    [NonSerialized] public ItemScriptable data;
+    [SerializeField] public string itemId;
+    [SerializeField] public int number;
+    [SerializeField] public int cost = 0;
+    [SerializeField] public string name = "";
     //public GameObject model;
     //public ItemType type;
     //public int defaultNumber;
@@ -17,14 +21,34 @@ public class Item {
     //public int maxNumber;
     //public Sprite sprite;
 
+    public Item(SerializationInfo info, StreamingContext context)
+    {
+        itemId = (string)info.GetValue("itemId", typeof(string));
+        number = (int)info.GetValue("number", typeof(int));
+        cost = (int)info.GetValue("cost", typeof(int));
+        name = (string)info.GetValue("name", typeof(string));
+        LoadScriptableObject(name);
+    }
+
+    public void GetObjectData(SerializationInfo info, StreamingContext ctxt)
+    {
+        info.AddValue("itemId", itemId);
+        info.AddValue("number", number);
+        info.AddValue("cost", cost);
+        info.AddValue("name", name);
+    }
+
     public Item () { }
 
     public Item (string spriteName, string scriptName) {
         //LoadSprite(spriteName);
+        this.name = scriptName;
         LoadScriptableObject (scriptName);
     }
 
     public Item (Item item) {
+        data = item.data;
+
         itemId = item.itemId;
         //defaultNumber = item.defaultNumber;
         //minNumber = item.minNumber;
@@ -34,8 +58,7 @@ public class Item {
         //type = item.type;
         //model = item.model;
         //sprite = item.sprite;
-        data = item.data;
-    }
+        name = item.name;    }
 
     public void LoadSprite (string spriteName) {
         //this.sprite = Resources.Load<Sprite>("Sprites/Items/" + spriteName);

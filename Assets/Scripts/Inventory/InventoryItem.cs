@@ -16,18 +16,15 @@ public class InventoryItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     bool isPointerOver = false;
     Vector3 position;
 
-    [SerializeField]
-    private Inventory inventory;
-
     void Start () {
 
     }
 
     public void OnPointerClick (PointerEventData pointerEventData) {
         if (pointerEventData.button == PointerEventData.InputButton.Left)
-            inventory.MoveItemToCharacter (item);
+            PlayerManager.Instance.HeroScript.inventory.MoveItemToCharacter (item);
         if (pointerEventData.button == PointerEventData.InputButton.Right)
-            inventory.DropItem (item.data.type);
+            PlayerManager.Instance.HeroScript.inventory.DropItem (item.data.type);
     }
 
     public void OnPointerEnter (PointerEventData eventData) {
@@ -64,7 +61,7 @@ public class InventoryItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     }
 
     private void refresh () {
-        if (inventory.HasItem (item.data.type))
+        if (PlayerManager.Instance.HeroScript.inventory.HasItem (item.data.type))
             Prime (item);
         else
             DestroyImmediate (gameObject);

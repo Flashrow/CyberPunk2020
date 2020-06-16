@@ -1,26 +1,16 @@
 using System.Collections;
+using System.Runtime.Serialization;
 using UnityEngine;
 
-public class FlyingItem : Interacted {
-    Item item;
-
+public class FlyingItem : Interacted
+{
     [SerializeField]
+    Item item;
+    
     private SpriteRenderer sprite;
 
-    [SerializeField]
-    private Inventory inventory;
-    // Use this for initialization
-    void Start () {
-
-    }
-
-    // Update is called once per frame
-    void Update () {
-
-    }
-
     public override void OnInteract () {
-        inventory.AddItem (item);
+        PlayerManager.Instance.HeroScript.inventory.AddItem (item);
         EventListener.instance.Inventory.Invoke(new ItemData
         {
             item = item,

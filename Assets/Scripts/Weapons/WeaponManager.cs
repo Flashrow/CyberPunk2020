@@ -7,10 +7,6 @@ public class WeaponManager : MonoBehaviour
 {
     public static WeaponManager instance;
 
-    public GameObject player;
-
-    public Inventory inventory;
-
     public GameObject fpsCamera;
 
     public Weapon weapon = null;
@@ -42,8 +38,8 @@ public class WeaponManager : MonoBehaviour
     private void Update()
     {
         if (weapon != null
-            && inventory.slots.ContainsKey(Slots.Primary)                      
-            && inventory.slots[Slots.Primary].data.type == ItemType.Rifle)
+            && PlayerManager.Instance.HeroScript.inventory.slots.ContainsKey(Slots.Primary)                      
+            && PlayerManager.Instance.HeroScript.inventory.slots[Slots.Primary].data.type == ItemType.Gun)
         {
            //Debug.Log("WeaponManager: Update");
             if (hasAmmo())
@@ -77,8 +73,8 @@ public class WeaponManager : MonoBehaviour
 
     private bool hasAmmo()
     {
-        if ((inventory.items.ContainsKey(ItemType.Ammo)
-            && inventory.items[ItemType.Ammo].number > 0)
+        if ((PlayerManager.Instance.HeroScript.inventory.items.ContainsKey(ItemType.Ammo)
+            && PlayerManager.Instance.HeroScript.inventory.items[ItemType.Ammo].number > 0)
             || weapon.getInGunAmmo() > 0)
         {
             return true;
@@ -92,9 +88,9 @@ public class WeaponManager : MonoBehaviour
 
     private string getAmmoString()
     {
-        if ((inventory.items.ContainsKey(ItemType.Ammo) && inventory.items[ItemType.Ammo].number > 0)
+        if ((PlayerManager.Instance.HeroScript.inventory.items.ContainsKey(ItemType.Ammo) && PlayerManager.Instance.HeroScript.inventory.items[ItemType.Ammo].number > 0)
           || weapon.getInGunAmmo() > 0)
-            return $"{weapon.getInGunAmmo()}/{inventory.items[ItemType.Ammo].number}";
+            return $"{weapon.getInGunAmmo()}/{PlayerManager.Instance.HeroScript.inventory.items[ItemType.Ammo].number}";
         else
             return "0";
     }
@@ -116,8 +112,8 @@ public class WeaponManager : MonoBehaviour
                 {
                     state = State.reloading;
                     UImanager.Alert($"Reloading...", weapon.getData().reloadingTime);
-                   // Debug.Log("WeaponManager: single shot - reloading");
-                    inventory.items[ItemType.Ammo].number = weapon.reload(inventory.items[ItemType.Ammo].number);
+                    //Debug.Log("WeaponManager: single shot - reloading");
+                    PlayerManager.Instance.HeroScript.inventory.items[ItemType.Ammo].number = weapon.reload(PlayerManager.Instance.HeroScript.inventory.items[ItemType.Ammo].number);
                 }
             }
         }
@@ -147,7 +143,7 @@ public class WeaponManager : MonoBehaviour
                        // Debug.Log("WeaponManager: reloading");
                         state = State.reloading;
                         UImanager.Alert($"Reloading...", weapon.getData().reloadingTime);
-                        inventory.items[ItemType.Ammo].number = weapon.reload(inventory.items[ItemType.Ammo].number);
+                        PlayerManager.Instance.HeroScript.inventory.items[ItemType.Ammo].number = weapon.reload(PlayerManager.Instance.HeroScript.inventory.items[ItemType.Ammo].number);
                     }
                 }
                 else
@@ -170,12 +166,11 @@ public class WeaponManager : MonoBehaviour
 
     public void updateWeapon()
     {
-        if (inventory.slots.ContainsKey(Slots.Primary))
+        if (PlayerManager.Instance.HeroScript.inventory.slots.ContainsKey(Slots.Primary))
         {
-            if (inventory.slots[Slots.Primary].data.type == ItemType.Rifle)
+            if (PlayerManager.Instance.HeroScript.inventory.slots[Slots.Primary].data.type == ItemType.Gun)
             {
-                weapon = (Weapon)inventory.slots[Slots.Primary];
-                modelHandler.setModel(weapon.data.model);
+                weapon = (Weapon)PlayerManager.Instance.HeroScript.inventory.slots[Slots.Primary];
             }
             else
             {

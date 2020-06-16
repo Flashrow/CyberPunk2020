@@ -23,8 +23,6 @@ public class ChestsInteractions : Interacted {
 
     [SerializeField]
     private MoneySystem moneySystem;
-    [SerializeField]
-    private Inventory inventory;
 
     [SerializeField]
     public List<ItemProbability> itemProbability = new List<ItemProbability> ();
@@ -79,7 +77,7 @@ public class ChestsInteractions : Interacted {
                     item = item,
                     eventType = ItemEventType.TAKEN
                 });
-                inventory.AddItem (item);
+                PlayerManager.Instance.HeroScript.inventory.AddItem (item);
             }
         });
     }

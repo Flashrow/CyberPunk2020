@@ -41,7 +41,6 @@ public class DialogueParser : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log("Dialogue Parser: player");
         if (
             player.getState() == State.dialog
             && Input.GetKeyDown(KeyCode.Space))
