@@ -9,7 +9,7 @@ public class UImanager : MonoBehaviour {
     static private GameObject gameInterface;
     [SerializeField] private GameObject quickMenuCanvas;
     static private List<GameObject> elements = new List<GameObject> ();
-    static public bool isOpen { get; private set; }
+    static public bool isOpen { get; set; }
     static public bool isBlock { get; private set; }
     static public bool alertDisable { get; set; } = false;
     static private Canvas alert;
@@ -23,9 +23,20 @@ public class UImanager : MonoBehaviour {
         if (isBlock == false) {
             if (isOpen == true && Input.GetKeyDown (KeyCode.Escape)) {
                 UIPermentClose ();
-            } else if (isOpen == false && Input.GetKeyDown (KeyCode.Escape)) {
+            }
+            else if (isOpen == false && Input.GetKeyDown (KeyCode.Escape)) {
                 UIOpen (ref quickMenuCanvas);
             }
+        }
+        if (isOpen)
+        {
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+        }
+        else
+        {
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
         }
     }
     static public void Alert(string text, float time = 2.5f)

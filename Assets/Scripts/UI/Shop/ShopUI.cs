@@ -30,6 +30,10 @@ public class ShopUI : MonoBehaviour {
         ShopItem.onShopItemClick += DisplayBuyWindow;
         ShopCharacterItem.onCharacterItemClick += DisplaySellWindow;
         ShopSliderWindow.onShopItemsChanged += DisplayShopItems;
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+        UImanager.alertDisable = true;
+        UImanager.isOpen = true;
     }
 
     private void OnDisable () {
@@ -38,6 +42,10 @@ public class ShopUI : MonoBehaviour {
         ShopItem.onShopItemClick -= DisplayBuyWindow;
         ShopCharacterItem.onCharacterItemClick -= DisplaySellWindow;
         ShopSliderWindow.onShopItemsChanged -= DisplayShopItems;
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+        UImanager.alertDisable = false;
+        UImanager.isOpen = false;
     }
 
     void Start () {

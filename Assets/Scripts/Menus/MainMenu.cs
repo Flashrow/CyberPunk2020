@@ -5,11 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour {
     public void PlayGame () {
-        SceneManager.LoadScene ("City");
+        Debug.Log("LOAD LAST SAVE!");
+
+        //SceneManager.LoadScene ("City");
     }
 
     public void CreateNewGame () {
-        Debug.Log ("NEW GAME!");
+        SceneManager.LoadScene("City");
     }
 
     public void QuitGame () {
