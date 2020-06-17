@@ -38,14 +38,14 @@ public class ChestsInteractions : Interacted {
     void RandomItems () {
         LoadItemsDictionary ();
         foreach (ItemProbability item in itemProbability) {
-            if (Random.Range (0, 101) < item.probability) items.Add (item.item);
+            if (Random.Range (0, 100) < item.probability) items.Add (item.item);
         }
     }
 
     void Start () {
         RandomItems ();
         foreach (Item item in items) {
-            item.number = Random.Range (item.data.minNumber, item.data.maxNumber + 1);
+            //item.number = Random.Range (item.data.minNumber, item.data.maxNumber + 1);
         }
     }
 

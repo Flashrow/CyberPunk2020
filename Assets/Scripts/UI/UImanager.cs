@@ -28,16 +28,6 @@ public class UImanager : MonoBehaviour {
                 UIOpen (ref quickMenuCanvas);
             }
         }
-        if (isOpen)
-        {
-            Cursor.visible = true;
-            Cursor.lockState = CursorLockMode.None;
-        }
-        else
-        {
-            Cursor.visible = false;
-            Cursor.lockState = CursorLockMode.Locked;
-        }
     }
     static public void Alert(string text, float time = 2.5f)
     {
