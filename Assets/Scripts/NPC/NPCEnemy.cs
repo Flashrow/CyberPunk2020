@@ -22,7 +22,10 @@ public class NPCEnemy : NPCCharacter {
         tg = Resources.Load<TargetsDataMinimap>("TargetsDataMinimap");
     }
     protected override void onStart () {
-        tg.Add(transform); // MINIMAP TEST
+        try {
+            if (tg.Add(transform) == false)
+                Debug.Log("NPC Enemy invisble");
+        } catch { }
         currentHealth = MaxHealth;
     }
     public override void OnHit (float val) {
